@@ -1,10 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-inter: "Inter", sans-serif;
+@theme {
+  /* Brand colors */
+  --color-brand-primary: #553555;
+  --color-brand-dark: #114B5F;
+  --color-brand-accent: #028090;
+  --color-brand-light: #E4FDE1;
+  --color-brand-coral: #F45B69;
+
+  /* Neutral colors */
+  --color-neutral-nearBlack: #1A1A1A;
+  --color-neutral-offWhite: #F8F8F8;
+
+  /* Font families */
+  --font-display: var(--font-montserrat), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  /* Font sizes */
+  --text-hero: 3.5rem;
+  --text-hero--line-height: 1.1;
+  --text-hero--font-weight: 900;
+
+  --text-page-h1: 3rem;
+  --text-page-h1--line-height: 1.1;
+  --text-page-h1--font-weight: 900;
+
+  --text-section-h2: 2.5rem;
+  --text-section-h2--line-height: 1.15;
+  --text-section-h2--font-weight: 900;
+
+  --text-subsection-h3: 1.625rem;
+  --text-subsection-h3--line-height: 1.2;
+  --text-subsection-h3--font-weight: 900;
+
+  --text-label-h4: 0.8125rem;
+  --text-label-h4--line-height: 1.4;
+  --text-label-h4--font-weight: 500;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.65;
+
+  --text-body-std: 1rem;
+  --text-body-std--line-height: 1.65;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.6;
+
+  --text-cta-btn: 0.9375rem;
+  --text-cta-btn--font-weight: 500;
+
+  --text-nav-link: 0.875rem;
+  --text-nav-link--font-weight: 500;
+
+  --text-footer-text: 0.8125rem;
+  --text-footer-text--line-height: 1.5;
 }
 
 *,
