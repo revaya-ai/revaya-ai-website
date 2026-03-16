@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { whyRevayaWebPageSchema, shannonPersonSchema } from "@/lib/schema";
@@ -68,17 +69,14 @@ export default function WhyRevayaPage() {
       <section className="bg-white py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Headshot placeholder */}
-            <div
-              className="bg-brand-light rounded w-full aspect-[4/5] max-w-[360px] flex items-center justify-center border border-[rgba(17,75,95,0.12)]"
-              aria-label="Shannon Winnicki headshot — placeholder to be replaced"
-            >
-              <div className="text-center px-8">
-                <p className="text-[0.8125rem] text-brand-dark/60 font-medium">
-                  [Photo placeholder — Shannon to provide headshot]
-                </p>
-              </div>
-            </div>
+            {/* Headshot */}
+            <Image
+              src="/shannon-headshot.jpg"
+              alt="Shannon Winnicki, founder of Revaya AI"
+              width={400}
+              height={500}
+              className="rounded-lg object-cover"
+            />
 
             {/* Intro text */}
             <div>
@@ -224,7 +222,7 @@ export default function WhyRevayaPage() {
           <p className="text-[1rem] text-neutral-nearBlack/70">
             If you want to follow how this builds — the methodology, the decisions, the real work — I document it on{" "}
             <a
-              href="https://www.linkedin.com/in/shannonwinnicki"
+              href="https://www.linkedin.com/in/swinnicki/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand-accent hover:underline"

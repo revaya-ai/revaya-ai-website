@@ -10,7 +10,7 @@ export const organizationSchema = {
     "@type": "Person",
     name: "Shannon Winnicki",
     url: "https://www.revaya.ai/why-revaya",
-    sameAs: ["https://www.linkedin.com/in/shannonwinnicki"],
+    sameAs: ["https://www.linkedin.com/in/swinnicki/"],
   },
   contactPoint: {
     "@type": "ContactPoint",
@@ -218,7 +218,7 @@ export const shannonPersonSchema = {
     "Product management",
     "Business automation",
   ],
-  sameAs: ["https://www.linkedin.com/in/shannonwinnicki"],
+  sameAs: ["https://www.linkedin.com/in/swinnicki/"],
 };
 
 export const whyRevayaWebPageSchema = {

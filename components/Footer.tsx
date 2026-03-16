@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,9 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Brand */}
           <div>
-            <span className="font-display font-black text-lg text-white">
-              Revaya AI
-            </span>
+            <Image src="/revaya-logo-white.png" alt="Revaya AI" width={140} height={40} />
             <p className="mt-2 text-footer-text text-white/70 max-w-xs">
               Business AI Operating Systems for service businesses.
             </p>

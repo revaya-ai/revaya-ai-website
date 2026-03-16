@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -37,20 +38,14 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 nav-bg-transition ${
         isDark
           ? "bg-transparent"
-          : "bg-white shadow-sm"
+          : "bg-[#114B5F] shadow-sm"
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span
-              className={`font-display font-black text-lg tracking-tight ${
-                isDark ? "text-white" : "text-brand-primary"
-              }`}
-            >
-              Revaya AI
-            </span>
+            <Image src="/revaya-logo-white.png" alt="Revaya AI" width={140} height={40} />
           </Link>
 
           {/* Desktop nav */}
@@ -62,13 +57,9 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   className={`text-nav-link transition-colors duration-150 ${
-                    isDark
-                      ? isActive
-                        ? "text-brand-accent"
-                        : "text-white hover:text-brand-accent"
-                      : isActive
+                    isActive
                       ? "text-brand-accent"
-                      : "text-neutral-nearBlack hover:text-brand-accent"
+                      : "text-white hover:text-brand-accent"
                   }`}
                 >
                   {link.label}
@@ -77,11 +68,7 @@ export default function Navigation() {
             })}
             <Link
               href="/work-with-me"
-              className={`text-cta-btn px-5 py-2.5 rounded border-2 transition-all duration-150 ${
-                isDark
-                  ? "border-white text-white hover:bg-white hover:text-brand-primary"
-                  : "border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
-              }`}
+              className="text-cta-btn px-5 py-2.5 rounded border-2 transition-all duration-150 border-white text-white hover:bg-white hover:text-brand-primary"
             >
               Start the conversation
             </Link>
@@ -89,7 +76,7 @@ export default function Navigation() {
 
           {/* Mobile hamburger */}
           <button
-            className={`md:hidden p-2 ${isDark ? "text-white" : "text-neutral-nearBlack"}`}
+            className="md:hidden p-2 text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation"
           >

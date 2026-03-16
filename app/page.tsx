@@ -255,7 +255,7 @@ export default function HomePage() {
           <p className="text-[1rem] text-neutral-nearBlack/70">
             If you want to watch how this gets built, I document it on{" "}
             <a
-              href="https://www.linkedin.com/in/shannonwinnicki"
+              href="https://www.linkedin.com/in/swinnicki/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand-accent hover:underline"
