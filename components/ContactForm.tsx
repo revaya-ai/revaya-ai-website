@@ -67,11 +67,16 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-brand-light border border-[rgba(17,75,95,0.12)] rounded p-8 text-center">
-        <p className="font-display font-black text-[1.25rem] text-brand-dark mb-2">
+      <div className="glass-card rounded-xl p-8 text-center border border-[#028090]/30">
+        <div className="w-12 h-12 rounded-full bg-[#028090]/20 flex items-center justify-center mx-auto mb-4">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10L8 14L16 6" stroke="#028090" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        <p className="font-display font-black text-[1.25rem] text-white mb-2">
           Thank you.
         </p>
-        <p className="text-[1rem] leading-[1.65] text-neutral-nearBlack">
+        <p className="text-[1rem] leading-[1.65] text-white/65">
           Your message has been received. I will contact you shortly.
         </p>
       </div>
@@ -79,10 +84,10 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full border border-[rgba(17,75,95,0.25)] rounded px-4 py-3 text-[1rem] text-neutral-nearBlack bg-white placeholder-transparent focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-[rgba(2,128,144,0.15)] transition-all duration-150";
+    "w-full border border-white/[0.12] rounded-lg px-4 py-3 text-[1rem] text-white bg-[#111820] placeholder-white/20 focus:outline-none focus:border-[#028090] focus:ring-1 focus:ring-[#028090]/30 transition-all duration-150";
 
   const labelClass =
-    "block text-[0.875rem] font-medium text-neutral-nearBlack mb-1.5";
+    "block text-[0.875rem] font-medium text-white/65 mb-1.5";
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -100,6 +105,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           autoComplete="name"
+          placeholder="Your name"
         />
       </div>
 
@@ -117,6 +123,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           autoComplete="email"
+          placeholder="you@company.com"
         />
       </div>
 
@@ -133,6 +140,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           autoComplete="tel"
+          placeholder="Optional"
         />
       </div>
 
@@ -149,6 +157,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           autoComplete="organization"
+          placeholder="Your company"
         />
       </div>
 
@@ -164,6 +173,7 @@ export default function ContactForm() {
           value={form.businessDescription}
           onChange={handleChange}
           className={inputClass}
+          placeholder="Brief description"
         />
       </div>
 
@@ -179,6 +189,7 @@ export default function ContactForm() {
           value={form.teamSize}
           onChange={handleChange}
           className={inputClass}
+          placeholder="e.g. 5, 10-20"
         />
       </div>
 
@@ -186,7 +197,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="bottleneck" className={labelClass}>
           What&rsquo;s the operational bottleneck you&rsquo;re dealing with right now?{" "}
-          <span className="text-brand-coral">*</span>
+          <span className="text-[#F45B69]">*</span>
         </label>
         <textarea
           id="bottleneck"
@@ -196,6 +207,7 @@ export default function ContactForm() {
           value={form.bottleneck}
           onChange={handleChange}
           className={`${inputClass} resize-y min-h-[120px]`}
+          placeholder="Be specific — this helps me give you a real read on the fit."
         />
       </div>
 
@@ -203,7 +215,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="triedSoFar" className={labelClass}>
           What have you tried so far?{" "}
-          <span className="text-neutral-nearBlack/50 text-[0.8125rem] font-normal">(optional)</span>
+          <span className="text-white/35 text-[0.8125rem] font-normal">(optional)</span>
         </label>
         <textarea
           id="triedSoFar"
@@ -212,11 +224,12 @@ export default function ContactForm() {
           value={form.triedSoFar}
           onChange={handleChange}
           className={`${inputClass} resize-y min-h-[96px]`}
+          placeholder="Tools, consultants, internal efforts..."
         />
       </div>
 
       {error && (
-        <p className="text-[0.875rem] text-brand-coral" role="alert">
+        <p className="text-[0.875rem] text-[#F45B69]" role="alert">
           {error}
         </p>
       )}
@@ -224,7 +237,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full md:w-auto bg-brand-primary text-white text-[0.9375rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:bg-[#3D263D] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full md:w-auto bg-[#553555] text-white text-[0.9375rem] font-medium px-7 py-3.5 rounded-lg transition-all duration-200 hover:bg-[#6B4468] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? "Sending..." : "Send this to Shannon"}
       </button>

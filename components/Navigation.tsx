@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/solutions", label: "Solutions" },
   { href: "/why-revaya", label: "Why Revaya" },
-  { href: "/work-with-me", label: "Work With Me" },
 ];
 
 export default function Navigation() {
@@ -17,117 +16,118 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const isHomePage = pathname === "/";
-
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  const isDark = isHomePage && !scrolled;
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 nav-bg-transition ${
-        isDark
-          ? "bg-transparent"
-          : "bg-[#114B5F] shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#0A0F14]/90 backdrop-blur-md border-b border-white/[0.06]"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image src="/revaya-logo-white.png" alt="Revaya AI" width={140} height={40} />
-          </Link>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between h-16 md:h-20">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/revaya-logo-white.png"
+            alt="Revaya AI"
+            width={140}
+            height={40}
+            priority
+          />
+        </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-nav-link transition-colors duration-150 ${
-                    isActive
-                      ? "text-brand-accent"
-                      : "text-white hover:text-brand-accent"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map(({ href, label }) => (
             <Link
-              href="/work-with-me"
-              className="text-cta-btn px-5 py-2.5 rounded border-2 transition-all duration-150 border-white text-white hover:bg-white hover:text-brand-primary"
+              key={href}
+              href={href}
+              className={`text-[0.875rem] font-medium transition-colors duration-150 ${
+                pathname === href ? "text-[#028090]" : "text-white/60 hover:text-white"
+              }`}
             >
-              Start the conversation
+              {label}
             </Link>
-          </nav>
+          ))}
+        </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden p-2 text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle navigation"
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/work-with-me"
+            className="text-[0.9375rem] font-medium px-5 py-2 rounded-lg bg-[#553555] text-white hover:bg-[#6B4468] transition-all duration-150"
           >
-            <div className="w-6 flex flex-col gap-1.5">
-              <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-200 ${
-                  mobileOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-200 ${
-                  mobileOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-200 ${
-                  mobileOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              />
-            </div>
-          </button>
+            Work With Me
+          </Link>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden p-2 text-white"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle navigation"
+        >
+          <div className="w-5 h-4 flex flex-col justify-between">
+            <span
+              className={`block h-0.5 bg-white transition-all duration-200 ${
+                mobileOpen ? "rotate-45 translate-y-[7px]" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 bg-white transition-all duration-200 ${
+                mobileOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 bg-white transition-all duration-200 ${
+                mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
+              }`}
+            />
+          </div>
+        </button>
       </div>
 
       {/* Mobile drawer */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
-          <nav className="flex flex-col px-6 py-4 gap-4">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="md:hidden bg-[#0A0F14] border-b border-white/[0.06] overflow-hidden"
+          >
+            <div className="px-6 py-4 flex flex-col gap-4">
+              {navLinks.map(({ href, label }) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-body-std py-2 ${
-                    isActive ? "text-brand-accent font-medium" : "text-neutral-nearBlack"
-                  }`}
+                  key={href}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-white/70 hover:text-white text-[1rem] py-1 transition-colors"
                 >
-                  {link.label}
+                  {label}
                 </Link>
-              );
-            })}
-            <Link
-              href="/work-with-me"
-              className="mt-2 text-center text-cta-btn px-5 py-3 rounded bg-brand-primary text-white"
-            >
-              Start the conversation
-            </Link>
-          </nav>
-        </div>
-      )}
+              ))}
+              <Link
+                href="/work-with-me"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 text-center text-[0.9375rem] font-medium px-5 py-3 rounded-lg bg-[#553555] text-white"
+              >
+                Work With Me
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

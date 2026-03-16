@@ -19,17 +19,17 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="border-b border-[rgba(17,75,95,0.12)]"
+          className="border-b border-white/[0.07]"
         >
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             className="w-full flex items-center justify-between py-5 text-left group"
             aria-expanded={openIndex === i}
           >
-            <span className="font-display font-black text-[1.125rem] md:text-[1.375rem] text-neutral-nearBlack leading-[1.2] pr-4 group-hover:text-brand-primary transition-colors duration-150">
+            <span className="font-display font-black text-[1.125rem] md:text-[1.25rem] text-white leading-[1.2] pr-4 group-hover:text-[#028090] transition-colors duration-150">
               {item.question}
             </span>
-            <span className="shrink-0 text-brand-accent text-[1.25rem] font-light transition-transform duration-200">
+            <span className="shrink-0 text-[#028090] transition-transform duration-200">
               {openIndex === i ? (
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M4 10H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -46,7 +46,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               openIndex === i ? "max-h-[800px] pb-5" : "max-h-0"
             }`}
           >
-            <p className="text-[1rem] leading-[1.65] text-neutral-nearBlack/80">
+            <p className="text-[1rem] leading-[1.65] text-white/55">
               {item.answer}
             </p>
           </div>
