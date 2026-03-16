@@ -66,119 +66,55 @@ function SystemDiagram() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Vertical spine line */}
+        {/* Vertical spine — draws slowly, leading each row reveal */}
         <motion.line
           x1="50" y1="60" x2="50" y2="460"
           stroke="rgba(2,128,144,0.2)"
           strokeWidth="1"
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : {}}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
+          transition={{ duration: 2.8, ease: "easeInOut", delay: 0.3 }}
         />
 
-        {/* Connection lines from nodes to right panel */}
-        {layers.map((layer, i) => (
-          <motion.line
-            key={`h-${i}`}
-            x1="50" y1={layer.y} x2="200" y2={layer.y}
-            stroke="rgba(2,128,144,0.15)"
-            strokeWidth="1"
-            strokeDasharray="4 4"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={inView ? { pathLength: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
-          />
-        ))}
+        {/* Each layer: node + connector + card — all animate together, one at a time */}
+        {layers.map((layer, i) => {
+          const rowDelay = 0.6 + i * 0.45;
+          const desc = ["How you operate", "Your data, connected", "AI where it matters", "Repeatable work, removed", "Custom tools, built"][i];
+          return (
+            <motion.g
+              key={layer.id}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.4, delay: rowDelay }}
+            >
+              {/* Horizontal connector */}
+              <motion.line
+                x1="50" y1={layer.y} x2="200" y2={layer.y}
+                stroke="rgba(2,128,144,0.18)"
+                strokeWidth="1"
+                strokeDasharray="4 4"
+                initial={{ pathLength: 0 }}
+                animate={inView ? { pathLength: 1 } : {}}
+                transition={{ duration: 0.5, delay: rowDelay + 0.05 }}
+              />
 
-        {/* Layer nodes */}
-        {layers.map((layer, i) => (
-          <motion.g
-            key={layer.id}
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
-          >
-            {/* Node circle */}
-            <circle
-              cx={layer.x}
-              cy={layer.y}
-              r="22"
-              fill="rgba(10,15,20,0.9)"
-              stroke="rgba(2,128,144,0.5)"
-              strokeWidth="1.5"
-            />
-            {/* Node number */}
-            <text
-              x={layer.x}
-              y={layer.y - 4}
-              textAnchor="middle"
-              fill="rgba(2,128,144,0.7)"
-              fontSize="9"
-              fontFamily="Montserrat, sans-serif"
-              fontWeight="700"
-            >
-              {layer.id}
-            </text>
-            {/* Node name */}
-            <text
-              x={layer.x}
-              y={layer.y + 7}
-              textAnchor="middle"
-              fill="rgba(255,255,255,0.9)"
-              fontSize="8.5"
-              fontFamily="Montserrat, sans-serif"
-              fontWeight="800"
-            >
-              {layer.name}
-            </text>
+              {/* Node circle */}
+              <circle cx={layer.x} cy={layer.y} r="22" fill="rgba(10,15,20,0.9)" stroke="rgba(2,128,144,0.5)" strokeWidth="1.5" />
+              {/* Node number */}
+              <text x={layer.x} y={layer.y - 4} textAnchor="middle" fill="rgba(2,128,144,0.7)" fontSize="9" fontFamily="Montserrat, sans-serif" fontWeight="700">{layer.id}</text>
+              {/* Node name */}
+              <text x={layer.x} y={layer.y + 7} textAnchor="middle" fill="rgba(255,255,255,0.9)" fontSize="8.5" fontFamily="Montserrat, sans-serif" fontWeight="800">{layer.name}</text>
 
-            {/* Right panel card */}
-            <rect
-              x="210"
-              y={layer.y - 22}
-              width="120"
-              height="44"
-              rx="8"
-              fill="rgba(255,255,255,0.03)"
-              stroke="rgba(255,255,255,0.07)"
-              strokeWidth="1"
-            />
-            <text
-              x="270"
-              y={layer.y - 5}
-              textAnchor="middle"
-              fill="rgba(255,255,255,0.7)"
-              fontSize="8"
-              fontFamily="Montserrat, sans-serif"
-              fontWeight="700"
-            >
-              {layer.name} Layer
-            </text>
-            <text
-              x="270"
-              y={layer.y + 8}
-              textAnchor="middle"
-              fill="rgba(255,255,255,0.35)"
-              fontSize="7"
-              fontFamily="Inter, sans-serif"
-            >
-              {i === 0 ? "How you operate" :
-               i === 1 ? "Your data, connected" :
-               i === 2 ? "AI where it matters" :
-               i === 3 ? "Repeatable work, removed" :
-               "Custom tools, built"}
-            </text>
+              {/* Right panel card */}
+              <rect x="210" y={layer.y - 22} width="120" height="44" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+              <text x="270" y={layer.y - 5} textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="8" fontFamily="Montserrat, sans-serif" fontWeight="700">{layer.name} Layer</text>
+              <text x="270" y={layer.y + 8} textAnchor="middle" fill="rgba(255,255,255,0.35)" fontSize="7" fontFamily="Inter, sans-serif">{desc}</text>
 
-            {/* Status dot */}
-            <circle
-              cx="310"
-              cy={layer.y - 10}
-              r="3"
-              fill={i < 3 ? "#028090" : i === 3 ? "#F45B69" : "#553555"}
-              opacity="0.8"
-            />
-          </motion.g>
-        ))}
+              {/* Status dot — uniform teal */}
+              <circle cx="310" cy={layer.y - 10} r="3" fill="#028090" opacity="0.8" />
+            </motion.g>
+          );
+        })}
 
         {/* "System active" badge at top right */}
         <motion.g
@@ -250,8 +186,8 @@ export default function HomePage() {
         </div>
 
         {/* Content — asymmetric split */}
-        <div className="relative max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 pt-36 pb-20 md:pt-44 md:pb-28">
-          <div className="grid md:grid-cols-[1fr_480px] gap-12 lg:gap-20 items-center">
+        <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 pt-32 pb-16 md:pt-40 md:pb-24">
+          <div className="grid md:grid-cols-[1fr_540px] gap-10 lg:gap-16 items-center">
 
             {/* LEFT: Text content */}
             <div>
@@ -266,8 +202,7 @@ export default function HomePage() {
 
               <FadeIn delay={0.1}>
                 <h1 className="font-display font-black text-[2.75rem] md:text-[3.75rem] lg:text-[4.25rem] leading-[1.02] text-white mb-8">
-                  Your Business,{" "}
-                  <span className="gradient-text">Running Without You.</span>
+                  Your Business, Running Without You.
                 </h1>
               </FadeIn>
 
