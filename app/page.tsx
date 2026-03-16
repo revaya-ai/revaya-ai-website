@@ -272,8 +272,11 @@ export default function HomePage() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <p className="text-[1.125rem] leading-[1.7] text-white/60 mb-10 max-w-[520px]">
-                  I build Business AI Operating Systems for service businesses. The kind that run when you don&rsquo;t. No chatbots. No generic tools. A full operating system built for how your business actually works.
+                <p className="font-display font-black text-[1.375rem] md:text-[1.625rem] leading-[1.3] text-white/80 mb-5 max-w-[520px]">
+                  You&rsquo;re running your business and doing the work. Only one of those should be your job.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/50 mb-10 max-w-[480px]">
+                  I build Business AI Operating Systems for service businesses. No chatbots. No generic tools. A full operating system built for how your business actually works.
                 </p>
               </FadeIn>
 
