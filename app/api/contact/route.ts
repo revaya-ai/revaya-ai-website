@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   try {
@@ -25,6 +24,16 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey || apiKey.startsWith("re_placeholder")) {
+      // Log to server console during pre-launch. Return success so form UX works.
+      console.log("[CONTACT FORM — no Resend key] Submission:", { name, email, company, bottleneck });
+      return NextResponse.json({ success: true });
+    }
+
+    const { Resend } = await import("resend");
+    const resend = new Resend(apiKey);
 
     const emailContent = `
 New contact form submission from revaya.ai
