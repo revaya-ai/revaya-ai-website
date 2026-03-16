@@ -266,10 +266,8 @@ export default function HomePage() {
 
               <FadeIn delay={0.1}>
                 <h1 className="font-display font-black text-[2.75rem] md:text-[3.75rem] lg:text-[4.25rem] leading-[1.02] text-white mb-8">
-                  You&rsquo;re running your business{" "}
-                  <span className="gradient-text">and doing the work.</span>
-                  <br />
-                  Only one should be your job.
+                  Your Business,{" "}
+                  <span className="gradient-text">Running Without You.</span>
                 </h1>
               </FadeIn>
 
