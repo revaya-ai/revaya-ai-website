@@ -119,7 +119,7 @@ function HeroPanel() {
             <div className="font-mono font-bold text-[2rem] text-[#028090] leading-none mb-1">
               {taskCount}
             </div>
-            <div className="text-[0.65rem] text-white/35 uppercase tracking-wide">
+            <div className="text-[0.65rem] text-white/70 uppercase tracking-wide">
               tasks handled today
             </div>
           </div>
@@ -127,7 +127,7 @@ function HeroPanel() {
             <div className="font-mono font-bold text-[1.5rem] text-white leading-none mb-1">
               &infin;
             </div>
-            <div className="text-[0.65rem] text-white/35 uppercase tracking-wide">
+            <div className="text-[0.65rem] text-white/70 uppercase tracking-wide">
               uptime
             </div>
           </div>
@@ -135,7 +135,7 @@ function HeroPanel() {
             <div className="text-[0.65rem] text-[#028090] uppercase tracking-wide mb-1">
               owner offline
             </div>
-            <div className="text-[0.7rem] text-white/50">system still running</div>
+            <div className="text-[0.7rem] text-white/80">system still running</div>
           </div>
         </div>
       </div>
@@ -187,7 +187,7 @@ function ContextPanel() {
               transition={{ duration: 0.4 }}
               className="space-y-1.5"
             >
-              <p className="text-[0.75rem] text-white/40 font-mono">
+              <p className="text-[0.75rem] text-white/70 font-mono">
                 {`>`} {item.q}
               </p>
               <div className="ml-3 px-3 py-2 rounded-lg bg-[#028090]/[0.08] border border-[#028090]/15">
@@ -331,7 +331,7 @@ export default function HomePage() {
           <FadeIn delay={0}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
-              <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/50 font-medium">
+              <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
                 Business AI Operating System
               </span>
             </div>
@@ -348,7 +348,7 @@ export default function HomePage() {
 
           {/* Subhead */}
           <FadeIn delay={0.2}>
-            <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/50 mb-4 max-w-[600px] mx-auto">
+            <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/80 mb-4 max-w-[600px] mx-auto">
               You&rsquo;re running your business and doing the work.
               <br className="hidden md:block" /> Only one of those should be
               your job.
@@ -357,7 +357,7 @@ export default function HomePage() {
 
           {/* Body */}
           <FadeIn delay={0.25}>
-            <p className="text-[0.9375rem] leading-[1.7] text-white/35 mb-10 max-w-[480px] mx-auto">
+            <p className="text-[0.9375rem] leading-[1.7] text-white/70 mb-10 max-w-[480px] mx-auto">
               I build Business AI Operating Systems for service businesses. No
               chatbots. No generic tools. A full operating system built for how
               your business actually works.
@@ -384,7 +384,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MARQUEE ─────────────────────────────────────────────────────────── */}
-      <div className="border-y border-white/[0.06]" style={{ zIndex: 1, position: "relative" }}>
+      <div style={{ zIndex: 1, position: "relative" }}>
         <div
           className="flex gap-10 whitespace-nowrap py-4"
           style={{ animation: "marquee 30s linear infinite", width: "max-content" }}
@@ -415,8 +415,7 @@ export default function HomePage() {
       </div>
 
       {/* ── FEATURE ROW 1: text LEFT, panel RIGHT — Context ─────────────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#028090]/18 blur-[100px] pointer-events-none" />
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -429,13 +428,13 @@ export default function HomePage() {
                   <br />
                   mapped and captured.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/55 mb-4">
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
                   Before I build anything, I map how your business actually
                   works. Every decision, every handoff, every repeatable task.
                   The system can&rsquo;t run without you until I understand what
                   &ldquo;running&rdquo; looks like.
                 </p>
-                <p className="text-[0.9375rem] leading-[1.7] text-white/35">
+                <p className="text-[0.9375rem] leading-[1.7] text-white/70">
                   This is the layer most AI consultants skip. It&rsquo;s why
                   their automations fail in month two.
                 </p>
@@ -449,8 +448,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURE ROW 2: panel LEFT, text RIGHT — Automate ────────────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#028090]/18 blur-[100px] pointer-events-none" />
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -466,13 +464,13 @@ export default function HomePage() {
                   <br />
                   handled without you.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/55 mb-4">
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
                   Follow-ups, reporting, routing, intake, status updates. The
                   tasks that eat your week aren&rsquo;t complex — they&rsquo;re
                   just constant. I identify every one and automate the ones that
                   don&rsquo;t require your judgment.
                 </p>
-                <p className="text-[0.9375rem] leading-[1.7] text-white/35">
+                <p className="text-[0.9375rem] leading-[1.7] text-white/70">
                   Task automation % is one of three KPIs I track in every
                   engagement. You see exactly what&rsquo;s moving.
                 </p>
@@ -483,8 +481,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURE ROW 3: text LEFT, panel RIGHT — Full system ─────────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#028090]/18 blur-[100px] pointer-events-none" />
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -497,12 +494,12 @@ export default function HomePage() {
                   <br />
                   Running while you sleep.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/55 mb-4">
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
                   Five layers — Context, Data, Intelligence, Automate, Build —
                   installed in order because each one depends on the last. This
                   is not a collection of tools. It&rsquo;s infrastructure.
                 </p>
-                <p className="text-[0.9375rem] leading-[1.7] text-white/35">
+                <p className="text-[0.9375rem] leading-[1.7] text-white/70">
                   Three outcomes measured at every engagement: away-from-desk
                   autonomy, task automation %, and revenue per employee.
                 </p>
@@ -524,8 +521,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CAPABILITY GRID ──────────────────────────────────────────────────── */}
-      <section className="relative py-24 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] rounded-full bg-[#028090]/12 blur-[100px] pointer-events-none" />
+      <section className="relative py-24" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
             <div className="text-center mb-14">
@@ -533,7 +529,7 @@ export default function HomePage() {
               <h2 className="font-display font-black text-[1.75rem] md:text-[2.25rem] text-white mb-3">
                 What the system covers.
               </h2>
-              <p className="text-[0.9375rem] text-white/40 max-w-[400px] mx-auto">
+              <p className="text-[0.9375rem] text-white/70 max-w-[400px] mx-auto">
                 Eight capabilities built into every Business AIOS engagement.
               </p>
             </div>
@@ -554,7 +550,7 @@ export default function HomePage() {
                   <div className="text-[1.5rem] text-[#028090]/60 mb-3 group-hover:text-[#028090] transition-colors">
                     {cap.icon}
                   </div>
-                  <p className="text-[0.8125rem] text-white/50 group-hover:text-white/70 transition-colors">
+                  <p className="text-[0.8125rem] text-white/80 group-hover:text-white/70 transition-colors">
                     {cap.label}
                   </p>
                 </div>
@@ -565,19 +561,19 @@ export default function HomePage() {
       </section>
 
       {/* ── PROOF ────────────────────────────────────────────────────────────── */}
-      <section className="relative py-24 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+      <section className="relative py-24" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
             <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-10 md:p-14 text-center max-w-[800px] mx-auto">
               <p className="font-display font-black text-[1.5rem] md:text-[2rem] text-white leading-[1.2] mb-6">
                 &ldquo;I built this system for my own company first.&rdquo;
               </p>
-              <p className="text-[1rem] leading-[1.7] text-white/50 mb-3">
+              <p className="text-[1rem] leading-[1.7] text-white/80 mb-3">
                 Revaya AI runs on the same Business AI OS I build for clients.
                 The web delivery pipeline that built this site is one example.
                 The content engine is another.
               </p>
-              <p className="text-[0.9375rem] text-white/35">
+              <p className="text-[0.9375rem] text-white/70">
                 No competitor is saying that. Most sell a methodology. I sell
                 the thing I already built for myself.
               </p>
@@ -596,14 +592,14 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
-      <section className="relative py-24 md:py-32 overflow-hidden border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ zIndex: 1 }}>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#028090]/06 to-transparent pointer-events-none" />
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
             <h2 className="font-display font-black text-[2rem] md:text-[3.25rem] leading-[1.05] text-white mb-5">
               Tell me what&rsquo;s slowing you down.
             </h2>
-            <p className="text-[1rem] leading-[1.7] text-white/45 mb-10 max-w-[480px] mx-auto">
+            <p className="text-[1rem] leading-[1.7] text-white/75 mb-10 max-w-[480px] mx-auto">
               I&rsquo;ll come back with a specific read on whether the AIOS is
               the right fit. If it&rsquo;s not, I&rsquo;ll say so.
             </p>
@@ -621,7 +617,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SOFT SECONDARY ───────────────────────────────────────────────────── */}
-      <section className="relative py-6 border-t border-white/[0.04]" style={{ zIndex: 1 }}>
+      <section className="relative py-6" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <p className="text-[0.875rem] text-white/25">
             Want to watch how this gets built?{" "}
@@ -629,7 +625,7 @@ export default function HomePage() {
               href="https://www.linkedin.com/in/swinnicki/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-white transition-colors underline underline-offset-2"
+              className="text-white/70 hover:text-white transition-colors underline underline-offset-2"
             >
               I document it on LinkedIn.
             </a>
