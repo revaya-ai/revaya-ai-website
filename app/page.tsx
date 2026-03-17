@@ -317,10 +317,10 @@ export default function HomePage() {
 
       {/* ── FULL-PAGE TEAL ORBS (fixed, behind everything) ───────────────────── */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-[#028090]/10 blur-[180px]" />
-        <div className="absolute top-[35%] -left-40 w-[600px] h-[600px] rounded-full bg-[#028090]/07 blur-[160px]" />
-        <div className="absolute top-[65%] -right-40 w-[600px] h-[600px] rounded-full bg-[#028090]/07 blur-[160px]" />
-        <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-[#028090]/06 blur-[140px]" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-[#028090]/20 blur-[160px]" />
+        <div className="absolute top-[35%] -left-40 w-[600px] h-[600px] rounded-full bg-[#028090]/14 blur-[140px]" />
+        <div className="absolute top-[65%] -right-40 w-[600px] h-[600px] rounded-full bg-[#028090]/14 blur-[140px]" />
+        <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-[#028090]/12 blur-[120px]" />
       </div>
 
       {/* ── HERO — centered ──────────────────────────────────────────────────── */}
@@ -415,7 +415,8 @@ export default function HomePage() {
       </div>
 
       {/* ── FEATURE ROW 1: text LEFT, panel RIGHT — Context ─────────────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+      <section className="relative py-24 md:py-32 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#028090]/18 blur-[100px] pointer-events-none" />
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -448,7 +449,8 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURE ROW 2: panel LEFT, text RIGHT — Automate ────────────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+      <section className="relative py-24 md:py-32 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#028090]/18 blur-[100px] pointer-events-none" />
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -481,7 +483,8 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURE ROW 3: text LEFT, panel RIGHT — Full system ─────────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+      <section className="relative py-24 md:py-32 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#028090]/18 blur-[100px] pointer-events-none" />
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -521,7 +524,8 @@ export default function HomePage() {
       </section>
 
       {/* ── CAPABILITY GRID ──────────────────────────────────────────────────── */}
-      <section className="relative py-24 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+      <section className="relative py-24 border-t border-white/[0.05] overflow-hidden" style={{ zIndex: 1 }}>
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] rounded-full bg-[#028090]/12 blur-[100px] pointer-events-none" />
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
             <div className="text-center mb-14">
