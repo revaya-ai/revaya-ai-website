@@ -315,20 +315,16 @@ export default function HomePage() {
     <>
       <JsonLd data={homeWebPageSchema} />
 
+      {/* ── FULL-PAGE TEAL ORBS (fixed, behind everything) ───────────────────── */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-[#028090]/10 blur-[180px]" />
+        <div className="absolute top-[35%] -left-40 w-[600px] h-[600px] rounded-full bg-[#028090]/07 blur-[160px]" />
+        <div className="absolute top-[65%] -right-40 w-[600px] h-[600px] rounded-full bg-[#028090]/07 blur-[160px]" />
+        <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-[#028090]/06 blur-[140px]" />
+      </div>
+
       {/* ── HERO — centered ──────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0A0F14] overflow-hidden pt-32 pb-0">
-        {/* Background orbs */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#553555]/12 blur-[160px]" />
-          <div
-            className="absolute inset-0 opacity-[0.025]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-              backgroundSize: "44px 44px",
-            }}
-          />
-        </div>
+      <section className="relative overflow-hidden pt-32 pb-0" style={{ zIndex: 1 }}>
 
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           {/* Eyebrow */}
@@ -388,7 +384,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MARQUEE ─────────────────────────────────────────────────────────── */}
-      <div className="bg-[#080D11] border-y border-white/[0.05]">
+      <div className="border-y border-white/[0.06]" style={{ zIndex: 1, position: "relative" }}>
         <div
           className="flex gap-10 whitespace-nowrap py-4"
           style={{ animation: "marquee 30s linear infinite", width: "max-content" }}
@@ -419,7 +415,7 @@ export default function HomePage() {
       </div>
 
       {/* ── FEATURE ROW 1: text LEFT, panel RIGHT — Context ─────────────────── */}
-      <section className="bg-[#0A0F14] py-24 md:py-32">
+      <section className="relative py-24 md:py-32 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -452,7 +448,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURE ROW 2: panel LEFT, text RIGHT — Automate ────────────────── */}
-      <section className="bg-[#080D11] py-24 md:py-32">
+      <section className="relative py-24 md:py-32 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -485,7 +481,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURE ROW 3: text LEFT, panel RIGHT — Full system ─────────────── */}
-      <section className="bg-[#0A0F14] py-24 md:py-32">
+      <section className="relative py-24 md:py-32 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -525,7 +521,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CAPABILITY GRID ──────────────────────────────────────────────────── */}
-      <section className="bg-[#080D11] py-24 border-t border-white/[0.04]">
+      <section className="relative py-24 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
             <div className="text-center mb-14">
@@ -565,10 +561,10 @@ export default function HomePage() {
       </section>
 
       {/* ── PROOF ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#0A0F14] py-24">
+      <section className="relative py-24 border-t border-white/[0.05]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
-            <div className="rounded-2xl border border-white/[0.07] bg-[#080D11] p-10 md:p-14 text-center max-w-[800px] mx-auto">
+            <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-10 md:p-14 text-center max-w-[800px] mx-auto">
               <p className="font-display font-black text-[1.5rem] md:text-[2rem] text-white leading-[1.2] mb-6">
                 &ldquo;I built this system for my own company first.&rdquo;
               </p>
@@ -596,8 +592,8 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#080D11] py-24 md:py-32 overflow-hidden border-t border-white/[0.04]">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#553555]/08 to-transparent pointer-events-none" />
+      <section className="relative py-24 md:py-32 overflow-hidden border-t border-white/[0.05]" style={{ zIndex: 1 }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#028090]/06 to-transparent pointer-events-none" />
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
             <h2 className="font-display font-black text-[2rem] md:text-[3.25rem] leading-[1.05] text-white mb-5">
@@ -621,7 +617,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SOFT SECONDARY ───────────────────────────────────────────────────── */}
-      <section className="bg-[#0A0F14] py-6 border-t border-white/[0.03]">
+      <section className="relative py-6 border-t border-white/[0.04]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <p className="text-[0.875rem] text-white/25">
             Want to watch how this gets built?{" "}
