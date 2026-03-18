@@ -101,7 +101,7 @@ ${triedSoFar || "Not provided"}
               Bottleneck: bottleneck,
               "Tried So Far": triedSoFar || "",
               Source: "revaya.ai contact form",
-              "Submitted At": new Date().toISOString(),
+              "Submitted At": new Date().toISOString().split("T")[0],
             },
           }),
         });
