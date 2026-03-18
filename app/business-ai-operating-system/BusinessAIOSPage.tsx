@@ -1413,7 +1413,7 @@ function HeroLiveFeedPanel() {
 
 export default function BusinessAIOSPage() {
   return (
-    <div className="bg-[#0A0F14] text-white min-h-screen overflow-x-hidden">
+    <div className="bg-[#0D1A4A] text-white min-h-screen overflow-x-hidden">
 
       {/* Ambient orbs — 4-orb teal pattern */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>

@@ -56,7 +56,7 @@ export default function WhyRevayaPage() {
       <JsonLd data={shannonPersonSchema} />
 
       {/* Page header */}
-      <section className="relative overflow-hidden bg-[#0A0F14] pt-36 pb-20 md:pt-44 md:pb-24">
+      <section className="relative overflow-hidden bg-[#0D1A4A] pt-36 pb-20 md:pt-44 md:pb-24">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#553555]/20 blur-[130px] animate-pulse-glow" />
           <div
@@ -129,7 +129,7 @@ export default function WhyRevayaPage() {
       </section>
 
       {/* Module 3.2 — Story Arc */}
-      <section className="bg-[#0A0F14] py-16 md:py-20">
+      <section className="bg-[#0D1A4A] py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-[680px]">
             {[
@@ -211,7 +211,7 @@ export default function WhyRevayaPage() {
       </section>
 
       {/* Module 3.4 — Credentials */}
-      <section className="bg-[#0A0F14] py-20 md:py-24">
+      <section className="bg-[#0D1A4A] py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
           <FadeIn>
             <h2 className="font-display font-black text-[1.875rem] md:text-[2.75rem] leading-[1.1] text-white mb-12">
@@ -270,7 +270,7 @@ export default function WhyRevayaPage() {
       </section>
 
       {/* Module 3.6 — Soft secondary CTA */}
-      <section className="bg-[#0A0F14] py-8 border-t border-white/[0.04]">
+      <section className="bg-[#0D1A4A] py-8 border-t border-white/[0.04]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 text-center">
           <p className="text-[1rem] text-white/40">
             If you want to follow how this builds — the methodology, the decisions, the real work — I document it on{" "}
