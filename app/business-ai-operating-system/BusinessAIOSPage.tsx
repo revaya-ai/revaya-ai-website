@@ -794,10 +794,334 @@ function ProcessGanttPanel() {
   );
 }
 
+// ─── Timeline Panel: Month 1 — Refinement Loop ─────────────────────────────
+
+const refinementRows = [
+  { draft: "Proposal draft — attached for your review.", revised: "Proposal ready. Specs from the 3/12 call included." },
+  { draft: "Weekly summary attached.", revised: "3 wins, 2 blockers, next actions listed." },
+  { draft: "Onboarding doc updated.", revised: "New hire can start without a walkthrough." },
+];
+
+function RefinementPanel() {
+  const [cycle, setCycle] = useState(0);
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    setStep(0);
+    const delays = [350, 1200, 2000, 2800, 3600, 4300];
+    const timers = delays.map((d, i) => setTimeout(() => setStep(i + 1), d));
+    const reset = setTimeout(() => setCycle((c) => c + 1), 6800);
+    return () => { timers.forEach(clearTimeout); clearTimeout(reset); };
+  }, [cycle]);
+
+  return (
+    <div className="glass-card rounded-xl overflow-hidden">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center gap-2">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+        <span className="text-[0.65rem] font-medium text-white/40 tracking-[0.12em] uppercase">
+          agent output · iteration
+        </span>
+      </div>
+      <div className="px-5 py-5 space-y-2.5 min-h-[200px]">
+        {step === 0 && (
+          <div className="h-full flex items-center justify-center py-10">
+            <div className="w-1.5 h-1.5 rounded-full bg-white/20 animate-pulse" />
+          </div>
+        )}
+        {refinementRows.map((row, i) => {
+          const appeared = step >= i * 2 + 1;
+          const revised = i === 2 ? step >= 5 : step >= i * 2 + 2;
+          if (!appeared) return null;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/[0.03] border border-white/[0.06] rounded-lg px-3.5 py-3"
+            >
+              <p className="text-[0.78rem] text-white/65 leading-[1.55] mb-2">
+                {revised ? row.revised : row.draft}
+              </p>
+              <AnimatePresence mode="wait">
+                {!revised ? (
+                  <motion.span
+                    key="editing"
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                    className="inline-block text-[0.58rem] font-medium tracking-[0.1em] uppercase px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400/65 border border-amber-500/20"
+                  >
+                    editing
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="revised"
+                    initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.25 }}
+                    className="inline-block text-[0.58rem] font-medium tracking-[0.1em] uppercase px-2 py-0.5 rounded-full bg-[#028090]/10 text-[#028090]/80 border border-[#028090]/20"
+                  >
+                    {i === 2 ? "clean ✓" : "revised ✓"}
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Timeline Panel: Month 3 — Flywheel ─────────────────────────────────────
+
+const flywheelTasks = ["proposals", "follow-ups", "onboarding", "reporting"];
+
+function FlywheelPanel() {
+  const [showTasks, setShowTasks] = useState(false);
+  const [showStat, setShowStat] = useState(false);
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setShowTasks(true), 3000);
+    const t2 = setTimeout(() => setShowStat(true), 4200);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+
+  return (
+    <div className="glass-card rounded-xl overflow-hidden">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center gap-2">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+        <span className="text-[0.65rem] font-medium text-white/40 tracking-[0.12em] uppercase">
+          month 3 · momentum
+        </span>
+      </div>
+      <div className="px-6 py-6 flex flex-col items-center gap-5">
+        {/* Wheel */}
+        <div className="relative w-[120px] h-[120px] flex items-center justify-center">
+          {/* Outer tick ring — spins up */}
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            animate={{ rotate: [0, 12, 50, 150, 480, 900, 1440] }}
+            transition={{ duration: 4.5, times: [0, 0.07, 0.17, 0.3, 0.55, 0.75, 1], ease: "linear", repeat: Infinity }}
+          >
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="absolute inset-0" style={{ transform: `rotate(${i * 30}deg)` }}>
+                <div className={`absolute top-0 left-1/2 -translate-x-1/2 ${i % 3 === 0 ? "w-[2px] h-3 bg-[#028090]/55" : "w-px h-2 bg-white/15"}`} />
+              </div>
+            ))}
+          </motion.div>
+          {/* Static outer border */}
+          <div className="absolute inset-0 rounded-full border border-white/[0.07]" />
+          {/* Inner ring — counter-rotates */}
+          <motion.div
+            className="absolute w-[68px] h-[68px] rounded-full border border-white/[0.08]"
+            animate={{ rotate: [0, -12, -50, -150, -480, -900, -1440] }}
+            transition={{ duration: 4.5, times: [0, 0.07, 0.17, 0.3, 0.55, 0.75, 1], ease: "linear", repeat: Infinity }}
+          />
+          {/* Center dot */}
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/65 z-10 relative" />
+        </div>
+
+        {/* Task labels */}
+        <div className="space-y-2 w-full">
+          {flywheelTasks.map((task, i) => (
+            <motion.div
+              key={task}
+              initial={{ opacity: 0, x: -8 }}
+              animate={showTasks ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: i * 0.15, duration: 0.35 }}
+              className="flex items-center gap-2.5"
+            >
+              <div className="w-1 h-1 rounded-full bg-[#028090]/55 shrink-0" />
+              <span className="text-[0.68rem] font-medium text-white/45 uppercase tracking-[0.12em]">{task}</span>
+              <div className="flex-1 h-px bg-[#028090]/12" />
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={showTasks ? { opacity: 1 } : {}}
+                transition={{ delay: i * 0.15 + 0.3 }}
+                className="text-[0.58rem] text-[#028090]/55 tracking-[0.1em]"
+              >
+                running
+              </motion.span>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={showStat ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-[0.62rem] text-white/28 tracking-[0.12em] uppercase text-center"
+        >
+          8–12 hrs/week recovered
+        </motion.p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Timeline Panel: Month 6 — Away Mode ────────────────────────────────────
+
+const awayTasks = [
+  { label: "New client intake", action: "Routed to intake form" },
+  { label: "Follow-up: Marcus", action: "Sent automatically" },
+  { label: "Proposal requested", action: "Drafted and queued" },
+  { label: "Weekly report", action: "Generated and filed" },
+];
+
+function AwayPanel() {
+  const [cycle, setCycle] = useState(0);
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    setStep(0);
+    const delays = [300, 1100, 1800, 2600, 3300, 4100, 4800, 5600];
+    const timers = delays.map((d, i) => setTimeout(() => setStep(i + 1), d));
+    const reset = setTimeout(() => setCycle((c) => c + 1), 8000);
+    return () => { timers.forEach(clearTimeout); clearTimeout(reset); };
+  }, [cycle]);
+
+  return (
+    <div className="glass-card rounded-xl overflow-hidden">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <div className="w-6 h-6 rounded-full bg-white/[0.08] flex items-center justify-center text-[0.6rem] font-bold text-white/40">
+            S
+          </div>
+          <span className="text-[0.75rem] font-medium text-white/55">Shannon</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <span className="text-[0.6rem] text-white/30 tracking-[0.1em] uppercase">Away</span>
+        </div>
+      </div>
+      <div className="px-5 py-4 space-y-2 min-h-[200px]">
+        {step === 0 && (
+          <div className="h-full flex items-center justify-center py-10">
+            <div className="w-1.5 h-1.5 rounded-full bg-white/20 animate-pulse" />
+          </div>
+        )}
+        {awayTasks.map((task, i) => {
+          const appeared = step >= i * 2 + 1;
+          const resolved = step >= i * 2 + 2;
+          if (!appeared) return null;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.28 }}
+              className="flex items-center justify-between gap-3 py-2 px-3 rounded-lg bg-white/[0.03] border border-white/[0.05]"
+            >
+              <span className="text-[0.75rem] text-white/50 shrink-0">{task.label}</span>
+              <AnimatePresence mode="wait">
+                {!resolved ? (
+                  <motion.span
+                    key="routing"
+                    initial={{ opacity: 0.3 }}
+                    animate={{ opacity: [0.3, 0.65, 0.3] }}
+                    transition={{ duration: 0.9, repeat: Infinity }}
+                    exit={{ opacity: 0, transition: { duration: 0.15 } }}
+                    className="text-[0.58rem] text-white/25 tracking-[0.1em] uppercase shrink-0"
+                  >
+                    routing
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="done"
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.22 }}
+                    className="text-[0.58rem] font-medium tracking-[0.08em] text-[#028090]/75 shrink-0"
+                  >
+                    {task.action} ✓
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Timeline Panel: Month 12 — System Report ───────────────────────────────
+
+const reportItems = [
+  "34 tasks handled",
+  "0 waiting on you",
+  "2 clients onboarded",
+  "1 proposal signed",
+];
+
+function SystemReportPanel() {
+  const [cycle, setCycle] = useState(0);
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    setStep(0);
+    const delays = [400, 1000, 1600, 2200, 2800, 3800];
+    const timers = delays.map((d, i) => setTimeout(() => setStep(i + 1), d));
+    const reset = setTimeout(() => setCycle((c) => c + 1), 6800);
+    return () => { timers.forEach(clearTimeout); clearTimeout(reset); };
+  }, [cycle]);
+
+  return (
+    <div className="glass-card rounded-xl overflow-hidden">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center gap-2">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+        <span className="text-[0.65rem] font-medium text-white/40 tracking-[0.12em] uppercase">
+          business os · report
+        </span>
+      </div>
+      <div className="px-5 py-5 space-y-4 min-h-[200px]">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={step >= 1 ? { opacity: 1 } : {}}
+          transition={{ duration: 0.4 }}
+          className="text-[0.875rem] text-white/60"
+        >
+          You were away 5 days.
+        </motion.p>
+        <div className="space-y-2.5">
+          {reportItems.map((item, i) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, x: -8 }}
+              animate={step >= i + 2 ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.32 }}
+              className="flex items-center gap-2.5"
+            >
+              <span className="text-[#028090]/65 text-[0.75rem] shrink-0">✓</span>
+              <span className="text-[0.8rem] text-white/65">{item}</span>
+            </motion.div>
+          ))}
+        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={step >= 6 ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5 }}
+          className="pt-3 border-t border-white/[0.06] flex items-center gap-2"
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-[#028090]" />
+          <span className="text-[0.62rem] text-white/30 tracking-[0.1em] uppercase">System status: All clear</span>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Timeline Tabs ──────────────────────────────────────────────────────────
+
+const timelinePanels: Array<() => React.JSX.Element> = [
+  RefinementPanel,
+  FlywheelPanel,
+  AwayPanel,
+  SystemReportPanel,
+];
 
 function TimelineTabs() {
   const [active, setActive] = useState(0);
+  const Panel = timelinePanels[active];
 
   return (
     <div className="w-full">
@@ -810,7 +1134,7 @@ function TimelineTabs() {
             className={`flex items-center gap-2 px-7 py-4 shrink-0 border-b-2 transition-all duration-200 ${
               active === i
                 ? "border-[#028090] text-white"
-                : "border-transparent text-white/40 hover:text-white/65"
+                : "border-transparent text-white/40 hover:text/65"
             }`}
           >
             <span className={`text-[0.875rem] font-medium uppercase tracking-[0.14em] ${active === i ? "text-[#028090]" : "text-white/25"}`}>
@@ -828,14 +1152,19 @@ function TimelineTabs() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.22 }}
-          className="pt-10 max-w-[680px]"
+          className="pt-10 grid md:grid-cols-2 gap-10 items-start"
         >
-          <p className="font-display font-black text-[1.5rem] leading-[1.2] text-white mb-5">
-            {timeline[active].label}
-          </p>
-          <p className="text-[1rem] text-white/85 leading-[1.7]">
-            {timeline[active].body}
-          </p>
+          {/* Text */}
+          <div>
+            <p className="font-display font-black text-[1.5rem] leading-[1.2] text-white mb-5">
+              {timeline[active].label}
+            </p>
+            <p className="text-[1rem] text-white/85 leading-[1.7]">
+              {timeline[active].body}
+            </p>
+          </div>
+          {/* Panel */}
+          <Panel />
         </motion.div>
       </AnimatePresence>
     </div>
