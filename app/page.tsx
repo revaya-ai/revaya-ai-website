@@ -1061,7 +1061,7 @@ export default function HomePage() {
               href="/work-with-me"
               className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
-              Start the conversation
+              Start the conversation →
             </Link>
           </FadeIn>
         </div>

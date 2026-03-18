@@ -918,6 +918,97 @@ function WhoPanel() {
   );
 }
 
+// ─── HeroLiveFeedPanel ──────────────────────────────────────────────────────
+
+const feedEvents = [
+  { time: "7:02 AM", event: "Morning brief delivered", detail: "Revenue, pipeline, 3 priorities", dot: "#028090" },
+  { time: "7:45 AM", event: "Follow-up sent — Henderson Industries", detail: "Proposal sent March 12 · no response yet", dot: "#028090" },
+  { time: "8:30 AM", event: "Intake form processed", detail: "2 new leads qualified and routed", dot: "#028090" },
+  { time: "9:15 AM", event: "Weekly status emails sent", detail: "8 clients notified automatically", dot: "#028090" },
+  { time: "11:00 AM", event: "Invoice reminder triggered", detail: "3 overdue · $12,400 outstanding", dot: "#F45B69" },
+  { time: "2:30 PM", event: "CRM synced with Airtable", detail: "14 records updated", dot: "#028090" },
+];
+
+function HeroLiveFeedPanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [pulse, setPulse] = useState(false);
+
+  useEffect(() => {
+    if (!inView) return;
+    let i = 0;
+    const timer = setInterval(() => {
+      i++;
+      setVisibleCount(i);
+      setPulse(true);
+      setTimeout(() => setPulse(false), 400);
+      if (i >= feedEvents.length) clearInterval(timer);
+    }, 700);
+    return () => clearInterval(timer);
+  }, [inView]);
+
+  return (
+    <div ref={ref} className="glass-card rounded-xl overflow-hidden">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <motion.div
+            animate={pulse ? { scale: [1, 1.6, 1] } : {}}
+            transition={{ duration: 0.3 }}
+            className="w-1.5 h-1.5 rounded-full bg-[#028090]"
+          />
+          <span className="text-[0.65rem] font-medium text-white/40 tracking-[0.12em] uppercase">
+            aios · live activity
+          </span>
+        </div>
+        <span className="text-[0.6rem] font-mono text-white/20">today</span>
+      </div>
+
+      <div className="divide-y divide-white/[0.04]">
+        <AnimatePresence>
+          {feedEvents.slice(0, visibleCount).map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="flex items-start gap-3 px-5 py-3.5"
+            >
+              <div className="flex flex-col items-center gap-1 pt-1 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.dot }} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[0.8125rem] text-white/85 leading-snug">{item.event}</p>
+                <p className="text-[0.7rem] text-white/30 mt-0.5">{item.detail}</p>
+              </div>
+              <span className="text-[0.6rem] font-mono text-white/20 shrink-0 pt-0.5">{item.time}</span>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+        {visibleCount < feedEvents.length && (
+          <div className="px-5 py-4 flex items-center gap-2">
+            <div className="w-1 h-1 rounded-full bg-white/20 animate-pulse" />
+            <div className="w-1 h-1 rounded-full bg-white/20 animate-pulse" style={{ animationDelay: "0.2s" }} />
+            <div className="w-1 h-1 rounded-full bg-white/20 animate-pulse" style={{ animationDelay: "0.4s" }} />
+          </div>
+        )}
+      </div>
+
+      {visibleCount >= feedEvents.length && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="border-t border-white/[0.08] px-5 py-3 flex items-center justify-between bg-white/[0.02]"
+        >
+          <span className="text-[0.7rem] font-mono text-white/25">6 tasks completed · 0 requiring you</span>
+          <span className="text-[0.7rem] font-mono text-[#028090]">system running</span>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
 // ─── Main Page ──────────────────────────────────────────────────────────────
 
 export default function BusinessAIOSPage() {
@@ -937,29 +1028,31 @@ export default function BusinessAIOSPage() {
         {/* HERO */}
         <section className="pt-36 pb-24 md:pb-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <motion.div
-              className="max-w-[720px]"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
-                A Business AI OS isn&apos;t software.
-                <br />
-                <span className="text-white/70">
-                  It&apos;s how your business thinks without you.
-                </span>
-              </h1>
-              <p className="text-[1rem] leading-[1.7] text-white/80 mb-10">
-                Five layers. Every major drain on your time. Automated, connected, fully auditable.
-              </p>
-              <Link
-                href="/work-with-me"
-                className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                Start with the Audit
-              </Link>
-            </motion.div>
+                <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
+                  A Business AI OS isn&apos;t software.
+                  <br />
+                  <span className="text-white/70">
+                    It&apos;s how your business thinks without you.
+                  </span>
+                </h1>
+                <p className="text-[1rem] leading-[1.7] text-white/80">
+                  Five layers. Every major drain on your time. Automated, connected, fully auditable.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              >
+                <HeroLiveFeedPanel />
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -1061,16 +1154,24 @@ export default function BusinessAIOSPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-12 pt-10 border-t border-white/[0.08]">
-                  <p className="text-[1rem] text-white/70 leading-[1.7] mb-5">
-                    Want the full methodology?
-                  </p>
-                  <a
-                    href="/blueprint"
-                    className="inline-flex items-center gap-2 text-[0.9375rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
+                <div className="mt-12 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-start gap-6">
+                  <Link
+                    href="/work-with-me"
+                    className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
                   >
-                    Download the Blueprint →
-                  </a>
+                    Start with the Audit →
+                  </Link>
+                  <div className="flex flex-col justify-center sm:pt-3">
+                    <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
+                      Want the full methodology?
+                    </p>
+                    <a
+                      href="/blueprint"
+                      className="inline-flex items-center gap-1 text-[0.9375rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
+                    >
+                      Download the Blueprint →
+                    </a>
+                  </div>
                 </div>
               </div>
             </FadeUp>

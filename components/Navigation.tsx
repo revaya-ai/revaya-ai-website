@@ -52,7 +52,7 @@ export default function Navigation() {
             <Link
               key={href}
               href={href}
-              className={`text-[0.875rem] font-medium transition-colors duration-150 ${
+              className={`font-display text-[0.875rem] font-bold tracking-wide transition-colors duration-150 ${
                 pathname === href ? "text-[#028090]" : "text-white/60 hover:text-white"
               }`}
             >
@@ -64,7 +64,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/work-with-me"
-            className="text-[0.9375rem] font-medium px-5 py-2 rounded-lg bg-[#553555] text-white hover:bg-[#6B4468] transition-all duration-150"
+            className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_24px_rgba(85,53,85,0.5)] transition-all duration-200"
           >
             Work With Me
           </Link>
@@ -120,7 +120,7 @@ export default function Navigation() {
               <Link
                 href="/work-with-me"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 text-center text-[0.9375rem] font-medium px-5 py-3 rounded-lg bg-[#553555] text-white"
+                className="mt-2 text-center font-display text-[0.9375rem] font-bold px-5 py-3 rounded-full bg-[#553555] text-white"
               >
                 Work With Me
               </Link>
