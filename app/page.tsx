@@ -745,7 +745,7 @@ export default function HomePage() {
 
           {/* Body */}
           <FadeIn delay={0.25}>
-            <p className="text-[1rem] leading-[1.75] text-white/70 mb-10 max-w-[718px] mx-auto">
+            <p className="text-[1rem] leading-[1.75] text-white/85 mb-10 max-w-[718px] mx-auto">
               AIOS orchestrates autonomous agents across data, documents, tech stack,
               and operations, forming a synchronized system that learns, adapts,
               and executes. Not a chatbot. Not a tool stack. An operating system
@@ -757,7 +757,7 @@ export default function HomePage() {
           <FadeIn delay={0.35}>
             <Link
               href="/work-with-me"
-              className="inline-block bg-white text-[#0A0F14] text-[0.9375rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] mb-16"
+              className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] mb-16"
             >
               See if you&rsquo;re a fit &rarr;
             </Link>
@@ -1020,13 +1020,15 @@ export default function HomePage() {
               </p>
               <p className="text-[1rem] leading-[1.7] text-white/80 mb-4">
                 Revaya AI runs on the same Business AI OS I build for clients.
-                The web delivery pipeline that built this site, the content engine
-                generating our marketing, the daily intelligence briefing in my
-                inbox. All of it is the AIOS running live.
+                My web delivery pipeline built this site, the content engine
+                generates marketing, the daily intelligence briefing in my
+                inbox, my one bottleneck of the week, performance metrics.
+                All of it is the AIOS running live.
               </p>
               <p className="text-[1rem] text-white/70">
                 I don&rsquo;t sell a methodology. I sell the thing I already
-                built for myself, then configure it to how your business works.
+                built for myself. Now I can build an AIOS that&rsquo;s custom
+                to your business.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
                 <span>18 years product leadership</span>
@@ -1035,7 +1037,7 @@ export default function HomePage() {
                   Virgin Mobile &middot; Papa Murphy&rsquo;s &middot; Intermedia
                 </span>
                 <span className="hidden sm:block text-white/10">&middot;</span>
-                <span>$10M website projects delivered</span>
+                <span>$10M website projects launched</span>
               </div>
             </div>
           </FadeIn>
@@ -1057,33 +1059,14 @@ export default function HomePage() {
             </p>
             <Link
               href="/work-with-me"
-              className="inline-block bg-white text-[#0A0F14] text-[0.9375rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_50px_rgba(255,255,255,0.12)]"
+              className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
               Start the conversation
             </Link>
-            <p className="mt-5 text-[0.8125rem] text-white/25">
-              Shannon reads every submission personally. 48-hour response.
-            </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── SOFT SECONDARY ───────────────────────────────────────────────────── */}
-      <section className="relative py-6" style={{ zIndex: 1 }}>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
-          <p className="text-[0.875rem] text-white/25">
-            Want to watch how this gets built?{" "}
-            <a
-              href="https://www.linkedin.com/in/swinnicki/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors underline underline-offset-2"
-            >
-              I document it on LinkedIn.
-            </a>
-          </p>
-        </div>
-      </section>
     </>
   );
 }

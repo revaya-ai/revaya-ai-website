@@ -955,7 +955,7 @@ export default function BusinessAIOSPage() {
               </p>
               <Link
                 href="/work-with-me"
-                className="inline-block text-[0.9375rem] font-medium px-7 py-3.5 rounded-lg bg-[#553555] text-white hover:bg-[#6B4468] transition-all duration-150"
+                className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
               >
                 Start with the Audit
               </Link>
@@ -1189,7 +1189,7 @@ export default function BusinessAIOSPage() {
                 </p>
                 <Link
                   href="/work-with-me"
-                  className="inline-block text-[0.9375rem] font-medium px-7 py-3.5 rounded-lg bg-[#553555] text-white hover:bg-[#6B4468] transition-all duration-150"
+                  className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
                 >
                   Book the Audit
                 </Link>
