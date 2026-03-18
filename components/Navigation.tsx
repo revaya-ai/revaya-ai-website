@@ -64,7 +64,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/work-with-me"
-            className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_24px_rgba(85,53,85,0.5)] transition-all duration-200"
+            className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
           >
             Work With Me
           </Link>

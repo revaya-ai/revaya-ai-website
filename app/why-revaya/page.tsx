@@ -258,9 +258,9 @@ export default function WhyRevayaPage() {
             </p>
             <Link
               href="/work-with-me"
-              className="inline-block bg-[#F45B69] text-white text-[0.9375rem] font-medium px-8 py-3.5 rounded-lg transition-all duration-200 hover:bg-[#f36b77] hover:shadow-[0_0_30px_rgba(244,91,105,0.4)]"
+              className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
             >
-              Start the conversation
+              Start the conversation →
             </Link>
             <p className="mt-5 text-[0.875rem] text-white/35">
               This goes to a short form. Shannon reads it personally. You&rsquo;ll hear back within 48 hours.

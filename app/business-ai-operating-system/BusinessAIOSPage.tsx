@@ -78,7 +78,7 @@ const timeline = [
 ];
 
 const processSteps = [
-  { num: "01", title: "Audit", body: "Map the gaps." },
+  { num: "01", title: "Audit", body: "Map your business." },
   { num: "02", title: "Scope", body: "Define exactly what gets built and at what cost." },
   { num: "03", title: "Build", body: "I architect your Business AIOS." },
   { num: "04", title: "Deliver", body: "The system is installed, tested, and running." },
@@ -595,7 +595,7 @@ function RetainerPanel() {
           system · ongoing
         </span>
       </div>
-      <div className="p-5 space-y-3">
+      <div className="px-5 py-[40px] space-y-3">
         <motion.div
           initial={{ opacity: 0 }}
           animate={phase >= 1 ? { opacity: 1 } : {}}
@@ -724,6 +724,76 @@ function ProcessPanel() {
   );
 }
 
+// ─── Panel: Process Gantt ────────────────────────────────────────────────────
+
+const ganttPhases = [
+  { title: "Audit",          fill: "15%",  ongoing: false },
+  { title: "Scope",          fill: "28%",  ongoing: false },
+  { title: "Build",          fill: "70%",  ongoing: false },
+  { title: "Deliver",        fill: "15%",  ongoing: false },
+  { title: "Train + Support", fill: "48%", ongoing: true  },
+];
+
+function ProcessGanttPanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [active, setActive] = useState(-1);
+
+  useEffect(() => {
+    if (!inView) return;
+    let i = -1;
+    const timer = setInterval(() => {
+      i++;
+      setActive(i);
+      if (i >= ganttPhases.length - 1) clearInterval(timer);
+    }, 700);
+    return () => clearInterval(timer);
+  }, [inView]);
+
+  return (
+    <div ref={ref} className="glass-card rounded-xl overflow-hidden">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center gap-2">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+        <span className="text-[0.65rem] font-medium text-white/40 tracking-[0.12em] uppercase">
+          engagement · duration
+        </span>
+      </div>
+      <div className="px-6 py-7 space-y-5">
+        {ganttPhases.map((phase, i) => (
+          <div key={phase.title}>
+            <motion.p
+              animate={active >= i ? { color: "rgba(255,255,255,0.6)" } : { color: "rgba(255,255,255,0.18)" }}
+              transition={{ duration: 0.3 }}
+              className="text-[0.65rem] font-medium uppercase tracking-[0.12em] mb-2"
+            >
+              {phase.title}
+            </motion.p>
+            <div className="h-[14px] bg-white/[0.04] rounded-sm overflow-hidden relative">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={active >= i ? { width: phase.fill } : { width: 0 }}
+                transition={{ duration: 0.55, ease: "easeOut" }}
+                className={`h-full rounded-sm ${phase.ongoing ? "bg-[#028090]/40" : "bg-[#028090]/65"}`}
+              />
+              {phase.ongoing && active >= i && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.55 }}
+                  className="absolute top-0 bottom-0 flex items-center text-[0.55rem] tracking-[0.2em] text-[#028090]/50"
+                  style={{ left: `calc(${phase.fill} + 6px)` }}
+                >
+                  · · ·
+                </motion.span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Timeline Tabs ──────────────────────────────────────────────────────────
 
 function TimelineTabs() {
@@ -737,13 +807,13 @@ function TimelineTabs() {
           <button
             key={item.month}
             onClick={() => setActive(i)}
-            className={`flex items-center gap-2 px-5 py-4 shrink-0 border-b-2 transition-all duration-200 ${
+            className={`flex items-center gap-2 px-7 py-4 shrink-0 border-b-2 transition-all duration-200 ${
               active === i
                 ? "border-[#028090] text-white"
                 : "border-transparent text-white/40 hover:text-white/65"
             }`}
           >
-            <span className={`text-[0.875rem] font-medium tracking-widest ${active === i ? "text-[#028090]" : "text-white/25"}`}>
+            <span className={`text-[0.875rem] font-medium uppercase tracking-[0.14em] ${active === i ? "text-[#028090]" : "text-white/25"}`}>
               {item.month}
             </span>
           </button>
@@ -1157,7 +1227,7 @@ export default function BusinessAIOSPage() {
                 <div className="mt-12 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-start gap-6">
                   <Link
                     href="/work-with-me"
-                    className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
+                    className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
                   >
                     Start with the Audit →
                   </Link>
@@ -1181,7 +1251,7 @@ export default function BusinessAIOSPage() {
         {/* AFTER THE BUILD — panel L, text R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
               <FadeUp delay={0.15} direction="right">
                 <RetainerPanel />
               </FadeUp>
@@ -1226,7 +1296,7 @@ export default function BusinessAIOSPage() {
         {/* THE PROCESS */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
               <FadeUp direction="right">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   The Process
@@ -1236,9 +1306,9 @@ export default function BusinessAIOSPage() {
                 </h2>
                 <ol className="space-y-0">
                   {processSteps.map((step, i, arr) => (
-                    <li key={step.num} className={`flex gap-8 ${i < arr.length - 1 ? "pb-10" : ""}`}>
+                    <li key={step.num} className={`flex gap-8 ${i < arr.length - 1 ? "pb-7" : ""}`}>
                       <div className="flex flex-col items-center">
-                        <span className="text-[0.75rem] font-medium text-[#028090]/50 leading-none mt-1">
+                        <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium leading-none mt-1">
                           {step.num}
                         </span>
                         {i < arr.length - 1 && (
@@ -1254,7 +1324,7 @@ export default function BusinessAIOSPage() {
                 </ol>
               </FadeUp>
               <FadeUp delay={0.15} direction="left">
-                <ProcessPanel />
+                <ProcessGanttPanel />
               </FadeUp>
             </div>
           </div>
@@ -1282,15 +1352,12 @@ export default function BusinessAIOSPage() {
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <FadeUp>
               <div className="max-w-[560px]">
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-5">
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
                   Ready to see what&apos;s possible?
                 </h2>
-                <p className="text-[1rem] text-white/80 leading-[1.7] mb-8">
-                  The Audit maps every gap. It costs nothing to find out where your time is going.
-                </p>
                 <Link
                   href="/work-with-me"
-                  className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+                  className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
                 >
                   Book the Audit →
                 </Link>
