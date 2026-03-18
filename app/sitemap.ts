@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.revaya.ai/business-ai-operating-system",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://www.revaya.ai/why-revaya",
       lastModified: new Date(),
       changeFrequency: "monthly",

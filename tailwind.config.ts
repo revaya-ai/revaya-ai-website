@@ -23,7 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-montserrat)", "sans-serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        body: ["Proxima Nova", "var(--font-inter)", "sans-serif"],
       },
       fontSize: {
         "hero": ["3.5rem", { lineHeight: "1.1", fontWeight: "900" }],

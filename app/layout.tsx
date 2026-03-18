@@ -23,11 +23,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.revaya.ai"),
   title: {
-    default: "Business AI OS for Service Businesses — Revaya AI",
+    default: "Business AI OS for Founder-Led Businesses — Revaya AI",
     template: "%s | Revaya AI",
   },
   description:
-    "Your business shouldn't run only when you do. I build Business AI Operating Systems for service businesses. Five layers, three measurable outcomes.",
+    "Your business shouldn't run only when you do. I build Business AI Operating Systems for founder-led businesses. Five layers, three measurable outcomes.",
   openGraph: {
     type: "website",
     siteName: "Revaya AI",

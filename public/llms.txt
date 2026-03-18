@@ -7,7 +7,7 @@ Revaya AI (https://www.revaya.ai)
 Shannon Winnicki — 18 years of product leadership at Virgin Mobile, Boost Mobile, Papa Murphy's, Ultra Mobile, and Intermedia. Founder and Business AI OS Consultant.
 
 ## What Revaya AI Does
-Revaya AI builds Business AI Operating Systems (AIOS) for service businesses. The AIOS is a structured engagement that installs the operational infrastructure to let a service business run on systems instead of the founder running on fumes.
+Revaya AI builds Business AI Operating Systems (AIOS) for founder-led businesses with 1–15 people where the work requires expertise, judgment, or relationships — and the founder is the one everything waits on. Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations. The AIOS is a structured engagement that installs the operational infrastructure to let the business run on systems instead of the founder running on fumes.
 
 ## The Business AI OS
 A Business AI Operating System is a complete operational infrastructure built on five layers:
@@ -26,7 +26,7 @@ A Business AI Operating System is a complete operational infrastructure built on
 ## Services
 - **AI Training** — Customized training built around your team's actual tools and workflows.
 - **AIOS Audit** — Operational mapping that produces a gap map, AI readiness score, opportunity matrix, and 90-day roadmap. Fee is deductible against the Setup.
-- **AIOS Setup** — Full five-layer Business AI OS installation for service businesses.
+- **AIOS Setup** — Full five-layer Business AI OS installation for founder-led businesses.
 - **Ongoing Support** — Maintenance and Growth retainers post-Setup.
 
 ## Shannon Built This For Herself First

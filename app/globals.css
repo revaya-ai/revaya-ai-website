@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
 @theme {
   /* Brand colors */
   --color-brand-primary: #553555;
@@ -19,7 +47,7 @@
 
   /* Font families */
   --font-display: var(--font-montserrat), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
+  --font-body: "Proxima Nova", var(--font-inter), sans-serif;
 
   /* Font sizes */
   --text-hero: 3.5rem;
@@ -72,7 +100,7 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), sans-serif;
+  font-family: "Proxima Nova", var(--font-inter), sans-serif;
   color: #E8EDF2;
   background-color: #0A0F14;
   -webkit-font-smoothing: antialiased;

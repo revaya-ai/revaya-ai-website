@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { href: "/solutions", label: "Solutions" },
+  { href: "/business-ai-operating-system", label: "Business AIOS" },
   { href: "/why-revaya", label: "Why Revaya" },
 ];
 

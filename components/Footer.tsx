@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Image src="/revaya-logo-white.png" alt="Revaya AI" width={140} height={40} />
             <p className="mt-3 text-[0.8125rem] text-white/45 max-w-[240px] leading-[1.6]">
-              Business AI Operating Systems for service businesses.
+              Business AI Operating Systems for founder-led businesses.
             </p>
           </div>
 

@@ -58,13 +58,12 @@ function HeroPanel() {
 
   return (
     <div className="w-full overflow-hidden border border-white/[0.07] bg-[#080D11]">
-      {/* Window chrome */}
       <div className="flex items-center gap-2 px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
         <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
         <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
         <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
         <span className="ml-3 text-[0.7rem] text-white/25 font-mono tracking-wide">
-          revaya-aios — live
+          revaya-aios · live
         </span>
         <div className="ml-auto flex items-center gap-1.5">
           <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
@@ -73,7 +72,6 @@ function HeroPanel() {
       </div>
 
       <div className="p-6 grid grid-cols-[1fr_180px] gap-6">
-        {/* Layer list */}
         <div className="space-y-2">
           {layers.map((layer, i) => (
             <motion.div
@@ -113,7 +111,6 @@ function HeroPanel() {
           ))}
         </div>
 
-        {/* Right stats column */}
         <div className="space-y-3">
           <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-center">
             <div className="font-mono font-bold text-[2rem] text-[#028090] leading-none mb-1">
@@ -152,7 +149,7 @@ function ContextPanel() {
   const steps = [
     { q: "What does your business do?", a: "Service-based consulting, 4 staff" },
     { q: "Where does your time go daily?", a: "Client onboarding, status updates, reporting" },
-    { q: "What breaks when you're away?", a: "Everything — team routes all decisions to me" },
+    { q: "What breaks when you're away?", a: "Everything. Team routes all decisions to me." },
     { q: "What would change with 10 hrs back?", a: "Focus on growth, client strategy" },
   ];
 
@@ -174,7 +171,7 @@ function ContextPanel() {
         <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
         <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
         <span className="ml-3 text-[0.7rem] text-white/25 font-mono">
-          context — discovery interview
+          context · discovery interview
         </span>
       </div>
       <div className="p-6 space-y-4">
@@ -196,12 +193,292 @@ function ContextPanel() {
             </motion.div>
           ))}
         </AnimatePresence>
-        {/* Blinking cursor */}
         <div className="flex items-center gap-2 ml-1">
           <span className="text-[0.75rem] text-[#028090] font-mono animate-pulse">
             ▋
           </span>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// ── ConnectPanel ──────────────────────────────────────────────────────────────
+function ConnectPanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [indexed, setIndexed] = useState(0);
+
+  const sources = [
+    { name: "client-onboarding-sop.pdf", type: "SOP" },
+    { name: "service-delivery-playbook.docx", type: "Playbook" },
+    { name: "proposal-template-v3.docx", type: "Template" },
+    { name: "brand-voice-guidelines.md", type: "Brand" },
+    { name: "pricing-and-scope-matrix.xlsx", type: "Pricing" },
+  ];
+
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setInterval(() => {
+      setIndexed((c) => (c < sources.length ? c + 1 : c));
+    }, 800);
+    return () => clearInterval(timer);
+  }, [inView, sources.length]);
+
+  return (
+    <div
+      ref={ref}
+      className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]"
+    >
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
+          <span className="ml-2 text-[0.7rem] text-white/25 font-mono">
+            knowledge · indexing sources
+          </span>
+        </div>
+        <span className="text-[0.7rem] font-mono text-[#028090]">
+          {indexed}/{sources.length} indexed
+        </span>
+      </div>
+      <div className="p-5 space-y-2">
+        {sources.map((source, i) => {
+          const done = i < indexed;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 8 }}
+              animate={{ opacity: done ? 1 : 0.35, x: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-white/[0.04]"
+            >
+              <motion.div
+                animate={{
+                  backgroundColor: done
+                    ? "rgba(2,128,144,0.15)"
+                    : "rgba(255,255,255,0.04)",
+                  borderColor: done
+                    ? "rgba(2,128,144,0.3)"
+                    : "rgba(255,255,255,0.06)",
+                }}
+                transition={{ duration: 0.3 }}
+                className="w-7 h-7 rounded border flex items-center justify-center shrink-0"
+              >
+                <motion.span
+                  animate={{ color: done ? "#028090" : "rgba(255,255,255,0.3)" }}
+                  className="text-[0.7rem] font-mono font-bold"
+                >
+                  {done ? "✓" : source.type.slice(0, 2).toUpperCase()}
+                </motion.span>
+              </motion.div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[0.8rem] text-white/75 font-mono truncate">
+                  {source.name}
+                </p>
+                <p className="text-[0.65rem] text-white/30 font-mono">
+                  {source.type}
+                </p>
+              </div>
+              {done && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-[0.65rem] text-[#028090] font-mono shrink-0"
+                >
+                  indexed
+                </motion.span>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ── IntegrationsPanel ─────────────────────────────────────────────────────────
+function IntegrationsPanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  const tools = [
+    { name: "HubSpot",          slug: "hubspot",          bg: "rgba(255,122,89,0.12)"  },
+    { name: "Salesforce",       slug: "salesforce",       bg: "rgba(0,161,224,0.12)"   },
+    { name: "Shopify",          slug: "shopify",          bg: "rgba(150,191,72,0.12)"  },
+    { name: "Slack",            slug: "slack",            bg: "rgba(236,178,46,0.12)"  },
+    { name: "Gmail",            slug: "gmail",            bg: "rgba(234,67,53,0.12)"   },
+    { name: "Notion",           slug: "notion",           bg: "rgba(255,255,255,0.06)" },
+    { name: "Airtable",         slug: "airtable",         bg: "rgba(24,191,255,0.12)"  },
+    { name: "LinkedIn",         slug: "linkedin",         bg: "rgba(10,102,194,0.12)"  },
+    { name: "Google Ads",       slug: "googleads",        bg: "rgba(66,133,244,0.12)"  },
+    { name: "QuickBooks",       slug: "quickbooks",       bg: "rgba(44,160,28,0.12)"   },
+    { name: "Meta",             slug: "meta",             bg: "rgba(0,128,251,0.12)"   },
+    { name: "Google Analytics", slug: "googleanalytics",  bg: "rgba(232,113,10,0.12)"  },
+  ];
+
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setInterval(() => {
+      setVisibleCount((c) => (c < tools.length ? c + 1 : c));
+    }, 120);
+    return () => clearInterval(timer);
+  }, [inView, tools.length]);
+
+  return (
+    <div
+      ref={ref}
+      className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]"
+    >
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
+          <span className="ml-2 text-[0.7rem] text-white/25 font-mono">
+            intelligence · connected stack
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+          <span className="text-[0.7rem] text-[#028090] font-mono">
+            {visibleCount} connected
+          </span>
+        </div>
+      </div>
+      <div className="p-5 grid grid-cols-4 gap-3">
+        {tools.map((tool, i) => (
+          <motion.div
+            key={tool.name}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={
+              i < visibleCount
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.85 }
+            }
+            transition={{ duration: 0.25, type: "spring", stiffness: 300, damping: 20 }}
+            className="flex flex-col items-center gap-2 p-3 rounded-xl border border-white/[0.05] hover:border-white/[0.1] transition-colors"
+            style={{
+              backgroundColor: i < visibleCount ? tool.bg : "transparent",
+            }}
+          >
+            <div className="w-9 h-9 flex items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/icons/${tool.slug}.svg`}
+                alt={tool.name}
+                width={28}
+                height={28}
+              />
+            </div>
+            <span className="text-[0.6rem] text-white/40 text-center leading-tight">
+              {tool.name}
+            </span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── SleepLogPanel (Option A) ──────────────────────────────────────────────────
+function SleepLogPanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  const entries = [
+    { time: "11:47 PM", action: "Client intake form processed", agent: "Intake" },
+    { time: "12:03 AM", action: "Lead follow-up sequence triggered", agent: "Comms" },
+    { time: "2:14 AM",  action: "Weekly status report sent to clients", agent: "Report" },
+    { time: "4:30 AM",  action: "CRM synced with Airtable", agent: "Data" },
+    { time: "6:00 AM",  action: "Daily brief compiled and delivered", agent: "Intel" },
+    { time: "7:02 AM",  action: "Team standup prep completed", agent: "Ops" },
+  ];
+
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setInterval(() => {
+      setVisibleCount((c) => (c < entries.length ? c + 1 : c));
+    }, 650);
+    return () => clearInterval(timer);
+  }, [inView, entries.length]);
+
+  return (
+    <div
+      ref={ref}
+      className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]"
+    >
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
+          <span className="ml-2 text-[0.7rem] text-white/25 font-mono">
+            aios · overnight log
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <span className="text-[0.7rem] text-white/30 font-mono">owner: offline</span>
+        </div>
+      </div>
+      <div className="p-5 space-y-2">
+        <AnimatePresence>
+          {entries.map((entry, i) =>
+            i < visibleCount ? (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4 }}
+                className="flex items-center gap-4 px-3 py-2.5 rounded-lg border border-white/[0.04]"
+              >
+                <span className="text-[0.7rem] text-white/30 font-mono w-[4.5rem] shrink-0">
+                  {entry.time}
+                </span>
+                <span className="text-[0.8rem] text-white/75 font-mono flex-1">
+                  {entry.action}
+                </span>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 400 }}
+                  className="w-4 h-4 rounded-full bg-[#028090]/15 border border-[#028090]/40 flex items-center justify-center shrink-0"
+                >
+                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <path
+                      d="M1.5 4l1.5 1.5L6.5 2.5"
+                      stroke="#028090"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </motion.div>
+              </motion.div>
+            ) : null
+          )}
+        </AnimatePresence>
+
+        {visibleCount >= entries.length && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-4 px-3 py-2.5 rounded-lg border border-[#028090]/20 bg-[#028090]/5 mt-1"
+          >
+            <span className="text-[0.7rem] text-[#028090] font-mono w-[4.5rem] shrink-0">
+              NOW
+            </span>
+            <span className="text-[0.8rem] text-white/75 font-mono flex-1">
+              System running · 47 tasks overnight
+            </span>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse shrink-0" />
+          </motion.div>
+        )}
       </div>
     </div>
   );
@@ -218,7 +495,7 @@ function AutomatePanel() {
     "Follow up with unresponsive leads",
     "Process new client intake form",
     "Generate monthly revenue summary",
-    "Route support ticket to correct team",
+    "Draft next week's content from the content calendar",
     "Schedule recurring team standup",
   ];
 
@@ -241,7 +518,7 @@ function AutomatePanel() {
           <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
           <span className="ml-2 text-[0.7rem] text-white/25 font-mono">
-            automate — task queue
+            automate · task queue
           </span>
         </div>
         <span className="text-[0.7rem] font-mono text-[#028090]">
@@ -309,6 +586,118 @@ function AutomatePanel() {
   );
 }
 
+// ── TelegramPanel ─────────────────────────────────────────────────────────────
+function TelegramPanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const delays = [400, 1200, 2100, 2900, 3700];
+    const timers = delays.map((d, i) =>
+      setTimeout(() => setStep(i + 1), d)
+    );
+    return () => timers.forEach(clearTimeout);
+  }, [inView]);
+
+  return (
+    <div
+      ref={ref}
+      className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]"
+    >
+      <div className="flex items-center gap-3 px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="w-8 h-8 rounded-full bg-[#028090]/15 border border-[#028090]/25 flex items-center justify-center text-[0.55rem] font-bold text-[#028090]">
+          AI
+        </div>
+        <div>
+          <div className="text-[0.8rem] text-white/75 font-medium">
+            Revaya AIOS
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-1 h-1 rounded-full bg-[#028090]" />
+            <span className="text-[0.65rem] text-[#028090]">online</span>
+          </div>
+        </div>
+      </div>
+      <div className="p-4 space-y-3 min-h-[260px]">
+        <AnimatePresence>
+          {step >= 1 && (
+            <motion.div
+              key="q1"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex justify-end"
+            >
+              <div className="max-w-[80%] px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-[#028090]/20 border border-[#028090]/20">
+                <p className="text-[0.8rem] text-white/85">
+                  Any new leads come in overnight?
+                </p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 2 && (
+            <motion.div
+              key="a1"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-[85%]"
+            >
+              <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
+                <p className="text-[0.8rem] text-white/85">
+                  3 form submissions. One looks qualified. Service business,
+                  $400K revenue, asking about full AIOS.
+                </p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 3 && (
+            <motion.div
+              key="a2"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-[85%]"
+            >
+              <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
+                <p className="text-[0.8rem] text-white/85">
+                  I drafted a response. Want to review before I send?
+                </p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 4 && (
+            <motion.div
+              key="q2"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex justify-end"
+            >
+              <div className="max-w-[80%] px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-[#028090]/20 border border-[#028090]/20">
+                <p className="text-[0.8rem] text-white/85">Send it.</p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 5 && (
+            <motion.div
+              key="a3"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-[85%]"
+            >
+              <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
+                <p className="text-[0.8rem] text-white/85">
+                  Sent. I&apos;ll follow up automatically in 48 hours if no
+                  response.
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function HomePage() {
   return (
@@ -323,10 +712,10 @@ export default function HomePage() {
         <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-[#028090]/12 blur-[120px]" />
       </div>
 
-      {/* ── HERO — centered ──────────────────────────────────────────────────── */}
+      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-32 pb-0" style={{ zIndex: 1 }}>
-
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
+
           {/* Eyebrow */}
           <FadeIn delay={0}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8">
@@ -348,19 +737,19 @@ export default function HomePage() {
 
           {/* Subhead */}
           <FadeIn delay={0.2}>
-            <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/80 mb-4 max-w-[600px] mx-auto">
-              You&rsquo;re running your business and doing the work.
-              <br className="hidden md:block" /> Only one of those should be
-              your job.
+            <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/80 mb-5 max-w-[620px] mx-auto">
+              The infrastructure layer your business has been missing.
+              Five layers. Three measurable outcomes.
             </p>
           </FadeIn>
 
           {/* Body */}
           <FadeIn delay={0.25}>
-            <p className="text-[0.9375rem] leading-[1.7] text-white/70 mb-10 max-w-[480px] mx-auto">
-              I build Business AI Operating Systems for service businesses. No
-              chatbots. No generic tools. A full operating system built for how
-              your business actually works.
+            <p className="text-[1rem] leading-[1.75] text-white/70 mb-10 max-w-[718px] mx-auto">
+              AIOS orchestrates autonomous agents across data, documents, tech stack,
+              and operations, forming a synchronized system that learns, adapts,
+              and executes. Not a chatbot. Not a tool stack. An operating system
+              built specific to how your business works so it runs when you&rsquo;re not in it.
             </p>
           </FadeIn>
 
@@ -370,11 +759,11 @@ export default function HomePage() {
               href="/work-with-me"
               className="inline-block bg-white text-[#0A0F14] text-[0.9375rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] mb-16"
             >
-              See if this fits your situation &rarr;
+              See if you&rsquo;re a fit &rarr;
             </Link>
           </FadeIn>
 
-          {/* Hero demo panel — full width, no bottom radius, bleeds into marquee */}
+          {/* Hero demo panel */}
           <FadeIn delay={0.5}>
             <div className="rounded-t-2xl border border-white/[0.07] border-b-0 overflow-hidden">
               <HeroPanel />
@@ -399,7 +788,7 @@ export default function HomePage() {
               "Business AI OS",
               "5 Layers",
               "3 Outcomes",
-              "Service Businesses",
+              "Founder-Led",
             ].map((item, i) => (
               <span
                 key={`${ri}-${i}`}
@@ -414,149 +803,210 @@ export default function HomePage() {
         <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }`}</style>
       </div>
 
-      {/* ── FEATURE ROW 1: text LEFT, panel RIGHT — Context ─────────────────── */}
+      {/* ── ROW 1: Five Layers — text LEFT, HeroPanel RIGHT ──────────────────── */}
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  Layer 01 — Context
+                  Five Layers
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Your operations,
+                  A system that runs
                   <br />
-                  mapped and captured.
+                  when you don&rsquo;t.
                 </h2>
                 <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  Before I build anything, I map how your business actually
-                  works. Every decision, every handoff, every repeatable task.
-                  The system can&rsquo;t run without you until I understand what
-                  &ldquo;running&rdquo; looks like.
+                  Context. Data. Intelligence. Automate. Build. Five layers
+                  installed in sequence, each one dependent on the last. Most
+                  businesses try to automate before they&rsquo;ve mapped how they
+                  work. AIOS builds the foundation first, then automates on top
+                  of it.
                 </p>
-                <p className="text-[0.9375rem] leading-[1.7] text-white/70">
-                  This is the layer most AI consultants skip. It&rsquo;s why
-                  their automations fail in month two.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.15} direction="left">
-              <ContextPanel />
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FEATURE ROW 2: panel LEFT, text RIGHT — Automate ────────────────── */}
-      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
-              <AutomatePanel />
-            </FadeIn>
-            <FadeIn delay={0.15} direction="left">
-              <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  Layer 04 — Automate
-                </span>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  The repeatable work,
-                  <br />
-                  handled without you.
-                </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  Follow-ups, reporting, routing, intake, status updates. The
-                  tasks that eat your week aren&rsquo;t complex — they&rsquo;re
-                  just constant. I identify every one and automate the ones that
-                  don&rsquo;t require your judgment.
-                </p>
-                <p className="text-[0.9375rem] leading-[1.7] text-white/70">
-                  Task automation % is one of three KPIs I track in every
-                  engagement. You see exactly what&rsquo;s moving.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FEATURE ROW 3: text LEFT, panel RIGHT — Full system ─────────────── */}
-      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
-              <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  The full system
-                </span>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Built in sequence.
-                  <br />
-                  Running while you sleep.
-                </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  Five layers — Context, Data, Intelligence, Automate, Build —
-                  installed in order because each one depends on the last. This
-                  is not a collection of tools. It&rsquo;s infrastructure.
-                </p>
-                <p className="text-[0.9375rem] leading-[1.7] text-white/70">
-                  Three outcomes measured at every engagement: away-from-desk
+                <p className="text-[1rem] leading-[1.7] text-white/70 mb-6">
+                  Three outcomes tracked in every engagement: away-from-desk
                   autonomy, task automation %, and revenue per employee.
                 </p>
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center gap-2 mt-6 text-[0.9375rem] text-[#028090] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-[0.9375rem] text-[#028090] hover:text-white transition-colors"
                 >
                   See how it&rsquo;s built <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>
             <FadeIn delay={0.15} direction="left">
-              <div className="rounded-2xl overflow-hidden">
-                <HeroPanel />
+              <SleepLogPanel />
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROW 2: Context — ContextPanel LEFT, text RIGHT ───────────────────── */}
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeIn direction="right">
+              <ContextPanel />
+            </FadeIn>
+            <FadeIn delay={0.15} direction="left">
+              <div>
+                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                  Context is KING
+                </span>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  The system learns how your
+                  <br />
+                  business works.
+                </h2>
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                  Before a single automation runs, AIOS maps how your business
+                  operates. Every workflow, every decision point, every repeatable
+                  task. Not a generic audit. A complete operational blueprint
+                  built from your actual processes.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/70">
+                  Most automations skip this entirely. They solve one thing, in
+                  one tool, under the right conditions. You&rsquo;re still the
+                  piece that ties it all together. Context is what changes that
+                  from rigid to fluid.
+                </p>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* ── CAPABILITY GRID ──────────────────────────────────────────────────── */}
-      <section className="relative py-24" style={{ zIndex: 1 }}>
+      {/* ── ROW 3: Knowledge — text LEFT, ConnectPanel RIGHT ─────────────────── */}
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <div className="w-10 h-px bg-[#553555] mx-auto mb-6" />
-              <h2 className="font-display font-black text-[1.75rem] md:text-[2.25rem] text-white mb-3">
-                What the system covers.
-              </h2>
-              <p className="text-[0.9375rem] text-white/70 max-w-[400px] mx-auto">
-                Eight capabilities built into every Business AIOS engagement.
-              </p>
-            </div>
-          </FadeIn>
-          <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: "◈", label: "Workflow mapping" },
-              { icon: "⬡", label: "Data connection" },
-              { icon: "◎", label: "AI decision layer" },
-              { icon: "⟳", label: "Task automation" },
-              { icon: "◻", label: "Custom tool build" },
-              { icon: "◷", label: "Async operations" },
-              { icon: "◑", label: "Owner dashboard" },
-              { icon: "◈", label: "Ongoing retainer" },
-            ].map((cap) => (
-              <StaggerItem key={cap.label}>
-                <div className="p-6 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-200 text-center group">
-                  <div className="text-[1.5rem] text-[#028090]/60 mb-3 group-hover:text-[#028090] transition-colors">
-                    {cap.icon}
-                  </div>
-                  <p className="text-[0.8125rem] text-white/80 group-hover:text-white/70 transition-colors">
-                    {cap.label}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeIn direction="right">
+              <div>
+                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                  Knowledge
+                </span>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  AIOS learns
+                  <br />
+                  how you work.
+                </h2>
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                  Feed it how you actually work. Your processes, your client
+                  templates, SOPs, how you handle the recurring situations.
+                  Doesn&rsquo;t have to be formal. If you&rsquo;d explain it
+                  to a contractor, it&rsquo;s enough.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/70">
+                  The more context it has, the more autonomous it gets. Every
+                  document you give it makes the system more accurate.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15} direction="left">
+              <ConnectPanel />
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROW 4: Intelligence — AnalyzePanel LEFT, text RIGHT ──────────────── */}
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeIn direction="right">
+              <IntegrationsPanel />
+            </FadeIn>
+            <FadeIn delay={0.15} direction="left">
+              <div>
+                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                  Intelligence
+                </span>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  Ask anything.
+                  <br />
+                  It knows your business.
+                </h2>
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                  Connect your CRM, your ops tools, your revenue data. AIOS
+                  ingests it all. Ask it anything, revenue for the month,
+                  pipeline health, what&rsquo;s overdue, and get a clear answer
+                  in plain language.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/70">
+                  For those who want dashboards, those get built too. For
+                  everyone else, just ask.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROW 5: Automate — text LEFT, AutomatePanel RIGHT ─────────────────── */}
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeIn direction="right">
+              <div>
+                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                  Automate Busy Work
+                </span>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  The work that repeats,
+                  <br />
+                  removed.
+                </h2>
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                  Follow-ups, reporting, routing, intake, status updates. The
+                  tasks that eat your week aren&rsquo;t complex, they&rsquo;re
+                  just constant. AIOS identifies every repeatable task and
+                  handles the ones that don&rsquo;t need your judgment.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/70">
+                  Task automation % is one of three KPIs tracked in every
+                  engagement. You see exactly what&rsquo;s moving.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15} direction="left">
+              <AutomatePanel />
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROW 6: Works Anywhere — TelegramPanel LEFT, text RIGHT ───────────── */}
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeIn direction="right">
+              <TelegramPanel />
+            </FadeIn>
+            <FadeIn delay={0.15} direction="left">
+              <div>
+                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                  Native in Your Stack
+                </span>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  AIOS works where
+                  <br />
+                  you already work.
+                </h2>
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                  Built to act like someone who actually works in your business,
+                  not a software product. Chat
+                  with it in Slack or Telegram, give it a task in plain language,
+                  get a status update from your phone. AIOS fits into your
+                  existing workflow, no new tools to learn.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/70">
+                  The system runs in the background. You check in when you want to.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -568,14 +1018,15 @@ export default function HomePage() {
               <p className="font-display font-black text-[1.5rem] md:text-[2rem] text-white leading-[1.2] mb-6">
                 &ldquo;I built this system for my own company first.&rdquo;
               </p>
-              <p className="text-[1rem] leading-[1.7] text-white/80 mb-3">
+              <p className="text-[1rem] leading-[1.7] text-white/80 mb-4">
                 Revaya AI runs on the same Business AI OS I build for clients.
-                The web delivery pipeline that built this site is one example.
-                The content engine is another.
+                The web delivery pipeline that built this site, the content engine
+                generating our marketing, the daily intelligence briefing in my
+                inbox. All of it is the AIOS running live.
               </p>
-              <p className="text-[0.9375rem] text-white/70">
-                No competitor is saying that. Most sell a methodology. I sell
-                the thing I already built for myself.
+              <p className="text-[1rem] text-white/70">
+                I don&rsquo;t sell a methodology. I sell the thing I already
+                built for myself, then configure it to how your business works.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
                 <span>18 years product leadership</span>
@@ -599,9 +1050,10 @@ export default function HomePage() {
             <h2 className="font-display font-black text-[2rem] md:text-[3.25rem] leading-[1.05] text-white mb-5">
               Tell me what&rsquo;s slowing you down.
             </h2>
-            <p className="text-[1rem] leading-[1.7] text-white/75 mb-10 max-w-[480px] mx-auto">
-              I&rsquo;ll come back with a specific read on whether the AIOS is
-              the right fit. If it&rsquo;s not, I&rsquo;ll say so.
+            <p className="text-[1rem] leading-[1.7] text-white/75 mb-10 max-w-[500px] mx-auto">
+              Your bottleneck is a solvable problem. Most owners I talk to already
+              know what it is. The AIOS is built to remove it permanently, not
+              manage it.
             </p>
             <Link
               href="/work-with-me"
