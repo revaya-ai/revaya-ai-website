@@ -108,6 +108,13 @@ ${triedSoFar || "Not provided"}
         if (!airtableRes.ok) {
           const errBody = await airtableRes.text();
           console.error("Airtable error:", airtableRes.status, errBody);
+          if (slackWebhookUrl) {
+            await fetch(slackWebhookUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text: `*Airtable error (${airtableRes.status}):* ${errBody}` }),
+            }).catch(() => {});
+          }
         }
       } catch (airtableError) {
         console.error("Airtable record creation failed:", airtableError);
