@@ -42,20 +42,24 @@ What have they tried so far?
 ${triedSoFar || "Not provided"}
     `.trim();
 
-    // --- Resend email ---
+    // --- Resend email (non-blocking) ---
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey || apiKey.startsWith("re_placeholder")) {
       console.log("[CONTACT FORM — no Resend key] Submission:", { name, email, company, bottleneck });
     } else {
-      const { Resend } = await import("resend");
-      const resend = new Resend(apiKey);
-      await resend.emails.send({
-        from: "Revaya AI Contact Form <noreply@revaya.ai>",
-        to: "shannon@revaya.ai",
-        replyTo: email,
-        subject: `New inquiry from ${name} — ${company || "No company"}`,
-        text: emailContent,
-      });
+      try {
+        const { Resend } = await import("resend");
+        const resend = new Resend(apiKey);
+        await resend.emails.send({
+          from: "Revaya AI Contact Form <noreply@revaya.ai>",
+          to: "shannon@revaya.ai",
+          replyTo: email,
+          subject: `New inquiry from ${name} — ${company || "No company"}`,
+          text: emailContent,
+        });
+      } catch (resendError) {
+        console.error("Resend email failed:", resendError);
+      }
     }
 
     // --- Slack notification (non-blocking) ---
@@ -66,7 +70,7 @@ ${triedSoFar || "Not provided"}
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            text: `*New AIOS inquiry from revaya.ai*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "Not provided"}\n*Bottleneck:* ${bottleneck}`,
+            text: `*New AIOS inquiry from revaya.ai*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "Not provided"}\n*Bottleneck:* ${bottleneck}${triedSoFar ? `\n*Tried so far:* ${triedSoFar}` : ""}`,
           }),
         });
       } catch (slackError) {
@@ -80,7 +84,7 @@ ${triedSoFar || "Not provided"}
     const airtableTable = process.env.AIRTABLE_CONTACTS_TABLE || "Contacts";
     if (airtableToken && airtableBaseId) {
       try {
-        await fetch(`https://api.airtable.com/v0/${airtableBaseId}/${encodeURIComponent(airtableTable)}`, {
+        const airtableRes = await fetch(`https://api.airtable.com/v0/${airtableBaseId}/${encodeURIComponent(airtableTable)}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${airtableToken}`,
@@ -101,6 +105,10 @@ ${triedSoFar || "Not provided"}
             },
           }),
         });
+        if (!airtableRes.ok) {
+          const errBody = await airtableRes.text();
+          console.error("Airtable error:", airtableRes.status, errBody);
+        }
       } catch (airtableError) {
         console.error("Airtable record creation failed:", airtableError);
       }
