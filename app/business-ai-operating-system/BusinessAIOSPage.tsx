@@ -1056,11 +1056,14 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* WHO THIS IS FOR — text L, panel R */}
+        {/* WHO THIS IS FOR — panel L, text R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp direction="right">
+              <FadeUp delay={0.15} direction="right">
+                <WhoPanel />
+              </FadeUp>
+              <FadeUp direction="left">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Who This Is For
                 </p>
@@ -1080,21 +1083,15 @@ export default function BusinessAIOSPage() {
                   If that&apos;s you, start with the Audit. It will tell us both if you&apos;re ready.
                 </p>
               </FadeUp>
-              <FadeUp delay={0.15} direction="left">
-                <WhoPanel />
-              </FadeUp>
             </div>
           </div>
         </section>
 
-        {/* BEFORE STATE — panel L, text R */}
+        {/* BEFORE STATE — text L, panel R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp delay={0.15} direction="right">
-                <PainQueuePanel />
-              </FadeUp>
-              <FadeUp direction="left">
+              <FadeUp direction="right">
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-7">
                   You answer the same questions 20 times a month.
                 </h2>
@@ -1113,6 +1110,9 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
                   That&apos;s not a people problem. It&apos;s an infrastructure problem.
                 </p>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <PainQueuePanel />
               </FadeUp>
             </div>
           </div>
@@ -1178,11 +1178,14 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* AFTER THE BUILD */}
+        {/* AFTER THE BUILD — panel L, text R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-start">
-              <FadeUp direction="right">
+              <FadeUp delay={0.15} direction="right">
+                <RetainerPanel />
+              </FadeUp>
+              <FadeUp direction="left">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   After the Build
                 </p>
@@ -1215,9 +1218,6 @@ export default function BusinessAIOSPage() {
                 <p className="text-[0.9375rem] text-white/55 leading-[1.7]">
                   The retainer conversation happens at your 30-day check-in, once you&apos;ve used the system and know what you want next.
                 </p>
-              </FadeUp>
-              <FadeUp delay={0.15} direction="left">
-                <RetainerPanel />
               </FadeUp>
             </div>
           </div>
@@ -1292,7 +1292,7 @@ export default function BusinessAIOSPage() {
                   href="/work-with-me"
                   className="inline-block text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
                 >
-                  Book the Audit
+                  Book the Audit →
                 </Link>
               </div>
             </FadeUp>
