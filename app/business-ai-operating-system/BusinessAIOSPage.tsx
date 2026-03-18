@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import Link from "next/link";
+import FaqAccordion from "@/components/FaqAccordion";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -1672,6 +1673,56 @@ export default function BusinessAIOSPage() {
             </FadeUp>
             <FadeUp delay={0.1}>
               <TimelineTabs />
+            </FadeUp>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="py-24 md:py-32">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <FadeUp className="mb-12">
+              <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                Common Questions
+              </p>
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white max-w-[560px]">
+                Questions I get asked before anyone books.
+              </h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <FaqAccordion items={[
+                {
+                  question: "I've tried AI tools before and they didn't stick. Why would this be different?",
+                  answer: "Because tools and systems are different things. Most AI tools are point solutions. They do one thing well if you set them up correctly and remember to use them. The AIOS is an operating system. I install it, configure it to your specific business, and integrate it into how your operations actually work. You don't have to figure it out. You don't have to maintain it. You're not left with a tool and a YouTube tutorial. You're left with a running system.",
+                },
+                {
+                  question: "How long does this take?",
+                  answer: "The Audit runs across one to two sessions and produces a specific deliverable within a week of completion. The Setup is scoped after the Audit. Most engagements run four to eight weeks, depending on the complexity of the business and the depth of the Build layer. I'll give you a specific timeline after the Audit, not before. Generic timelines are guesses. Scoped timelines are real.",
+                },
+                {
+                  question: "Do I need to be technical?",
+                  answer: "No. Your job in this process is knowing your business: how it works, where your time goes, what decisions you make, what breaks. That's it. I handle the technical layer. The AIOS is built for a business owner to use every day, not for an engineer to maintain.",
+                },
+                {
+                  question: "What if my business is too small or too early?",
+                  answer: "The Audit will answer that. I've told founders their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
+                },
+                {
+                  question: "What happens if something breaks after Setup?",
+                  answer: "Ongoing support is built into every engagement. You're not handed a system and wished luck. Maintenance retainers cover system monitoring, minor updates, and a quarterly review. Growth retainers include active monthly builds if the system needs to expand. You'll know exactly what support looks like before Setup begins.",
+                },
+                {
+                  question: "Is this just automation? I already have Zapier.",
+                  answer: "Zapier automates individual tasks. The AIOS changes how your whole business operates. That's not a semantic difference — it's a structural one. Zapier can automate one invoice reminder. The AIOS determines how all of your intake, client management, reporting, and team coordination works without you being in the middle of it. Most businesses that come to me have Zapier. Most of them also have automations that break when something changes and nobody knows why. The AIOS is a system, not a stack of automations. Full audit trails mean you can see every decision it makes.",
+                },
+                {
+                  question: "How is this different from hiring an operations consultant?",
+                  answer: "An operations consultant maps your business, writes recommendations, hands you a document, and leaves. You then have to figure out how to implement those recommendations yourself. I build the infrastructure and leave it running. The difference is the gap between a report and a working system. I'm not giving you advice on what to build. I'm building it.",
+                },
+                {
+                  question: "What do you actually need from me?",
+                  answer: "Time for the Audit interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Audit is only as good as the information it's built on.",
+                },
+              ]} />
             </FadeUp>
           </div>
         </section>
