@@ -42,7 +42,7 @@ What have they tried so far?
 ${triedSoFar || "Not provided"}
     `.trim();
 
-    // --- Resend email (non-blocking) ---
+    // --- Resend emails (non-blocking) ---
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey || apiKey.startsWith("re_placeholder")) {
       console.log("[CONTACT FORM — no Resend key] Submission:", { name, email, company, bottleneck });
@@ -50,12 +50,50 @@ ${triedSoFar || "Not provided"}
       try {
         const { Resend } = await import("resend");
         const resend = new Resend(apiKey);
+
+        // Notify Shannon
         await resend.emails.send({
           from: "Revaya AI Contact Form <noreply@revaya.ai>",
           to: "shannon@revaya.ai",
           replyTo: email,
           subject: `New inquiry from ${name} — ${company || "No company"}`,
           text: emailContent,
+        });
+
+        // Confirmation to visitor
+        const confirmationText = `
+Hi ${name},
+
+Thank you for reaching out. I received your submission and will be in touch shortly — within 48 hours if it looks like a fit.
+
+Here's a copy of what you sent:
+
+---
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Company: ${company || "Not provided"}
+Business description: ${businessDescription || "Not provided"}
+Team size: ${teamSize || "Not provided"}
+
+What's the operational bottleneck?
+${bottleneck}
+
+What have you tried so far?
+${triedSoFar || "Not provided"}
+---
+
+Talk soon,
+Shannon Winnicki
+Revaya AI
+https://www.revaya.ai
+        `.trim();
+
+        await resend.emails.send({
+          from: "Shannon Winnicki — Revaya AI <shannon@revaya.ai>",
+          to: email,
+          subject: "Got your message — I'll be in touch shortly",
+          text: confirmationText,
         });
       } catch (resendError) {
         console.error("Resend email failed:", resendError);
@@ -75,49 +113,6 @@ ${triedSoFar || "Not provided"}
         });
       } catch (slackError) {
         console.error("Slack notification failed:", slackError);
-      }
-    }
-
-    // --- Airtable record (non-blocking) ---
-    const airtableToken = process.env.AIRTABLE_TOKEN;
-    const airtableBaseId = process.env.AIRTABLE_CONTACTS_BASE_ID;
-    const airtableTable = process.env.AIRTABLE_CONTACTS_TABLE || "Contacts";
-    if (airtableToken && airtableBaseId) {
-      try {
-        const airtableRes = await fetch(`https://api.airtable.com/v0/${airtableBaseId}/${encodeURIComponent(airtableTable)}`, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${airtableToken}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            fields: {
-              Name: name,
-              Email: email,
-              Phone: phone || "",
-              Company: company || "",
-              "Business Description": businessDescription || "",
-              "Team Size": teamSize || "",
-              Bottleneck: bottleneck,
-              "Tried So Far": triedSoFar || "",
-              Source: "revaya.ai contact form",
-              "Submitted At": new Date().toISOString().split("T")[0],
-            },
-          }),
-        });
-        if (!airtableRes.ok) {
-          const errBody = await airtableRes.text();
-          console.error("Airtable error:", airtableRes.status, errBody);
-          if (slackWebhookUrl) {
-            await fetch(slackWebhookUrl, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ text: `*Airtable error (${airtableRes.status}):* ${errBody}` }),
-            }).catch(() => {});
-          }
-        }
-      } catch (airtableError) {
-        console.error("Airtable record creation failed:", airtableError);
       }
     }
 
