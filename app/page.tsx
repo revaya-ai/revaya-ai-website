@@ -729,27 +729,23 @@ export default function HomePage() {
           {/* H1 */}
           <FadeIn delay={0.1}>
             <h1 className="font-display font-black text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.0] text-white mb-6 tracking-tight">
-              Your Business,
+              Stop Being the Business.
               <br />
-              Running Without You.
+              Start Owning One.
             </h1>
           </FadeIn>
 
           {/* Subhead */}
           <FadeIn delay={0.2}>
             <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/80 mb-5 max-w-[620px] mx-auto">
-              The infrastructure layer your business has been missing.
-              Five layers. Three measurable outcomes.
+              You didn&rsquo;t build a business. You built something that quietly owns you.
             </p>
           </FadeIn>
 
           {/* Body */}
           <FadeIn delay={0.25}>
             <p className="text-[1rem] leading-[1.75] text-white/85 mb-10 max-w-[718px] mx-auto">
-              AIOS orchestrates autonomous agents across data, documents, tech stack,
-              and operations, forming a synchronized system that learns, adapts,
-              and executes. Not a chatbot. Not a tool stack. An operating system
-              built specific to how your business works so it runs when you&rsquo;re not in it.
+              I build business operating systems for founders who&rsquo;ve become the business. A business that only works when you do isn&rsquo;t an asset. It&rsquo;s a job with overhead. I build the system that keeps your business running whether you&rsquo;re in it or not.
             </p>
           </FadeIn>
 
@@ -810,7 +806,7 @@ export default function HomePage() {
             <FadeIn direction="right">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  Five Layers
+                  Map &rarr; Build &rarr; Own
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   A system that runs
@@ -818,18 +814,10 @@ export default function HomePage() {
                   when you don&rsquo;t.
                 </h2>
                 <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  Context. Data. Intelligence. Automate. Build. Five layers
-                  installed in sequence, each one dependent on the last. Most
-                  businesses try to automate before they&rsquo;ve mapped how they
-                  work. AIOS builds the foundation first, then automates on top
-                  of it.
-                </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70 mb-6">
-                  Three outcomes tracked in every engagement: away-from-desk
-                  autonomy, task automation %, and revenue per employee.
+                  Every task, every decision, every answer still routes through you. We map where the business runs through you, then build the system that replaces you there. You step into the owner role instead of the operator role.
                 </p>
                 <Link
-                  href="/solutions"
+                  href="/business-ai-operating-system"
                   className="inline-flex items-center gap-2 text-[0.9375rem] text-[#028090] hover:text-white transition-colors"
                 >
                   See how it&rsquo;s built <span>&rarr;</span>
@@ -853,7 +841,7 @@ export default function HomePage() {
             <FadeIn delay={0.15} direction="left">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  Context is KING
+                  Step 1 — Map
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   The system learns how your
@@ -987,19 +975,18 @@ export default function HomePage() {
             <FadeIn delay={0.15} direction="left">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  Native in Your Stack
+                  Your Control Center
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  AIOS works where
+                  Not another tool.
                   <br />
-                  you already work.
+                  The last one.
                 </h2>
                 <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  Built to act like someone who actually works in your business,
-                  not a software product. Chat
-                  with it in Slack or Telegram, give it a task in plain language,
-                  get a status update from your phone. AIOS fits into your
-                  existing workflow, no new tools to learn.
+                  This replaces most of what you&rsquo;re already paying for. Context, data, intelligence, automations, builds. One place. All connected. Your business stops living across a dozen different tabs.
+                </p>
+                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                  And when you get time back, you decide what to do with it. Some people take a week off. Others put it back into the business. Use it to plan. Use it to pressure-test a decision, think through a hire, figure out what to build next. It knows your business well enough to push back. Sparring partner. Strategy partner. Both.
                 </p>
                 <p className="text-[1rem] leading-[1.7] text-white/70">
                   The system runs in the background. You check in when you want to.
@@ -1016,19 +1003,13 @@ export default function HomePage() {
           <FadeIn>
             <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-10 md:p-14 text-center max-w-[800px] mx-auto">
               <p className="font-display font-black text-[1.5rem] md:text-[2rem] text-white leading-[1.2] mb-6">
-                &ldquo;I built this system for my own company first.&rdquo;
+                &ldquo;I spent 18 years as a digital product manager. Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. That time taught me how businesses actually operate from the inside.&rdquo;
               </p>
               <p className="text-[1rem] leading-[1.7] text-white/80 mb-4">
-                Revaya AI runs on the same Business AI OS I build for clients.
-                My web delivery pipeline built this site, the content engine
-                generates marketing, the daily intelligence briefing in my
-                inbox, my one bottleneck of the week, performance metrics.
-                All of it is the AIOS running live.
+                I spent the last year going deep on AI. Python certified, technically trained, and active in the world&rsquo;s leading AI training program alongside 800 professional AI developers. I build the thing. I don&rsquo;t configure it.
               </p>
               <p className="text-[1rem] text-white/70">
-                I don&rsquo;t sell a methodology. I sell the thing I already
-                built for myself. Now I can build an AIOS that&rsquo;s custom
-                to your business.
+                When your build needs a specialist, I have bench depth most solo consultants can&rsquo;t match. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
                 <span>18 years product leadership</span>
@@ -1050,7 +1031,9 @@ export default function HomePage() {
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
             <h2 className="font-display font-black text-[2rem] md:text-[3.25rem] leading-[1.05] text-white mb-5">
-              Tell me what&rsquo;s slowing you down.
+              You take a week off.
+              <br />
+              Your business keeps going.
             </h2>
             <p className="text-[1rem] leading-[1.7] text-white/75 mb-10 max-w-[500px] mx-auto">
               Your bottleneck is a solvable problem. Most owners I talk to already

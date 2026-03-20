@@ -21,7 +21,7 @@ A Business AI Operating System is a complete operational infrastructure built on
 ## Three Measurable Outcomes
 - Away-from-desk autonomy: Can you disconnect without things falling apart?
 - Task automation percentage: What share of recurring operational work runs without you?
-- Revenue per employee: Is the business getting more valuable per person as it scales?
+- Revenue per headcount: Is the business getting more valuable per person as it scales?
 
 ## Services
 - **AI Training** — Customized training built around your team's actual tools and workflows.

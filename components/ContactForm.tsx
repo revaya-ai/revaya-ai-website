@@ -136,11 +136,12 @@ export default function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
+          required
           value={form.phone}
           onChange={handleChange}
           className={inputClass}
           autoComplete="tel"
-          placeholder="Optional"
+          placeholder="Your phone number"
         />
       </div>
 
@@ -153,6 +154,7 @@ export default function ContactForm() {
           id="company"
           name="company"
           type="text"
+          required
           value={form.company}
           onChange={handleChange}
           className={inputClass}
@@ -170,6 +172,7 @@ export default function ContactForm() {
           id="businessDescription"
           name="businessDescription"
           type="text"
+          required
           value={form.businessDescription}
           onChange={handleChange}
           className={inputClass}
@@ -186,6 +189,7 @@ export default function ContactForm() {
           id="teamSize"
           name="teamSize"
           type="text"
+          required
           value={form.teamSize}
           onChange={handleChange}
           className={inputClass}
@@ -214,12 +218,12 @@ export default function ContactForm() {
       {/* Tried so far — optional */}
       <div>
         <label htmlFor="triedSoFar" className={labelClass}>
-          What have you tried so far?{" "}
-          <span className="text-white/35 text-[0.8125rem] font-normal">(optional)</span>
+          What have you tried so far?
         </label>
         <textarea
           id="triedSoFar"
           name="triedSoFar"
+          required
           rows={3}
           value={form.triedSoFar}
           onChange={handleChange}
@@ -239,7 +243,7 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-full md:w-auto font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
       >
-        {submitting ? "Submitting..." : "Submit"}
+        {submitting ? "Submitting..." : "Submit →"}
       </button>
     </form>
   );

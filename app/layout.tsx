@@ -23,18 +23,31 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.revaya.ai"),
   title: {
-    default: "Business AI OS for Founder-Led Businesses — Revaya AI",
+    default: "Business AI Operating System for Founder-Led Businesses | Revaya AI",
     template: "%s | Revaya AI",
   },
   description:
-    "Your business shouldn't run only when you do. I build Business AI Operating Systems for founder-led businesses. Five layers, three measurable outcomes.",
+    "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses. Five layers. Three measurable outcomes.",
+  keywords: [
+    "Business AI Operating System",
+    "Business AI OS",
+    "AI consultant",
+    "founder-led business automation",
+    "AI operating system for small business",
+    "Shannon Winnicki",
+    "Revaya AI",
+  ],
   openGraph: {
     type: "website",
     siteName: "Revaya AI",
     locale: "en_US",
+    description:
+      "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses. Five layers. Three measurable outcomes.",
   },
   twitter: {
     card: "summary_large_image",
+    description:
+      "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses.",
   },
 };
 

@@ -5,7 +5,7 @@ export const organizationSchema = {
   url: "https://www.revaya.ai",
   logo: "https://www.revaya.ai/revaya-ai-logo.png",
   description:
-    "Revaya AI builds Business AI Operating Systems for founder-led businesses. Founder: Shannon Winnicki. The AIOS methodology covers five layers — Context, Data, Intelligence, Automate, Build — and delivers three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per employee.",
+    "Revaya AI builds Business AI Operating Systems for founder-led businesses. Founder: Shannon Winnicki. The AIOS methodology covers five layers — Context, Data, Intelligence, Automate, Build — and delivers three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per headcount.",
   founder: {
     "@type": "Person",
     name: "Shannon Winnicki",
@@ -38,7 +38,7 @@ export const homeWebPageSchema = {
     "@type": "Thing",
     name: "Business AI Operating System",
     description:
-      "A Business AI Operating System is a structured methodology for building the operational infrastructure of a service business using AI. It covers five layers — Context, Data, Intelligence, Automate, Build — and is designed to deliver three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per employee.",
+      "A Business AI Operating System is a structured methodology for building the operational infrastructure of a service business using AI. It covers five layers — Context, Data, Intelligence, Automate, Build — and is designed to deliver three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per headcount.",
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
@@ -108,7 +108,7 @@ export const aiosSetupServiceSchema = {
   name: "Business AI Operating System Setup",
   alternateName: "AIOS Setup",
   description:
-    "Full Business AI OS installation for founder-led businesses. Covers five layers: Context (the system knows your business), Data (real numbers connected), Intelligence (what's happening surfaces automatically), Automate (recurring work runs without you), Build (freed capacity directed at growth). Delivers three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per employee.",
+    "Full Business AI OS installation for founder-led businesses. Covers five layers: Context (the system knows your business), Data (real numbers connected), Intelligence (what's happening surfaces automatically), Automate (recurring work runs without you), Build (freed capacity directed at growth). Delivers three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per headcount.",
   provider: {
     "@type": "Person",
     name: "Shannon Winnicki",

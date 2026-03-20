@@ -6,15 +6,15 @@ import { FadeIn } from "@/components/FadeIn";
 import { StaggerChildren, StaggerItem } from "@/components/StaggerChildren";
 
 export const metadata: Metadata = {
-  title: "Work With Me — Revaya AI",
+  title: "Work With Me | Business AI Operating System | Revaya AI",
   description:
-    "Tell me what's slowing you down. I read every submission personally and respond within 48 hours if it's a fit.",
+    "You already know something has to change. Tell Shannon Winnicki about your business. Business AI Operating System engagements for founder-led service businesses.",
 };
 
 const nextSteps = [
   "I review your submission personally.",
-  "If it looks like a fit, I'll reach out within 48 hours — either with a couple of follow-up questions or a link to book time.",
-  "The first conversation is a real discussion about your situation. Not a pitch. A chance to understand whether the AIOS makes sense for where your business is right now.",
+  "If it looks like a fit, I'll reach out within 48 hours — either with a follow-up question or a link to book time.",
+  "The first conversation is about your situation. Not a pitch. I want to understand whether the AIOS makes sense for where your business is right now.",
 ];
 
 export default function WorkWithMePage() {
@@ -23,7 +23,7 @@ export default function WorkWithMePage() {
       <JsonLd data={workWithMeContactPageSchema} />
 
       {/* Page header */}
-      <section className="relative overflow-hidden bg-[#0D1A4A] pt-36 pb-20 md:pt-44 md:pb-24">
+      <section className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-24">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#553555]/20 blur-[130px] animate-pulse-glow" />
           <div
@@ -45,7 +45,7 @@ export default function WorkWithMePage() {
               Start the conversation
             </span>
             <h1 className="font-display font-black text-[2.5rem] md:text-[3.5rem] leading-[1.05] text-white mb-5">
-              Let&rsquo;s talk about what&rsquo;s slowing you down.
+              You already know something has to change.
             </h1>
             <p className="text-[1.125rem] leading-[1.65] text-white/65 max-w-[520px]">
               Tell me what&rsquo;s going on in your business. The honest version, not the polished one.
@@ -55,7 +55,7 @@ export default function WorkWithMePage() {
       </section>
 
       {/* Form + What happens next */}
-      <section className="bg-[#111820] py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-[1fr_340px] gap-16 items-start">
             {/* Form */}
@@ -87,7 +87,7 @@ export default function WorkWithMePage() {
                 </StaggerChildren>
                 <div className="mt-8 glass-card rounded-xl p-5 border-l-2 border-[#028090]">
                   <p className="text-[0.875rem] text-white/50 leading-[1.65]">
-                    If the AIOS isn&rsquo;t the right fit for where your business is right now, I&rsquo;ll say so. You&rsquo;re not signing up for a pitch. You&rsquo;re starting a real conversation.
+                    If it&rsquo;s not the right fit, I&rsquo;ll tell you that. No pitch, no pressure. Just an honest read on whether this makes sense for your business.
                   </p>
                 </div>
               </div>

@@ -26,7 +26,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
             className="w-full flex items-center justify-between py-5 text-left group"
             aria-expanded={openIndex === i}
           >
-            <span className="font-display font-black text-[1.125rem] md:text-[1.25rem] text-white leading-[1.2] pr-4 group-hover:text-[#028090] transition-colors duration-150">
+            <span className="font-display font-normal text-[1.125rem] md:text-[1.25rem] text-white leading-[1.2] pr-4 group-hover:text-[#028090] transition-colors duration-150">
               {item.question}
             </span>
             <span className="shrink-0 text-[#028090] transition-transform duration-200">
@@ -46,7 +46,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               openIndex === i ? "max-h-[800px] pb-5" : "max-h-0"
             }`}
           >
-            <p className="text-[1rem] leading-[1.65] text-white/55">
+            <p className="text-[1rem] leading-[1.65] text-white">
               {item.answer}
             </p>
           </div>

@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Image src="/revaya-logo-white.png" alt="Revaya AI" width={140} height={40} />
             <p className="mt-3 text-[0.8125rem] text-white/45 max-w-[240px] leading-[1.6]">
-              Business AI Operating Systems for founder-led businesses.
+              Stop being the business. Start owning one.
             </p>
           </div>
 
@@ -18,9 +18,6 @@ export default function Footer() {
           <nav className="flex flex-col gap-3">
             <Link href="/" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Home
-            </Link>
-            <Link href="/solutions" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
-              Solutions
             </Link>
             <Link href="/why-revaya" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Why Revaya

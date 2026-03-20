@@ -40,7 +40,7 @@ const layers = [
     num: "05",
     name: "Build",
     problem: "Every new AI capability you want feels like starting over. New tool, new setup, new context to configure. Nothing connects to what you already have.",
-    what: "An expandable foundation. Each new agent, workflow, or integration gets added to the system you've already built. It inherits the context, the data, the standards.",
+    what: "An expandable foundation. Each new agent, workflow, or integration gets added to the system you've already built. It inherits the context, the data, the standards. You think it, you build it.",
     produces: "New capability without the setup tax. You add, you don't rebuild.",
   },
 ];
@@ -561,6 +561,180 @@ function BuildPanel() {
           </motion.p>
         )}
       </div>
+    </div>
+  );
+}
+
+// ─── Panel: Orbit ────────────────────────────────────────────────────────────
+
+const orbitAgents = [
+  // ring 1 — r:110, 3 nodes
+  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 110, speed: 0.38, angle: 0 },
+  { label: "IntelOS", task: "3 meetings", color: "#028090", ring: 110, speed: 0.38, angle: (Math.PI * 2) / 3 },
+  { label: "Content", task: "queued", color: "#553555", ring: 110, speed: 0.38, angle: (Math.PI * 4) / 3 },
+  // ring 2 — r:185, 4 nodes
+  { label: "CRM", task: "updated", color: "#F45B69", ring: 185, speed: 0.22, angle: 0.4 },
+  { label: "Proposals", task: "ready", color: "#028090", ring: 185, speed: 0.22, angle: 0.4 + Math.PI / 2 },
+  { label: "Slack", task: "2 flags", color: "#553555", ring: 185, speed: 0.22, angle: 0.4 + Math.PI },
+  { label: "Pipeline", task: "tracked", color: "rgba(228,253,225,0.8)", ring: 185, speed: 0.22, angle: 0.4 + (Math.PI * 3) / 2 },
+  // ring 3 — r:215, 4 nodes
+  { label: "Analytics", task: "weekly ✓", color: "#028090", ring: 215, speed: 0.13, angle: 0.9 },
+  { label: "Intake", task: "submitted", color: "#F45B69", ring: 215, speed: 0.13, angle: 0.9 + Math.PI / 2 },
+  { label: "Docs", task: "SOW sent", color: "#553555", ring: 215, speed: 0.13, angle: 0.9 + Math.PI },
+  { label: "Revenue", task: "monthly ✓", color: "rgba(228,253,225,0.8)", ring: 215, speed: 0.13, angle: 0.9 + (Math.PI * 3) / 2 },
+];
+
+function OrbitPanel() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, { once: true });
+  const animRef = useRef<number>(0);
+  const agentsRef = useRef(orbitAgents.map((a) => ({ ...a })));
+  const tRef = useRef(0);
+  const startedRef = useRef(false);
+
+  useEffect(() => {
+    if (!inView || startedRef.current) return;
+    startedRef.current = true;
+
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resize = () => {
+      const w = container.clientWidth;
+      canvas.width = w;
+      canvas.height = w * 1.1;
+    };
+    resize();
+
+    const draw = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const W = canvas.width;
+      const cx = W / 2, cy = canvas.height / 2;
+      const t = tRef.current;
+
+      ctx.clearRect(0, 0, W, canvas.height);
+
+      // orbit rings
+      [150, 255, 300].forEach((r, ri) => {
+        const colors = ["rgba(2,128,144,0.12)", "rgba(85,53,85,0.12)", "rgba(2,128,144,0.10)"];
+        ctx.beginPath();
+        ctx.arc(cx, cy, r * (W / 520), 0, Math.PI * 2);
+        ctx.strokeStyle = colors[ri];
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 9]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      });
+
+      const scale = W / 520;
+
+      // pass 1 — advance angles + draw spokes (behind everything)
+      agentsRef.current.forEach((a) => {
+        a.angle += a.speed * 0.008;
+        const r = a.ring * scale;
+        const x = cx + Math.cos(a.angle) * r;
+        const y = cy + Math.sin(a.angle) * r;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = a.color.startsWith("rgba") ? a.color.replace(/[\d.]+\)$/, "0.22)") : a.color + "38";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+
+      // center glow
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 70 * scale);
+      grd.addColorStop(0, "rgba(85,53,85,0.35)");
+      grd.addColorStop(1, "transparent");
+      ctx.beginPath();
+      ctx.arc(cx, cy, 70 * scale, 0, Math.PI * 2);
+      ctx.fillStyle = grd;
+      ctx.fill();
+
+      // center pulse ring
+      const pulse = 0.4 + Math.sin(t * 0.025) * 0.15;
+      ctx.beginPath();
+      ctx.arc(cx, cy, (34 + Math.sin(t * 0.025) * 4) * scale, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(85,53,85,${pulse})`;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // center node
+      ctx.beginPath();
+      ctx.arc(cx, cy, 28 * scale, 0, Math.PI * 2);
+      ctx.fillStyle = "#553555";
+      ctx.fill();
+
+      ctx.fillStyle = "white";
+      ctx.font = `700 ${11 * scale}px Inter, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("YOU", cx, cy);
+
+      // pass 2 — draw nodes + labels (on top of center)
+      agentsRef.current.forEach((a) => {
+        const r = a.ring * scale;
+        const x = cx + Math.cos(a.angle) * r;
+        const y = cy + Math.sin(a.angle) * r;
+
+        // node glow
+        const ng = ctx.createRadialGradient(x, y, 0, x, y, 20 * scale);
+        ng.addColorStop(0, a.color.startsWith("rgba") ? "rgba(228,253,225,0.2)" : a.color + "30");
+        ng.addColorStop(1, "transparent");
+        ctx.beginPath();
+        ctx.arc(x, y, 20 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = ng;
+        ctx.fill();
+
+        // node circle
+        ctx.beginPath();
+        ctx.arc(x, y, 14 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(13,26,74,0.95)";
+        ctx.fill();
+        ctx.strokeStyle = a.color.startsWith("rgba") ? "rgba(228,253,225,0.5)" : a.color + "99";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // live dot
+        const dotAlpha = 0.5 + Math.sin(t * 0.05 + a.angle * 3) * 0.5;
+        ctx.beginPath();
+        ctx.arc(x + 9 * scale, y - 9 * scale, 3 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(34,197,94,${dotAlpha})`;
+        ctx.fill();
+
+        // label — clamp x to canvas bounds to prevent clipping
+        ctx.font = `500 ${12 * scale}px Inter, sans-serif`;
+        const lw = ctx.measureText(a.label).width;
+        const lx = Math.min(Math.max(x, lw / 2 + 4), W - lw / 2 - 4);
+        const ly = y > cy ? y - 36 * scale : y + 18 * scale; // flip above if in bottom half
+        ctx.fillStyle = "#ffffff";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.fillText(a.label, lx, ly);
+
+        ctx.fillStyle = "rgba(255,255,255,0.65)";
+        ctx.font = `400 ${10 * scale}px Inter, sans-serif`;
+        ctx.fillText(a.task, lx, ly + 14 * scale);
+      });
+
+      tRef.current++;
+      animRef.current = requestAnimationFrame(draw);
+    };
+
+    draw();
+    return () => cancelAnimationFrame(animRef.current);
+  }, [inView]);
+
+  return (
+    <div ref={containerRef} className="w-full relative overflow-visible" style={{ aspectRatio: "1 / 1.1" }}>
+      <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   );
 }
@@ -1413,7 +1587,7 @@ function HeroLiveFeedPanel() {
 
 export default function BusinessAIOSPage() {
   return (
-    <div className="bg-[#0D1A4A] text-white min-h-screen overflow-x-hidden">
+    <div className="text-white min-h-screen overflow-x-hidden">
 
       {/* Ambient orbs — 4-orb teal pattern */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
@@ -1435,14 +1609,14 @@ export default function BusinessAIOSPage() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
-                  A Business AI OS isn&apos;t software.
+                  Business AI Operating System.
                   <br />
                   <span className="text-white/70">
-                    It&apos;s how your business thinks without you.
+                    How your business runs without you.
                   </span>
                 </h1>
                 <p className="text-[1rem] leading-[1.7] text-white/80">
-                  Five layers. Every major drain on your time. Automated, connected, fully auditable.
+                  I build a system your business runs on instead of you. Five layers. Every major drain on your time. Automated, connected, fully auditable.
                 </p>
               </motion.div>
               <motion.div
@@ -1508,7 +1682,7 @@ export default function BusinessAIOSPage() {
                   Your business stops when you stop.
                 </p>
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
-                  That&apos;s not a people problem. It&apos;s an infrastructure problem.
+                  That&apos;s not a people problem. It&apos;s an architecture problem.
                 </p>
               </FadeUp>
               <FadeUp delay={0.15} direction="left">
@@ -1583,7 +1757,7 @@ export default function BusinessAIOSPage() {
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <FadeUp delay={0.15} direction="right">
-                <RetainerPanel />
+                <OrbitPanel />
               </FadeUp>
               <FadeUp direction="left">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
@@ -1691,8 +1865,32 @@ export default function BusinessAIOSPage() {
             <FadeUp delay={0.1}>
               <FaqAccordion items={[
                 {
+                  question: "What is a Business AI Operating System?",
+                  answer: "Most AI tools solve one problem. A Business AI Operating System connects your entire operation, so the business runs on information and systems instead of your constant attention. It has five layers: Context (what the business knows), Data (what the business tracks), Intelligence (how decisions get made), Automate (what happens without you), and Build (the custom tools that make it yours). The goal is simple. You stop being the business. You start owning one.",
+                },
+                {
+                  question: "Is a Business AI OS right for a small business?",
+                  answer: "It's built specifically for small businesses, not enterprise. If you have 1 to 15 people and you're the one keeping everything from falling apart, this is exactly the situation it was designed for. Enterprise companies have operations teams. You don't. That's the gap this fills.",
+                },
+                {
+                  question: "What does a Business AI OS actually do day to day?",
+                  answer: "It depends on what's built into it, but the typical outcomes are concrete. Founders get 10 or more hours a week back. Recurring tasks that used to need your decision get handled automatically. New team members onboard faster because the knowledge lives in the system, not your head. The three metrics I measure against: away-from-desk autonomy, task automation percentage, and revenue per headcount. If those don't move, the system isn't working.",
+                },
+                {
                   question: "I've tried AI tools before and they didn't stick. Why would this be different?",
                   answer: "Because tools and systems are different things. Most AI tools are point solutions. They do one thing well if you set them up correctly and remember to use them. The AIOS is an operating system. I install it, configure it to your specific business, and integrate it into how your operations actually work. You don't have to figure it out. You don't have to maintain it. You're not left with a tool and a YouTube tutorial. You're left with a running system.",
+                },
+                {
+                  question: "How is this different from ChatGPT Projects, Claude Cowork, or Manus?",
+                  answer: "Those tools are powerful. They're still tools. ChatGPT Projects and Claude Cowork give you a smarter workspace. Manus can run tasks autonomously. But all of them require you to set them up, prompt them, maintain them, and remember to use them. They know what you told them. They don't know your business. A Business AI OS is a designed operating layer built around your specific workflows, your data, your decision patterns, and your team. It doesn't wait for you to prompt it. It runs. The difference is the same as having a smart assistant versus having a business that thinks. One makes you more productive. The other makes you less necessary to the daily operation.",
+                },
+                {
+                  question: "Is this just automation? I already have Zapier.",
+                  answer: "Zapier automates individual tasks. The AIOS changes how your whole business operates. That's not a semantic difference, it's a structural one. Zapier can automate one invoice reminder. The AIOS determines how all of your intake, client management, reporting, and team coordination works without you being in the middle of it. Most businesses that come to me have Zapier. Most of them also have automations that break when something changes and nobody knows why. The AIOS is a system, not a stack of automations. Full audit trails mean you can see every decision it makes.",
+                },
+                {
+                  question: "How is this different from hiring an operations consultant?",
+                  answer: "An operations consultant maps your business, writes recommendations, hands you a document, and leaves. You then have to figure out how to implement those recommendations yourself. I build the infrastructure and leave it running. The difference is the gap between a report and a working system. I'm not giving you advice on what to build. I'm building it.",
                 },
                 {
                   question: "How long does this take?",
@@ -1711,14 +1909,6 @@ export default function BusinessAIOSPage() {
                   answer: "Ongoing support is built into every engagement. You're not handed a system and wished luck. Maintenance retainers cover system monitoring, minor updates, and a quarterly review. Growth retainers include active monthly builds if the system needs to expand. You'll know exactly what support looks like before Setup begins.",
                 },
                 {
-                  question: "Is this just automation? I already have Zapier.",
-                  answer: "Zapier automates individual tasks. The AIOS changes how your whole business operates. That's not a semantic difference — it's a structural one. Zapier can automate one invoice reminder. The AIOS determines how all of your intake, client management, reporting, and team coordination works without you being in the middle of it. Most businesses that come to me have Zapier. Most of them also have automations that break when something changes and nobody knows why. The AIOS is a system, not a stack of automations. Full audit trails mean you can see every decision it makes.",
-                },
-                {
-                  question: "How is this different from hiring an operations consultant?",
-                  answer: "An operations consultant maps your business, writes recommendations, hands you a document, and leaves. You then have to figure out how to implement those recommendations yourself. I build the infrastructure and leave it running. The difference is the gap between a report and a working system. I'm not giving you advice on what to build. I'm building it.",
-                },
-                {
                   question: "What do you actually need from me?",
                   answer: "Time for the Audit interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Audit is only as good as the information it's built on.",
                 },
@@ -1733,7 +1923,7 @@ export default function BusinessAIOSPage() {
             <FadeUp>
               <div className="max-w-[560px]">
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
-                  Ready to see what&apos;s possible?
+                  You become a business owner instead of a business operator.
                 </h2>
                 <Link
                   href="/work-with-me"
