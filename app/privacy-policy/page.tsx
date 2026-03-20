@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Revaya AI",
+  title: "Privacy Policy",
   robots: { index: false },
 };
 

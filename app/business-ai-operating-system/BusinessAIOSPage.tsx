@@ -1735,17 +1735,7 @@ export default function BusinessAIOSPage() {
                   >
                     Start with the Audit →
                   </Link>
-                  <div className="flex flex-col justify-center sm:pt-3">
-                    <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
-                      Want the full methodology?
-                    </p>
-                    <a
-                      href="/blueprint"
-                      className="inline-flex items-center gap-1 text-[0.9375rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
-                    >
-                      Download the Blueprint →
-                    </a>
-                  </div>
+                  {/* Blueprint link removed — /blueprint page not yet built */}
                 </div>
               </div>
             </FadeUp>
