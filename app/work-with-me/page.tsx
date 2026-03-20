@@ -23,7 +23,7 @@ export default function WorkWithMePage() {
       <JsonLd data={workWithMeContactPageSchema} />
 
       {/* Page header */}
-      <section className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-24">
+      <section className="relative overflow-hidden pt-36 pb-8 md:pt-44 md:pb-10">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#553555]/20 blur-[130px] animate-pulse-glow" />
           <div
@@ -55,7 +55,7 @@ export default function WorkWithMePage() {
       </section>
 
       {/* Form + What happens next */}
-      <section className="py-20 md:py-24">
+      <section className="pt-10 pb-20 md:pt-12 md:pb-24">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-[1fr_340px] gap-16 items-start">
             {/* Form */}

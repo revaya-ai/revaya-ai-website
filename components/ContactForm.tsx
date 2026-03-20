@@ -94,7 +94,7 @@ export default function ContactForm() {
       {/* Name */}
       <div>
         <label htmlFor="name" className={labelClass}>
-          Name
+          Name <span className="text-[#F45B69]">*</span>
         </label>
         <input
           id="name"
@@ -112,7 +112,7 @@ export default function ContactForm() {
       {/* Email */}
       <div>
         <label htmlFor="email" className={labelClass}>
-          Email address
+          Email address <span className="text-[#F45B69]">*</span>
         </label>
         <input
           id="email"
@@ -130,7 +130,7 @@ export default function ContactForm() {
       {/* Phone */}
       <div>
         <label htmlFor="phone" className={labelClass}>
-          Phone number
+          Phone number <span className="text-[#F45B69]">*</span>
         </label>
         <input
           id="phone"
@@ -148,7 +148,7 @@ export default function ContactForm() {
       {/* Company */}
       <div>
         <label htmlFor="company" className={labelClass}>
-          Company name
+          Company name <span className="text-[#F45B69]">*</span>
         </label>
         <input
           id="company"
@@ -166,7 +166,7 @@ export default function ContactForm() {
       {/* Business description */}
       <div>
         <label htmlFor="businessDescription" className={labelClass}>
-          What does your business do?
+          What does your business do? <span className="text-[#F45B69]">*</span>
         </label>
         <input
           id="businessDescription"
@@ -183,7 +183,7 @@ export default function ContactForm() {
       {/* Team size */}
       <div>
         <label htmlFor="teamSize" className={labelClass}>
-          How many people are in your company?
+          How many people are in your company? <span className="text-[#F45B69]">*</span>
         </label>
         <input
           id="teamSize"
@@ -218,7 +218,7 @@ export default function ContactForm() {
       {/* Tried so far — optional */}
       <div>
         <label htmlFor="triedSoFar" className={labelClass}>
-          What have you tried so far?
+          What have you tried so far? <span className="text-[#F45B69]">*</span>
         </label>
         <textarea
           id="triedSoFar"
