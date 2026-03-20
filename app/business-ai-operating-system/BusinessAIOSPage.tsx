@@ -1735,7 +1735,19 @@ export default function BusinessAIOSPage() {
                   >
                     Start with the Audit →
                   </Link>
-                  {/* Blueprint link removed — /blueprint page not yet built */}
+                  <div className="flex flex-col justify-center sm:pt-3">
+                    <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
+                      Want the full methodology?
+                    </p>
+                    <a
+                      href="/business-ai-os-blueprint.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[0.9375rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
+                    >
+                      Download the Blueprint →
+                    </a>
+                  </div>
                 </div>
               </div>
             </FadeUp>
