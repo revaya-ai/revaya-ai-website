@@ -1758,10 +1758,10 @@ export default function BusinessAIOSPage() {
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp delay={0.15} direction="right">
+              <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
                 <OrbitPanel />
               </FadeUp>
-              <FadeUp direction="left">
+              <FadeUp direction="left" className="order-first md:order-last">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   After the Build
                 </p>

@@ -84,7 +84,7 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Headshot */}
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-last md:order-first">
               <div className="relative inline-block w-full">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#028090]/50 to-[#553555]/50 blur-sm" />
                 <div className="relative rounded-2xl overflow-hidden border border-white/10">
@@ -100,7 +100,7 @@ export default function WhyRevayaPage() {
             </FadeIn>
 
             {/* Intro text */}
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="left" delay={0.15} className="order-first md:order-last">
               <div className="md:pt-6">
                 <p className="text-[0.8125rem] uppercase tracking-[0.1em] text-[#028090] font-medium mb-6">
                   Shannon Winnicki
@@ -128,14 +128,14 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Timeline panel */}
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-last md:order-first">
               <div className="md:sticky md:top-24">
                 <TimelinePanel />
               </div>
             </FadeIn>
 
             {/* Story text */}
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="left" delay={0.15} className="order-first md:order-last">
               <div className="space-y-10">
                 {[
                   {
