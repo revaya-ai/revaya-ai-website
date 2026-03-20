@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     description:
       "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses.",
   },
+  other: {
+    "msvalidate.01": "A2EA5C970EB8CE94A778035751E3EC69",
+  },
 };
 
 export default function RootLayout({
