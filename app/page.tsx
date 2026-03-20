@@ -71,7 +71,7 @@ function HeroPanel() {
         </div>
       </div>
 
-      <div className="p-6 grid grid-cols-[1fr_180px] gap-6">
+      <div className="p-6 grid grid-cols-1 md:grid-cols-[1fr_180px] gap-4 md:gap-6">
         <div className="space-y-2">
           {layers.map((layer, i) => (
             <motion.div
@@ -111,7 +111,7 @@ function HeroPanel() {
           ))}
         </div>
 
-        <div className="space-y-3">
+        <div className="grid grid-cols-3 md:grid-cols-1 gap-3">
           <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-center">
             <div className="font-mono font-bold text-[2rem] text-[#028090] leading-none mb-1">
               {taskCount}
