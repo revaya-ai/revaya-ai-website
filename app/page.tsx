@@ -835,10 +835,10 @@ export default function HomePage() {
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-last md:order-first">
               <ContextPanel />
             </FadeIn>
-            <FadeIn delay={0.15} direction="left">
+            <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Step 1 — Map
@@ -903,10 +903,10 @@ export default function HomePage() {
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-last md:order-first">
               <IntegrationsPanel />
             </FadeIn>
-            <FadeIn delay={0.15} direction="left">
+            <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Intelligence
@@ -969,10 +969,10 @@ export default function HomePage() {
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-last md:order-first">
               <TelegramPanel />
             </FadeIn>
-            <FadeIn delay={0.15} direction="left">
+            <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Your Control Center
@@ -1012,13 +1012,9 @@ export default function HomePage() {
                 When your build needs a specialist, I have bench depth most solo consultants can&rsquo;t match. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
-                <span>18 years product leadership</span>
+                <span>18+ years product leadership</span>
                 <span className="hidden sm:block text-white/10">&middot;</span>
-                <span>
-                  Virgin Mobile &middot; Papa Murphy&rsquo;s &middot; Intermedia
-                </span>
-                <span className="hidden sm:block text-white/10">&middot;</span>
-                <span>$10M website projects launched</span>
+                <span>Shannon Winnicki — Revaya AI</span>
               </div>
             </div>
           </FadeIn>
