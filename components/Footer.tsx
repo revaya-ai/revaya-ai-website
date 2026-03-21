@@ -25,6 +25,9 @@ export default function Footer() {
             <Link href="/work-with-me" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Work With Me
             </Link>
+            <Link href="/business-ai-os-assessment" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
+              Business AI OS Assessment
+            </Link>
           </nav>
 
           {/* Legal + social */}
