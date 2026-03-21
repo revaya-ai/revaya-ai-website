@@ -204,7 +204,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
       <div className="max-w-3xl mx-auto px-6 py-16 space-y-16">
 
         {/* ─── SCORE HEADER ─── */}
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-6 pt-8">
           <div className="inline-flex items-center justify-center w-28 h-28 rounded-full border-4 border-brand-accent/40 bg-brand-accent/10">
             <div>
               <div className="font-display text-4xl font-black text-white leading-none">
@@ -224,7 +224,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
             <h1 className="font-display text-3xl md:text-4xl font-black leading-tight">
               {config.headline}
             </h1>
-            <p className="text-white/55 mt-3 text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-white mt-3 text-base max-w-xl mx-auto leading-relaxed">
               {config.sub}
             </p>
           </div>
@@ -279,18 +279,18 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
           </div>
 
           <div className="mt-6 pt-5 border-t border-white/6 space-y-2">
-            <p className="text-white/30 text-[0.7rem] uppercase tracking-wider mb-3">How this is calculated</p>
-            <p className="text-white/35 text-xs leading-relaxed">
-              <span className="text-white/55">Hours you could reclaim</span> — estimated from your answers about founder availability, decision load, admin time, coordination, proposal creation, and client onboarding. These categories may overlap in practice.
+            <p className="text-white text-[0.7rem] uppercase tracking-wider mb-3">How this is calculated</p>
+            <p className="text-white text-xs leading-relaxed">
+              <span className="font-bold">Hours you could reclaim</span> — estimated from your answers about founder availability, decision load, admin time, coordination, proposal creation, and client onboarding. These categories may overlap in practice.
             </p>
-            <p className="text-white/35 text-xs leading-relaxed">
-              <span className="text-white/55">Value of that time</span> — reclaimed hours × your stated hourly rate (${fmt(hourlyRate)}/hr).
+            <p className="text-white text-xs leading-relaxed">
+              <span className="font-bold">Value of that time</span> — reclaimed hours × your stated hourly rate (${fmt(hourlyRate)}/hr).
             </p>
-            <p className="text-white/35 text-xs leading-relaxed">
-              <span className="text-white/55">Revenue likely missing</span> — estimated from deals going quiet due to slow follow-up, and referrals that were never asked for.
+            <p className="text-white text-xs leading-relaxed">
+              <span className="font-bold">Revenue likely missing</span> — estimated from deals going quiet due to slow follow-up, and referrals that were never asked for.
             </p>
-            <p className="text-white/35 text-xs leading-relaxed">
-              <span className="text-white/55">Total opportunity</span> — sum of the above. These are estimates based on your inputs, not guarantees. They show you where to look, not a number to take to the bank.
+            <p className="text-white text-xs leading-relaxed">
+              <span className="font-bold">Total opportunity</span> — sum of the above. These are estimates based on your inputs, not guarantees. They show you where to look, not a number to take to the bank.
             </p>
           </div>
         </div>
