@@ -32,7 +32,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
           {[
             { label: "Find the Gaps", sub: "Six critical areas scored" },
             { label: "See the Math", sub: "Your ROI in real dollars" },
-            { label: "5 Minutes", sub: "Start to scorecard" },
+            { label: "3 Minutes", sub: "Start to scorecard" },
           ].map(({ label, sub }) => (
             <div
               key={label}
