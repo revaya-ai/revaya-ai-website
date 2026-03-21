@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ComparisonPage from "./ComparisonPage";
-import { JsonLd } from "@/components/JsonLd";
+import JsonLd from "@/components/JsonLd";
 import { comparisonFaqSchema, comparisonPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
