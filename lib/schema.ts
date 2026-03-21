@@ -198,6 +198,90 @@ export const faqPageSchema = {
   ],
 };
 
+export const comparisonFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can OpenClaw run a service business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "OpenClaw can automate individual tasks — email management, file organization, web research — but it has no strategic layer. It does what you tell it to do, not what your business actually needs. Without a system that connects your goals, your data, and your workflows, you end up automating the wrong things or creating new problems faster than you solve old ones.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is OpenClaw safe for a small business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "OpenClaw has active security vulnerabilities as of early 2026, including a critical remote code execution flaw (CVE-2026-25253), a WebSocket hijacking vulnerability called ClawJacked, and 341 confirmed malicious skills on its ClawHub marketplace. Microsoft, Cisco, and CrowdStrike have all published security advisories. It requires broad system-level permissions with no least-privilege architecture and no audit trail. For non-technical service business owners handling client data, the risk is significant.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need a developer to use OpenClaw?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "OpenClaw requires Docker, YAML configuration, VPS or local server setup, API key management, and ongoing security hardening. It was designed for technical operators. In practice, non-technical business owners are paying engineers to install it for them — but the ongoing security burden still falls on the operator.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does OpenClaw cost per month to run?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Running OpenClaw costs approximately $25 to $50 per month for light-to-moderate use. That does not include engineer fees many non-technical users pay for installation. API costs can spike significantly with no real-time visibility — documented cases show monthly bills going from $80 to over $2,100 in a single month when agents run unchecked.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens when OpenClaw makes a mistake? Is there an audit trail?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There is no audit trail in OpenClaw by default. Actions taken by the agent are not logged in a reviewable format. If something goes wrong — a file deleted, an email sent, data exfiltrated — you may not know it happened until the damage is done. A Business AI OS is built on full transparency: every decision is visible, every action is logged, and nothing happens without a reason you can trace.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a Business AI OS?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Business AI OS is a structured operating environment built specifically around a founder-led business. It is not a single tool — it is five connected layers: Context (everything the AI needs to know about your business), Data (your actual business data, not a generic feed), Intelligence (AI that understands your goals and bottlenecks), Automate (workflows that run without you), and Build (custom systems as your needs grow). A Business AI OS is designed and implemented by a specialist, auditable at every layer, and built to compound over time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who should use OpenClaw vs. a Business AI OS?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "OpenClaw is built for technical operators — developers, engineers, and IT professionals who are comfortable managing servers, YAML config, and security hardening. A Business AI OS is built for founders of service businesses who want autonomous AI without the technical complexity, security exposure, or strategic guesswork. If your business runs on expertise, relationships, and judgment — and you want a system that actually understands what you are trying to build — a Business AI OS is the right fit.",
+      },
+    },
+  ],
+};
+
+export const comparisonPageSchema = (url: string) => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Business AI OS vs OpenClaw: What Service Business Owners Need to Know",
+  description:
+    "OpenClaw promises a business that runs itself. Here is what it actually requires, where it breaks down for service businesses, and what a Business AI OS does differently.",
+  url,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Revaya AI",
+    url: "https://www.revaya.ai",
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.revaya.ai" },
+      { "@type": "ListItem", position: 2, name: "Business AI OS vs OpenClaw", item: url },
+    ],
+  },
+});
+
 export const shannonPersonSchema = {
   "@context": "https://schema.org",
   "@type": "Person",

@@ -1916,6 +1916,18 @@ export default function BusinessAIOSPage() {
                 },
               ]} />
             </FadeUp>
+            <FadeUp delay={0.2}>
+              <p className="mt-10 text-white/50 text-sm">
+                Considering OpenClaw?{" "}
+                <Link
+                  href="/business-ai-os-vs-openclaw"
+                  className="text-[#028090] underline underline-offset-4 hover:text-white transition-colors"
+                >
+                  See how Business AI OS compares to OpenClaw
+                </Link>
+                .
+              </p>
+            </FadeUp>
           </div>
         </section>
 
