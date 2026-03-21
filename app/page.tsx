@@ -752,7 +752,7 @@ export default function HomePage() {
           {/* CTA */}
           <FadeIn delay={0.35}>
             <div className="flex flex-col items-center gap-3 mb-16">
-              <p className="text-[0.8125rem] text-white/50 uppercase tracking-[0.12em]">See if you&rsquo;re a fit</p>
+              <p className="text-[0.8125rem] text-white uppercase tracking-[0.12em]">See if you&rsquo;re a fit</p>
               <Link
                 href="/business-ai-os-assessment"
                 className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
