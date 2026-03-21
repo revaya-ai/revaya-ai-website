@@ -1,6 +1,6 @@
 # Revaya AI — Design System
 **Source of truth for all pages. Homepage (`app/page.tsx`) is the canonical reference.**
-Last updated: 2026-03-17
+Last updated: 2026-03-20
 
 ---
 
@@ -27,11 +27,13 @@ Brand primary:     #553555  (purple — CTAs, accents)
 Brand accent:      #028090  (teal — labels, highlights, active states)
 Brand coral:       #F45B69  (alerts, negative states)
 
-Text white:        #FFFFFF  →  text-white           (headlines)
-Text primary:      text-white/85  (lead body copy)
-Text secondary:    text-white/70  (supporting body)
-Text muted:        text-white/40  (captions, metadata)
-Text disabled:     text-white/25  (inactive)
+Text white:        #FFFFFF  →  text-white           (all body copy, headlines, paragraphs)
+Text muted:        text-white/40  (captions, metadata — explicitly permitted)
+Text disabled:     text-white/25  (inactive states — explicitly permitted)
+
+⚠️  FONT OPACITY RULE: Never use opacity on fonts or copy unless it appears in this list above.
+    Body copy, paragraphs, subheads, and lead text are always text-white — no exceptions.
+    text-white/85, text-white/70, text-white/60, text-white/50 are not permitted for copy.
 ```
 
 ---
@@ -54,14 +56,15 @@ Monospace (panels):   font-mono     →  system mono (panels only)
 | Section H2 | `font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white` |
 | Subsection H3 | `font-display font-black text-[1.5rem] leading-[1.2] text-white` |
 | Section label (eyebrow) | `text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium` |
-| Lead body | `text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/80` |
-| Body standard | `text-[1rem] leading-[1.7] text-white/70` |
-| Body primary (first paragraph) | `text-[1rem] leading-[1.7] text-white/85` |
+| Lead body | `text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white` |
+| Body standard | `text-[1rem] leading-[1.7] text-white` |
+| Body primary (first paragraph) | `text-[1rem] leading-[1.7] text-white` |
 | Caption / meta | `text-[0.75rem] text-white/40` |
 | Panel UI text | `text-[0.8125rem] font-mono text-white/70` |
 | Panel label | `text-[0.7rem] font-mono text-white/25` |
 
-**Never use `text-[#E8EDF2]` directly in prose — use `text-white` with opacity.**
+**Never use `text-[#E8EDF2]` directly in prose — use `text-white`.**
+**Never use opacity on body copy or paragraphs. text-white/85, /70, /60, /50 are not permitted for prose.**
 
 ---
 
@@ -207,7 +210,8 @@ The `FadeUp` helper defined inline in some pages duplicates `FadeIn`. Use `FadeI
 ## What NOT to do
 
 - Do not use `max-w-[1200px]` — use `max-w-[1100px]`
-- Do not use `text-[#E8EDF2]` for prose — use `text-white` with opacity
+- Do not use `text-[#E8EDF2]` for prose — use `text-white`
+- Do not use opacity on fonts or copy (text-white/85, /70, /60, /50, etc.) — body text is always text-white
 - Do not use `leading-[1.65]` for body — use `leading-[1.7]`
 - Do not use `tracking-[0.15em]` for labels — use `tracking-[0.14em]`
 - Do not use `px-12` or `px-20` — use `px-10` at `md:` breakpoint
