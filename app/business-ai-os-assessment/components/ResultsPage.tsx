@@ -467,7 +467,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
 
           {/* Secondary CTA */}
           <a
-            href="#lead-magnet"
+            href="https://www.revaya.ai/business-ai-os-blueprint.pdf"
             className="flex items-center justify-center gap-2 w-full py-4 rounded-full border border-white/15 text-white/70 font-display font-black text-sm hover:border-white/30 hover:text-white transition-all duration-200"
           >
             Download the Business AI OS Blueprint
