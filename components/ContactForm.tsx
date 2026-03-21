@@ -54,6 +54,12 @@ export default function ContactForm() {
       }
 
       setSubmitted(true);
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "contact_form_submitted", {
+          event_category: "conversion",
+          event_label: "Work With Me",
+        });
+      }
     } catch (err) {
       setError(
         err instanceof Error

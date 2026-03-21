@@ -94,6 +94,12 @@ export function AssessmentApp() {
     } catch (err) {
       // Don't block user from seeing results if Supabase fails
       console.error("Failed to save assessment:", err);
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "assessment_email_submitted", {
+          event_category: "conversion",
+          event_label: "Business AI OS Assessment",
+        });
+      }
     } finally {
       setIsSubmitting(false);
       setScreen("results");
