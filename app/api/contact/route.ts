@@ -13,8 +13,10 @@ export async function POST(request: Request) {
       company,
       businessDescription,
       teamSize,
+      annualRevenue,
       bottleneck,
       triedSoFar,
+      marketingOptIn,
     } = body;
 
     // Basic validation
@@ -34,12 +36,15 @@ Phone: ${phone || "Not provided"}
 Company: ${company || "Not provided"}
 Business description: ${businessDescription || "Not provided"}
 Team size: ${teamSize || "Not provided"}
+Annual revenue: ${annualRevenue || "Not provided"}
 
 What's the operational bottleneck?
 ${bottleneck}
 
 What have they tried so far?
 ${triedSoFar || "Not provided"}
+
+Marketing opt-in: ${marketingOptIn ? "Yes" : "No"}
     `.trim();
 
     // --- Resend emails (non-blocking) ---
@@ -75,6 +80,7 @@ Phone: ${phone || "Not provided"}
 Company: ${company || "Not provided"}
 Business description: ${businessDescription || "Not provided"}
 Team size: ${teamSize || "Not provided"}
+Annual revenue: ${annualRevenue || "Not provided"}
 
 What's the operational bottleneck?
 ${bottleneck}
@@ -108,7 +114,7 @@ https://www.revaya.ai
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            text: `*New AIOS inquiry from revaya.ai*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "Not provided"}\n*Bottleneck:* ${bottleneck}${triedSoFar ? `\n*Tried so far:* ${triedSoFar}` : ""}`,
+            text: `*New AIOS inquiry from revaya.ai*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "Not provided"}\n*Revenue:* ${annualRevenue || "Not provided"}\n*Bottleneck:* ${bottleneck}${triedSoFar ? `\n*Tried so far:* ${triedSoFar}` : ""}${marketingOptIn ? "\n*Marketing opt-in:* Yes" : ""}`,
           }),
         });
       } catch (slackError) {
