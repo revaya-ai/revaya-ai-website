@@ -9,8 +9,10 @@ interface FormData {
   company: string;
   businessDescription: string;
   teamSize: string;
+  annualRevenue: string;
   bottleneck: string;
   triedSoFar: string;
+  marketingOptIn: boolean;
 }
 
 const initialForm: FormData = {
@@ -20,9 +22,20 @@ const initialForm: FormData = {
   company: "",
   businessDescription: "",
   teamSize: "",
+  annualRevenue: "",
   bottleneck: "",
   triedSoFar: "",
+  marketingOptIn: false,
 };
+
+const revenueOptions = [
+  { value: "", label: "Select a range" },
+  { value: "under-200k", label: "Under $200K" },
+  { value: "200k-500k", label: "$200K – $500K" },
+  { value: "500k-2m", label: "$500K – $2M" },
+  { value: "2m-10m", label: "$2M – $10M" },
+  { value: "10m-plus", label: "$10M+" },
+];
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(initialForm);
@@ -31,9 +44,11 @@ export default function ContactForm() {
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value, type } = e.target;
+    const newValue = type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
+    setForm((prev) => ({ ...prev, [name]: newValue }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -203,6 +218,27 @@ export default function ContactForm() {
         />
       </div>
 
+      {/* Annual revenue */}
+      <div>
+        <label htmlFor="annualRevenue" className={labelClass}>
+          Annual revenue <span className="text-[#F45B69]">*</span>
+        </label>
+        <select
+          id="annualRevenue"
+          name="annualRevenue"
+          required
+          value={form.annualRevenue}
+          onChange={handleChange}
+          className={`${inputClass} cursor-pointer`}
+        >
+          {revenueOptions.map((opt) => (
+            <option key={opt.value} value={opt.value} className="bg-[#111820]">
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Bottleneck — required */}
       <div>
         <label htmlFor="bottleneck" className={labelClass}>
@@ -236,6 +272,21 @@ export default function ContactForm() {
           className={`${inputClass} resize-y min-h-[96px]`}
           placeholder="Tools, consultants, internal efforts..."
         />
+      </div>
+
+      {/* Marketing opt-in */}
+      <div className="flex items-start gap-3">
+        <input
+          id="marketingOptIn"
+          name="marketingOptIn"
+          type="checkbox"
+          checked={form.marketingOptIn}
+          onChange={handleChange}
+          className="mt-1 h-4 w-4 shrink-0 rounded border border-white/20 bg-[#111820] accent-[#553555] cursor-pointer"
+        />
+        <label htmlFor="marketingOptIn" className="text-[0.8125rem] leading-[1.6] text-white/45 cursor-pointer">
+          I&rsquo;d like to receive marketing emails from Revaya AI, including insights, resources, and updates. You can opt out anytime.
+        </label>
       </div>
 
       {error && (

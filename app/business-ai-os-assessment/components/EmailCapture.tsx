@@ -86,7 +86,7 @@ export default function EmailCapture({ onSubmit, isLoading }: EmailCaptureProps)
         </form>
 
         <p className="text-white/25 text-xs">
-          No spam. One follow-up with resources based on your score.
+          By submitting your email, you are opting in to receive marketing emails from Revaya AI. You can opt out anytime.
         </p>
       </div>
     </div>
