@@ -5,6 +5,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/schema";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const montserrat = Montserrat({
   weight: ["700", "900"],
@@ -63,11 +65,24 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
       <head>
         <JsonLd data={organizationSchema} />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-8M6HLZZ52E"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8M6HLZZ52E');
+          `}
+        </Script>
       </head>
       <body className="font-body antialiased">
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
