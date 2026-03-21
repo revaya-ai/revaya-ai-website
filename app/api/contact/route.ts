@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +17,7 @@ export async function POST(request: Request) {
       annualRevenue,
       bottleneck,
       triedSoFar,
+      linkedinUrl,
       marketingOptIn,
     } = body;
 
@@ -25,6 +27,66 @@ export async function POST(request: Request) {
         { error: "Name, email, and bottleneck are required." },
         { status: 400 }
       );
+    }
+
+    // --- Supabase: save lead + optional email consent (non-blocking) ---
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (supabaseUrl && supabaseKey) {
+      try {
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // Save lead record
+        await supabase.from("contact_form_leads").insert([{
+          name,
+          email,
+          phone: phone || null,
+          company: company || null,
+          business_description: businessDescription || null,
+          team_size: teamSize || null,
+          annual_revenue: annualRevenue || null,
+          bottleneck,
+          tried_so_far: triedSoFar || null,
+          linkedin_url: linkedinUrl || null,
+          opted_in: marketingOptIn ?? false,
+          intake_triggered: false,
+        }]);
+
+        // Upsert into email_subscribers if opted in
+        if (marketingOptIn) {
+          await supabase.from("email_subscribers").upsert([{
+            email,
+            name,
+            source: "contact_form",
+            consent_method: "contact_form_checkbox",
+          }], { onConflict: "email" });
+        }
+      } catch (dbError) {
+        console.error("Supabase write failed:", dbError);
+      }
+    }
+
+    // --- Intake system: trigger pre-call research (fire-and-forget) ---
+    const intakeSystemUrl = process.env.INTAKE_SYSTEM_URL;
+    if (intakeSystemUrl) {
+      const [firstName, ...lastParts] = (name || "").trim().split(" ");
+      const lastName = lastParts.join(" ");
+      fetch(`${intakeSystemUrl}/intake`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: firstName,
+          last_name: lastName || "",
+          email,
+          phone: phone || "",
+          company_name: company || "",
+          website: "",
+          interested_in: "Business AI OS",
+          pain_points: bottleneck,
+          referred_by: "",
+          linkedin_url: linkedinUrl || "",
+        }),
+      }).catch((e) => console.error("Intake system trigger failed:", e));
     }
 
     const emailContent = `
@@ -37,6 +99,7 @@ Company: ${company || "Not provided"}
 Business description: ${businessDescription || "Not provided"}
 Team size: ${teamSize || "Not provided"}
 Annual revenue: ${annualRevenue || "Not provided"}
+LinkedIn: ${linkedinUrl || "Not provided"}
 
 What's the operational bottleneck?
 ${bottleneck}
@@ -81,6 +144,7 @@ Company: ${company || "Not provided"}
 Business description: ${businessDescription || "Not provided"}
 Team size: ${teamSize || "Not provided"}
 Annual revenue: ${annualRevenue || "Not provided"}
+LinkedIn: ${linkedinUrl || "Not provided"}
 
 What's the operational bottleneck?
 ${bottleneck}
@@ -114,7 +178,7 @@ https://www.revaya.ai
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            text: `*New AIOS inquiry from revaya.ai*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "Not provided"}\n*Revenue:* ${annualRevenue || "Not provided"}\n*Bottleneck:* ${bottleneck}${triedSoFar ? `\n*Tried so far:* ${triedSoFar}` : ""}${marketingOptIn ? "\n*Marketing opt-in:* Yes" : ""}`,
+            text: `*New AIOS inquiry from revaya.ai*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "Not provided"}\n*Revenue:* ${annualRevenue || "Not provided"}\n*LinkedIn:* ${linkedinUrl || "Not provided"}\n*Bottleneck:* ${bottleneck}${triedSoFar ? `\n*Tried so far:* ${triedSoFar}` : ""}${marketingOptIn ? "\n*Marketing opt-in:* Yes" : ""}`,
           }),
         });
       } catch (slackError) {

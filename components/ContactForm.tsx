@@ -12,6 +12,7 @@ interface FormData {
   annualRevenue: string;
   bottleneck: string;
   triedSoFar: string;
+  linkedinUrl: string;
   marketingOptIn: boolean;
 }
 
@@ -25,6 +26,7 @@ const initialForm: FormData = {
   annualRevenue: "",
   bottleneck: "",
   triedSoFar: "",
+  linkedinUrl: "",
   marketingOptIn: false,
 };
 
@@ -271,6 +273,22 @@ export default function ContactForm() {
           onChange={handleChange}
           className={`${inputClass} resize-y min-h-[96px]`}
           placeholder="Tools, consultants, internal efforts..."
+        />
+      </div>
+
+      {/* LinkedIn URL — optional */}
+      <div>
+        <label htmlFor="linkedinUrl" className={labelClass}>
+          LinkedIn profile URL <span className="text-white/30 text-[0.75rem] font-normal">(optional — helps me prep for our call)</span>
+        </label>
+        <input
+          id="linkedinUrl"
+          name="linkedinUrl"
+          type="url"
+          value={form.linkedinUrl}
+          onChange={handleChange}
+          className={inputClass}
+          placeholder="https://linkedin.com/in/yourname"
         />
       </div>
 

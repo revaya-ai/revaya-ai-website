@@ -7,6 +7,7 @@ interface SaveAssessmentParams {
   name: string;
   answers: AssessmentAnswers;
   results: ROIResults;
+  optedIn?: boolean;
 }
 
 export async function saveAssessmentResponse({
@@ -14,6 +15,7 @@ export async function saveAssessmentResponse({
   name,
   answers,
   results,
+  optedIn = true,
 }: SaveAssessmentParams) {
   // Extract contextual values for tagging
   const operationTypeOption = answers[1]?.selectedOption ?? 0;
@@ -87,12 +89,23 @@ export async function saveAssessmentResponse({
       annual_opportunity: results.annualOpportunity,
       lowest_section: results.lowestSection,
       tags,
+      opted_in: optedIn,
     },
   ]);
 
   if (error) {
     console.error("Error saving assessment:", error);
     throw error;
+  }
+
+  // Upsert into email_subscribers — assessment completion = implicit consent
+  if (optedIn) {
+    await supabase.from("email_subscribers").upsert([{
+      email,
+      name,
+      source: "assessment",
+      consent_method: "assessment_completion",
+    }], { onConflict: "email" });
   }
 
   return { success: true };
