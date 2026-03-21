@@ -124,6 +124,7 @@ export function AssessmentApp() {
           />
         </div>
         <QuestionCard
+          key={currentQuestion.id}
           question={currentQuestion}
           selectedOption={answers[currentQuestion.id]?.selectedOption}
           sliderValue={answers[currentQuestion.id]?.sliderValue}
