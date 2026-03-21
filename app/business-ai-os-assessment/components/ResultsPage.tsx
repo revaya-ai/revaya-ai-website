@@ -205,13 +205,14 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
 
         {/* ─── SCORE HEADER ─── */}
         <div className="text-center space-y-6 pt-8">
-          <div className="inline-flex items-center justify-center w-28 h-28 rounded-full border-4 border-brand-accent/40 bg-brand-accent/10">
-            <div>
+          <div>
+            <p className="text-[0.75rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Your AI Readiness Score</p>
+            <div className="inline-flex items-center justify-center w-28 h-28 rounded-full border-4 border-brand-accent/40 bg-brand-accent/10">
               <div className="font-display text-4xl font-black text-white leading-none">
                 {results.totalScore}
               </div>
-              <div className="text-white/40 text-xs mt-1">of 59</div>
             </div>
+            <p className="text-white/40 text-xs mt-2">out of 59 possible points across 6 sections</p>
           </div>
 
           <div>
@@ -262,7 +263,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
                     : "bg-white/4 border border-white/8"
                 }`}
               >
-                <p className="text-white/50 text-xs mb-1">{label}</p>
+                <p className="text-white text-xs mb-1">{label}</p>
                 <p className={`font-display font-black text-lg ${highlight ? "text-brand-accent" : "text-white"}`}>
                   {value}
                 </p>
@@ -351,7 +352,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
                         </div>
                       </div>
                       <div className="text-right shrink-0">
-                        <p className="text-white/50 text-xs">
+                        <p className="text-white text-xs">
                           {section.score}/{section.maxScore}
                         </p>
                       </div>
@@ -388,20 +389,20 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
             {biggestOpp.headline}
           </h2>
 
-          <p className="text-white/60 text-base leading-relaxed mb-6">
+          <p className="text-white text-base leading-relaxed mb-6">
             {biggestOpp.intro}
           </p>
 
           <div className="bg-brand-coral/8 border border-brand-coral/20 rounded-xl p-5 mb-6">
-            <p className="text-white/50 text-xs uppercase tracking-wider mb-2">Here's the hard truth</p>
-            <p className="text-white/85 text-sm leading-relaxed">{biggestOpp.hardTruth}</p>
+            <p className="text-white text-xs uppercase tracking-wider mb-2">Here's the hard truth</p>
+            <p className="text-white text-sm leading-relaxed">{biggestOpp.hardTruth}</p>
           </div>
 
           <div className="mb-6">
-            <p className="text-white/50 text-xs uppercase tracking-wider mb-3">What closes this gap</p>
+            <p className="text-white text-xs uppercase tracking-wider mb-3">What closes this gap</p>
             <ul className="space-y-2">
               {biggestOpp.whatCloses.map((item) => (
-                <li key={item} className="flex gap-3 text-sm text-white/75 leading-snug">
+                <li key={item} className="flex gap-3 text-sm text-white leading-snug">
                   <span className="text-brand-accent mt-0.5">→</span>
                   <span>{item}</span>
                 </li>
@@ -413,7 +414,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
             <p className="text-brand-accent text-xs font-medium uppercase tracking-wider mb-1">
               Quick win
             </p>
-            <p className="text-white/75 text-sm leading-relaxed">{biggestOpp.quickWin}</p>
+            <p className="text-white text-sm leading-relaxed">{biggestOpp.quickWin}</p>
           </div>
 
           <p className="text-white/25 text-xs mt-4">AIOS layer: {biggestOpp.layer}</p>
@@ -459,7 +460,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-5 rounded-full bg-brand-primary text-white font-display font-black text-sm hover:bg-brand-primary/80 transition-all duration-200 glow-purple"
           >
-            Book the AI Audit
+            Start the Conversation
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -468,7 +469,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
           {/* Secondary CTA */}
           <a
             href="https://www.revaya.ai/business-ai-os-blueprint.pdf"
-            className="flex items-center justify-center gap-2 w-full py-4 rounded-full border border-white/15 text-white/70 font-display font-black text-sm hover:border-white/30 hover:text-white transition-all duration-200"
+            className="flex items-center justify-center gap-2 w-full py-4 rounded-full border border-white/15 text-white font-display font-black text-sm hover:border-white/30 transition-all duration-200"
           >
             Download the Business AI OS Blueprint
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -479,7 +480,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
           {/* Tertiary — PDF */}
           <button
             onClick={handleDownloadPDF}
-            className="flex items-center justify-center gap-2 w-full py-3 text-white/40 text-xs hover:text-white/70 transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 text-white text-xs hover:text-brand-accent transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
