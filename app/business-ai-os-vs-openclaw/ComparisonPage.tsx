@@ -599,7 +599,7 @@ export default function ComparisonPage() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            padding: "96px 80px",
+            padding: "96px 80px 96px 48px",
           }}
         >
           <FadeUp>
