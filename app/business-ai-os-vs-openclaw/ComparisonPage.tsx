@@ -631,7 +631,7 @@ export default function ComparisonPage() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            padding: "96px 80px 96px 36px",
+            padding: "96px 80px",
           }}
         >
           <FadeUp>
@@ -665,6 +665,11 @@ export default function ComparisonPage() {
               a capable agent and no way to tell it what actually matters. A Business AI OS
               is five connected layers, and the strategic layer is what makes the rest of it
               worth building.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.12}>
+            <p style={{ fontSize: "13px", fontWeight: 700, letterSpacing: "0.12em", color: "#028090", marginBottom: "32px", fontFamily: "'Montserrat', 'Inter', sans-serif" }}>
+              Context &rarr; Data &rarr; Intelligence &rarr; Automate &rarr; Build
             </p>
           </FadeUp>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "36px" }}>
@@ -725,7 +730,7 @@ export default function ComparisonPage() {
             alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
             title="Business AI Operating System five-layer architecture for founder-led service businesses"
             fill
-            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(18%)" }}
+            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(28%)" }}
             sizes="50vw"
             loading="lazy"
             decoding="async"
@@ -749,7 +754,7 @@ export default function ComparisonPage() {
               display: "flex",
               flexDirection: "column-reverse",
               justifyContent: "space-around",
-              padding: "8% 52% 8% 6%",
+              padding: "8% 52% 8% 1%",
               pointerEvents: "none",
             }}
           >
