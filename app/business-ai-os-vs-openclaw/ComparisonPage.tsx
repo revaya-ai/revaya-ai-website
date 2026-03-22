@@ -233,6 +233,20 @@ const hdg: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
 export default function ComparisonPage() {
   return (
     <main style={{ fontFamily: "'Proxima Nova', 'Inter', sans-serif", background: "#080D11", color: "#fff" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-content { padding: 100px 24px 60px !important; }
+          .section-split { flex-direction: column !important; min-height: auto !important; }
+          .split-image-col { width: 100% !important; height: 280px !important; }
+          .split-text-col { padding: 48px 24px !important; flex: none !important; width: 100% !important; }
+          .split-copy-col { width: 100% !important; padding: 48px 24px !important; }
+          .split-image-right { height: 300px !important; flex: none !important; width: 100% !important; }
+          .section-header { padding: 0 24px !important; }
+          .pullquote-block { padding: 24px !important; }
+          .risk-grid { grid-template-columns: 1fr !important; padding: 24px 16px 48px !important; }
+          .citation-block { padding: 0 16px 40px !important; }
+        }
+      `}</style>
 
       {/* ── SECTION 1 — HERO ── */}
       <section
@@ -266,6 +280,7 @@ export default function ComparisonPage() {
           }}
         />
         <div
+          className="hero-content"
           style={{
             position: "relative",
             zIndex: 2,
@@ -318,6 +333,7 @@ export default function ComparisonPage() {
 
       {/* ── SECTION 2 — THE APPEAL ── */}
       <section
+        className="section-split"
         style={{
           background: "#0A1118",
           display: "flex",
@@ -327,6 +343,7 @@ export default function ComparisonPage() {
       >
         {/* Image column */}
         <div
+          className="split-image-col"
           style={{
             width: "50%",
             flexShrink: 0,
@@ -354,6 +371,7 @@ export default function ComparisonPage() {
         </div>
         {/* Text column */}
         <div
+          className="split-text-col"
           style={{
             flex: 1,
             display: "flex",
@@ -436,7 +454,7 @@ export default function ComparisonPage() {
       {/* ── SECTION 3 — RISKS ── */}
       <section style={{ background: "#080D11", paddingTop: "96px" }}>
         {/* Header */}
-        <div style={{ padding: "0 80px", marginBottom: "40px" }}>
+        <div className="section-header" style={{ padding: "0 80px", marginBottom: "40px" }}>
           <FadeUp>
             <p style={eyebrowCoral}>Where it breaks</p>
             <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "14px" }}>
@@ -454,6 +472,7 @@ export default function ComparisonPage() {
         {/* Pull quote — full width */}
         <FadeUp delay={0.15}>
           <div
+            className="pullquote-block"
             style={{
               background: "rgba(244,91,105,0.08)",
               borderLeft: "3px solid #F45B69",
@@ -513,6 +532,7 @@ export default function ComparisonPage() {
 
         {/* Risk cards — 3 columns */}
         <div
+          className="risk-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
@@ -563,7 +583,7 @@ export default function ComparisonPage() {
         </div>
 
         {/* Citation */}
-        <div style={{ padding: "0 80px 40px", background: "#080D11" }}>
+        <div className="citation-block" style={{ padding: "0 80px 40px", background: "#080D11" }}>
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.5px" }}>
             Sources: TechCrunch (Julie Bort, Feb 23, 2026) — The Hacker News (Ravie Lakshmanan, Feb
             28, 2026) — Oasis Security ClawJacked Research (Feb 2026) — Cisco Talos (Jan 28, 2026)
@@ -584,6 +604,7 @@ export default function ComparisonPage() {
 
       {/* ── SECTION 4 — WHAT A BUSINESS AI OPERATING SYSTEM IS ── */}
       <section
+        className="section-split"
         style={{
           background: "#080D11",
           display: "flex",
@@ -593,6 +614,7 @@ export default function ComparisonPage() {
       >
         {/* Copy column */}
         <div
+          className="split-copy-col"
           style={{
             width: "50%",
             flexShrink: 0,
@@ -686,7 +708,7 @@ export default function ComparisonPage() {
         </div>
 
         {/* Image + layer labels column */}
-        <div style={{ flex: 1, position: "relative", overflow: "hidden" }}>
+        <div className="split-image-right" style={{ flex: 1, position: "relative", overflow: "hidden" }}>
           <Image
             src="/comparison/aios-layers.png"
             alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
