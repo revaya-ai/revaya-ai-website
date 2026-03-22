@@ -730,7 +730,7 @@ export default function ComparisonPage() {
             alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
             title="Business AI Operating System five-layer architecture for founder-led service businesses"
             fill
-            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(28%)" }}
+            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(18%)" }}
             sizes="50vw"
             loading="lazy"
             decoding="async"
