@@ -31,7 +31,7 @@ const riskCards = [
   {
     num: "05",
     title: "No strategic layer",
-    body: "OpenClaw does what you tell it to do. It has no concept of your business goals, your bottleneck, or what actually needs to happen this week. It does not know your clients, your constraints, or your calendar priorities. Every session starts from zero. You can tell it to send a follow-up email. It does not know that this particular client is three days away from a contract renewal and needs a different message than the template. Without a strategic layer, you automate the wrong things, or create new problems faster than you solve old ones.",
+    body: "OpenClaw has memory, but memory is not a strategy. It does not have a built-in concept of your business goals, your bottleneck, or what actually matters this week. It does not know your clients, your constraints, or your current priorities unless you have manually configured that context. You can tell it to send a follow-up email. It does not know that this particular client is three days away from a contract renewal and needs a different message than the template. Without a strategic layer, you automate the wrong things, or create new problems faster than you solve old ones.",
   },
   {
     num: "06",
@@ -96,7 +96,7 @@ const tableRows = [
   },
   {
     dimension: "Compounding",
-    openclaw: "No — each session starts from zero, no memory or learning",
+    openclaw: "General-purpose memory only — no built-in business context, goals, or client awareness",
     aios: "Yes — every layer feeds the next, the system gets smarter over time",
   },
   {
