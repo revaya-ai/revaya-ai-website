@@ -185,21 +185,23 @@ function FadeUp({
 // ─── Shared styles ──────────────────────────────────────────────────────────
 
 const eyebrow: React.CSSProperties = {
-  fontSize: "11px",
-  fontWeight: 700,
-  letterSpacing: "4px",
+  fontSize: "14px",
+  fontWeight: 600,
+  letterSpacing: "2.5px",
   textTransform: "uppercase",
   color: "#028090",
   marginBottom: "20px",
+  fontFamily: "'Proxima Nova', 'Inter', sans-serif",
 };
 
 const eyebrowCoral: React.CSSProperties = {
-  fontSize: "11px",
-  fontWeight: 700,
-  letterSpacing: "4px",
+  fontSize: "14px",
+  fontWeight: 600,
+  letterSpacing: "2.5px",
   textTransform: "uppercase",
   color: "#F45B69",
   marginBottom: "16px",
+  fontFamily: "'Proxima Nova', 'Inter', sans-serif",
 };
 
 const divider: React.CSSProperties = {
@@ -207,11 +209,14 @@ const divider: React.CSSProperties = {
   background: "linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent)",
 };
 
+// All headings must use Montserrat — body font is Proxima Nova
+const hdg: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
+
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function ComparisonPage() {
   return (
-    <main style={{ fontFamily: "'Montserrat', sans-serif", background: "#080D11", color: "#fff" }}>
+    <main style={{ fontFamily: "'Proxima Nova', 'Inter', sans-serif", background: "#080D11", color: "#fff" }}>
 
       {/* ── SECTION 1 — HERO ── */}
       <section
@@ -249,7 +254,7 @@ export default function ComparisonPage() {
             zIndex: 2,
             textAlign: "center",
             maxWidth: "860px",
-            padding: "80px 60px",
+            padding: "140px 60px 80px",
           }}
         >
           <FadeUp delay={0.1}>
@@ -258,6 +263,7 @@ export default function ComparisonPage() {
           <FadeUp delay={0.2}>
             <h1
               style={{
+                ...hdg,
                 fontSize: "clamp(36px, 4.5vw, 58px)",
                 fontWeight: 900,
                 lineHeight: 1.08,
@@ -362,6 +368,7 @@ export default function ComparisonPage() {
             <FadeUp delay={0.1}>
               <h2
                 style={{
+                  ...hdg,
                   fontSize: "36px",
                   fontWeight: 900,
                   marginBottom: "36px",
@@ -417,7 +424,7 @@ export default function ComparisonPage() {
         <div style={{ padding: "0 80px", marginBottom: "40px" }}>
           <FadeUp>
             <p style={eyebrowCoral}>Where it breaks</p>
-            <h2 style={{ fontSize: "38px", fontWeight: 900, marginBottom: "14px" }}>
+            <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "14px" }}>
               OpenClaw Security Risks Service Businesses Should Know
             </h2>
           </FadeUp>
@@ -522,6 +529,7 @@ export default function ComparisonPage() {
                 </p>
                 <h3
                   style={{
+                    ...hdg,
                     fontSize: "15px",
                     fontWeight: 700,
                     color: "#fff",
@@ -574,6 +582,7 @@ export default function ComparisonPage() {
           <FadeUp delay={0.1}>
             <h2
               style={{
+                ...hdg,
                 fontSize: "38px",
                 fontWeight: 900,
                 marginBottom: "16px",
@@ -769,7 +778,7 @@ export default function ComparisonPage() {
       >
         <FadeUp>
           <p style={eyebrow}>Side by side</p>
-          <h2 style={{ fontSize: "38px", fontWeight: 900, marginBottom: "12px" }}>
+          <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "12px" }}>
             OpenClaw vs. Business AI Operating System: Full Comparison
           </h2>
         </FadeUp>
@@ -900,7 +909,7 @@ export default function ComparisonPage() {
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <FadeUp>
             <p style={eyebrow}>Common questions</p>
-            <h2 style={{ fontSize: "38px", fontWeight: 900 }}>
+            <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900 }}>
               OpenClaw FAQ: Common Questions from Small Business Owners
             </h2>
           </FadeUp>
@@ -1008,6 +1017,7 @@ export default function ComparisonPage() {
           <FadeUp delay={0.1}>
             <h2
               style={{
+                ...hdg,
                 fontSize: "42px",
                 fontWeight: 900,
                 lineHeight: 1.1,
