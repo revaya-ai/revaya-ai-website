@@ -425,18 +425,6 @@ export default function ComparisonPage() {
                   Here is what the demos did not show you.
                 </p>
               </FadeUp>
-              <FadeUp delay={0.35}>
-                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
-                  Here is what it cannot do: manage a client relationship. Know that this particular
-                  client is sensitive about response time. Understand that the deliverable sitting in
-                  your inbox needs a judgment call, not a send. Know that your priorities shifted
-                  this week because a deal is closing and everything else needs to move. OpenClaw
-                  takes the instructions you give it in the moment. It does not carry context about
-                  your business, your clients, or what matters right now. You can automate a task.
-                  You cannot automate the judgment behind the task. That requires something built
-                  around your actual business, not a general-purpose agent you point at it.
-                </p>
-              </FadeUp>
             </div>
           </div>
         </div>
