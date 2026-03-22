@@ -627,8 +627,11 @@ export default function ComparisonPage() {
                 lineHeight: 1.6,
               }}
             >
-              Not a tool. An operating environment. Five connected layers built specifically
-              around your business.
+              Here is what OpenClaw does not have: a strategic layer. A layer that knows
+              your goals, your bottleneck, your clients, your decisions. Without it, you have
+              a capable agent and no way to tell it what actually matters. A Business AI OS
+              is five connected layers, and the strategic layer is what makes the rest of it
+              worth building.
             </p>
           </FadeUp>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "36px" }}>
