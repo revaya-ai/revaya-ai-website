@@ -730,7 +730,7 @@ export default function ComparisonPage() {
             alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
             title="Business AI Operating System five-layer architecture for founder-led service businesses"
             fill
-            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(18%)" }}
+            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(8%)" }}
             sizes="50vw"
             loading="lazy"
             decoding="async"
@@ -785,7 +785,12 @@ export default function ComparisonPage() {
                     {layer.name}
                   </span>
                   <span style={{ fontSize: "12px", color: "#fff", fontWeight: 400, lineHeight: 1.4 }}>
-                    {layer.desc}
+                    {(() => {
+                      const words = layer.desc.split(" ");
+                      const first = words.slice(0, 5).join(" ");
+                      const rest = words.slice(5).join(" ");
+                      return rest ? <>{first}<br />{rest}</> : <>{first}</>;
+                    })()}
                   </span>
                 </div>
               </FadeUp>
