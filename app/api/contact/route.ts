@@ -71,7 +71,7 @@ export async function POST(request: Request) {
     if (intakeSystemUrl) {
       const [firstName, ...lastParts] = (name || "").trim().split(" ");
       const lastName = lastParts.join(" ");
-      fetch(`${intakeSystemUrl}/intake`, {
+      fetch(`${intakeSystemUrl}/initial-lead`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
