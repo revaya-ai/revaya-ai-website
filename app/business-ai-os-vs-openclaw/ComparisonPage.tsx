@@ -251,6 +251,9 @@ export default function ComparisonPage() {
           .section-table { padding: 64px 16px !important; }
           .section-faq { padding: 64px 16px !important; }
           .faq-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+          .table-desktop { display: none !important; }
+          .table-mobile { display: flex !important; }
+          .mobile-h2 { font-size: 26px !important; }
         }
       `}</style>
 
@@ -391,6 +394,7 @@ export default function ComparisonPage() {
             </FadeUp>
             <FadeUp delay={0.1}>
               <h2
+                className="mobile-h2"
                 style={{
                   ...hdg,
                   fontSize: "36px",
@@ -463,7 +467,7 @@ export default function ComparisonPage() {
         <div className="section-header" style={{ padding: "0 80px", marginBottom: "40px" }}>
           <FadeUp>
             <p style={eyebrowCoral}>Where it breaks</p>
-            <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "14px" }}>
+            <h2 className="mobile-h2" style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "14px" }}>
               OpenClaw Security Risks Service Businesses Should Know
             </h2>
           </FadeUp>
@@ -635,6 +639,7 @@ export default function ComparisonPage() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <h2
+              className="mobile-h2"
               style={{
                 ...hdg,
                 fontSize: "38px",
@@ -839,7 +844,7 @@ export default function ComparisonPage() {
       >
         <FadeUp>
           <p style={eyebrow}>Side by side</p>
-          <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "12px" }}>
+          <h2 className="mobile-h2" style={{ ...hdg, fontSize: "38px", fontWeight: 900, marginBottom: "12px" }}>
             OpenClaw vs. Business AI Operating System: Full Comparison
           </h2>
         </FadeUp>
@@ -849,8 +854,10 @@ export default function ComparisonPage() {
           </p>
         </FadeUp>
 
+        {/* Desktop table */}
         <FadeUp delay={0.15}>
           <div
+            className="table-desktop"
             style={{
               overflowX: "auto",
               borderRadius: "12px",
@@ -971,6 +978,61 @@ export default function ComparisonPage() {
             </table>
           </div>
         </FadeUp>
+
+        {/* Mobile stacked cards — hidden on desktop */}
+        <div
+          className="table-mobile"
+          style={{
+            display: "none",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
+          {tableRows.map((row) => (
+            <div
+              key={row.dimension}
+              style={{
+                borderRadius: "12px",
+                border: "1px solid rgba(255,255,255,0.07)",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  padding: "12px 16px",
+                  background: "rgba(255,255,255,0.04)",
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.45)",
+                }}
+              >
+                {row.dimension}
+              </div>
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderTop: "1px solid rgba(244,91,105,0.2)",
+                  background: "rgba(244,91,105,0.05)",
+                }}
+              >
+                <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#F45B69", marginBottom: "6px" }}>OpenClaw</p>
+                <p style={{ fontSize: "15px", color: "#fff", lineHeight: 1.5 }}>{row.openclaw}</p>
+              </div>
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderTop: "1px solid rgba(2,128,144,0.2)",
+                  background: "rgba(2,128,144,0.05)",
+                }}
+              >
+                <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#028090", marginBottom: "6px" }}>Business AI OS</p>
+                <p style={{ fontSize: "15px", color: "#fff", lineHeight: 1.5 }}>{row.aios}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       <div style={divider} />
@@ -986,7 +1048,7 @@ export default function ComparisonPage() {
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <FadeUp>
             <p style={eyebrow}>Common questions</p>
-            <h2 style={{ ...hdg, fontSize: "38px", fontWeight: 900 }}>
+            <h2 className="mobile-h2" style={{ ...hdg, fontSize: "38px", fontWeight: 900 }}>
               OpenClaw FAQ: Common Questions from Small Business Owners
             </h2>
           </FadeUp>
@@ -1129,6 +1191,7 @@ export default function ComparisonPage() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <h2
+              className="mobile-h2"
               style={{
                 ...hdg,
                 fontSize: "42px",
