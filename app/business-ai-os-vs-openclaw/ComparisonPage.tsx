@@ -381,20 +381,35 @@ export default function ComparisonPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
               <FadeUp delay={0.15}>
                 <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
-                  OpenClaw is a self-hosted AI agent that actually does things. Not just answers,
-                  things. It runs terminal commands, controls your browser, manages email, sends
-                  messages, reads and writes files. All from WhatsApp or Telegram, while you are
-                  doing something else.
+                  OpenClaw is not one AI assistant. It is a self-hosted framework for running a
+                  network of AI agents, each built around a specific task. You install Skills, which
+                  are specialized agents that handle email, browser control, file management,
+                  messaging, terminal commands. They work together, chain across your systems, and
+                  execute without you being in the room. All from WhatsApp or Telegram.
                 </p>
               </FadeUp>
               <FadeUp delay={0.2}>
                 <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
-                  The appeal is real. A business that runs itself, through apps you already use,
-                  without a subscription. More GitHub stars than Linux. That does not happen without
+                  The appeal landed fast. 60,000 GitHub stars in 72 hours. More stars than Linux.
+                  Jensen Huang called it &ldquo;the most popular open-source project in the history
+                  of humanity&rdquo; from the GTC stage in March 2026. That does not happen without
                   a genuinely compelling idea.
                 </p>
               </FadeUp>
-              <FadeUp delay={0.25}>
+              <FadeUp delay={0.22}>
+                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
+                  Here is what happened next. Non-technical founders, marketers, and business owners
+                  saw the demos and showed up in numbers the creator did not expect. Business owners
+                  were hiring developers to set it up. People were paying engineers just to get the
+                  install working. OpenClaw went viral with an audience it was never designed for.
+                  The creator built it for developers. He has since joined OpenAI and handed the
+                  project to a community foundation. That means no single person is responsible for
+                  what happens next. No owner. No roadmap. Security patches happen when a volunteer
+                  shows up. The system millions of people pointed at their business data is now a
+                  free-for-all.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.28}>
                 <p
                   style={{
                     fontSize: "17px",
