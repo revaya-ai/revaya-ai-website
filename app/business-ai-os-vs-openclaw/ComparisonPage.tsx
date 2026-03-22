@@ -26,7 +26,7 @@ const riskCards = [
   {
     num: "04",
     title: "Active security vulnerabilities",
-    body: "A critical remote code execution flaw (CVE-2026-25253) allows exploitation without authentication — CVSS score 8.8 HIGH. Over 135,000 exposed instances detected on the public internet as of February 12, 2026.* SecurityScorecard, Bitdefender, and Bitsight all published independent research confirming the exposure. 63% of observed deployments were vulnerable, with over 12,000 exploitable via remote code execution.",
+    body: "A critical remote code execution flaw (CVE-2026-25253, CVSS 8.8 HIGH) allows exploitation without authentication. A separate vulnerability named ClawJacked lets malicious websites take over a locally running agent via WebSocket — no plugins required, just the base install (Oasis Security, Feb 2026). A supply chain attack called ClawHavoc put malware inside the skill marketplace: 341 infected skills confirmed by Koi.ai (Feb 2026), with a subsequent audit finding 539 across the most popular agents (ClawSecure, Mar 2026). Cisco Talos called OpenClaw a 'security nightmare' after documenting 9 critical vulnerabilities. Over 135,000 exposed instances confirmed on the public internet as of February 12, 2026.*",
   },
   {
     num: "05",
@@ -550,9 +550,12 @@ export default function ComparisonPage() {
         {/* Citation */}
         <div style={{ padding: "0 80px 40px", background: "#080D11" }}>
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.5px" }}>
-            Sources: TechCrunch (Julie Bort, Feb 23, 2026) — SecurityScorecard STRIKE Team (Feb 11,
-            2026) — Bitdefender (Feb 12, 2026) — Bitsight Research (Feb 9, 2026) — Infosecurity
-            Magazine (Feb 9, 2026) — CVE-2026-25253 (NVD) — Hacker News
+            Sources: TechCrunch (Julie Bort, Feb 23, 2026) — The Hacker News (Ravie Lakshmanan, Feb
+            28, 2026) — Oasis Security ClawJacked Research (Feb 2026) — Cisco Talos (Jan 28, 2026)
+            — SecurityScorecard STRIKE Team (Feb 11, 2026) — Bitdefender (Feb 12, 2026) — Bitsight
+            Research (Feb 9, 2026) — Infosecurity Magazine (Feb 9, 2026) — Koi.ai ClawHavoc Report
+            (Feb 1, 2026) — ClawSecure Audit (Mar 17, 2026) — Antiy CERT (Feb 6, 2026) —
+            CVE-2026-25253 (NVD) — Hacker News
           </p>
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.25)", letterSpacing: "0.5px", marginTop: "6px" }}>
             * Exposed instance counts varied by research firm and scan date: 30,000+ (Bitsight, Jan
