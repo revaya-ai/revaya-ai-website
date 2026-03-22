@@ -5,14 +5,13 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-
 // ─── Data ───────────────────────────────────────────────────────────────────
 
 const riskCards = [
   {
     num: "01",
     title: "The creator said it is not for you",
-    body: "OpenClaw was not designed for small business owners. Peter Steinberger, the developer who built OpenClaw, stated explicitly that the product is \"not for non-technical users.\" If you are a business owner without a development background, you are operating outside the intended use case.",
+    body: 'OpenClaw was not designed for small business owners. OpenClaw founder Peter Steinberger stated explicitly that the product is "not for non-technical users." If you are a business owner without a development background, you are operating outside the intended use case.',
   },
   {
     num: "02",
@@ -109,59 +108,48 @@ const tableRows = [
 
 const faqItems = [
   {
-    question: "Can OpenClaw run a service business?",
-    answer:
-      "OpenClaw can automate individual tasks, email management, file organization, web research, but it has no strategic layer. It does what you tell it to do, not what your business actually needs. Without a system that connects your goals, your data, and your workflows, you end up automating the wrong things or creating new problems faster than you solve old ones.",
+    q: "Can OpenClaw run a service business?",
+    a: "OpenClaw can automate individual tasks, email management, file organization, web research, but it has no strategic layer. It does what you tell it to do, not what your business actually needs. Without a system that connects your goals, your data, and your workflows, you end up automating the wrong things or creating new problems faster than you solve old ones.",
   },
   {
-    question: "Is OpenClaw safe for a small business?",
-    answer:
-      "OpenClaw has active security vulnerabilities as of early 2026, including a critical remote code execution flaw (CVE-2026-25253), a WebSocket hijacking vulnerability called ClawJacked, and 341 confirmed malicious skills on its ClawHub marketplace. Microsoft, Cisco, and CrowdStrike have all published security advisories. For non-technical service business owners handling client data, the risk is significant.",
+    q: "Is OpenClaw safe for a small business?",
+    a: "OpenClaw has active security vulnerabilities as of early 2026, including a critical remote code execution flaw (CVE-2026-25253), a WebSocket hijacking vulnerability called ClawJacked, and 341 confirmed malicious skills on its ClawHub marketplace. Microsoft, Cisco, and CrowdStrike have all published security advisories. For non-technical service business owners handling client data, the risk is significant.",
   },
   {
-    question: "Do I need a developer to use OpenClaw?",
-    answer:
-      "OpenClaw requires Docker, YAML configuration, VPS or local server setup, API key management, and ongoing security hardening. It was designed for technical operators. In practice, non-technical business owners are paying engineers to install it for them, but the ongoing security burden still falls on the operator.",
+    q: "Do I need a developer to use OpenClaw?",
+    a: "OpenClaw requires Docker, YAML configuration, VPS or local server setup, API key management, and ongoing security hardening. It was designed for technical operators. In practice, non-technical business owners are paying engineers to install it for them, but the ongoing security burden still falls on the operator.",
   },
   {
-    question: "What does OpenClaw cost per month to run?",
-    answer:
-      "Running OpenClaw costs approximately $25 to $50 per month for light-to-moderate use. That does not include engineer fees many non-technical users pay for installation. API costs can spike significantly with no real-time visibility. Documented cases show monthly bills going from $80 to over $2,100 in a single month when agents run unchecked.",
+    q: "What does OpenClaw cost per month to run?",
+    a: "Running OpenClaw costs approximately $25 to $50 per month for light-to-moderate use. That does not include engineer fees many non-technical users pay for installation. API costs can spike significantly with no real-time visibility. Documented cases show monthly bills going from $80 to over $2,100 in a single month when agents run unchecked.",
   },
   {
-    question: "What happens when OpenClaw makes a mistake?",
-    answer:
-      "There is no audit trail in OpenClaw by default. Actions taken by the agent are not logged in a reviewable format. If something goes wrong, a file deleted, an email sent, data exfiltrated, you may not know it happened until the damage is done.",
+    q: "What happens when OpenClaw makes a mistake?",
+    a: "There is no audit trail in OpenClaw by default. Actions taken by the agent are not logged in a reviewable format. If something goes wrong, a file deleted, an email sent, data exfiltrated, you may not know it happened until the damage is done.",
   },
   {
-    question: "Does OpenClaw have an audit trail?",
-    answer:
-      "No. OpenClaw does not log agent actions in a reviewable format by default. If the agent deletes a file, sends an email, or accesses data it should not have, there is no record you can trace. A Business AI Operating System is built on full transparency: every decision is visible, every action is logged, and nothing happens without a reason you can follow.",
+    q: "Does OpenClaw have an audit trail?",
+    a: "No. OpenClaw does not log agent actions in a reviewable format by default. If the agent deletes a file, sends an email, or accesses data it should not have, there is no record you can trace. A Business AI Operating System is built on full transparency: every decision is visible, every action is logged, and nothing happens without a reason you can follow.",
   },
   {
-    question: "What is a Business AI OS?",
-    answer:
-      "A Business AI Operating System is a structured operating environment built specifically around a founder-led business. It is five connected layers: Context, Data, Intelligence, Automate, and Build. It is designed and implemented by a specialist, auditable at every layer, and built to compound over time.",
+    q: "What is a Business AI OS?",
+    a: "A Business AI Operating System is a structured operating environment built specifically around a founder-led business. It is five connected layers: Context, Data, Intelligence, Automate, and Build. It is designed and implemented by a specialist, auditable at every layer, and built to compound over time.",
   },
   {
-    question: "Who should use OpenClaw vs. a Business AI OS?",
-    answer:
-      "OpenClaw is built for technical operators, developers, engineers, and IT professionals comfortable managing servers, YAML config, and security hardening. A Business AI Operating System is built for founders of service businesses who want autonomous AI without the technical complexity, security exposure, or strategic guesswork.",
+    q: "Who should use OpenClaw vs. a Business AI OS?",
+    a: "OpenClaw is built for technical operators, developers, engineers, and IT professionals comfortable managing servers, YAML config, and security hardening. A Business AI Operating System is built for founders of service businesses who want autonomous AI without the technical complexity, security exposure, or strategic guesswork.",
   },
   {
-    question: "What is ClawJacked?",
-    answer:
-      "ClawJacked is a vulnerability in OpenClaw where a malicious website can send hidden instructions to your agent through the browser, causing it to take actions without your knowledge or consent. It was disclosed in early 2026. It is the reason Cisco, Microsoft, and CrowdStrike all issued separate security advisories within weeks of each other.",
+    q: "What is ClawJacked?",
+    a: "ClawJacked is a vulnerability in OpenClaw where a malicious website can send hidden instructions to your agent through the browser, causing it to take actions without your knowledge or consent. It was disclosed in early 2026. It is the reason Cisco, Microsoft, and CrowdStrike all issued separate security advisories within weeks of each other.",
   },
   {
-    question: "What is NanoClaw and how is it different from OpenClaw?",
-    answer:
-      "NanoClaw is a security-focused fork of OpenClaw built in 2026 specifically because OpenClaw's security problems could not be patched. It is a technically cleaner product. It is still a developer product. NanoClaw does not solve the non-technical founder's problem, it just solves the security problem for operators who were already technical.",
+    q: "What is NanoClaw and how is it different from OpenClaw?",
+    a: "NanoClaw is a security-focused fork of OpenClaw built in 2026 specifically because OpenClaw's security problems could not be patched. It is a technically cleaner product. It is still a developer product. NanoClaw does not solve the non-technical founder's problem, it just solves the security problem for operators who were already technical.",
   },
   {
-    question: "Is OpenClaw free?",
-    answer:
-      "OpenClaw is open-source and free to install. Running it is not free. You need a server ($5 to $20 per month), API keys for the AI models it connects to (typically $15 to $35 per month), and for most non-technical business owners, a developer to configure it. API costs can scale without warning.",
+    q: "Is OpenClaw free?",
+    a: "OpenClaw is open-source and free to install. Running it is not free. You need a server ($5 to $20 per month), API keys for the AI models it connects to (typically $15 to $35 per month), and for most non-technical business owners, a developer to configure it. API costs can scale without warning.",
   },
 ];
 
@@ -171,10 +159,12 @@ function FadeUp({
   children,
   delay = 0,
   className = "",
+  style = {},
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -182,6 +172,7 @@ function FadeUp({
     <motion.div
       ref={ref}
       className={className}
+      style={style}
       initial={{ opacity: 0, y: 18 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
@@ -191,41 +182,105 @@ function FadeUp({
   );
 }
 
+// ─── Shared styles ──────────────────────────────────────────────────────────
+
+const eyebrow: React.CSSProperties = {
+  fontSize: "11px",
+  fontWeight: 700,
+  letterSpacing: "4px",
+  textTransform: "uppercase",
+  color: "#028090",
+  marginBottom: "20px",
+};
+
+const eyebrowCoral: React.CSSProperties = {
+  fontSize: "11px",
+  fontWeight: 700,
+  letterSpacing: "4px",
+  textTransform: "uppercase",
+  color: "#F45B69",
+  marginBottom: "16px",
+};
+
+const divider: React.CSSProperties = {
+  height: "1px",
+  background: "linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent)",
+};
+
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function ComparisonPage() {
   return (
-    <main className="text-white">
-      {/* Section 1 — Hero */}
-      <section className="relative bg-[#080D11] overflow-hidden min-h-[720px] flex items-center justify-center py-28 md:py-40">
-        {/* Background image */}
+    <main style={{ fontFamily: "'Montserrat', sans-serif", background: "#080D11", color: "#fff" }}>
+
+      {/* ── SECTION 1 — HERO ── */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "720px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          background: "#080D11",
+        }}
+      >
         <Image
           src="/comparison/hero-option-a.png"
           alt="Business AI Operating System vs OpenClaw — what service business owners need to know"
           title="Business AI OS vs OpenClaw comparison for service business founders"
           fill
-          className="object-cover object-center"
+          style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
           priority
         />
         {/* Gradient overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#080D11]/82 via-[#080D11]/60 to-[#080D11]/75" />
-
-        <div className="relative z-10 max-w-[1100px] mx-auto px-6 md:px-10 text-center">
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(135deg, rgba(8,13,17,0.82) 0%, rgba(8,13,17,0.60) 50%, rgba(8,13,17,0.75) 100%)",
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: "center",
+            maxWidth: "860px",
+            padding: "80px 60px",
+          }}
+        >
           <FadeUp delay={0.1}>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-6">
-              Business AI OS vs OpenClaw
-            </p>
+            <p style={eyebrow}>Business AI OS vs OpenClaw</p>
           </FadeUp>
           <FadeUp delay={0.2}>
-            <h1 className="font-black text-4xl md:text-6xl leading-tight mb-6">
+            <h1
+              style={{
+                fontSize: "clamp(36px, 4.5vw, 58px)",
+                fontWeight: 900,
+                lineHeight: 1.08,
+                marginBottom: "28px",
+              }}
+            >
               Business AI OS vs OpenClaw:
               <br />
-              <span className="text-[#F45B69]">What Service Business Owners Need to Know</span>
+              <span style={{ color: "#F45B69" }}>What Service Business Owners Need to Know</span>
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: 1.7,
+                color: "#fff",
+                marginBottom: "40px",
+                maxWidth: "680px",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
               You already tried the tools. You became the one connecting them all. Every workflow
               still touched your calendar. Every decision still ran through you. OpenClaw caught
               your attention because it promised to change that. The problem is not the promise.
@@ -236,174 +291,329 @@ export default function ComparisonPage() {
           <FadeUp delay={0.4}>
             <Link
               href="/business-ai-operating-system"
-              className="rounded-full bg-[#553555] px-8 py-4 text-white font-semibold hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-300 inline-flex items-center gap-2"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                background: "#553555",
+                color: "#fff",
+                padding: "16px 32px",
+                borderRadius: "9999px",
+                fontWeight: 600,
+                fontSize: "15px",
+                textDecoration: "none",
+              }}
             >
-              See how it&apos;s built
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              See how it&apos;s built <span>→</span>
             </Link>
           </FadeUp>
         </div>
       </section>
 
-      {/* Section 2 — The Appeal (50/50 split) */}
-      <section className="bg-[#111820] flex flex-col md:flex-row min-h-[560px]">
-        {/* Left visual col */}
-        <div className="relative w-full md:w-1/2 flex-shrink-0 min-h-[320px] md:min-h-0 overflow-hidden bg-[#080D11]">
+      <div style={divider} />
+
+      {/* ── SECTION 2 — THE APPEAL ── */}
+      <section
+        style={{
+          background: "#0A1118",
+          display: "flex",
+          alignItems: "stretch",
+          minHeight: "640px",
+        }}
+      >
+        {/* Image column */}
+        <div
+          style={{
+            width: "50%",
+            flexShrink: 0,
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
           <Image
             src="/comparison/appeal-openclaw.png"
             alt="OpenClaw AI agent controlling business apps via WhatsApp and Telegram — the appeal that drove 247,000 GitHub stars"
             title="OpenClaw AI agent: why 247,000 developers and business owners starred it on GitHub"
             fill
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111820] hidden md:block" />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to left, #0A1118 0%, transparent 20%)",
+            }}
+          />
         </div>
-
-        {/* Right copy col */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-20 py-16 md:py-24">
-          <FadeUp>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-5">
-              What OpenClaw is
-            </p>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <h2 className="font-black text-3xl md:text-4xl mb-8 leading-tight">
-              What OpenClaw Is and Why It Went Viral
-            </h2>
-          </FadeUp>
-          <div className="space-y-5 text-white/75 text-base md:text-lg leading-relaxed">
-            <FadeUp delay={0.15}>
-              <p>
-                OpenClaw is a self-hosted AI agent that actually does things. Not just answers,
-                things. It runs terminal commands, controls your browser, manages email, sends
-                messages, reads and writes files. All from WhatsApp or Telegram, while you are
-                doing something else.
-              </p>
+        {/* Text column */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            padding: "96px 80px",
+          }}
+        >
+          <div>
+            <FadeUp>
+              <p style={eyebrow}>What OpenClaw is</p>
             </FadeUp>
-            <FadeUp delay={0.2}>
-              <p>
-                The appeal is real. A business that runs itself, through apps you already use,
-                without a subscription. More GitHub stars than Linux. That does not happen without
-                a genuinely compelling idea.
-              </p>
+            <FadeUp delay={0.1}>
+              <h2
+                style={{
+                  fontSize: "36px",
+                  fontWeight: 900,
+                  marginBottom: "36px",
+                  lineHeight: 1.1,
+                }}
+              >
+                What OpenClaw Is and Why It Went Viral
+              </h2>
             </FadeUp>
-            <FadeUp delay={0.25}>
-              <p className="border-l-[3px] border-[#028090] pl-5 text-white font-semibold">
-                You were imagining something specific. Client emails handled. Follow-ups sent.
-                Documents organized. Your calendar protected. That is not a fantasy. That is an
-                operational architecture problem. And it has a real solution, just not this one.
-                A business that only works when you do is not an asset. It is a job with overhead.
-                Here is what the demos did not show you.
-              </p>
-            </FadeUp>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <FadeUp delay={0.15}>
+                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
+                  OpenClaw is a self-hosted AI agent that actually does things. Not just answers,
+                  things. It runs terminal commands, controls your browser, manages email, sends
+                  messages, reads and writes files. All from WhatsApp or Telegram, while you are
+                  doing something else.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.2}>
+                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
+                  The appeal is real. A business that runs itself, through apps you already use,
+                  without a subscription. More GitHub stars than Linux. That does not happen without
+                  a genuinely compelling idea.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.25}>
+                <p
+                  style={{
+                    fontSize: "17px",
+                    fontWeight: 600,
+                    color: "#fff",
+                    borderLeft: "3px solid #028090",
+                    paddingLeft: "20px",
+                  }}
+                >
+                  You were imagining something specific. Client emails handled. Follow-ups sent.
+                  Documents organized. Your calendar protected. That is not a fantasy. That is an
+                  operational architecture problem. And it has a real solution, just not this one.
+                  A business that only works when you do is not an asset. It is a job with overhead.
+                  Here is what the demos did not show you.
+                </p>
+              </FadeUp>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3 — The Risks */}
-      <section className="bg-[#080D11]">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10 pt-24 md:pt-32">
+      <div style={divider} />
+
+      {/* ── SECTION 3 — RISKS ── */}
+      <section style={{ background: "#080D11", paddingTop: "96px" }}>
+        {/* Header */}
+        <div style={{ padding: "0 80px", marginBottom: "40px" }}>
           <FadeUp>
-            <p className="text-[#F45B69] text-xs font-semibold tracking-widest uppercase mb-4">
-              Where it breaks
-            </p>
-            <h2 className="font-black text-3xl md:text-4xl mb-4">
+            <p style={eyebrowCoral}>Where it breaks</p>
+            <h2 style={{ fontSize: "38px", fontWeight: 900, marginBottom: "14px" }}>
               OpenClaw Security Risks Service Businesses Should Know
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <p className="text-white/60 text-lg mb-8">
+            <p style={{ fontSize: "17px", color: "#fff", marginBottom: "32px" }}>
               These are not theoretical concerns. Even the people who built AI safety systems at
               Meta ran into them.
             </p>
           </FadeUp>
-
-          {/* Pull quote */}
-          <FadeUp delay={0.15}>
-            <blockquote className="bg-[#F45B69]/[0.08] border-l-[3px] border-[#F45B69] px-6 md:px-10 py-8 mb-0 w-full">
-              <p className="text-white italic text-lg leading-relaxed">
-                &ldquo;If an AI security researcher could run into this problem, what hope do mere mortals have?&rdquo;
-              </p>
-              <cite className="block mt-3 text-[#F45B69] text-xs font-bold tracking-widest uppercase not-italic">
-                TechCrunch, Feb 23, 2026
-              </cite>
-            </blockquote>
-          </FadeUp>
         </div>
 
-        {/* Full-width risk image */}
-        <FadeUp delay={0.2}>
-          <div className="relative w-full h-[360px] md:h-[440px] overflow-hidden">
-            <Image
-              src="/comparison/section3-risk.png"
-              alt="135,000 exposed OpenClaw instances on the public internet — a critical security risk for service businesses handling client data"
-              title="OpenClaw security exposure: over 135,000 instances publicly accessible, no authentication required"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080D11]" />
+        {/* Pull quote — full width */}
+        <FadeUp delay={0.15}>
+          <div
+            style={{
+              background: "rgba(244,91,105,0.08)",
+              borderLeft: "3px solid #F45B69",
+              padding: "32px 80px",
+            }}
+          >
+            <blockquote
+              style={{
+                fontSize: "18px",
+                fontStyle: "italic",
+                color: "#fff",
+                lineHeight: 1.6,
+                marginBottom: "10px",
+              }}
+            >
+              &ldquo;If an AI security researcher could run into this problem, what hope do mere
+              mortals have?&rdquo;
+            </blockquote>
+            <cite
+              style={{
+                fontSize: "12px",
+                fontWeight: 600,
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                color: "#F45B69",
+                fontStyle: "normal",
+              }}
+            >
+              TechCrunch, Feb 23, 2026
+            </cite>
           </div>
         </FadeUp>
 
-        {/* Risk cards */}
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10 pb-24 md:pb-32">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-            {riskCards.map((card, i) => (
-              <FadeUp key={card.num} delay={0.1 + i * 0.05}>
-                <div className="glass-card border-t-2 border-[#F45B69] p-6 h-full">
-                  <p className="text-[#F45B69] text-xs font-semibold tracking-widest uppercase mb-2">
-                    {card.num}
-                  </p>
-                  <h3 className="font-bold text-base mb-3">{card.title}</h3>
-                  <p className="text-white/65 text-sm leading-relaxed">{card.body}</p>
-                </div>
-              </FadeUp>
-            ))}
+        {/* Risk image — full width */}
+        <FadeUp delay={0.2}>
+          <div style={{ width: "100%", overflow: "hidden", position: "relative" }}>
+            <Image
+              src="/comparison/section3-risk.png"
+              alt="135,000 exposed OpenClaw instances on the public internet — a critical security risk for service businesses"
+              title="OpenClaw security exposure: over 135,000 instances publicly accessible, no authentication required"
+              width={1440}
+              height={440}
+              style={{ width: "100%", display: "block", maxHeight: "440px", objectFit: "cover", objectPosition: "center" }}
+              sizes="100vw"
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(to bottom, transparent 50%, #080D11 100%)",
+              }}
+            />
           </div>
+        </FadeUp>
 
-          <FadeUp delay={0.4}>
-            <p className="text-[#028090]/60 text-xs">
-              Sources: TechCrunch, Cisco Security, Microsoft Security Blog, CrowdStrike,
-              CVE-2026-25253, Hacker News
-            </p>
-          </FadeUp>
+        {/* Risk cards — 3 columns */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "16px",
+            padding: "40px 80px 80px",
+            background: "#080D11",
+          }}
+        >
+          {riskCards.map((card, i) => (
+            <FadeUp key={card.num} delay={0.1 + i * 0.05}>
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  borderTop: "2px solid #F45B69",
+                  borderRadius: "12px",
+                  padding: "24px",
+                  height: "100%",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    letterSpacing: "3px",
+                    color: "#F45B69",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {card.num}
+                </p>
+                <h3
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 700,
+                    color: "#fff",
+                    marginBottom: "12px",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {card.title}
+                </h3>
+                <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#fff" }}>{card.body}</p>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
+        {/* Citation */}
+        <div style={{ padding: "0 80px 40px", background: "#080D11" }}>
+          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.5px" }}>
+            Sources: TechCrunch, Cisco Security, Microsoft Security Blog, CrowdStrike,
+            CVE-2026-25253, Hacker News
+          </p>
         </div>
       </section>
 
-      {/* Section 4 — What a Business AI Operating System Is (50/50 split) */}
-      <section className="bg-[#080D11] flex flex-col md:flex-row border-t border-white/5">
-        {/* Left copy col */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-20 py-16 md:py-24">
+      <div style={divider} />
+
+      {/* ── SECTION 4 — WHAT A BUSINESS AI OPERATING SYSTEM IS ── */}
+      <section
+        style={{
+          background: "#080D11",
+          display: "flex",
+          alignItems: "stretch",
+          minHeight: "720px",
+        }}
+      >
+        {/* Copy column */}
+        <div
+          style={{
+            width: "50%",
+            flexShrink: 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "96px 80px",
+          }}
+        >
           <FadeUp>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-5">
-              What a Business AI Operating System actually is
-            </p>
+            <p style={eyebrow}>What a Business AI Operating System actually is</p>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <h2 className="font-black text-3xl md:text-4xl mb-6 leading-tight">
+            <h2
+              style={{
+                fontSize: "38px",
+                fontWeight: 900,
+                marginBottom: "16px",
+                lineHeight: 1.1,
+              }}
+            >
               What Is a Business AI Operating System?
             </h2>
           </FadeUp>
           <FadeUp delay={0.15}>
-            <p className="text-white text-lg leading-relaxed mb-8">
+            <p
+              style={{
+                fontSize: "17px",
+                color: "#fff",
+                marginBottom: "40px",
+                lineHeight: 1.6,
+              }}
+            >
               Not a tool. An operating environment. Five connected layers built specifically
               around your business.
             </p>
           </FadeUp>
-          <div className="space-y-6 mb-8">
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "36px" }}>
             <FadeUp delay={0.2}>
-              <p className="text-white/80 text-base leading-relaxed">
+              <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#fff" }}>
                 The difference between a tool and a system is that a system compounds. Every
                 layer feeds the next. Every decision gets smarter. The business gets more
                 autonomous over time, not just once.
               </p>
             </FadeUp>
             <FadeUp delay={0.25}>
-              <p className="border-l-[3px] border-[#553555] pl-5 text-white/80 text-sm leading-relaxed">
+              <p
+                style={{
+                  fontSize: "15px",
+                  lineHeight: 1.75,
+                  color: "#fff",
+                  borderLeft: "3px solid #553555",
+                  paddingLeft: "20px",
+                }}
+              >
                 I spent 18 years as a digital product manager. Virgin Mobile, Boost Mobile,
                 Papa Murphy&apos;s, Intermedia. I have built systems at scale and watched founders
                 stay trapped inside their own businesses because no system was ever built around
@@ -418,139 +628,87 @@ export default function ComparisonPage() {
           <FadeUp delay={0.3}>
             <Link
               href="/business-ai-operating-system"
-              className="rounded-full bg-[#553555] px-8 py-4 text-white font-semibold hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-300 inline-flex items-center gap-2 self-start"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                background: "#553555",
+                color: "#fff",
+                padding: "16px 32px",
+                borderRadius: "9999px",
+                fontWeight: 600,
+                fontSize: "15px",
+                textDecoration: "none",
+                alignSelf: "flex-start",
+              }}
             >
-              See how it&apos;s built
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              See how it&apos;s built <span>→</span>
             </Link>
           </FadeUp>
         </div>
 
-        {/* Right layer labels col */}
-        <div className="relative w-full md:w-1/2 flex-shrink-0 flex items-center justify-center px-8 md:px-16 py-16 md:py-24 overflow-hidden">
-          {/* Background image */}
+        {/* Image + layer labels column */}
+        <div style={{ flex: 1, position: "relative", overflow: "hidden" }}>
           <Image
             src="/comparison/aios-layers.png"
             alt="Five-layer Business AI Operating System architecture: Context, Data, Intelligence, Automate, Build — each layer feeding the next"
             title="Business AI Operating System five-layer architecture for founder-led service businesses"
             fill
-            className="object-cover object-center-right translate-x-[8%]"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(8%)" }}
+            sizes="50vw"
           />
-          {/* fade from left */}
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#080D11] via-[#080D11]/75 to-transparent" />
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#080D11] to-transparent hidden md:block" />
-          {/* Decorative orb */}
-          <div className="absolute right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-[#028090]/8 blur-[100px] pointer-events-none" />
-
-          <div className="relative z-10 w-full max-w-sm space-y-6">
+          {/* Fade from left */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(to right, #080D11 0%, rgba(8,13,17,0.75) 28%, transparent 52%)",
+              zIndex: 1,
+            }}
+          />
+          {/* Layer labels */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 2,
+              display: "flex",
+              flexDirection: "column-reverse",
+              justifyContent: "space-around",
+              padding: "8% 52% 8% 6%",
+              pointerEvents: "none",
+            }}
+          >
             {aiosLayers.map((layer, i) => (
-              <FadeUp key={layer.name} delay={0.1 + i * 0.08}>
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-[#028090] shadow-[0_0_8px_rgba(2,128,144,0.8)]" />
-                  <div>
-                    <p className="text-white font-bold text-xs tracking-[3px] uppercase mb-1">
-                      {layer.name}
-                    </p>
-                    <p className="text-white/60 text-sm leading-relaxed">{layer.desc}</p>
-                  </div>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Assessment CTA block */}
-      <section className="bg-[#080D11] py-14 border-t border-white/5">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
-          <FadeUp>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-5">
-              See if a Business AI Operating System fits your business
-            </p>
-            <Link
-              href="/business-ai-os-assessment"
-              className="rounded-full bg-[#553555] px-8 py-4 text-white font-semibold hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-300 inline-flex items-center gap-2"
-            >
-              Take the Assessment
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* Section 5 — Comparison Table */}
-      <section className="bg-[#111820] py-24 md:py-32">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <FadeUp>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-4">
-              Side by side
-            </p>
-            <h2 className="font-black text-3xl md:text-4xl mb-3">
-              OpenClaw vs. Business AI Operating System: Full Comparison
-            </h2>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <p className="text-white/60 text-lg mb-12">The same promise. Different architecture.</p>
-          </FadeUp>
-
-          {/* Desktop table */}
-          <FadeUp delay={0.15}>
-            <div className="hidden md:block rounded-xl overflow-hidden border border-white/10">
-              {/* Header */}
-              <div className="grid grid-cols-3">
-                <div className="bg-[#1a1a2e] px-6 py-4" />
-                <div className="bg-[#F45B69]/20 px-6 py-4 text-center border-l border-white/5">
-                  <p className="text-[#F45B69] font-bold text-xs tracking-[3px] uppercase">OpenClaw</p>
-                </div>
-                <div className="bg-[#028090]/20 px-6 py-4 text-center border-l border-white/5">
-                  <p className="text-[#028090] font-bold text-xs tracking-[3px] uppercase">Business AI Operating System</p>
-                </div>
-              </div>
-              {/* Rows */}
-              {tableRows.map((row, i) => (
+              <FadeUp key={layer.name} delay={0.1 + i * 0.08} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                 <div
-                  key={row.dimension}
-                  className={`grid grid-cols-3 border-t border-white/5 ${
-                    i % 2 === 0 ? "bg-[#111820]" : "bg-[#0d1520]"
-                  }`}
-                >
-                  <div className="px-6 py-5 border-r border-white/5">
-                    <p className="text-white/70 text-xs font-bold tracking-widest uppercase">{row.dimension}</p>
-                  </div>
-                  <div className="px-6 py-5 border-r border-white/5">
-                    <p className="text-white/80 text-sm leading-relaxed">{row.openclaw}</p>
-                  </div>
-                  <div className="px-6 py-5">
-                    <p className="text-[#28b0be] text-sm leading-relaxed">{row.aios}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
-
-          {/* Mobile — stacked cards */}
-          <div className="md:hidden space-y-4">
-            {tableRows.map((row, i) => (
-              <FadeUp key={row.dimension} delay={0.05 * i}>
-                <div className="glass-card border-l-2 border-[#F45B69] p-5">
-                  <p className="text-white font-semibold mb-3">{row.dimension}</p>
-                  <div className="space-y-2">
-                    <div>
-                      <span className="text-white/40 text-xs uppercase tracking-widest">OpenClaw</span>
-                      <p className="text-white/70 text-sm mt-1">{row.openclaw}</p>
-                    </div>
-                    <div>
-                      <span className="text-[#028090] text-xs uppercase tracking-widest">
-                        Business AI Operating System
-                      </span>
-                      <p className="text-[#028090] text-sm mt-1">{row.aios}</p>
-                    </div>
-                  </div>
+                  style={{
+                    width: "8px",
+                    height: "8px",
+                    borderRadius: "50%",
+                    background: "#028090",
+                    flexShrink: 0,
+                    boxShadow: "0 0 8px rgba(2,128,144,0.8)",
+                    marginTop: "4px",
+                  }}
+                />
+                <div style={{ display: "flex", flexDirection: "column", gap: "3px" }}>
+                  <span
+                    style={{
+                      fontSize: "11px",
+                      fontWeight: 700,
+                      letterSpacing: "3px",
+                      textTransform: "uppercase",
+                      color: "#fff",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {layer.name}
+                  </span>
+                  <span style={{ fontSize: "12px", color: "#fff", fontWeight: 400, lineHeight: 1.4 }}>
+                    {layer.desc}
+                  </span>
                 </div>
               </FadeUp>
             ))}
@@ -558,86 +716,348 @@ export default function ComparisonPage() {
         </div>
       </section>
 
-      {/* Section 6 — FAQ */}
-      <section className="bg-[#111820] py-24 md:py-32 border-t border-white/5">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+      {/* ── AIOS ASSESSMENT CTA BLOCK ── */}
+      <div
+        style={{
+          background: "#080D11",
+          padding: "56px 80px 80px",
+          textAlign: "center",
+        }}
+      >
+        <FadeUp>
+          <p
+            style={{
+              fontSize: "12px",
+              fontWeight: 700,
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              color: "#028090",
+              marginBottom: "20px",
+            }}
+          >
+            See if a Business AI Operating System fits your business
+          </p>
+          <Link
+            href="/business-ai-os-assessment"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              background: "#553555",
+              color: "#fff",
+              padding: "16px 32px",
+              borderRadius: "9999px",
+              fontWeight: 600,
+              fontSize: "15px",
+              textDecoration: "none",
+            }}
+          >
+            Take the Assessment <span>→</span>
+          </Link>
+        </FadeUp>
+      </div>
+
+      <div style={divider} />
+
+      {/* ── SECTION 5 — COMPARISON TABLE ── */}
+      <section
+        style={{
+          background: "#0A1118",
+          padding: "96px 80px",
+          textAlign: "center",
+        }}
+      >
+        <FadeUp>
+          <p style={eyebrow}>Side by side</p>
+          <h2 style={{ fontSize: "38px", fontWeight: 900, marginBottom: "12px" }}>
+            OpenClaw vs. Business AI Operating System: Full Comparison
+          </h2>
+        </FadeUp>
+        <FadeUp delay={0.1}>
+          <p style={{ fontSize: "17px", color: "#fff", marginBottom: "48px" }}>
+            The same promise. Different architecture.
+          </p>
+        </FadeUp>
+
+        <FadeUp delay={0.15}>
+          <div
+            style={{
+              overflowX: "auto",
+              borderRadius: "12px",
+              border: "1px solid rgba(255,255,255,0.07)",
+            }}
+          >
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
+              <thead>
+                <tr>
+                  <th
+                    style={{
+                      padding: "20px 24px",
+                      fontWeight: 700,
+                      fontSize: "11px",
+                      letterSpacing: "3px",
+                      textTransform: "uppercase",
+                      borderBottom: "1px solid rgba(255,255,255,0.1)",
+                      textAlign: "left",
+                      color: "rgba(255,255,255,0.4)",
+                      width: "18%",
+                    }}
+                  />
+                  <th
+                    style={{
+                      padding: "20px 24px",
+                      fontWeight: 700,
+                      fontSize: "11px",
+                      letterSpacing: "3px",
+                      textTransform: "uppercase",
+                      borderBottom: "1px solid rgba(255,255,255,0.1)",
+                      textAlign: "center",
+                      color: "#F45B69",
+                      background: "rgba(244,91,105,0.14)",
+                    }}
+                  >
+                    OpenClaw
+                  </th>
+                  <th
+                    style={{
+                      padding: "20px 24px",
+                      fontWeight: 700,
+                      fontSize: "11px",
+                      letterSpacing: "3px",
+                      textTransform: "uppercase",
+                      borderBottom: "1px solid rgba(255,255,255,0.1)",
+                      textAlign: "center",
+                      color: "#028090",
+                      background: "rgba(2,128,144,0.14)",
+                    }}
+                  >
+                    Business AI Operating System
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableRows.map((row) => (
+                  <tr
+                    key={row.dimension}
+                    style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+                  >
+                    <td
+                      style={{
+                        padding: "18px 24px",
+                        verticalAlign: "top",
+                        fontWeight: 700,
+                        fontSize: "12px",
+                        letterSpacing: "1px",
+                        color: "rgba(255,255,255,0.5)",
+                        textTransform: "uppercase",
+                        textAlign: "left",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {row.dimension}
+                    </td>
+                    <td
+                      style={{
+                        padding: "18px 24px",
+                        verticalAlign: "top",
+                        color: "#fff",
+                        lineHeight: 1.5,
+                        background: "rgba(244,91,105,0.06)",
+                        textAlign: "left",
+                      }}
+                    >
+                      {row.openclaw}
+                    </td>
+                    <td
+                      style={{
+                        padding: "18px 24px",
+                        verticalAlign: "top",
+                        color: "#fff",
+                        lineHeight: 1.5,
+                        background: "rgba(2,128,144,0.06)",
+                        textAlign: "left",
+                      }}
+                    >
+                      {row.aios}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </FadeUp>
+      </section>
+
+      <div style={divider} />
+
+      {/* ── SECTION 6 — FAQ ── */}
+      <section
+        style={{
+          background: "#0A1118",
+          padding: "96px 80px",
+        }}
+      >
+        <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <FadeUp>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-4">
-              Common questions
-            </p>
-            <h2 className="font-black text-3xl md:text-4xl mb-12">
+            <p style={eyebrow}>Common questions</p>
+            <h2 style={{ fontSize: "38px", fontWeight: 900 }}>
               OpenClaw FAQ: Common Questions from Small Business Owners
             </h2>
           </FadeUp>
-          <FadeUp delay={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 max-w-[1100px]">
-              {faqItems.map((item) => (
-                <div
-                  key={item.question}
-                  className="border-b border-white/[0.07] pb-8 pt-0 mb-8"
-                >
-                  <p className="font-bold text-base leading-snug mb-3">{item.question}</p>
-                  <p className="text-white/75 text-sm leading-[1.7]">{item.answer}</p>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
         </div>
+
+        <FadeUp delay={0.1}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "32px 48px",
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            {faqItems.map((item) => (
+              <div
+                key={item.q}
+                style={{
+                  borderBottom: "1px solid rgba(255,255,255,0.07)",
+                  paddingBottom: "32px",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 700,
+                    color: "#fff",
+                    marginBottom: "12px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {item.q}
+                </p>
+                <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#fff" }}>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeUp>
       </section>
 
-      {/* Section 7 — Final CTA (50/50 split) */}
-      <section className="bg-[#080D11] flex flex-col md:flex-row min-h-[600px]">
-        {/* Left visual col */}
-        <div className="relative w-full md:w-1/2 flex-shrink-0 min-h-[300px] md:min-h-0 overflow-hidden">
+      <div style={divider} />
+
+      {/* ── SECTION 7 — FINAL CTA ── */}
+      <section
+        style={{
+          background: "#080D11",
+          display: "flex",
+          alignItems: "stretch",
+          minHeight: "600px",
+        }}
+      >
+        {/* Image column */}
+        <div
+          style={{
+            width: "50%",
+            flexShrink: 0,
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
           <Image
             src="/comparison/cta-clarity.png"
-            alt="From a chaotic tangle of disconnected tools to a clear, structured Business AI Operating System — the path from bottleneck to autonomy"
+            alt="From a chaotic tangle of disconnected tools to a clear, structured Business AI Operating System"
             title="Business AI Operating System: from founder bottleneck to business autonomy"
             fill
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="50vw"
           />
-          {/* fade to right */}
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent to-[#080D11] hidden md:block" />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to left, #080D11 0%, transparent 25%)",
+              zIndex: 1,
+            }}
+          />
         </div>
 
-        {/* Right copy col */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-8 md:px-20 py-16 md:py-24">
+        {/* Copy column */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            padding: "96px 80px",
+          }}
+        >
           <FadeUp>
-            <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-5">
+            <p
+              style={{
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                color: "#028090",
+                marginBottom: "20px",
+              }}
+            >
               Stop being the business. Start owning one.
             </p>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <h2 className="font-black text-3xl md:text-5xl leading-tight mb-7">
+            <h2
+              style={{
+                fontSize: "42px",
+                fontWeight: 900,
+                lineHeight: 1.1,
+                marginBottom: "28px",
+              }}
+            >
               You were right to pause.
               <br />
               Now here is the next move.
             </h2>
           </FadeUp>
           <FadeUp delay={0.2}>
-            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-lg">
+            <p
+              style={{
+                fontSize: "17px",
+                lineHeight: 1.75,
+                color: "#fff",
+                marginBottom: "36px",
+              }}
+            >
               I build Business AI Operating Systems for founders of service businesses who want
               the autonomy OpenClaw promised, without the security exposure, the technical
               complexity, or the guesswork. The starting point is an Audit. I map every place
-              the business runs through you, show you exactly what a Business AI Operating System
-              would change, and you decide if it makes sense. If it does, the Audit fee comes off
-              your build. If it does not, you keep the map.
+              the business runs through you, show you exactly what a Business AI OS would change,
+              and you decide if it makes sense. If it does, the Audit fee comes off your build.
+              If it does not, you keep the map.
             </p>
           </FadeUp>
           <FadeUp delay={0.3}>
             <Link
               href="/work-with-me"
-              className="rounded-full bg-[#553555] px-8 py-4 text-white font-semibold hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-300 inline-flex items-center gap-2"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                background: "#553555",
+                color: "#fff",
+                padding: "16px 32px",
+                borderRadius: "9999px",
+                fontWeight: 600,
+                fontSize: "15px",
+                textDecoration: "none",
+              }}
             >
-              See if it&apos;s a fit
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              See if it&apos;s a fit <span>→</span>
             </Link>
           </FadeUp>
         </div>
       </section>
+
     </main>
   );
 }
