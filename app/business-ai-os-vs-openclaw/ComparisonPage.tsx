@@ -753,9 +753,8 @@ export default function ComparisonPage() {
               zIndex: 2,
               display: "flex",
               flexDirection: "column-reverse",
-              justifyContent: "center",
-              gap: "20px",
-              padding: "8% 52% 8% 1%",
+              justifyContent: "space-evenly",
+              padding: "4% 52% 4% 1%",
               pointerEvents: "none",
             }}
           >
