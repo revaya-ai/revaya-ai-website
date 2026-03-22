@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -231,6 +231,7 @@ const hdg: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function ComparisonPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <main style={{ fontFamily: "'Proxima Nova', 'Inter', sans-serif", background: "#080D11", color: "#fff" }}>
       <style>{`
@@ -241,10 +242,15 @@ export default function ComparisonPage() {
           .split-text-col { padding: 48px 24px !important; flex: none !important; width: 100% !important; }
           .split-copy-col { width: 100% !important; padding: 48px 24px !important; }
           .split-image-right { height: 300px !important; flex: none !important; width: 100% !important; }
+          .split-cta-col { padding: 48px 24px !important; flex: none !important; width: 100% !important; }
           .section-header { padding: 0 24px !important; }
           .pullquote-block { padding: 24px !important; }
           .risk-grid { grid-template-columns: 1fr !important; padding: 24px 16px 48px !important; }
           .citation-block { padding: 0 16px 40px !important; }
+          .assessment-cta { padding: 48px 24px !important; }
+          .section-table { padding: 64px 16px !important; }
+          .section-faq { padding: 64px 16px !important; }
+          .faq-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
         }
       `}</style>
 
@@ -780,6 +786,7 @@ export default function ComparisonPage() {
 
       {/* ── AIOS ASSESSMENT CTA BLOCK ── */}
       <div
+        className="assessment-cta"
         style={{
           background: "#080D11",
           padding: "56px 80px 80px",
@@ -823,6 +830,7 @@ export default function ComparisonPage() {
 
       {/* ── SECTION 5 — COMPARISON TABLE ── */}
       <section
+        className="section-table"
         style={{
           background: "#0A1118",
           padding: "96px 80px",
@@ -969,6 +977,7 @@ export default function ComparisonPage() {
 
       {/* ── SECTION 6 — FAQ ── */}
       <section
+        className="section-faq"
         style={{
           background: "#0A1118",
           padding: "96px 80px",
@@ -985,34 +994,65 @@ export default function ComparisonPage() {
 
         <FadeUp delay={0.1}>
           <div
+            className="faq-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
-              gap: "32px 48px",
+              gap: "0 48px",
               maxWidth: "1200px",
               margin: "0 auto",
             }}
           >
-            {faqItems.map((item) => (
+            {faqItems.map((item, i) => (
               <div
                 key={item.q}
                 style={{
                   borderBottom: "1px solid rgba(255,255,255,0.07)",
-                  paddingBottom: "32px",
                 }}
               >
-                <p
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   style={{
-                    fontSize: "15px",
-                    fontWeight: 700,
-                    color: "#fff",
-                    marginBottom: "12px",
-                    lineHeight: 1.4,
+                    width: "100%",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "16px",
+                    padding: "24px 0",
+                    textAlign: "left",
                   }}
                 >
-                  {item.q}
-                </p>
-                <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#fff" }}>{item.a}</p>
+                  <span
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: 700,
+                      color: "#fff",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {item.q}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "18px",
+                      color: "#028090",
+                      flexShrink: 0,
+                      transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)",
+                      transition: "transform 0.2s ease",
+                      display: "inline-block",
+                    }}
+                  >
+                    +
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#fff", paddingBottom: "24px" }}>
+                    {item.a}
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -1023,6 +1063,7 @@ export default function ComparisonPage() {
 
       {/* ── SECTION 7 — FINAL CTA ── */}
       <section
+        className="section-split"
         style={{
           background: "#080D11",
           display: "flex",
@@ -1032,6 +1073,7 @@ export default function ComparisonPage() {
       >
         {/* Image column */}
         <div
+          className="split-image-col"
           style={{
             width: "50%",
             flexShrink: 0,
@@ -1061,6 +1103,7 @@ export default function ComparisonPage() {
 
         {/* Copy column */}
         <div
+          className="split-cta-col"
           style={{
             flex: 1,
             display: "flex",
