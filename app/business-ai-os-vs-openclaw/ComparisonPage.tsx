@@ -650,12 +650,15 @@ export default function ComparisonPage() {
                 }}
               >
                 I spent 18 years as a digital product manager. Virgin Mobile, Boost Mobile,
-                Papa Murphy&apos;s, Intermedia. I have built systems at scale and watched founders
-                stay trapped inside their own businesses because no system was ever built around
-                them specifically. I have looked at everything being marketed as an OpenClaw
-                alternative. The cloud wrappers, the managed platforms, the no-code builders.
-                They handle the hosting. Some handle the setup. None of them map your actual
-                workflows, connect to your real goals, or build something that compounds over time.
+                Papa Murphy&apos;s, Intermedia. I have managed systems at scale. I know what
+                breaks when there is no strategic layer underneath.
+                <br /><br />
+                I&apos;ve seen OpenClaw alternatives floating around. The cloud wrappers, the
+                managed platforms, the no-code builders. They handle the hosting. Some handle the
+                setup. None of them map your actual workflows, connect to your real goals, keep
+                you focused on the one priority that matters most, or build something that
+                compounds over time.
+                <br /><br />
                 That is what I do. It is a different thing entirely.
               </p>
             </FadeUp>
