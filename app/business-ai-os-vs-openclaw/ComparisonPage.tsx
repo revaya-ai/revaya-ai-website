@@ -754,7 +754,7 @@ export default function ComparisonPage() {
               display: "flex",
               flexDirection: "column-reverse",
               justifyContent: "center",
-              gap: "12px",
+              gap: "20px",
               padding: "8% 52% 8% 1%",
               pointerEvents: "none",
             }}
