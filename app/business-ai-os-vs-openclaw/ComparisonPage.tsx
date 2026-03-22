@@ -425,13 +425,6 @@ export default function ComparisonPage() {
                   Here is what the demos did not show you.
                 </p>
               </FadeUp>
-              <FadeUp delay={0.3}>
-                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
-                  Here is what OpenClaw can actually do for a service business: send a templated
-                  follow-up email, read a document you point it to, search the web for something
-                  specific, execute a file task you have scripted out. Useful. But bounded.
-                </p>
-              </FadeUp>
               <FadeUp delay={0.35}>
                 <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
                   Here is what it cannot do: manage a client relationship. Know that this particular
