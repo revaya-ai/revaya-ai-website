@@ -126,7 +126,7 @@ const faqItems = [
   {
     question: "What does OpenClaw cost per month to run?",
     answer:
-      "OpenClaw is open-source and free to install. Running it is not free. You need a server ($5 to $20 per month), API keys for the AI models it connects to (typically $15 to $35 per month), and for most non-technical business owners, a developer to configure it. Documented cases show monthly bills going from $80 to over $2,100 in a single month when agents run unchecked.",
+      "Running OpenClaw costs approximately $25 to $50 per month for light-to-moderate use. That does not include engineer fees many non-technical users pay for installation. API costs can spike significantly with no real-time visibility. Documented cases show monthly bills going from $80 to over $2,100 in a single month when agents run unchecked.",
   },
   {
     question: "What happens when OpenClaw makes a mistake?",
@@ -197,13 +197,21 @@ export default function ComparisonPage() {
   return (
     <main className="text-white">
       {/* Section 1 — Hero */}
-      <section className="relative bg-[#080D11] overflow-hidden py-28 md:py-40">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#553555]/20 blur-[120px]" />
-          <div className="absolute right-1/4 bottom-1/3 h-[400px] w-[400px] translate-x-1/2 translate-y-1/2 rounded-full bg-[#028090]/10 blur-[100px]" />
-        </div>
+      <section className="relative bg-[#080D11] overflow-hidden min-h-[720px] flex items-center justify-center py-28 md:py-40">
+        {/* Background image */}
+        <Image
+          src="/comparison/hero-option-a.png"
+          alt="Business AI Operating System vs OpenClaw — what service business owners need to know"
+          title="Business AI OS vs OpenClaw comparison for service business founders"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+        {/* Gradient overlay */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#080D11]/82 via-[#080D11]/60 to-[#080D11]/75" />
 
-        <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
+        <div className="relative z-10 max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <FadeUp delay={0.1}>
             <p className="text-[#028090] text-xs font-semibold tracking-widest uppercase mb-6">
               Business AI OS vs OpenClaw
