@@ -26,7 +26,7 @@ const riskCards = [
   {
     num: "04",
     title: "Active security vulnerabilities",
-    body: "A critical remote code execution flaw (CVE-2026-25253, CVE database 2026) allows exploitation without authentication. A separate vulnerability called ClawJacked lets malicious websites hijack your agent silently. 341 confirmed malicious skills on ClawHub. Over 135,000 exposed instances on the public internet. Cisco, Microsoft, and CrowdStrike have all published formal security advisories (Cisco Security Advisory 2026, Microsoft Security Blog Feb 2026, CrowdStrike Blog 2026).",
+    body: "A critical remote code execution flaw (CVE-2026-25253) allows exploitation without authentication — CVSS score 8.8 HIGH. Over 135,000 exposed instances detected on the public internet as of February 12, 2026.* SecurityScorecard, Bitdefender, and Bitsight all published independent research confirming the exposure. 63% of observed deployments were vulnerable, with over 12,000 exploitable via remote code execution.",
   },
   {
     num: "05",
@@ -550,8 +550,14 @@ export default function ComparisonPage() {
         {/* Citation */}
         <div style={{ padding: "0 80px 40px", background: "#080D11" }}>
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", letterSpacing: "0.5px" }}>
-            Sources: TechCrunch, Cisco Security, Microsoft Security Blog, CrowdStrike,
-            CVE-2026-25253, Hacker News
+            Sources: TechCrunch (Julie Bort, Feb 23, 2026) — SecurityScorecard STRIKE Team (Feb 11,
+            2026) — Bitdefender (Feb 12, 2026) — Bitsight Research (Feb 9, 2026) — Infosecurity
+            Magazine (Feb 9, 2026) — CVE-2026-25253 (NVD) — Hacker News
+          </p>
+          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.25)", letterSpacing: "0.5px", marginTop: "6px" }}>
+            * Exposed instance counts varied by research firm and scan date: 30,000+ (Bitsight, Jan
+            27–Feb 8), 40,214 (SecurityScorecard, Feb 9), 135,000+ (Bitdefender/SecurityScorecard,
+            Feb 12). Numbers rose rapidly as deployment accelerated.
           </p>
         </div>
       </section>
