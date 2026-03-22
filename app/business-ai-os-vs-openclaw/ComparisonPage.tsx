@@ -26,17 +26,17 @@ const riskCards = [
   {
     num: "04",
     title: "Active security vulnerabilities",
-    body: "A critical remote code execution flaw (CVE-2026-25253) allows exploitation without authentication. A separate vulnerability called ClawJacked lets malicious websites hijack your agent silently. 341 confirmed malicious skills on ClawHub. Over 135,000 exposed instances on the public internet. Cisco, Microsoft, and CrowdStrike have all published formal security advisories.",
+    body: "A critical remote code execution flaw (CVE-2026-25253, CVE database 2026) allows exploitation without authentication. A separate vulnerability called ClawJacked lets malicious websites hijack your agent silently. 341 confirmed malicious skills on ClawHub. Over 135,000 exposed instances on the public internet. Cisco, Microsoft, and CrowdStrike have all published formal security advisories (Cisco Security Advisory 2026, Microsoft Security Blog Feb 2026, CrowdStrike Blog 2026).",
   },
   {
     num: "05",
     title: "No strategic layer",
-    body: "OpenClaw does what you tell it to do. It has no concept of your business goals, your bottleneck, or what actually needs to happen this week. Without a strategic layer, you automate the wrong things, or create new problems faster than you solve old ones.",
+    body: "OpenClaw does what you tell it to do. It has no concept of your business goals, your bottleneck, or what actually needs to happen this week. It does not know your clients, your constraints, or your calendar priorities. Every session starts from zero. You can tell it to send a follow-up email. It does not know that this particular client is three days away from a contract renewal and needs a different message than the template. Without a strategic layer, you automate the wrong things, or create new problems faster than you solve old ones.",
   },
   {
     num: "06",
     title: "Unpredictable costs",
-    body: "API bills arrive 30 days after the damage. Agents run 24/7 with no real-time visibility into what they are spending. Documented case: one business owner's monthly bill went from $80 to $2,100 in a single month. There is no kill switch built into the default setup.",
+    body: "API bills arrive 30 days after the damage. Agents run 24/7 with no real-time visibility into what they are spending. Documented case: one business owner's monthly bill went from $80 to $2,100 in a single month (Hacker News 2026). There is no kill switch built into the default setup.",
   },
 ];
 
@@ -66,90 +66,106 @@ const aiosLayers = [
 const tableRows = [
   {
     dimension: "Designed for",
-    openclaw: "Technical operators and developers (creator's own words)",
-    aios: "Founders of service businesses, agencies, consultancies",
+    openclaw: "Technical users with development background",
+    aios: "Founders of service businesses, no technical background required",
   },
   {
     dimension: "Setup",
-    openclaw: "Docker, YAML, VPS, API key management",
-    aios: "Professionally designed and implemented",
+    openclaw: "Docker, YAML, VPS or local server — hours to days, often requires a hired engineer",
+    aios: "Done for you — I map your workflows, configure the system, and deploy it",
   },
   {
     dimension: "Audit trail",
-    openclaw: "None by default",
-    aios: "Every decision visible, every action logged",
+    openclaw: "No reviewable log by default",
+    aios: "Full audit trail — every decision and action recorded and reviewable",
   },
   {
     dimension: "Security model",
-    openclaw: "9 documented CVEs, 135K exposed instances, broad system permissions",
-    aios: "Structured permissions per layer, no exposed attack surface",
+    openclaw: "Self-hosted, you own the attack surface and ongoing patches",
+    aios: "Managed and monitored — security is not your problem to maintain",
   },
   {
     dimension: "Strategic layer",
-    openclaw: "None. Executes instructions only.",
-    aios: "Built around your goals, your bottleneck, your KPIs",
+    openclaw: "None — executes instructions, no business context or goal awareness",
+    aios: "Built in — the system knows your goals, your clients, and what matters this week",
   },
   {
     dimension: "Cost predictability",
-    openclaw: "API bills arrive 30 days after the damage. No real-time visibility.",
-    aios: "Fixed engagement scope. No runaway API surprises.",
+    openclaw: "Unpredictable API costs, no kill switch, 30-day billing lag",
+    aios: "Fixed scope, transparent cost, no runaway agent spend",
   },
   {
     dimension: "Compounding",
-    openclaw: "No. Resets each session.",
-    aios: "Yes. Context and learning accumulate over time.",
+    openclaw: "No — each session starts from zero, no memory or learning",
+    aios: "Yes — every layer feeds the next, the system gets smarter over time",
   },
   {
     dimension: "Support",
-    openclaw: "Open-source community",
-    aios: "Ongoing specialist retainer",
+    openclaw: "GitHub issues, Discord, community forum",
+    aios: "Direct — I am the person who built your system and I am reachable",
   },
 ];
 
 const faqItems = [
   {
     q: "Can OpenClaw run a service business?",
-    a: "OpenClaw can automate individual tasks, email management, file organization, web research, but it has no strategic layer. It does what you tell it to do, not what your business actually needs. Without a system that connects your goals, your data, and your workflows, you end up automating the wrong things or creating new problems faster than you solve old ones.",
+    a: "It can run tasks inside a service business, but not the business itself. OpenClaw can send emails, execute scripts, search the web, and manage files. What it cannot do is manage client relationships, make judgment calls about deliverables, or understand what the current priority actually is. Service businesses run on context, judgment, and relationship history. OpenClaw has none of that by default.",
   },
   {
     q: "Is OpenClaw safe for a small business?",
-    a: "OpenClaw has active security vulnerabilities as of early 2026, including a critical remote code execution flaw (CVE-2026-25253), a WebSocket hijacking vulnerability called ClawJacked, and 341 confirmed malicious skills on its ClawHub marketplace. Microsoft, Cisco, and CrowdStrike have all published security advisories. For non-technical service business owners handling client data, the risk is significant.",
+    a: "Not without significant technical investment to harden it. The default setup has no audit trail, no granular permissions, no kill switch, and a documented remote code execution vulnerability (CVE-2026-25253). Cisco, Microsoft, and CrowdStrike have all published formal advisories. The creator has stated it is not intended for non-technical users. If you do not have a developer managing it ongoing, the risk is real and ongoing.",
   },
   {
     q: "Do I need a developer to use OpenClaw?",
-    a: "OpenClaw requires Docker, YAML configuration, VPS or local server setup, API key management, and ongoing security hardening. It was designed for technical operators. In practice, non-technical business owners are paying engineers to install it for them, but the ongoing security burden still falls on the operator.",
+    a: "For initial setup, almost certainly. For ongoing management, yes. OpenClaw requires Docker, YAML configuration, and server management. Most non-technical business owners pay a developer to install it. The security and maintenance burden after that stays with the business owner, not the developer.",
   },
   {
     q: "What does OpenClaw cost per month to run?",
-    a: "Running OpenClaw costs approximately $25 to $50 per month for light-to-moderate use. That does not include engineer fees many non-technical users pay for installation. API costs can spike significantly with no real-time visibility. Documented cases show monthly bills going from $80 to over $2,100 in a single month when agents run unchecked.",
+    a: "The software is free. The infrastructure is not. You need a server or VPS (typically $10-$50/month), API keys for the AI models you connect (variable, potentially $50-$500+/month depending on usage), and potentially developer time for setup and maintenance. One documented case on Hacker News showed a monthly bill jump from $80 to $2,100 in a single month with no warning.",
   },
   {
     q: "What happens when OpenClaw makes a mistake?",
-    a: "There is no audit trail in OpenClaw by default. Actions taken by the agent are not logged in a reviewable format. If something goes wrong, a file deleted, an email sent, data exfiltrated, you may not know it happened until the damage is done.",
+    a: "There is no default error recovery or audit trail. If OpenClaw sends the wrong email, deletes a file, or takes an action you did not intend, you may not know it happened until the consequences surface. Meta's AI safety director had her entire inbox deleted by an agent despite explicit instructions to confirm before acting. The gap between what you think the agent understood and what it actually executed is where the damage happens.",
   },
   {
     q: "Does OpenClaw have an audit trail?",
-    a: "No. OpenClaw does not log agent actions in a reviewable format by default. If the agent deletes a file, sends an email, or accesses data it should not have, there is no record you can trace. A Business AI Operating System is built on full transparency: every decision is visible, every action is logged, and nothing happens without a reason you can follow.",
+    a: "No, not by default. Actions taken by the agent are not logged in a reviewable format out of the box. For a business handling client data, financial information, or sensitive communications, this is a material risk. A Business AI Operating System includes a full audit trail by design — every action is recorded and reviewable.",
   },
   {
-    q: "What is a Business AI OS?",
-    a: "A Business AI Operating System is a structured operating environment built specifically around a founder-led business. It is five connected layers: Context, Data, Intelligence, Automate, and Build. It is designed and implemented by a specialist, auditable at every layer, and built to compound over time.",
+    q: "What is a Business AI Operating System?",
+    a: "A Business AI Operating System is a five-layer architecture built specifically around your business. The five layers are Context (everything the AI needs to know about your business), Data (your live business data), Intelligence (AI that understands your goals and current bottleneck), Automate (workflows that run without you watching), and Build (custom systems that compound over time). The result is a business that can run without you in the room, with a full audit trail of every decision.",
   },
   {
-    q: "Who should use OpenClaw vs. a Business AI OS?",
-    a: "OpenClaw is built for technical operators, developers, engineers, and IT professionals comfortable managing servers, YAML config, and security hardening. A Business AI Operating System is built for founders of service businesses who want autonomous AI without the technical complexity, security exposure, or strategic guesswork.",
+    q: "Who should use OpenClaw vs. a Business AI Operating System?",
+    a: "OpenClaw is suited for technical users, developers, and builders who want a self-hosted AI agent they can customize at the code level. They understand the security tradeoffs and have the background to manage them. A Business AI Operating System is for founders of service businesses who want the same operational autonomy without needing to manage infrastructure, debug YAML, or absorb security vulnerabilities.",
   },
   {
     q: "What is ClawJacked?",
-    a: "ClawJacked is a vulnerability in OpenClaw where a malicious website can send hidden instructions to your agent through the browser, causing it to take actions without your knowledge or consent. It was disclosed in early 2026. It is the reason Cisco, Microsoft, and CrowdStrike all issued separate security advisories within weeks of each other.",
+    a: "ClawJacked is a class of attack specific to OpenClaw where a malicious website or document injects instructions into your agent's context, hijacking its behavior without your knowledge. Because OpenClaw can access your email, files, and browser, a successful ClawJacked attack can exfiltrate data, send messages on your behalf, or execute commands. It was documented in early 2026 and no default protection exists in the standard OpenClaw setup.",
   },
   {
     q: "What is NanoClaw and how is it different from OpenClaw?",
-    a: "NanoClaw is a security-focused fork of OpenClaw built in 2026 specifically because OpenClaw's security problems could not be patched. It is a technically cleaner product. It is still a developer product. NanoClaw does not solve the non-technical founder's problem, it just solves the security problem for operators who were already technical.",
+    a: "NanoClaw is a lighter, faster version of the OpenClaw runtime designed to run on lower-resource environments, including local machines and edge devices. It trades some capability for speed and reduced compute cost. The core architecture — including the lack of an audit trail, the absence of a strategic layer, and the self-hosted security model — is the same. NanoClaw is faster. The fundamental limitations for service businesses are unchanged.",
   },
   {
     q: "Is OpenClaw free?",
-    a: "OpenClaw is open-source and free to install. Running it is not free. You need a server ($5 to $20 per month), API keys for the AI models it connects to (typically $15 to $35 per month), and for most non-technical business owners, a developer to configure it. API costs can scale without warning.",
+    a: "The software is open source and free to download. Running it is not free. You need server infrastructure, API keys for connected AI models, and typically developer time for setup and ongoing maintenance. The total monthly cost for a non-technical business owner using OpenClaw in production is typically $200-$600/month minimum, plus developer hours, and can spike significantly higher with uncapped agent activity.",
+  },
+  {
+    q: "Does OpenClaw work with WhatsApp and Telegram?",
+    a: "Yes, that is part of its appeal. OpenClaw is designed to receive commands through WhatsApp or Telegram and execute them — sending messages, running tasks, controlling your browser — from a messaging interface you already use. The setup that makes that work requires a self-hosted server, API keys, and Docker configuration. The interface is familiar. The infrastructure behind it is not.",
+  },
+  {
+    q: "Can OpenClaw access my email and files?",
+    a: "Yes, and that is the point — and the risk. OpenClaw is built to take real actions, including reading and sending email, opening and editing files, and running terminal commands. That level of access is what makes it powerful and what makes the absence of an audit trail significant. There is no granular permissions layer by default. If OpenClaw can do it, it will do it when told to.",
+  },
+  {
+    q: "How long does it take to set up OpenClaw?",
+    a: "For a technical user who knows Docker and can configure YAML, setup takes several hours to a day. For a non-technical business owner, setup typically requires hiring a developer, which adds cost and time. Most non-technical users report spending one to three days just getting the base installation stable, before any business-specific configuration begins. Ongoing maintenance is separate from initial setup.",
+  },
+  {
+    q: "I already tried OpenClaw — can a Business AI Operating System replace what I built?",
+    a: "Yes, and in most cases it would replace it with something better structured. If you built automations in OpenClaw, those workflows exist because there was a real need. A Business AI Operating System starts with mapping those needs properly — understanding your actual bottlenecks, your data, your decision patterns — and then building around them with a full audit trail and strategic layer. Nothing gets thrown away. The logic gets rebuilt on a foundation that does not require you to maintain it.",
   },
 ];
 
@@ -267,15 +283,29 @@ export default function ComparisonPage() {
                 fontSize: "clamp(36px, 4.5vw, 58px)",
                 fontWeight: 900,
                 lineHeight: 1.08,
-                marginBottom: "28px",
+                marginBottom: "20px",
               }}
             >
-              Business AI OS vs OpenClaw:
+              Business AI Operating System vs OpenClaw:
               <br />
               <span style={{ color: "#F45B69" }}>What Service Business Owners Need to Know</span>
             </h1>
           </FadeUp>
-          <FadeUp delay={0.3}>
+          <FadeUp delay={0.25}>
+            <p
+              style={{
+                fontSize: "13px",
+                fontWeight: 600,
+                letterSpacing: "1px",
+                color: "rgba(255,255,255,0.45)",
+                marginBottom: "24px",
+                fontFamily: "'Proxima Nova', 'Inter', sans-serif",
+              }}
+            >
+              By Shannon Winnicki — 18 years building AI systems for operational businesses.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.35}>
             <p
               style={{
                 fontSize: "18px",
@@ -390,6 +420,25 @@ export default function ComparisonPage() {
                   operational architecture problem. And it has a real solution, just not this one.
                   A business that only works when you do is not an asset. It is a job with overhead.
                   Here is what the demos did not show you.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.3}>
+                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
+                  Here is what OpenClaw can actually do for a service business: send a templated
+                  follow-up email, read a document you point it to, search the web for something
+                  specific, execute a file task you have scripted out. Useful. But bounded.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.35}>
+                <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
+                  Here is what it cannot do: manage a client relationship. Know that this particular
+                  client is sensitive about response time. Understand that the deliverable sitting in
+                  your inbox needs a judgment call, not a send. Know that your priorities shifted
+                  this week because a deal is closing and everything else needs to move. OpenClaw
+                  takes the instructions you give it in the moment. It does not carry context about
+                  your business, your clients, or what matters right now. You can automate a task.
+                  You cannot automate the judgment behind the task. That requires something built
+                  around your actual business, not a general-purpose agent you point at it.
                 </p>
               </FadeUp>
             </div>
@@ -775,6 +824,21 @@ export default function ComparisonPage() {
             }}
           >
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
+              <caption
+                style={{
+                  captionSide: "top",
+                  textAlign: "left",
+                  padding: "0 0 16px 0",
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  letterSpacing: "1.5px",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.3)",
+                  fontFamily: "'Proxima Nova', 'Inter', sans-serif",
+                }}
+              >
+                Comparison: OpenClaw vs Business AI Operating System for Service Businesses
+              </caption>
               <thead>
                 <tr>
                   <th
@@ -1019,7 +1083,7 @@ export default function ComparisonPage() {
               I build Business AI Operating Systems for founders of service businesses who want
               the autonomy OpenClaw promised, without the security exposure, the technical
               complexity, or the guesswork. The starting point is an Audit. I map every place
-              the business runs through you, show you exactly what a Business AI OS would change,
+              the business runs through you, show you exactly what a Business AI Operating System would change,
               and you decide if it makes sense. If it does, the Audit fee comes off your build.
               If it does not, you keep the map.
             </p>
