@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import FaqAccordion from "@/components/FaqAccordion";
+
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -283,7 +283,10 @@ export default function ComparisonPage() {
               </p>
             </FadeUp>
             <FadeUp delay={0.25}>
-              <p className="border-l-4 border-[#F45B69] pl-5 text-white/90">
+              <p className="border-l-[3px] border-[#028090] pl-5 text-white font-semibold">
+                You were imagining something specific. Client emails handled. Follow-ups sent.
+                Documents organized. Your calendar protected. That is not a fantasy. That is an
+                operational architecture problem. And it has a real solution, just not this one.
                 A business that only works when you do is not an asset. It is a job with overhead.
                 Here is what the demos did not show you.
               </p>
@@ -293,8 +296,8 @@ export default function ComparisonPage() {
       </section>
 
       {/* Section 3 — The Risks */}
-      <section className="bg-[#080D11] py-24 md:py-32">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+      <section className="bg-[#080D11]">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10 pt-24 md:pt-32">
           <FadeUp>
             <p className="text-[#F45B69] text-xs font-semibold tracking-widest uppercase mb-4">
               Where it breaks
@@ -312,25 +315,42 @@ export default function ComparisonPage() {
 
           {/* Pull quote */}
           <FadeUp delay={0.15}>
-            <blockquote className="border-l-4 border-[#F45B69] pl-6 mb-14 max-w-2xl">
-              <p className="text-white/80 italic text-xl leading-relaxed">
+            <blockquote className="bg-[#F45B69]/[0.08] border-l-[3px] border-[#F45B69] px-6 md:px-10 py-8 mb-0 w-full">
+              <p className="text-white italic text-lg leading-relaxed">
                 &ldquo;If an AI security researcher could run into this problem, what hope do mere mortals have?&rdquo;
               </p>
-              <cite className="block mt-3 text-white/50 text-sm not-italic">
+              <cite className="block mt-3 text-[#F45B69] text-xs font-bold tracking-widest uppercase not-italic">
                 TechCrunch, Feb 23, 2026
               </cite>
             </blockquote>
           </FadeUp>
+        </div>
 
-          {/* Risk cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {/* Full-width risk image */}
+        <FadeUp delay={0.2}>
+          <div className="relative w-full h-[360px] md:h-[440px] overflow-hidden">
+            <Image
+              src="/comparison/section3-risk.png"
+              alt="135,000 exposed OpenClaw instances on the public internet — a critical security risk for service businesses handling client data"
+              title="OpenClaw security exposure: over 135,000 instances publicly accessible, no authentication required"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080D11]" />
+          </div>
+        </FadeUp>
+
+        {/* Risk cards */}
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10 pb-24 md:pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {riskCards.map((card, i) => (
               <FadeUp key={card.num} delay={0.1 + i * 0.05}>
                 <div className="glass-card border-t-2 border-[#F45B69] p-6 h-full">
                   <p className="text-[#F45B69] text-xs font-semibold tracking-widest uppercase mb-2">
                     {card.num}
                   </p>
-                  <h3 className="font-bold text-lg mb-3">{card.title}</h3>
+                  <h3 className="font-bold text-base mb-3">{card.title}</h3>
                   <p className="text-white/65 text-sm leading-relaxed">{card.body}</p>
                 </div>
               </FadeUp>
@@ -380,9 +400,10 @@ export default function ComparisonPage() {
                 Papa Murphy&apos;s, Intermedia. I have built systems at scale and watched founders
                 stay trapped inside their own businesses because no system was ever built around
                 them specifically. I have looked at everything being marketed as an OpenClaw
-                alternative. None of them map your actual workflows, connect to your real goals,
-                or build something that compounds over time. That is what I do. It is a different
-                thing entirely.
+                alternative. The cloud wrappers, the managed platforms, the no-code builders.
+                They handle the hosting. Some handle the setup. None of them map your actual
+                workflows, connect to your real goals, or build something that compounds over time.
+                That is what I do. It is a different thing entirely.
               </p>
             </FadeUp>
           </div>
@@ -541,7 +562,17 @@ export default function ComparisonPage() {
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <FaqAccordion items={faqItems} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 max-w-[1100px]">
+              {faqItems.map((item) => (
+                <div
+                  key={item.question}
+                  className="border-b border-white/[0.07] pb-8 pt-0 mb-8"
+                >
+                  <p className="font-bold text-base leading-snug mb-3">{item.question}</p>
+                  <p className="text-white/75 text-sm leading-[1.7]">{item.answer}</p>
+                </div>
+              ))}
+            </div>
           </FadeUp>
         </div>
       </section>
