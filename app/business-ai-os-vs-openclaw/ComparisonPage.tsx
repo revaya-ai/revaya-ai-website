@@ -556,7 +556,7 @@ export default function ComparisonPage() {
                 >
                   {card.title}
                 </h3>
-                <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#fff" }}>{card.body}</p>
+                <p style={{ fontSize: "16px", lineHeight: 1.65, color: "#fff" }}>{card.body}</p>
               </div>
             </FadeUp>
           ))}
@@ -636,7 +636,7 @@ export default function ComparisonPage() {
           </FadeUp>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "36px" }}>
             <FadeUp delay={0.2}>
-              <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#fff" }}>
+              <p style={{ fontSize: "17px", lineHeight: 1.75, color: "#fff" }}>
                 The difference between a tool and a system is that a system compounds. Every
                 layer feeds the next. Every decision gets smarter. The business gets more
                 autonomous over time, not just once.
@@ -692,7 +692,7 @@ export default function ComparisonPage() {
             alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
             title="Business AI Operating System five-layer architecture for founder-led service businesses"
             fill
-            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(8%)" }}
+            style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(38%)" }}
             sizes="50vw"
             loading="lazy"
             decoding="async"
