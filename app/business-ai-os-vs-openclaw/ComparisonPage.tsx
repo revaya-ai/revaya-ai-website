@@ -283,7 +283,7 @@ export default function ComparisonPage() {
               </p>
             </FadeUp>
             <FadeUp delay={0.25}>
-              <p className="border-l-3 border-[#F45B69] pl-5 text-white/90">
+              <p className="border-l-4 border-[#F45B69] pl-5 text-white/90">
                 A business that only works when you do is not an asset. It is a job with overhead.
                 Here is what the demos did not show you.
               </p>
@@ -347,7 +347,7 @@ export default function ComparisonPage() {
       </section>
 
       {/* Section 4 — What a Business AI Operating System Is (50/50 split) */}
-      <section className="bg-[#080D11] flex flex-col md:flex-row min-h-[720px] border-t border-white/5">
+      <section className="bg-[#080D11] flex flex-col md:flex-row border-t border-white/5">
         {/* Left copy col */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-20 py-16 md:py-24">
           <FadeUp>
@@ -472,21 +472,33 @@ export default function ComparisonPage() {
           {/* Desktop table */}
           <FadeUp delay={0.15}>
             <div className="hidden md:block rounded-xl overflow-hidden border border-white/10">
-              <div className="grid grid-cols-3 bg-[#553555]/20 px-6 py-4">
-                <p className="text-white/50 text-xs font-semibold uppercase tracking-widest"></p>
-                <p className="text-[#F45B69] font-bold text-xs tracking-[3px] uppercase text-center">OpenClaw</p>
-                <p className="text-[#028090] font-bold text-xs tracking-[3px] uppercase text-center">Business AI Operating System</p>
+              {/* Header */}
+              <div className="grid grid-cols-3">
+                <div className="bg-[#1a1a2e] px-6 py-4" />
+                <div className="bg-[#F45B69]/20 px-6 py-4 text-center border-l border-white/5">
+                  <p className="text-[#F45B69] font-bold text-xs tracking-[3px] uppercase">OpenClaw</p>
+                </div>
+                <div className="bg-[#028090]/20 px-6 py-4 text-center border-l border-white/5">
+                  <p className="text-[#028090] font-bold text-xs tracking-[3px] uppercase">Business AI Operating System</p>
+                </div>
               </div>
+              {/* Rows */}
               {tableRows.map((row, i) => (
                 <div
                   key={row.dimension}
-                  className={`grid grid-cols-3 px-6 py-5 border-t border-white/5 ${
-                    i % 2 === 0 ? "bg-[#111820]" : "bg-[#0d1a4a]/10"
+                  className={`grid grid-cols-3 border-t border-white/5 ${
+                    i % 2 === 0 ? "bg-[#111820]" : "bg-[#0d1520]"
                   }`}
                 >
-                  <p className="text-white/50 text-xs font-bold tracking-[1px] uppercase">{row.dimension}</p>
-                  <p className="text-white/75 text-sm pr-4 bg-[rgba(244,91,105,0.04)] rounded">{row.openclaw}</p>
-                  <p className="text-[#028090] text-sm bg-[rgba(2,128,144,0.04)] rounded">{row.aios}</p>
+                  <div className="px-6 py-5 border-r border-white/5">
+                    <p className="text-white/70 text-xs font-bold tracking-widest uppercase">{row.dimension}</p>
+                  </div>
+                  <div className="px-6 py-5 border-r border-white/5">
+                    <p className="text-white/80 text-sm leading-relaxed">{row.openclaw}</p>
+                  </div>
+                  <div className="px-6 py-5">
+                    <p className="text-[#28b0be] text-sm leading-relaxed">{row.aios}</p>
+                  </div>
                 </div>
               ))}
             </div>
