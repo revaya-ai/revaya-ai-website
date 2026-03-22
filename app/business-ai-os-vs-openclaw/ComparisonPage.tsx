@@ -248,12 +248,13 @@ export default function ComparisonPage() {
       >
         <Image
           src="/comparison/hero-option-a.png"
-          alt="Business AI Operating System vs OpenClaw — what service business owners need to know"
-          title="Business AI OS vs OpenClaw comparison for service business founders"
+          alt="OpenClaw vs Business AI Operating System — what service business owners need to know"
+          title="OpenClaw vs Business AI OS comparison for service business founders"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
           priority
+          fetchPriority="high"
         />
         {/* Gradient overlay */}
         <div
@@ -349,11 +350,13 @@ export default function ComparisonPage() {
         >
           <Image
             src="/comparison/appeal-openclaw.png"
-            alt="OpenClaw AI agent controlling business apps via WhatsApp and Telegram — the appeal that drove 247,000 GitHub stars"
+            alt="OpenClaw AI agent controlling business apps via WhatsApp — why 247,000 developers starred it on GitHub"
             title="OpenClaw AI agent: why 247,000 developers and business owners starred it on GitHub"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             sizes="50vw"
+            loading="lazy"
+            decoding="async"
           />
           <div
             style={{
@@ -507,12 +510,14 @@ export default function ComparisonPage() {
           <div style={{ width: "100%", overflow: "hidden", position: "relative" }}>
             <Image
               src="/comparison/section3-risk.png"
-              alt="135,000 exposed OpenClaw instances on the public internet — a critical security risk for service businesses"
+              alt="OpenClaw security risk: 135,000 instances publicly exposed with no authentication — Shodan scan, 2026"
               title="OpenClaw security exposure: over 135,000 instances publicly accessible, no authentication required"
               width={1440}
               height={440}
               style={{ width: "100%", display: "block", maxHeight: "440px", objectFit: "cover", objectPosition: "center" }}
               sizes="100vw"
+              loading="lazy"
+              decoding="async"
             />
             <div
               style={{
@@ -687,11 +692,13 @@ export default function ComparisonPage() {
         <div style={{ flex: 1, position: "relative", overflow: "hidden" }}>
           <Image
             src="/comparison/aios-layers.png"
-            alt="Five-layer Business AI Operating System architecture: Context, Data, Intelligence, Automate, Build — each layer feeding the next"
+            alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
             title="Business AI Operating System five-layer architecture for founder-led service businesses"
             fill
             style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(8%)" }}
             sizes="50vw"
+            loading="lazy"
+            decoding="async"
           />
           {/* Fade from left */}
           <div
@@ -1015,11 +1022,13 @@ export default function ComparisonPage() {
         >
           <Image
             src="/comparison/cta-clarity.png"
-            alt="From a chaotic tangle of disconnected tools to a clear, structured Business AI Operating System"
+            alt="Business AI Operating System: replacing fragmented tools with a structured alternative to OpenClaw"
             title="Business AI Operating System: from founder bottleneck to business autonomy"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             sizes="50vw"
+            loading="lazy"
+            decoding="async"
           />
           <div
             style={{
