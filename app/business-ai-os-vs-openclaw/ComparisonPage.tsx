@@ -292,20 +292,6 @@ export default function ComparisonPage() {
               <span style={{ color: "#F45B69" }}>What Service Business Owners Need to Know</span>
             </h1>
           </FadeUp>
-          <FadeUp delay={0.25}>
-            <p
-              style={{
-                fontSize: "13px",
-                fontWeight: 600,
-                letterSpacing: "1px",
-                color: "rgba(255,255,255,0.45)",
-                marginBottom: "24px",
-                fontFamily: "'Proxima Nova', 'Inter', sans-serif",
-              }}
-            >
-              By Shannon Winnicki — 18 years building AI systems for operational businesses.
-            </p>
-          </FadeUp>
           <FadeUp delay={0.35}>
             <p
               style={{
