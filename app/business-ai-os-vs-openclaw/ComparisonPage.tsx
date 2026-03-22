@@ -281,8 +281,8 @@ export default function ComparisonPage() {
                 fontSize: "18px",
                 lineHeight: 1.7,
                 color: "#fff",
-                marginBottom: "40px",
-                maxWidth: "680px",
+                marginBottom: "0px",
+                maxWidth: "884px",
                 marginLeft: "auto",
                 marginRight: "auto",
               }}
@@ -293,25 +293,6 @@ export default function ComparisonPage() {
               It is the gap between that demo and what actually happens when you run it on a real
               business. Here is that gap, laid out plainly.
             </p>
-          </FadeUp>
-          <FadeUp delay={0.4}>
-            <Link
-              href="/business-ai-operating-system"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                background: "#553555",
-                color: "#fff",
-                padding: "16px 32px",
-                borderRadius: "9999px",
-                fontWeight: 600,
-                fontSize: "15px",
-                textDecoration: "none",
-              }}
-            >
-              See how it&apos;s built <span>→</span>
-            </Link>
           </FadeUp>
         </div>
       </section>
@@ -640,15 +621,12 @@ export default function ComparisonPage() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "8px",
-                background: "#553555",
-                color: "#fff",
-                padding: "16px 32px",
-                borderRadius: "9999px",
-                fontWeight: 600,
+                gap: "6px",
+                color: "#028090",
                 fontSize: "15px",
+                fontWeight: 600,
                 textDecoration: "none",
-                alignSelf: "flex-start",
+                fontFamily: "'Proxima Nova', 'Inter', sans-serif",
               }}
             >
               See how it&apos;s built <span>→</span>
