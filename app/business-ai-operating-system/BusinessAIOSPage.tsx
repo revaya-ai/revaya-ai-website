@@ -1927,6 +1927,16 @@ export default function BusinessAIOSPage() {
                 </Link>
                 .
               </p>
+              <p className="mt-4 text-white/50 text-sm">
+                Using Claude Code + Obsidian as your business brain?{" "}
+                <Link
+                  href="/business-ai-os-vs-claude-code-obsidian"
+                  className="text-[#028090] underline underline-offset-4 hover:text-white transition-colors"
+                >
+                  See how Business AI OS compares to Claude Code + Obsidian
+                </Link>
+                .
+              </p>
             </FadeUp>
           </div>
         </section>

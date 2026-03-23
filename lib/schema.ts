@@ -351,3 +351,81 @@ export const workWithMeContactPageSchema = {
     ],
   },
 };
+
+export const claudeCodeComparisonFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between Claude Code and a Business AI OS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude Code is a terminal-based AI assistant that can be configured to help with business tasks through CLAUDE.md files and MCP server integrations. A Business AI OS is a professionally designed operating environment — five connected layers (Context, Data, Intelligence, Automate, Build) built around a specific business's goals, workflows, and data. Claude Code is a personal productivity tool. A Business AI OS is business infrastructure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I run my consulting business with Claude Code if I don't know how to code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically yes — but in practice, the setup requires a command-line environment, CLAUDE.md configuration, MCP server setup, and individual integrations for each external tool (calendar, email, CRM). One founder described his setup: 'My key idea is that CC can run CLI tools. If I make my workflow command line based, CC can work it.' That is the honest prerequisite. Founders in the AI automation community report 8 months to reach competence with these systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to set up a working AI system for a service business using Claude Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most honest data point available: founders in the AI automation community report 8 months to competence. That covers the CLAUDE.md setup, MCP server configuration, external integrations, and agent skills for specific workflows. For technically-inclined people who are actively building. For non-technical service business owners, the timeline is longer — or the work stalls before completion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my Claude Code setup when I go on vacation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It stops. The DIY Claude Code + Obsidian setup runs in the founder's terminal, on the founder's machine. When you close the laptop, the system goes dormant. There is no intake processing, no lead qualification, no follow-up, no reporting. Away-from-desk autonomy — the metric that actually matters for a service business — is zero in a standard DIY setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is context engineering and do I need to learn it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Context engineering is the discipline of structuring the information an AI has access to so it can do useful work consistently. In a Claude Code setup, this means maintaining the CLAUDE.md file, organizing your Obsidian vault, and keeping both current as your business changes. It is the core skill required for the DIY approach to work long-term. It requires ongoing effort to maintain — not just initial setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the CLAUDE.md file approach enough for a small service business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a solo founder with technical comfort, moderate business complexity, and time to maintain the system — it can be enough at first. The ceiling appears when the business grows, adds team members, or needs the system to run without the founder's active involvement. The CLAUDE.md approach requires the founder to update it every time business context changes. That maintenance burden compounds over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a Business AI OS actually do that Claude Code + Obsidian doesn't?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things. First, it runs without the founder at the terminal — intake, qualification, follow-up, and reporting continue 24/7. Second, it is built on live business data — actual CRM records, email, meetings, forms — not notes about the business. Third, it is maintained by a specialist. When a tool updates, breaks, or needs to be extended, that is covered. The founder uses the system. They do not build or repair it."
+      }
+    }
+  ]
+};
+
+export const claudeCodeComparisonPageSchema = (url: string) => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Business AI OS vs Claude Code + Obsidian | Revaya AI",
+  "description": "Claude Code and Obsidian can run your business — with the right technical setup, ongoing maintenance, and the founder at the terminal. Here is where that approach has a ceiling, and what a Business AI OS does differently.",
+  "url": url,
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.revaya.ai" },
+      { "@type": "ListItem", "position": 2, "name": "Business AI OS vs Claude Code + Obsidian" }
+    ]
+  }
+});
