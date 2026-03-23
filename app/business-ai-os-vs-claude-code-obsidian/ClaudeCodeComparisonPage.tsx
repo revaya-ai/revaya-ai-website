@@ -106,7 +106,7 @@ const tableRows = [
     dimension: "Compounding",
     claudeCode:
       "Partially. Context and automation compound only if the founder actively maintains and expands the system.",
-    aios: "Yes. Every session, every decision, and every engagement accumulates. The system gets more capable without requiring your time to make it happen.",
+    aios: "Yes. Every session, every decision, and every engagement accumulates. The system gets more capable without requiring your time to make it happen. This is your Obsidian replacement.",
   },
 ];
 
