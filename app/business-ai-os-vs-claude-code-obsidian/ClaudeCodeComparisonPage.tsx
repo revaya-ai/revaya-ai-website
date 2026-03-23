@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 // ─── Style Constants ────────────────────────────────────────────────────────
@@ -187,7 +188,11 @@ export default function ClaudeCodeComparisonPage() {
       <style>{`
         @media (max-width: 768px) {
           .hero-content { padding: 100px 24px 60px !important; }
-          .section-appeal { padding: 64px 24px !important; }
+          .section-split { flex-direction: column !important; min-height: auto !important; }
+          .split-image-col { width: 100% !important; height: 280px !important; }
+          .split-text-col { padding: 48px 24px !important; flex: none !important; width: 100% !important; }
+          .split-copy-col { width: 100% !important; padding: 48px 24px !important; }
+          .split-image-right { height: 300px !important; flex: none !important; width: 100% !important; }
           .section-header { padding: 0 24px !important; }
           .pullquote-block { padding: 24px !important; }
           .ceiling-grid { grid-template-columns: 1fr !important; padding: 24px 16px 48px !important; }
@@ -195,7 +200,6 @@ export default function ClaudeCodeComparisonPage() {
           .section-table { padding: 64px 16px !important; }
           .table-desktop { display: none !important; }
           .table-mobile { display: flex !important; }
-          .section-aios { padding: 64px 24px !important; }
           .assessment-cta { padding: 48px 24px !important; }
           .section-faq { padding: 64px 16px !important; }
           .faq-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
@@ -207,50 +211,43 @@ export default function ClaudeCodeComparisonPage() {
       {/* ─── Section 1: Hero ─────────────────────────────────────────────── */}
       <section
         style={{
-          background: "#080D11",
+          position: "relative",
           minHeight: "720px",
           display: "flex",
           alignItems: "center",
-          position: "relative",
+          justifyContent: "center",
           overflow: "hidden",
+          background: "#080D11",
         }}
       >
-        {/* Teal orb */}
-        <div
-          style={{
-            position: "absolute",
-            top: "10%",
-            left: "5%",
-            width: "400px",
-            height: "400px",
-            background: "radial-gradient(circle, rgba(2,128,144,0.15) 0%, transparent 70%)",
-            filter: "blur(40px)",
-            pointerEvents: "none",
-          }}
+        <Image
+          src="/images/claude-code-comparison/hero-layers.png"
+          alt="Business AI Operating System vs Claude Code + Obsidian — what service business owners need to know"
+          title="Claude Code + Obsidian vs Business AI OS comparison for service business founders"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          sizes="100vw"
+          priority
+          fetchPriority="high"
         />
-        {/* Purple orb */}
+        {/* Gradient overlay */}
         <div
           style={{
             position: "absolute",
-            bottom: "10%",
-            right: "5%",
-            width: "400px",
-            height: "400px",
-            background: "radial-gradient(circle, rgba(85,53,85,0.20) 0%, transparent 70%)",
-            filter: "blur(40px)",
-            pointerEvents: "none",
+            inset: 0,
+            background:
+              "linear-gradient(135deg, rgba(8,13,17,0.88) 0%, rgba(8,13,17,0.65) 50%, rgba(8,13,17,0.80) 100%)",
           }}
         />
 
         <div
           className="hero-content"
           style={{
-            maxWidth: "860px",
-            margin: "0 auto",
-            padding: "140px 60px 80px",
-            textAlign: "center",
             position: "relative",
-            zIndex: 1,
+            zIndex: 2,
+            textAlign: "center",
+            maxWidth: "860px",
+            padding: "140px 60px 80px",
           }}
         >
           <FadeUp delay={0}>
@@ -323,10 +320,43 @@ export default function ClaudeCodeComparisonPage() {
 
       {/* ─── Section 2: The Appeal ────────────────────────────────────────── */}
       <section
-        className="section-appeal"
-        style={{ background: "#0A1118", padding: "96px 80px" }}
+        className="section-split"
+        style={{
+          background: "#0A1118",
+          display: "flex",
+          alignItems: "stretch",
+          minHeight: "640px",
+        }}
       >
-        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+        {/* Image column */}
+        <div
+          className="split-image-col"
+          style={{ width: "50%", position: "relative", overflow: "hidden" }}
+        >
+          <Image
+            src="/images/claude-code-comparison/section2-promise.png"
+            alt="Developer at dark workstation with Obsidian graph and Claude Code terminal"
+            title="The Claude Code + Obsidian business brain setup"
+            fill
+            loading="lazy"
+            decoding="async"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="50vw"
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to left, #0A1118 0%, transparent 20%)",
+            }}
+          />
+        </div>
+
+        {/* Text column */}
+        <div
+          className="split-text-col"
+          style={{ flex: 1, padding: "96px 80px", display: "flex", flexDirection: "column", justifyContent: "center" }}
+        >
           <FadeUp delay={0}>
             <p style={eyebrow}>THE APPEAL</p>
           </FadeUp>
@@ -455,6 +485,27 @@ export default function ClaudeCodeComparisonPage() {
             </p>
           </div>
         </FadeUp>
+
+        {/* Full-width ceiling image */}
+        <div style={{ position: "relative", width: "100%", height: "380px", marginTop: "0" }}>
+          <Image
+            src="/images/claude-code-comparison/section3-ceiling.png"
+            alt="Claude Code + Obsidian setup showing the ceiling — stalled terminal, drifted context files, fragmented workflow"
+            title="Where Claude Code + Obsidian stops working for a service business"
+            fill
+            loading="lazy"
+            decoding="async"
+            style={{ objectFit: "cover", objectPosition: "center 30%" }}
+            sizes="100vw"
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to bottom, transparent 40%, #080D11 100%)",
+            }}
+          />
+        </div>
 
         {/* Ceiling Cards Grid */}
         <div
@@ -824,10 +875,19 @@ export default function ClaudeCodeComparisonPage() {
 
       {/* ─── Section 5: What a Business AI OS Is ─────────────────────────── */}
       <section
-        className="section-aios"
-        style={{ background: "#080D11", padding: "96px 80px" }}
+        className="section-split"
+        style={{
+          background: "#080D11",
+          display: "flex",
+          alignItems: "stretch",
+          minHeight: "720px",
+        }}
       >
-        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+        {/* Text column */}
+        <div
+          className="split-copy-col"
+          style={{ width: "50%", padding: "96px 80px", display: "flex", flexDirection: "column", justifyContent: "center" }}
+        >
           <FadeUp delay={0}>
             <p style={eyebrow}>BUSINESS AI OS</p>
           </FadeUp>
@@ -952,6 +1012,30 @@ export default function ClaudeCodeComparisonPage() {
               Last updated: March 2026
             </p>
           </FadeUp>
+        </div>
+
+        {/* AIOS layers image column */}
+        <div
+          className="split-image-right"
+          style={{ flex: 1, position: "relative", overflow: "hidden" }}
+        >
+          <Image
+            src="/images/claude-code-comparison/section4-aios.png"
+            alt="Business AI Operating System — five layers: Context, Data, Intelligence, Automate, Build"
+            title="The five-layer Business AI Operating System architecture"
+            fill
+            loading="lazy"
+            decoding="async"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="50vw"
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to right, #080D11 0%, rgba(8,13,17,0.55) 30%, transparent 55%)",
+            }}
+          />
         </div>
       </section>
 
