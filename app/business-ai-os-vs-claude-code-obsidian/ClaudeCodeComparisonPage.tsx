@@ -76,7 +76,7 @@ const tableRows = [
     dimension: "Context maintenance",
     claudeCode:
       "Your ongoing job. Context drifts as your business changes. Updating it is founder work at whatever scale you build to.",
-    aios: "Built into the system by design. Every session, every decision, every engagement compounds the context automatically. It gets smarter without your attention.",
+    aios: "Built into the system by design. Every session, every decision, every engagement compounds the context automatically. It gets smarter without your attention. This is your Obsidian replacement.",
   },
   {
     dimension: "Runs when you're away",
