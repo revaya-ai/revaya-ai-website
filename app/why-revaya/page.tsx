@@ -67,7 +67,7 @@ export default function WhyRevayaPage() {
               <span className="w-6 h-px bg-[#028090]" />
               The Founder&rsquo;s Story
             </span>
-            <h1 className="font-display font-black text-[2.5rem] md:text-[3.5rem] leading-[1.05] text-white mb-5">
+            <h1 className="font-display font-black text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] leading-[1.05] text-white mb-5">
               I didn&rsquo;t design a methodology.
               <br />
               I lived one.

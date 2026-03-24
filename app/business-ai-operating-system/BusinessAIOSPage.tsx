@@ -1608,10 +1608,13 @@ export default function BusinessAIOSPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <p className="text-[0.875rem] font-semibold uppercase tracking-[0.18em] text-[#028090] mb-5">
-                  For Founder-Led Businesses
-                </p>
-                <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-6">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+                  <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
+                    For Founder-Led Businesses
+                  </span>
+                </div>
+                <h1 className="font-display text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] font-black leading-[1.05] text-white mb-8">
                   Business AI Operating System.
                   <br />
                   <span className="text-[#F45B69]">
