@@ -144,7 +144,7 @@ export default function WhyRevayaPage() {
                     title: "The breaking point.",
                     paragraphs: [
                       "Burnout doesn't always look dramatic. It looked like not caring anymore about work I used to find genuinely interesting. Making decisions by default instead of by thought.",
-                      "I got laid off from a toxic company in 2022. Sold the house. Moved into an RV full-time — not a plan, a gut call. Then I made a deliberate choice: step back two levels, take a significant pay cut, specifically to have the mental space to build something that mattered. I'm still there. Still building on the side.",
+                      "I got laid off from a toxic company in 2022. Sold the house. Moved into an RV full-time. Not a plan, a gut call. Then I made a deliberate choice: step back two levels, take a significant pay cut, specifically to have the mental space to build something that mattered. I'm still there. Still building on the side.",
                     ],
                   },
                   {
@@ -160,7 +160,7 @@ export default function WhyRevayaPage() {
                     title: "What I learned.",
                     paragraphs: [
                       "The methodology gave me the framework. Building it inside my own business gave me the proof.",
-                      "Every layer I built for Revaya AI — the content engine, the client intake pipeline, the project delivery system, the agent team — was a working version of what I now build for clients.",
+                      "Every layer I built for Revaya AI, the content engine, the client intake pipeline, the project delivery system, the agent team, was a working version of what I now build for clients.",
                       "I built it for myself first. Now I have something real to show. Not a pitch deck. A working system.",
                     ],
                   },
@@ -201,7 +201,7 @@ export default function WhyRevayaPage() {
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <p className="text-[1rem] leading-[1.7] text-white/70">
-                    The challenge command that reviews every piece of copy against brand standards. The content pipeline that drafts, approves, and pushes to the database automatically. The agent team built on a completely different architecture than a traditional org chart — four functions instead of fourteen job titles.
+                    The challenge command that reviews every piece of copy against brand standards. The content pipeline that drafts, approves, and pushes to the database automatically. The agent team built on a completely different architecture than a traditional org chart. Four functions instead of fourteen job titles.
                   </p>
                   <p className="text-[1rem] leading-[1.7] text-white/70">
                     I built all of it before I offered it to anyone else. That&rsquo;s what an AIOS engagement looks like for your business. I map how your business actually operates, identify where custom automations would change something real, and build them to match the specific way you work. Not a generic setup. Not a template.
@@ -286,7 +286,7 @@ export default function WhyRevayaPage() {
       <section className="relative py-8 border-t border-white/[0.04]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <p className="text-[1rem] text-white/40">
-            If you want to follow how this builds — the methodology, the decisions, the real work — I document it on{" "}
+            If you want to follow how this builds, the methodology, the decisions, the real work, I document it on{" "}
             <a
               href="https://www.linkedin.com/in/swinnicki/"
               target="_blank"
