@@ -1614,7 +1614,7 @@ export default function BusinessAIOSPage() {
                     For Founder-Led Businesses
                   </span>
                 </div>
-                <h1 className="font-display text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] font-black leading-[1.05] text-white mb-8">
+                <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
                   Business AI Operating System.
                   <br />
                   <span className="text-[#F45B69]">

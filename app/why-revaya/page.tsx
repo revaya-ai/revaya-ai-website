@@ -63,11 +63,13 @@ export default function WhyRevayaPage() {
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-24" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
-            <span className="inline-flex items-center gap-2 text-[0.8125rem] uppercase tracking-[0.1em] font-medium text-[#028090] mb-5">
-              <span className="w-6 h-px bg-[#028090]" />
-              The Founder&rsquo;s Story
-            </span>
-            <h1 className="font-display font-black text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] leading-[1.05] text-white mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-6">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+              <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
+                The Founder&rsquo;s Story
+              </span>
+            </div>
+            <h1 className="font-display font-black text-[2.5rem] md:text-[3.5rem] leading-[1.05] text-white mb-5">
               I didn&rsquo;t design a methodology.
               <br />
               I lived one.
