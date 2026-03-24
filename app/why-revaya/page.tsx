@@ -42,7 +42,7 @@ const credentials = [
   {
     label: "Built working systems",
     detail:
-      "Using Claude Code, Vercel, Railway, Retool, Twilio, and others. From real client deliverables, not tutorials. The system also replaced tools I used to depend on — n8n, Make, Obsidian, Airtable. When it's built right, you stop needing the patchwork.",
+      "Using Claude Code, Vercel, Railway, Retool, Twilio, and others. From real client deliverables, not tutorials. The system also replaced tools I used to depend on: n8n, Make, Obsidian, Airtable. When it's built right, you stop needing the patchwork.",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function WhyRevayaPage() {
                   Eighteen years as the person who stood between a business need and a dev team.
                 </h2>
                 <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  At Virgin Mobile, Papa Murphy&rsquo;s, Intermedia — I wasn&rsquo;t the outside consultant with a framework. I was inside the machine. Managing up to $11M website redesigns. Building an email program that drove 80% revenue growth. Coordinating remote development teams globally.
+                  At Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. I wasn&rsquo;t the outside consultant with a framework. I was inside the machine. Managing up to $11M website redesigns. Building an email program that drove 80% revenue growth. Coordinating remote development teams globally.
                 </p>
                 <p className="text-[1rem] leading-[1.7] text-white/70 mb-4">
                   I knew what the right systems looked like. I knew what it cost to build them.
