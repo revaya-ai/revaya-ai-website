@@ -1736,10 +1736,10 @@ export default function BusinessAIOSPage() {
                 </ul>
                 <div className="mt-12 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-start gap-6">
                   <Link
-                    href="/work-with-me"
+                    href="/business-ai-os-assessment"
                     className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
                   >
-                    Start with the Audit →
+                    Take the Assessment →
                   </Link>
                   <div className="flex flex-col justify-center sm:pt-3">
                     <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
