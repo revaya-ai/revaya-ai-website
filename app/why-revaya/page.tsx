@@ -275,9 +275,6 @@ export default function WhyRevayaPage() {
             >
               Start the conversation →
             </Link>
-            <p className="mt-5 text-[0.875rem] text-white/35">
-              This goes to a short form. Shannon reads it personally. You&rsquo;ll hear back within 48 hours.
-            </p>
           </FadeIn>
         </div>
       </section>
