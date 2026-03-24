@@ -1608,10 +1608,16 @@ export default function BusinessAIOSPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-6">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+                  <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
+                    For Founder-Led Businesses
+                  </span>
+                </div>
                 <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
                   Business AI Operating System.
                   <br />
-                  <span className="text-white/70">
+                  <span className="text-[#F45B69]">
                     How your business runs without you.
                   </span>
                 </h1>
@@ -1953,7 +1959,7 @@ export default function BusinessAIOSPage() {
                   href="/work-with-me"
                   className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
                 >
-                  Book the Audit →
+                  Start the Conversation →
                 </Link>
               </div>
             </FadeUp>

@@ -26,7 +26,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
             className="w-full flex items-center justify-between py-5 text-left group"
             aria-expanded={openIndex === i}
           >
-            <span className="font-display font-normal text-[1.125rem] md:text-[1.25rem] text-white leading-[1.2] pr-4 group-hover:text-[#028090] transition-colors duration-150">
+            <span className="text-[1rem] md:text-[1.0625rem] text-white leading-[1.6] pr-4 group-hover:text-[#028090] transition-colors duration-150">
               {item.question}
             </span>
             <span className="shrink-0 text-[#028090] transition-transform duration-200">

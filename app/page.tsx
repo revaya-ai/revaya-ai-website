@@ -728,7 +728,7 @@ export default function HomePage() {
 
           {/* H1 */}
           <FadeIn delay={0.1}>
-            <h1 className="font-display font-black text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.0] text-white mb-6 tracking-tight">
+            <h1 className="font-display font-black text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] leading-[1.0] text-white mb-6 tracking-tight">
               Stop Being the Business.
               <br />
               Start Owning One.
