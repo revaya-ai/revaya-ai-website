@@ -19,6 +19,7 @@ export async function POST(request: Request) {
       triedSoFar,
       linkedinUrl,
       marketingOptIn,
+      turnstileToken,
     } = body;
 
     // Basic validation
@@ -27,6 +28,34 @@ export async function POST(request: Request) {
         { error: "Name, email, and bottleneck are required." },
         { status: 400 }
       );
+    }
+
+    // --- Turnstile verification ---
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    if (turnstileSecret) {
+      if (!turnstileToken) {
+        return NextResponse.json(
+          { error: "Verification failed. Please try again." },
+          { status: 400 }
+        );
+      }
+
+      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          secret: turnstileSecret,
+          response: turnstileToken,
+        }),
+      });
+
+      const verifyData = await verifyRes.json();
+      if (!verifyData.success) {
+        return NextResponse.json(
+          { error: "Verification failed. Please try again." },
+          { status: 400 }
+        );
+      }
     }
 
     // --- Supabase: save lead + optional email consent (non-blocking) ---

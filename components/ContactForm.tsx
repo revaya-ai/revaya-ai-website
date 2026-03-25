@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 interface FormData {
   name: string;
@@ -44,6 +45,8 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -58,11 +61,17 @@ export default function ContactForm() {
     setError(null);
     setSubmitting(true);
 
+    if (!turnstileToken) {
+      setError("Please complete the verification check.");
+      setSubmitting(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, turnstileToken }),
       });
 
       if (!res.ok) {
@@ -83,6 +92,8 @@ export default function ContactForm() {
           ? err.message
           : "Something went wrong. Please try again."
       );
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     } finally {
       setSubmitting(false);
     }
@@ -306,6 +317,17 @@ export default function ContactForm() {
           I&rsquo;d like to receive marketing emails from Revaya AI, including insights, resources, and updates. You can opt out anytime.
         </label>
       </div>
+
+      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+          onSuccess={setTurnstileToken}
+          onError={() => setTurnstileToken(null)}
+          onExpire={() => setTurnstileToken(null)}
+          options={{ theme: "dark", size: "flexible" }}
+        />
+      )}
 
       {error && (
         <p className="text-[0.875rem] text-[#F45B69]" role="alert">
