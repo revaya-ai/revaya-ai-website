@@ -318,16 +318,14 @@ export default function ContactForm() {
         </label>
       </div>
 
-      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
-        <Turnstile
+      <Turnstile
           ref={turnstileRef}
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+          siteKey="0x4AAAAAACvlOpXIGRw5UnCI"
           onSuccess={setTurnstileToken}
           onError={() => setTurnstileToken(null)}
           onExpire={() => setTurnstileToken(null)}
           options={{ theme: "dark", size: "flexible" }}
         />
-      )}
 
       {error && (
         <p className="text-[0.875rem] text-[#F45B69]" role="alert">
