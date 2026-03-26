@@ -201,7 +201,7 @@ export default function WhyRevayaPage() {
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <p className="text-[1rem] leading-[1.7] text-white/70">
-                    The challenge command that reviews every piece of copy against brand standards. The content pipeline that drafts, approves, and pushes to the database automatically. The agent team built on a completely different architecture than a traditional org chart. Four functions instead of fourteen job titles.
+                    A quality check that reviews every piece of copy against my brand standards before it goes out. A content pipeline that drafts, approves, and publishes without me touching it. A virtual team structure that handles four business functions instead of requiring fourteen job titles.
                   </p>
                   <p className="text-[1rem] leading-[1.7] text-white/70">
                     I built all of it before I offered it to anyone else. That&rsquo;s what an AIOS engagement looks like for your business. I map how your business actually operates, identify where custom automations would change something real, and build them to match the specific way you work. Not a generic setup. Not a template.
@@ -266,8 +266,11 @@ export default function WhyRevayaPage() {
               <br />
               the system long enough.
             </h2>
-            <p className="text-[1.125rem] leading-[1.65] text-white/65 mb-10 max-w-[440px] mx-auto">
+            <p className="text-[1.125rem] leading-[1.65] text-white/65 mb-4 max-w-[440px] mx-auto">
               Tell me about your situation.
+            </p>
+            <p className="text-[1rem] leading-[1.65] text-white/45 mb-10 max-w-[520px] mx-auto">
+              Every month without the right system is another month of 60 hour weeks, missed opportunities, and a business that only runs when you do.
             </p>
             <Link
               href="/work-with-me"

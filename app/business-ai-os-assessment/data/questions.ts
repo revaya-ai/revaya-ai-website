@@ -1,6 +1,25 @@
 import { Question } from "../types/assessment";
 
 export const questions: Question[] = [
+  // ─── SECTION 0: Priority Problem (context only, surfaces the ONE thing) ───
+
+  {
+    id: 0,
+    text: "What's the ONE thing in your business that's costing you the most time right now?",
+    type: "single-select",
+    section: "Priority Problem",
+    helperText: "Pick the one that hits hardest. This shapes your results.",
+    options: [
+      { label: "Following up with leads and prospects", points: 0 },
+      { label: "Managing my team's work and questions", points: 0 },
+      { label: "Doing tasks only I know how to do", points: 0 },
+      { label: "Client communication and updates", points: 0 },
+      { label: "Financial tracking and reporting", points: 0 },
+      { label: "Content creation and marketing", points: 0 },
+      { label: "Something else entirely", points: 0 },
+    ],
+  },
+
   // ─── SECTION 1: Business Profile (Q1–Q4, context only) ───
 
   {

@@ -90,6 +90,11 @@ export default function WorkWithMePage() {
                     If it&rsquo;s not the right fit, I&rsquo;ll tell you that. No pitch, no pressure. Just an honest read on whether this makes sense for your business.
                   </p>
                 </div>
+                <div className="mt-4 glass-card rounded-xl p-5 border-l-2 border-[#553555]">
+                  <p className="text-[0.875rem] text-white/50 leading-[1.65]">
+                    I take on a small number of AIOS engagements at a time. If it&rsquo;s not the right moment, I&rsquo;ll tell you that too.
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </div>

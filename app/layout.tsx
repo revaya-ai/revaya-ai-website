@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Revaya AI",
   },
   description:
-    "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses. Five layers. Three measurable outcomes.",
+    "Your business only works when you do. That's a systems problem I can fix. Business AI Operating Systems for founder-led businesses.",
   keywords: [
     "Business AI Operating System",
     "Business AI OS",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Revaya AI",
     locale: "en_US",
     description:
-      "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses. Five layers. Three measurable outcomes.",
+      "Your business only works when you do. That's a systems problem I can fix. Business AI Operating Systems for founder-led businesses.",
   },
   twitter: {
     card: "summary_large_image",

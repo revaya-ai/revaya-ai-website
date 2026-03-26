@@ -1611,18 +1611,18 @@ export default function BusinessAIOSPage() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-6">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
                   <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
-                    For Founder-Led Businesses
+                    Does This Sound Familiar?
                   </span>
                 </div>
                 <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
-                  Business AI Operating System.
+                  Your business breaks every time you step away.
                   <br />
                   <span className="text-[#F45B69]">
-                    How your business runs without you.
+                    That&apos;s a systems problem.
                   </span>
                 </h1>
                 <p className="text-[1rem] leading-[1.7] text-white/80">
-                  I build a system your business runs on instead of you. Five layers. Every major drain on your time. Automated, connected, fully auditable.
+                  I find the specific thing that&apos;s costing you the most time right now. Then I build the system that removes it permanently. Not a tool. Not a stack. A system your business actually runs on. Fully auditable. Every decision visible.
                 </p>
               </motion.div>
               <motion.div
@@ -1633,6 +1633,65 @@ export default function BusinessAIOSPage() {
                 <HeroLiveFeedPanel />
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* BEFORE STATE — text L, panel R */}
+        <section className="py-24 md:py-32">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <FadeUp direction="right">
+                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                  Business AI Operating System
+                </p>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-7">
+                  You answer the same questions 20 times a month.
+                </h2>
+                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                  New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&apos;re unavailable, nothing moves.
+                </p>
+                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                  Or you&apos;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&apos;s no one to hand off to. The business doesn&apos;t run when you&apos;re not in it. It waits.
+                </p>
+                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                  You make decisions from memory because clean data takes a week to pull.
+                </p>
+                <p className="text-[1rem] text-white/85 leading-[1.7] mb-8">
+                  Your business stops when you stop.
+                </p>
+                <p className="text-[1rem] text-white font-medium leading-[1.7]">
+                  That&apos;s not a people problem. It&apos;s an architecture problem.
+                </p>
+                <p className="text-[1rem] text-white/70 leading-[1.7] mt-8 border-l-2 border-[#028090]/40 pl-6">
+                  I spent 18 years inside companies like Virgin Mobile, Papa Murphy&apos;s, and Intermedia. I know what the right systems look like. I know what it costs to build them. And I built this one for my own business first.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <PainQueuePanel />
+              </FadeUp>
+            </div>
+          </div>
+        </section>
+
+        {/* COST OF INACTION */}
+        <section className="py-24 md:py-32">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <FadeUp>
+              <div className="max-w-[760px]">
+                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
+                  The Math
+                </p>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  What This Costs You Every Month You Don&apos;t Fix It
+                </h2>
+                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                  If you&apos;re spending 15 hours a week on tasks a system could handle, and your time is worth $150 an hour, that&apos;s $117,000 a year. Every month this continues is another $9,750 you don&apos;t get back.
+                </p>
+                <p className="text-[1rem] text-white font-medium leading-[1.7]">
+                  The AIOS Setup pays for itself in 2 to 3 months.
+                </p>
+              </div>
+            </FadeUp>
           </div>
         </section>
 
@@ -1662,37 +1721,6 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
                   If that&apos;s you, start with the Audit. It will tell us both if you&apos;re ready.
                 </p>
-              </FadeUp>
-            </div>
-          </div>
-        </section>
-
-        {/* BEFORE STATE — text L, panel R */}
-        <section className="py-24 md:py-32">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp direction="right">
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-7">
-                  You answer the same questions 20 times a month.
-                </h2>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
-                  New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&apos;re unavailable, nothing moves.
-                </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
-                  Or you&apos;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&apos;s no one to hand off to. The business doesn&apos;t run when you&apos;re not in it. It waits.
-                </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
-                  You make decisions from memory because clean data takes a week to pull.
-                </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-8">
-                  Your business stops when you stop.
-                </p>
-                <p className="text-[1rem] text-white font-medium leading-[1.7]">
-                  That&apos;s not a people problem. It&apos;s an architecture problem.
-                </p>
-              </FadeUp>
-              <FadeUp delay={0.15} direction="left">
-                <PainQueuePanel />
               </FadeUp>
             </div>
           </div>
@@ -1930,7 +1958,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What does this cost, and how do I know it will pay off?",
-                  answer: "The engagement starts with an Audit, scoped and priced before any Setup begins. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders I've worked with get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount. If those do not move, the system is not working.",
+                  answer: "The Audit is $2,500 and deductible against Setup if you proceed. If you decide not to move forward, you still walk away with a comprehensive audit of your operations, a clear gap map, and a roadmap you can execute on your own. It's yours either way. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders I've worked with get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount. If those do not move, the system is not working.",
                 },
                 {
                   question: "What if the AI makes a wrong decision or does something I didn't intend?",
@@ -1946,7 +1974,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "Claude Computer Use can click buttons, fill forms, and log into accounts. Can your system do that too?",
-                  answer: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how we do it in production — faster, more reliable, and with a full audit trail.",
+                  answer: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
                 },
               ]} />
             </FadeUp>
@@ -1981,7 +2009,7 @@ export default function BusinessAIOSPage() {
             <FadeUp>
               <div className="max-w-[560px]">
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
-                  You become a business owner instead of a business operator.
+                  You take a week off. Your business keeps going. That&apos;s not a fantasy. It&apos;s what the system is built to do.
                 </h2>
                 <Link
                   href="/work-with-me"

@@ -4,7 +4,7 @@ import BusinessAIOSPage from "./BusinessAIOSPage";
 export const metadata: Metadata = {
   title: "Business AI Operating System | AIOS Services",
   description:
-    "Five layers. The Business AI Operating System built for founder-led businesses. By AI consultant Shannon Winnicki — custom to how your business works.",
+    "Your business breaks when you step away. I build the system that keeps it running. The Business AI Operating System for founder-led businesses, custom to how you work.",
 };
 
 const faqSchema = {
@@ -32,7 +32,7 @@ const faqSchema = {
       name: "What does this cost, and how do I know it will pay off?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The engagement starts with an Audit, scoped and priced before any Setup begins. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount.",
+        text: "The Audit is $2,500 and deductible against Setup if you proceed. If you decide not to move forward, you still walk away with a comprehensive audit of your operations, a clear gap map, and a roadmap you can execute on your own. It\u2019s yours either way. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount.",
       },
     },
     {
@@ -56,7 +56,7 @@ const faqSchema = {
       name: "Claude Computer Use can click buttons, fill forms, and log into accounts. Can your system do that too?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how we do it in production — faster, more reliable, and with a full audit trail.",
+        text: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
       },
     },
   ],

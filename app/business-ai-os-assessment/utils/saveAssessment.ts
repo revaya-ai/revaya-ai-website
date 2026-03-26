@@ -18,17 +18,24 @@ export async function saveAssessmentResponse({
   optedIn = true,
 }: SaveAssessmentParams) {
   // Extract contextual values for tagging
+  // Priority problem (Q0, index 0)
+  const priorityProblemOption = answers[0]?.selectedOption ?? 0;
+  const priorityProblem = questions[0].options?.[priorityProblemOption]?.label ?? "Unknown";
+
   const operationTypeOption = answers[1]?.selectedOption ?? 0;
-  const operationType = questions[0].options?.[operationTypeOption]?.label ?? "Unknown";
+  const operationType = questions[1].options?.[operationTypeOption]?.label ?? "Unknown";
 
   const businessTypeOption = answers[2]?.selectedOption ?? 0;
-  const businessType = questions[1].options?.[businessTypeOption]?.label ?? "Unknown";
+  const businessType = questions[2].options?.[businessTypeOption]?.label ?? "Unknown";
 
   const revenuePerPersonOption = answers[3]?.selectedOption ?? 0;
-  const revenuePerPerson = questions[2].options?.[revenuePerPersonOption]?.label ?? "Unknown";
+  const revenuePerPerson = questions[3].options?.[revenuePerPersonOption]?.label ?? "Unknown";
 
   // Build tags for segmentation
   const tags: string[] = [];
+
+  // Priority problem tag
+  tags.push(`priority-${priorityProblem.toLowerCase().replace(/ /g, "-").slice(0, 40)}`);
 
   // Category tag
   tags.push(results.category.toLowerCase().replace(/ /g, "-"));

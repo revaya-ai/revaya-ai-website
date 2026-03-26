@@ -91,7 +91,7 @@ export const aiosAuditServiceSchema = {
   name: "Business AI Operating System Audit",
   alternateName: "AIOS Audit",
   description:
-    "The Business AI OS Audit maps the entire service business: where time goes, where decisions bottleneck, where AI can actually help. It produces an operational gap map, an AI readiness assessment, and a recommended path forward. The Audit fee is deductible against the AIOS Setup if the client proceeds.",
+    "The Audit is $2,500 and is deductible against the AIOS Setup if the client proceeds. It maps the entire service business: where time goes, where decisions bottleneck, where AI can actually help. It produces an operational gap map, an AI readiness assessment, and a recommended path forward.",
   provider: {
     "@type": "Person",
     name: "Shannon Winnicki",

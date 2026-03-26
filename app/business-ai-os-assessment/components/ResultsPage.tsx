@@ -307,7 +307,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
               every hour spent on the wrong things is revenue the business can't generate.
             </p>
             <p className="text-white/40 text-xs mt-3">
-              This is a company-level metric, but the point is personal. We're talking about your hours, not your team's.
+              This is a company-level metric, but the point is personal. It's about your hours, not your team's.
             </p>
           </div>
         )}
@@ -455,9 +455,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
         <div className="space-y-4 pt-4">
           {/* Primary CTA */}
           <a
-            href="https://cal.com/revaya/ai-fit-call"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/work-with-me"
             className="flex items-center justify-center gap-2 w-full py-5 rounded-full bg-brand-primary text-white font-display font-black text-sm hover:bg-brand-primary/80 transition-all duration-200 glow-purple"
           >
             Start the Conversation

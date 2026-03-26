@@ -745,7 +745,7 @@ export default function HomePage() {
           {/* Body */}
           <FadeIn delay={0.25}>
             <p className="text-[1rem] leading-[1.75] text-white/85 mb-10 max-w-[718px] mx-auto">
-              I build business operating systems for founders who&rsquo;ve become the business. A business that only works when you do isn&rsquo;t an asset. It&rsquo;s a job with overhead. I build the system that keeps your business running whether you&rsquo;re in it or not.
+              Every task, every decision, every answer still routes through you. That&rsquo;s not a business you own. That&rsquo;s a job with overhead. I build the system that changes that.
             </p>
           </FadeIn>
 
@@ -779,15 +779,14 @@ export default function HomePage() {
         >
           {[...Array(3)].flatMap((_, ri) =>
             [
-              "Context",
-              "Data",
-              "Intelligence",
-              "Automate",
-              "Build",
-              "Business AI OS",
-              "5 Layers",
-              "3 Outcomes",
-              "Founder-Led",
+              "Everything routes through me",
+              "Can't take a week off",
+              "Team texts me at 9pm",
+              "Business stops when I stop",
+              "Wearing all the hats",
+              "No time to think",
+              "Just need a system",
+              "10+ hours back",
             ].map((item, i) => (
               <span
                 key={`${ri}-${i}`}
@@ -809,7 +808,7 @@ export default function HomePage() {
             <FadeIn direction="right">
               <div>
                 <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
-                  Map &rarr; Build &rarr; Own
+                  The Problem &rarr; The Fix
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   A system that runs
@@ -817,7 +816,7 @@ export default function HomePage() {
                   when you don&rsquo;t.
                 </h2>
                 <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  Every task, every decision, every answer still routes through you. We map where the business runs through you, then build the system that replaces you there. You step into the owner role instead of the operator role.
+                  Every task, every decision, every answer still routes through you. I map where the business runs through you, then build the system that replaces you there. You step into the owner role instead of the operator role.
                 </p>
                 <Link
                   href="/business-ai-operating-system"
@@ -981,9 +980,9 @@ export default function HomePage() {
                   Your Control Center
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Not another tool.
+                  Stop switching between 12 tabs.
                   <br />
-                  The last one.
+                  This replaces most of them.
                 </h2>
                 <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
                   This replaces most of what you&rsquo;re already paying for. Context, data, intelligence, automations, builds. One place. All connected. Your business stops living across a dozen different tabs.
@@ -1024,6 +1023,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── ROI CALLOUT ──────────────────────────────────────────────────────── */}
+      <section className="relative py-16 md:py-20" style={{ zIndex: 1 }}>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <FadeIn>
+            <div className="rounded-2xl border border-[#028090]/20 bg-[#028090]/[0.06] p-8 md:p-12 text-center max-w-[740px] mx-auto">
+              <p className="text-[1.125rem] md:text-[1.375rem] leading-[1.6] text-white/90 font-medium">
+                If you&rsquo;re spending 15 hours a week on operations a system could handle, and your effective rate is $150 an hour, that&rsquo;s <span className="text-[#028090] font-bold">$117,000 a year</span>. Every month you wait is another <span className="text-[#028090] font-bold">$9,750</span> gone.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32 overflow-hidden" style={{ zIndex: 1 }}>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#028090]/06 to-transparent pointer-events-none" />
@@ -1040,11 +1052,17 @@ export default function HomePage() {
               manage it.
             </p>
             <Link
-              href="/work-with-me"
+              href="/business-ai-os-assessment"
               className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
-              Start the conversation →
+              Take the Assessment &rarr;
             </Link>
+            <p className="mt-4 text-[0.8125rem] text-white/40">
+              Or if you already know,{" "}
+              <Link href="/work-with-me" className="text-white/50 underline underline-offset-2 hover:text-white/70 transition-colors">
+                start the conversation &rarr;
+              </Link>
+            </p>
           </FadeIn>
         </div>
       </section>
