@@ -1920,6 +1920,34 @@ export default function BusinessAIOSPage() {
                   question: "What do you actually need from me?",
                   answer: "Time for the Audit interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Audit is only as good as the information it's built on.",
                 },
+                {
+                  question: "Claude Desktop and Cowork look like they do the same thing. Why would I need a custom AI OS?",
+                  answer: "Claude Desktop is a better assistant. A Business AI OS is the system that runs your business when you're not in the room. Every Cowork session starts fresh. It does not know your clients, your pricing, or what you decided last week. What I build holds that context permanently and logs every decision so you know what happened when something goes wrong. Anthropic will never build that for your specific company.",
+                },
+                {
+                  question: "Can't I just set up Claude Code and Obsidian myself? Why pay for this?",
+                  answer: "You could. The tools are not the product. Knowing what to build is. You could open Obsidian today and still be staring at a blank vault asking what to put in it. The system design requires understanding your business — your clients, your workflows, your decision bottlenecks. That takes discovery, not installation. My clients pay because mapping their business and building the right system is worth more than three months of trial and error.",
+                },
+                {
+                  question: "What does this cost, and how do I know it will pay off?",
+                  answer: "The engagement starts with an Audit, scoped and priced before any Setup begins. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders I've worked with get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount. If those do not move, the system is not working.",
+                },
+                {
+                  question: "What if the AI makes a wrong decision or does something I didn't intend?",
+                  answer: "Every system I build includes a decision log and rollback capability. You can see every action the system took, when it took it, and why. This is not optional. It is part of how I build. A Cowork user asked it to clean up a folder. It deleted 11GB of files with no confirmation and no audit trail. That is what happens when a powerful tool operates without accountability. What I build is auditable by design.",
+                },
+                {
+                  question: "I already use a bunch of tools. Does this replace everything or layer on top?",
+                  answer: "It layers on top, in almost every case. The point is not to swap your tools. It is to connect them and make them work as a system instead of a collection of separate things. The Audit maps what you already have. The Build adds what is missing. If something in your stack is genuinely redundant, I will tell you that in the Audit. But most founders do not have too many tools. They have tools that do not talk to each other.",
+                },
+                {
+                  question: "Is this basically a custom ChatGPT wrapper for my business?",
+                  answer: "No. A chatbot answers questions. A Business AI OS runs operations. The difference is what happens when you are not in the room. A chatbot waits. The AIOS acts. It monitors, routes, responds, and logs based on the logic built into it during Setup. It also carries full business context across every interaction: your clients, your pricing, your decisions, your voice. A chatbot forgets every time you close the tab.",
+                },
+                {
+                  question: "Claude Computer Use can click buttons, fill forms, and log into accounts. Can your system do that too?",
+                  answer: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how we do it in production — faster, more reliable, and with a full audit trail.",
+                },
               ]} />
             </FadeUp>
             <FadeUp delay={0.2}>
