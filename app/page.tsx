@@ -1008,10 +1008,10 @@ export default function HomePage() {
                 &ldquo;I spent 18 years as a digital product manager. Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. That time taught me how businesses actually operate from the inside.&rdquo;
               </p>
               <p className="text-[1rem] leading-[1.7] text-white/80 mb-4">
-                I spent the last year going deep on AI. Python certified, technically trained, and active in the world&rsquo;s leading AI training program alongside 800 professional AI developers. I build the thing. I don&rsquo;t configure it.
+                I spent the last year going deep on AI. Python certified, technically trained, and part of a network of 800+ AI developers and engineers. When your build needs a specialist I don&rsquo;t have to go looking. The team is already there.
               </p>
               <p className="text-[1rem] text-white/70">
-                When your build needs a specialist, I have bench depth most solo consultants can&rsquo;t match. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
+                You&rsquo;re hiring a strategist with 18 years of operational experience and a build team behind her that most solo consultants can&rsquo;t touch. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
                 <span>18+ years product leadership</span>

@@ -81,7 +81,7 @@ const timeline = [
 const processSteps = [
   { num: "01", title: "Audit", body: "Map your business." },
   { num: "02", title: "Scope", body: "Define exactly what gets built and at what cost." },
-  { num: "03", title: "Build", body: "I architect your Business AIOS." },
+  { num: "03", title: "Build", body: "I architect the system. My team builds it. 800+ AI developers behind every engagement." },
   { num: "04", title: "Deliver", body: "The system is installed, tested, and running." },
   { num: "05", title: "Train + Support", body: "Three sessions, 30 days of direct support, then a check-in at day 30. Questions answered, adoption protected." },
 ];

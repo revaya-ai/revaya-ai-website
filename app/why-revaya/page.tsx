@@ -37,7 +37,7 @@ const credentials = [
   {
     label: "AI Agency Accelerator",
     detail:
-      "200+ hours of training in agentic engineering, AI agent architecture, automations, and the Business AI OS methodology. Python certified. Still active.",
+      "200+ hours of training in agentic engineering, AI agent architecture, and the Business AI OS methodology. Python certified. Part of a network of 800+ AI developers and engineers. When the build needs depth, the team is already in place.",
   },
   {
     label: "Built working systems",
