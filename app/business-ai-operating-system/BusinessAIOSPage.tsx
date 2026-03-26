@@ -269,7 +269,7 @@ function ContextPanel() {
                 </span>
               </div>
               <p className="text-[0.8rem] text-white/75 leading-[1.6]">
-                Pricing ranges from $10K to $27K depending on scope. Audit is deductible. Retainer starts post-setup.
+                The Audit is $2,500 (deductible from your Setup). Setup ranges from $10K to $30K depending on scope. Retainer starts post-setup.
               </p>
             </motion.div>
           )}
@@ -1871,7 +1871,7 @@ export default function BusinessAIOSPage() {
               </h2>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <FaqAccordion items={[
+              <FaqAccordion columns={2} items={[
                 {
                   question: "What is a Business AI Operating System?",
                   answer: "Most AI tools solve one problem. A Business AI Operating System connects your entire operation, so the business runs on information and systems instead of your constant attention. It has five layers: Context (what the business knows), Data (what the business tracks), Intelligence (how decisions get made), Automate (what happens without you), and Build (the custom tools that make it yours). The goal is simple. You stop being the business. You start owning one.",
