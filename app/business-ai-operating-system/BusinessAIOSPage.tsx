@@ -1452,7 +1452,7 @@ function WhoPanel() {
         <span className="text-[0.7rem] font-mono text-white/25 tracking-wide">aios · candidate scan</span>
         <span className="text-[0.7rem] font-mono text-[#028090]">live</span>
       </div>
-      <div className="p-5 space-y-3.5 min-h-[270px]">
+      <div className="p-5 space-y-6 min-h-[370px]">
         <AnimatePresence>
           {businessTypes.slice(0, count).map((type, i) => (
             <motion.div
