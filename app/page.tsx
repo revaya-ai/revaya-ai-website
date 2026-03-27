@@ -737,7 +737,7 @@ export default function HomePage() {
 
           {/* Subhead */}
           <FadeIn delay={0.2}>
-            <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white/80 mb-5 max-w-[620px] mx-auto">
+            <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white mb-5 max-w-[620px] mx-auto">
               You didn&rsquo;t build a business. You built something that quietly owns you.
             </p>
           </FadeIn>
@@ -807,7 +807,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   The Problem &rarr; The Fix
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -842,7 +842,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
-                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Step 1 — Map
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -874,7 +874,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Knowledge
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -910,7 +910,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
-                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Intelligence
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -940,7 +940,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Automate Busy Work
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -976,7 +976,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
-                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Your Control Center
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -1007,10 +1007,10 @@ export default function HomePage() {
               <p className="font-display font-black text-[1.5rem] md:text-[2rem] text-white leading-[1.2] mb-6">
                 &ldquo;I spent 18 years as a digital product manager. Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. That time taught me how businesses actually operate from the inside.&rdquo;
               </p>
-              <p className="text-[1rem] leading-[1.7] text-white/80 mb-4">
+              <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                 I spent the last year going deep on AI. Python certified, technically trained, and part of a network of 800+ AI developers and engineers. When your build needs a specialist I don&rsquo;t have to go looking. The team is already there.
               </p>
-              <p className="text-[1rem] text-white/70">
+              <p className="text-[1.0625rem] text-white/70">
                 You&rsquo;re hiring a strategist with 18 years of operational experience and a build team behind her that most solo consultants can&rsquo;t touch. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
@@ -1028,7 +1028,7 @@ export default function HomePage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
             <div className="rounded-2xl border border-[#028090]/20 bg-[#028090]/[0.06] p-8 md:p-12 text-center max-w-[740px] mx-auto">
-              <p className="text-[1.125rem] md:text-[1.375rem] leading-[1.6] text-white/90 font-medium">
+              <p className="text-[1.125rem] md:text-[1.375rem] leading-[1.6] text-white font-medium">
                 If you&rsquo;re spending 15 hours a week on operations a system could handle, and your effective rate is $150 an hour, that&rsquo;s <span className="text-[#028090] font-bold">$117,000 a year</span>. Every month you wait is another <span className="text-[#028090] font-bold">$9,750</span> gone.
               </p>
             </div>
@@ -1046,7 +1046,7 @@ export default function HomePage() {
               <br />
               Your business keeps going.
             </h2>
-            <p className="text-[1rem] leading-[1.7] text-white/75 mb-10 max-w-[500px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.7] text-white/70 mb-10 max-w-[500px] mx-auto">
               Your bottleneck is a solvable problem. Most owners I talk to already
               know what it is. The AIOS is built to remove it permanently, not
               manage it.

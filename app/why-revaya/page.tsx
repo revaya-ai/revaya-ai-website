@@ -74,7 +74,7 @@ export default function WhyRevayaPage() {
               <br />
               I lived one.
             </h1>
-            <p className="text-[1.125rem] leading-[1.65] text-white/65 max-w-[580px]">
+            <p className="text-[1.125rem] leading-[1.65] text-white/70 max-w-[580px]">
               Eighteen years on the inside of companies that operate at scale. Then I built the same system for my own business. That&rsquo;s what&rsquo;s running Revaya today.
             </p>
           </FadeIn>
@@ -106,7 +106,7 @@ export default function WhyRevayaPage() {
             {/* Intro text */}
             <FadeIn direction="left" delay={0.15} className="order-first md:order-last">
               <div className="md:pt-6">
-                <p className="text-[0.875rem] uppercase tracking-[0.1em] text-[#028090] font-medium mb-6">
+                <p className="text-[0.875rem] uppercase tracking-[0.1em] text-[#F45B69] font-medium mb-6">
                   Shannon Winnicki
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -195,7 +195,7 @@ export default function WhyRevayaPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#028090]/15 to-[#553555]/15" />
               <div className="absolute inset-0 border border-[#028090]/25 rounded-2xl" />
               <div className="relative p-8 md:p-14">
-                <p className="text-[1.0625rem] leading-[1.65] text-white/50 mb-5">
+                <p className="text-[1.0625rem] leading-[1.65] text-white/45 mb-5">
                   This is not a talking point.
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
@@ -268,7 +268,7 @@ export default function WhyRevayaPage() {
               <br />
               the system long enough.
             </h2>
-            <p className="text-[1.125rem] leading-[1.65] text-white/65 mb-4 max-w-[440px] mx-auto">
+            <p className="text-[1.125rem] leading-[1.65] text-white/70 mb-4 max-w-[440px] mx-auto">
               Tell me about your situation.
             </p>
             <p className="text-[1.0625rem] leading-[1.65] text-white/45 mb-10 max-w-[520px] mx-auto">
