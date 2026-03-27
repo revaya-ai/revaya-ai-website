@@ -8,7 +8,7 @@ const milestones = [
   { year: "2022",      label: "Reset.",               note: "Sold the house. Moved into the RV." },
   { year: "Jun 2025",  label: "AAA Program.",         note: "200+ hours. 10 months absorb mode." },
   { year: "Late 2025", label: "Build mode.",         note: "The AIOS starts taking shape." },
-  { year: "Mar 2026",  label: "It clicked.",          note: "Bird's eye view. Something real to show." },
+  { year: "Feb 2026",  label: "It clicked.",          note: "Bird's eye view. Something real to show." },
   { year: "Now",       label: "This.",                note: "Built for herself first. Now built for you." },
 ];
 
