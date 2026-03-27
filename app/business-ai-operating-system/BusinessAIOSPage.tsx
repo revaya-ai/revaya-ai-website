@@ -1959,7 +1959,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "How long does this take?",
-                  answer: "The Audit runs across one to two sessions and produces a specific deliverable within a week of completion. The Setup is scoped after the Audit. Most engagements run four to eight weeks, depending on the complexity of the business and the depth of the Build layer. I'll give you a specific timeline after the Audit, not before. Generic timelines are guesses. Scoped timelines are real.",
+                  answer: "The Audit runs across one to two sessions and produces a specific deliverable within a week of completion. The Setup is scoped after the Audit. We work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, it's best to have in-person sessions. Then we create a support plan based on your business and needs.",
                 },
                 {
                   question: "Do I need to be technical?",
@@ -1975,11 +1975,11 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What do you actually need from me?",
-                  answer: "Time for the Audit interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Audit is only as good as the information it's built on.",
+                  answer: "Time for the Audit interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Audit is only as good as the information it's built on. You'll also want to set aside a few days during Delivery and Training so we can work side by side as the system goes live.",
                 },
                 {
                   question: "Claude Desktop and Cowork look like they do the same thing. Why would I need a custom AI OS?",
-                  answer: "Claude Desktop is a better assistant. A Business AI OS is the system that runs your business when you're not in the room. Every Cowork session starts fresh. It does not know your clients, your pricing, or what you decided last week. What I build holds that context permanently and logs every decision so you know what happened when something goes wrong. Anthropic will never build that for your specific company.",
+                  answer: "Claude Desktop is a better assistant. A Business AI OS is the system that runs your business when you're not in the room. Every Cowork session starts fresh. It does not know your clients, your pricing, or what you decided last week. What I build holds that context permanently and logs every decision so you know what happened when something goes wrong.",
                 },
                 {
                   question: "Can't I just set up Claude Code and Obsidian myself? Why pay for this?",
@@ -1995,7 +1995,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "I already use a bunch of tools. Does this replace everything or layer on top?",
-                  answer: "It layers on top, in almost every case. The point is not to swap your tools. It is to connect them and make them work as a system instead of a collection of separate things. The Audit maps what you already have. The Build adds what is missing. If something in your stack is genuinely redundant, I will tell you that in the Audit. But most founders do not have too many tools. They have tools that do not talk to each other.",
+                  answer: "It replaces some and connects the rest. The Audit maps what you already have. If something in your stack is redundant, I will tell you. But most founders do not have too many tools. They have tools that do not talk to each other. The AIOS connects your core stack into one system, replaces anything that is not pulling its weight, and fills the gaps with custom builds. The result is fewer subscriptions, less context switching, and one place where everything lives.",
                 },
                 {
                   question: "Is this basically a custom ChatGPT wrapper for my business?",

@@ -718,7 +718,7 @@ export default function HomePage() {
 
           {/* Eyebrow */}
           <FadeIn delay={0}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8 mt-5">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
               <span className="text-[0.875rem] uppercase tracking-[0.12em] text-white/80 font-medium">
                 Business AI Operating System

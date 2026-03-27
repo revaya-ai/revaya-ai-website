@@ -16,8 +16,8 @@ export default function Footer() {
 
           {/* Nav */}
           <nav className="flex flex-col gap-3">
-            <Link href="/" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
-              Home
+            <Link href="/business-ai-operating-system" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
+              Business AI Operating System
             </Link>
             <Link href="/why-revaya" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Why Revaya
@@ -27,6 +27,17 @@ export default function Footer() {
             </Link>
             <Link href="/business-ai-os-assessment" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Business AI OS Assessment
+            </Link>
+          </nav>
+
+          {/* Resources */}
+          <nav className="flex flex-col gap-3">
+            <span className="text-[0.75rem] uppercase tracking-[0.1em] text-white/30 font-medium mb-1">Resources</span>
+            <Link href="/business-ai-os-vs-openclaw" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
+              Business AI OS vs OpenClaw
+            </Link>
+            <Link href="/business-ai-os-vs-claude-code-obsidian" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
+              Business AI OS vs Claude Code + Obsidian
             </Link>
           </nav>
 
