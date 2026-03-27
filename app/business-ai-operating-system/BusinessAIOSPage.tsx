@@ -615,7 +615,7 @@ function OrbitPanel() {
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const w = container.clientWidth;
-      const h = w * 1.1;
+      const h = w * 1.15;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       canvas.style.width = w + "px";
@@ -624,9 +624,18 @@ function OrbitPanel() {
     };
     resize();
 
-    const ringRadii = [130, 220, 310];
-    const ringRotations = [0, 0, 0];
-    const ringSpeeds = [0.0003, -0.0002, 0.00015];
+    // visual ring radii (for drawing the ring strokes)
+    const visualRingRadii = [130, 220, 310];
+    const ringColors: [string, string, string] = [
+      "rgba(244,91,105,",   // coral
+      "rgba(85,53,85,",     // purple
+      "rgba(2,128,144,",    // teal
+    ];
+
+    // node sizes by ring (diameter in px, halved for radius)
+    const nodeSizeByRing: Record<number, number> = { 100: 19, 175: 23, 260: 27 };
+    const fontSizeByRing: Record<number, number> = { 100: 7, 175: 8, 260: 9 };
+    const haloSizeByRing: Record<number, number> = { 100: 28, 175: 34, 260: 40 };
 
     const parseColor = (c: string): [number, number, number] => {
       if (c.startsWith("rgba")) {
@@ -647,38 +656,41 @@ function OrbitPanel() {
       const H = canvas.height / dpr;
       const cx = W / 2, cy = H / 2;
       const t = tRef.current;
-      const scale = W / 580;
+      const scale = W / 620;
 
       ctx.clearRect(0, 0, W, H);
 
       // background radial glow
-      const bgGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, 280 * scale);
+      const bgGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, 300 * scale);
       bgGlow.addColorStop(0, "rgba(85,53,85,0.06)");
       bgGlow.addColorStop(0.5, "rgba(2,128,144,0.03)");
       bgGlow.addColorStop(1, "transparent");
       ctx.fillStyle = bgGlow;
       ctx.fillRect(0, 0, W, H);
 
-      // orbit rings — smooth gradient with glow
-      ringRadii.forEach((baseR, ri) => {
-        ringRotations[ri] += ringSpeeds[ri];
+      // orbit rings — dual stroke: wide blurred glow + thin bright line
+      visualRingRadii.forEach((baseR, ri) => {
         const r = baseR * scale;
-        const opacity = [0.25, 0.15, 0.10][ri];
-        const glowOpacity = [0.08, 0.05, 0.03][ri];
-        const colors = ["rgba(2,128,144,", "rgba(85,53,85,", "rgba(2,128,144,"];
 
         // wide glow stroke
         ctx.beginPath();
         ctx.arc(cx, cy, r, 0, Math.PI * 2);
-        ctx.strokeStyle = colors[ri] + glowOpacity + ")";
+        ctx.strokeStyle = ringColors[ri] + "0.12)";
         ctx.lineWidth = 6 * scale;
         ctx.stroke();
 
         // thin bright stroke
         ctx.beginPath();
         ctx.arc(cx, cy, r, 0, Math.PI * 2);
-        ctx.strokeStyle = colors[ri] + opacity + ")";
+        ctx.strokeStyle = ringColors[ri] + "0.20)";
         ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        // subtle inset glow
+        ctx.beginPath();
+        ctx.arc(cx, cy, r - 2 * scale, 0, Math.PI * 2);
+        ctx.strokeStyle = ringColors[ri] + "0.04)";
+        ctx.lineWidth = 3 * scale;
         ctx.stroke();
       });
 
@@ -692,10 +704,10 @@ function OrbitPanel() {
         const r = a.ring * scale;
         const x = cx + Math.cos(a.angle) * r;
         const y = cy + Math.sin(a.angle) * r;
+        const [cr, cg, cb] = parseColor(a.color);
 
         const spokeGrad = ctx.createLinearGradient(cx, cy, x, y);
-        const [cr, cg, cb] = parseColor(a.color);
-        spokeGrad.addColorStop(0, `rgba(${cr},${cg},${cb},0.18)`);
+        spokeGrad.addColorStop(0, `rgba(${cr},${cg},${cb},0.15)`);
         spokeGrad.addColorStop(1, `rgba(${cr},${cg},${cb},0.02)`);
 
         ctx.beginPath();
@@ -717,18 +729,18 @@ function OrbitPanel() {
         const y = cy + Math.sin(a.angle) * r * p.progress;
         const [cr, cg, cb] = parseColor(a.color);
 
-        // fade in then out
+        // fade in near center, fade out near node
         const alpha = p.progress < 0.1 ? p.progress / 0.1 : p.progress > 0.85 ? (1 - p.progress) / 0.15 : 1;
 
         ctx.beginPath();
-        ctx.arc(x, y, 1.2 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${cr},${cg},${cb},${(alpha * 0.6).toFixed(3)})`;
+        ctx.arc(x, y, 1 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},${(alpha * 0.3).toFixed(3)})`;
         ctx.fill();
       });
 
       // center outer glow
       const outerGlow = ctx.createRadialGradient(cx, cy, 20 * scale, cx, cy, 80 * scale);
-      outerGlow.addColorStop(0, "rgba(85,53,85,0.20)");
+      outerGlow.addColorStop(0, "rgba(85,53,85,0.22)");
       outerGlow.addColorStop(0.5, "rgba(85,53,85,0.06)");
       outerGlow.addColorStop(1, "transparent");
       ctx.beginPath();
@@ -736,8 +748,10 @@ function OrbitPanel() {
       ctx.fillStyle = outerGlow;
       ctx.fill();
 
-      // center breathing pulse ring
-      const breathe = Math.sin(t * 0.018) * 0.5 + 0.5; // 0..1 sinusoidal
+      // center breathing pulse
+      const breathe = Math.sin(t * 0.018) * 0.5 + 0.5;
+
+      // pulse ring 1
       const pulseRadius = (36 + breathe * 8) * scale;
       const pulseAlpha = 0.15 + breathe * 0.2;
       ctx.beginPath();
@@ -746,7 +760,7 @@ function OrbitPanel() {
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // second pulse ring (offset phase)
+      // pulse ring 2 (offset phase)
       const breathe2 = Math.sin(t * 0.018 + Math.PI) * 0.5 + 0.5;
       const pulseRadius2 = (38 + breathe2 * 6) * scale;
       ctx.beginPath();
@@ -755,13 +769,23 @@ function OrbitPanel() {
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      // center node — gradient fill with breathing scale
+      // center node — 58px diameter, breathing
       const centerScale = 1 + breathe * 0.06;
-      const centerR = 28 * scale * centerScale;
+      const centerR = 29 * scale * centerScale;
       const centerGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, centerR);
       centerGrad.addColorStop(0, "rgba(85,53,85,1)");
       centerGrad.addColorStop(0.7, "rgba(85,53,85,0.85)");
       centerGrad.addColorStop(1, "rgba(85,53,85,0.4)");
+
+      // strong purple glow behind center
+      const centerGlow = ctx.createRadialGradient(cx, cy, centerR * 0.5, cx, cy, centerR * 3);
+      centerGlow.addColorStop(0, "rgba(85,53,85,0.25)");
+      centerGlow.addColorStop(0.5, "rgba(85,53,85,0.08)");
+      centerGlow.addColorStop(1, "transparent");
+      ctx.beginPath();
+      ctx.arc(cx, cy, centerR * 3, 0, Math.PI * 2);
+      ctx.fillStyle = centerGlow;
+      ctx.fill();
 
       ctx.beginPath();
       ctx.arc(cx, cy, centerR, 0, Math.PI * 2);
@@ -777,121 +801,107 @@ function OrbitPanel() {
 
       // "YOU" text
       ctx.fillStyle = "rgba(255,255,255,0.95)";
-      ctx.font = `600 ${12 * scale}px Inter, sans-serif`;
+      ctx.font = `800 ${11 * scale}px Inter, sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.letterSpacing = `${2 * scale}px`;
-      ctx.fillText("YOU", cx + 1 * scale, cy);
+      ctx.letterSpacing = `${3 * scale}px`;
+      ctx.fillText("YOU", cx + 1.5 * scale, cy);
       ctx.letterSpacing = "0px";
 
-      // pass 2 — agent nodes
+      // pass 2 — agent nodes (labels inside larger glass orbs)
       agentsRef.current.forEach((a) => {
         const r = a.ring * scale;
         const x = cx + Math.cos(a.angle) * r;
         const y = cy + Math.sin(a.angle) * r;
         const [cr, cg, cb] = parseColor(a.color);
 
-        // large soft halo
-        // outer glow halo — larger, more visible
-        const halo = ctx.createRadialGradient(x, y, 0, x, y, 38 * scale);
+        const nodeR = (nodeSizeByRing[a.ring] || 23) * scale;
+        const haloR = (haloSizeByRing[a.ring] || 34) * scale;
+        const fontSize = (fontSizeByRing[a.ring] || 8) * scale;
+
+        // 1. Outer glow halo
+        const halo = ctx.createRadialGradient(x, y, 0, x, y, haloR);
         halo.addColorStop(0, `rgba(${cr},${cg},${cb},0.20)`);
         halo.addColorStop(0.4, `rgba(${cr},${cg},${cb},0.08)`);
         halo.addColorStop(1, "transparent");
         ctx.beginPath();
-        ctx.arc(x, y, 38 * scale, 0, Math.PI * 2);
+        ctx.arc(x, y, haloR, 0, Math.PI * 2);
         ctx.fillStyle = halo;
         ctx.fill();
 
-        // glass node background — more translucent, glassier
-        const nodeR = 16 * scale;
+        // 2. Glass body
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(13,26,74,0.45)";
+        ctx.fillStyle = "rgba(8,13,17,0.45)";
         ctx.fill();
 
-        // glass border — brighter, thicker
+        // 3. Colored border (1.8px, 0.6 opacity)
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.7)`;
+        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.6)`;
         ctx.lineWidth = 1.8;
         ctx.stroke();
 
-        // second inner border — white glass edge
+        // Secondary inner white border for glass edge
         ctx.beginPath();
         ctx.arc(x, y, nodeR - 1.5 * scale, 0, Math.PI * 2);
         ctx.strokeStyle = "rgba(255,255,255,0.08)";
         ctx.lineWidth = 0.8;
         ctx.stroke();
 
-        // top highlight — glass reflection (bigger, brighter)
-        ctx.beginPath();
-        ctx.arc(x - 3 * scale, y - 4 * scale, nodeR * 0.7, 0, Math.PI * 2);
-        const highlight = ctx.createRadialGradient(
-          x - 3 * scale, y - 4 * scale, 0,
-          x - 3 * scale, y - 4 * scale, nodeR * 0.7
-        );
+        // 4. Top-left glass reflection
+        const hlX = x - nodeR * 0.25;
+        const hlY = y - nodeR * 0.3;
+        const hlR = nodeR * 0.6;
+        const highlight = ctx.createRadialGradient(hlX, hlY, 0, hlX, hlY, hlR);
         highlight.addColorStop(0, "rgba(255,255,255,0.18)");
         highlight.addColorStop(0.5, "rgba(255,255,255,0.05)");
         highlight.addColorStop(1, "transparent");
+        ctx.beginPath();
+        ctx.arc(hlX, hlY, hlR, 0, Math.PI * 2);
         ctx.fillStyle = highlight;
         ctx.fill();
 
-        // live dot — smooth pulse
-        const dotPhase = Math.sin(t * 0.03 + a.angle * 2) * 0.5 + 0.5;
-        const dotAlpha = 0.4 + dotPhase * 0.6;
-        const dotSize = (2.5 + dotPhase * 1) * scale;
-
+        // 5. Inner glowing dot (upper portion of node)
+        const dotR = (a.ring === 100 ? 2 : a.ring === 175 ? 2.5 : 3) * scale;
+        const dotY = y - nodeR * 0.3;
         // dot glow
         ctx.beginPath();
-        ctx.arc(x + 9 * scale, y - 9 * scale, dotSize * 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(34,197,94,${(dotAlpha * 0.25).toFixed(3)})`;
+        ctx.arc(x, dotY, dotR * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},0.15)`;
         ctx.fill();
-
         // dot core
         ctx.beginPath();
-        ctx.arc(x + 9 * scale, y - 9 * scale, dotSize, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(34,197,94,${dotAlpha.toFixed(3)})`;
+        ctx.arc(x, dotY, dotR, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},0.9)`;
         ctx.fill();
 
-        // label — position with background pill
-        ctx.font = `500 ${11 * scale}px Inter, sans-serif`;
-        const labelText = a.label;
-        const taskText = a.task;
-        const lw = ctx.measureText(labelText).width;
-        const lx = Math.min(Math.max(x, lw / 2 + 6), W - lw / 2 - 6);
-        const ly = y > cy ? y - 38 * scale : y + 20 * scale;
-
-        // pill background
-        const pillW = Math.max(lw, ctx.measureText(taskText).width) + 12 * scale;
-        const pillH = 28 * scale;
-        const pillX = lx - pillW / 2;
-        const pillY = ly - 2 * scale;
-
-        ctx.beginPath();
-        const pillR = 6 * scale;
-        ctx.moveTo(pillX + pillR, pillY);
-        ctx.lineTo(pillX + pillW - pillR, pillY);
-        ctx.quadraticCurveTo(pillX + pillW, pillY, pillX + pillW, pillY + pillR);
-        ctx.lineTo(pillX + pillW, pillY + pillH - pillR);
-        ctx.quadraticCurveTo(pillX + pillW, pillY + pillH, pillX + pillW - pillR, pillY + pillH);
-        ctx.lineTo(pillX + pillR, pillY + pillH);
-        ctx.quadraticCurveTo(pillX, pillY + pillH, pillX, pillY + pillH - pillR);
-        ctx.lineTo(pillX, pillY + pillR);
-        ctx.quadraticCurveTo(pillX, pillY, pillX + pillR, pillY);
-        ctx.closePath();
-        ctx.fillStyle = "rgba(13,26,74,0.35)";
-        ctx.fill();
-
-        // label text
-        ctx.fillStyle = "rgba(255,255,255,0.95)";
+        // 6. Label text INSIDE the node (below the dot)
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},0.95)`;
+        ctx.font = `700 ${fontSize}px Inter, sans-serif`;
         ctx.textAlign = "center";
-        ctx.textBaseline = "top";
-        ctx.fillText(labelText, lx, ly + 1 * scale);
+        ctx.textBaseline = "middle";
+        ctx.letterSpacing = "0.3px";
+        ctx.fillText(a.label, x, y + nodeR * 0.2);
+        ctx.letterSpacing = "0px";
 
-        // task text
-        ctx.fillStyle = "rgba(255,255,255,0.5)";
-        ctx.font = `400 ${9.5 * scale}px Inter, sans-serif`;
-        ctx.fillText(taskText, lx, ly + 14 * scale);
+        // 7. Live pulse dot (green, top-right of node)
+        const pulseDotPhase = Math.sin(t * 0.03 + a.angle * 2) * 0.5 + 0.5;
+        const pulseDotAlpha = 0.4 + pulseDotPhase * 0.6;
+        const pulseDotSize = (1.5 + pulseDotPhase * 0.5) * scale;
+        const pdx = x + nodeR * 0.65;
+        const pdy = y - nodeR * 0.65;
+
+        // pulse dot glow
+        ctx.beginPath();
+        ctx.arc(pdx, pdy, pulseDotSize * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(34,197,94,${(pulseDotAlpha * 0.2).toFixed(3)})`;
+        ctx.fill();
+        // pulse dot core
+        ctx.beginPath();
+        ctx.arc(pdx, pdy, pulseDotSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(34,197,94,${pulseDotAlpha.toFixed(3)})`;
+        ctx.fill();
       });
 
       tRef.current++;
@@ -907,7 +917,7 @@ function OrbitPanel() {
   }, [inView]);
 
   return (
-    <div ref={containerRef} className="w-full relative overflow-visible -mx-[30px]" style={{ aspectRatio: "1 / 1.15" }}>
+    <div ref={containerRef} className="w-full relative overflow-visible -mx-[50px]" style={{ aspectRatio: "1 / 1.15" }}>
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   );
