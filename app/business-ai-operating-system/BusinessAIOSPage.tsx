@@ -1666,18 +1666,18 @@ export default function BusinessAIOSPage() {
                   I spent 18 years inside companies like Virgin Mobile, Papa Murphy&apos;s, and Intermedia. I know what the right systems look like. I know what it costs to build them. And I built this one for my own business first.
                 </p>
               </FadeUp>
-              <FadeUp delay={0.15} direction="left" className="md:pl-[30px]">
+              <FadeUp delay={0.15} direction="left" className="md:pl-[50px]">
                 <PainQueuePanel />
               </FadeUp>
             </div>
           </div>
         </section>
 
-        {/* COST OF INACTION */}
+        {/* COST OF INACTION — text L, math visual R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <FadeUp>
-              <div className="max-w-[760px]">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <FadeUp direction="right">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   The Math
                 </p>
@@ -1687,22 +1687,48 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
                   If you&apos;re spending 15 hours a week on tasks a system could handle, and your time is worth $150 an hour, that&apos;s $117,000 a year. Every month this continues is another $9,750 you don&apos;t get back.
                 </p>
-                <p className="text-[1rem] text-white font-medium leading-[1.7]">
+                <p className="text-[1.0625rem] text-white font-medium leading-[1.7]">
                   The AIOS Setup pays for itself in 2 to 3 months.
                 </p>
-              </div>
-            </FadeUp>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 md:p-10">
+                  <p className="text-[0.75rem] uppercase tracking-[0.14em] text-[#F45B69]/60 font-medium mb-6">Cost Breakdown</p>
+                  <div className="space-y-5">
+                    <div className="flex justify-between items-baseline border-b border-white/[0.06] pb-4">
+                      <span className="text-[0.9375rem] text-white/70">Hours lost per week</span>
+                      <span className="font-display font-black text-[1.5rem] text-white">15</span>
+                    </div>
+                    <div className="flex justify-between items-baseline border-b border-white/[0.06] pb-4">
+                      <span className="text-[0.9375rem] text-white/70">Your effective rate</span>
+                      <span className="font-display font-black text-[1.5rem] text-white">$150<span className="text-[0.875rem] text-white/40">/hr</span></span>
+                    </div>
+                    <div className="flex justify-between items-baseline border-b border-white/[0.06] pb-4">
+                      <span className="text-[0.9375rem] text-white/70">Monthly cost of inaction</span>
+                      <span className="font-display font-black text-[1.5rem] text-[#F45B69]">$9,750</span>
+                    </div>
+                    <div className="flex justify-between items-baseline pt-2">
+                      <span className="text-[0.9375rem] text-white/70">Annual cost of inaction</span>
+                      <span className="font-display font-black text-[2rem] text-[#F45B69]">$117,000</span>
+                    </div>
+                  </div>
+                  <div className="mt-8 pt-6 border-t border-[#028090]/20 bg-[#028090]/[0.04] rounded-xl p-4 -mx-2">
+                    <div className="flex justify-between items-baseline">
+                      <span className="text-[0.875rem] text-[#028090] font-medium">AIOS ROI timeline</span>
+                      <span className="font-display font-black text-[1.25rem] text-[#028090]">2-3 months</span>
+                    </div>
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
           </div>
         </section>
 
-        {/* WHO THIS IS FOR — panel L, text R */}
+        {/* WHO THIS IS FOR — text L, panel R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp delay={0.15} direction="right">
-                <WhoPanel />
-              </FadeUp>
-              <FadeUp direction="left">
+              <FadeUp direction="right">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Who This Is For
                 </p>
@@ -1721,6 +1747,9 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
                   If that&apos;s you, start with the Audit. It will tell us both if you&apos;re ready.
                 </p>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <WhoPanel />
               </FadeUp>
             </div>
           </div>
@@ -1790,7 +1819,7 @@ export default function BusinessAIOSPage() {
 
         {/* AFTER THE BUILD — panel L, text R */}
         <section className="py-24 md:py-32">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="max-w-[1140px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
                 <OrbitPanel />
