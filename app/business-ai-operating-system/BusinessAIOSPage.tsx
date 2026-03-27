@@ -1334,7 +1334,7 @@ function TimelineTabs() {
             <p className="font-display font-black text-[1.5rem] leading-[1.2] text-white mb-5">
               {timeline[active].label}
             </p>
-            <p className="text-[1rem] text-white/85 leading-[1.7]">
+            <p className="text-[1rem] text-white leading-[1.7]">
               {timeline[active].body}
             </p>
           </div>
@@ -1391,11 +1391,11 @@ function LayersTabs() {
           <div className="space-y-6">
             <div>
               <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090] mb-2">The problem</p>
-              <p className="text-[1rem] text-white/85 leading-[1.7]">{layers[active].problem}</p>
+              <p className="text-[1rem] text-white leading-[1.7]">{layers[active].problem}</p>
             </div>
             <div>
               <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090] mb-2">What it is</p>
-              <p className="text-[1rem] text-white/85 leading-[1.7]">{layers[active].what}</p>
+              <p className="text-[1rem] text-white leading-[1.7]">{layers[active].what}</p>
             </div>
             <div className="bg-[#028090]/[0.08] border border-[#028090]/20 rounded-lg p-4">
               <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090]/65 mb-2">What it produces</p>
@@ -1552,7 +1552,7 @@ function HeroLiveFeedPanel() {
                 <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.dot }} />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[0.8125rem] text-white/85 leading-snug">{item.event}</p>
+                <p className="text-[0.8125rem] text-white leading-snug">{item.event}</p>
                 <p className="text-[0.7rem] text-white/30 mt-0.5">{item.detail}</p>
               </div>
               <span className="text-[0.6rem] font-mono text-white/20 shrink-0 pt-0.5">{item.time}</span>
@@ -1647,16 +1647,16 @@ export default function BusinessAIOSPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-7">
                   You answer the same questions 20 times a month.
                 </h2>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                <p className="text-[1rem] text-white leading-[1.7] mb-4">
                   New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&apos;re unavailable, nothing moves.
                 </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                <p className="text-[1rem] text-white leading-[1.7] mb-4">
                   Or you&apos;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&apos;s no one to hand off to. The business doesn&apos;t run when you&apos;re not in it. It waits.
                 </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                <p className="text-[1rem] text-white leading-[1.7] mb-4">
                   You make decisions from memory because clean data takes a week to pull.
                 </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-8">
+                <p className="text-[1rem] text-white leading-[1.7] mb-8">
                   Your business stops when you stop.
                 </p>
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
@@ -1684,7 +1684,7 @@ export default function BusinessAIOSPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   What This Costs You Every Month You Don&apos;t Fix It
                 </h2>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                <p className="text-[1rem] text-white leading-[1.7] mb-4">
                   If you&apos;re spending 15 hours a week on tasks a system could handle, and your time is worth $150 an hour, that&apos;s $117,000 a year. Every month this continues is another $9,750 you don&apos;t get back.
                 </p>
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
@@ -1709,10 +1709,10 @@ export default function BusinessAIOSPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   Built for founders where everything waits on you.
                 </h2>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-4">
+                <p className="text-[1rem] text-white leading-[1.7] mb-4">
                   Founder-led businesses with 1 to 15 people where the work requires expertise, judgment, or relationships, and the founder is the one everything waits on.
                 </p>
-                <p className="text-[1rem] text-white/85 leading-[1.7] mb-8">
+                <p className="text-[1rem] text-white leading-[1.7] mb-8">
                   Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations.
                 </p>
                 <p className="text-[1rem] text-white/75 leading-[1.7] mb-8">
@@ -1758,7 +1758,7 @@ export default function BusinessAIOSPage() {
                   {included.map((item, i) => (
                     <li key={i} className="flex gap-4">
                       <span className="text-[#028090] mt-[3px] shrink-0">→</span>
-                      <span className="text-[1rem] text-white/85 leading-[1.7]">{item}</span>
+                      <span className="text-[1rem] text-white leading-[1.7]">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -1810,7 +1810,7 @@ export default function BusinessAIOSPage() {
                     <h3 className="font-display text-[1.125rem] font-black text-white uppercase tracking-wide mb-3">
                       Maintenance
                     </h3>
-                    <p className="text-[1rem] text-white/85 leading-[1.7]">
+                    <p className="text-[1rem] text-white leading-[1.7]">
                       System monitoring and issue resolution. No active builds. For businesses that want the OS maintained before expanding further.
                     </p>
                   </div>
@@ -1820,7 +1820,7 @@ export default function BusinessAIOSPage() {
                     <h3 className="font-display text-[1.125rem] font-black text-white uppercase tracking-wide mb-3">
                       Growth
                     </h3>
-                    <p className="text-[1rem] text-white/85 leading-[1.7]">
+                    <p className="text-[1rem] text-white leading-[1.7]">
                       Active build credits every month. Pricing varies based on the number of workflow builds, plus monthly strategy sessions. For businesses ready to keep expanding the OS, layer by layer.
                     </p>
                   </div>
@@ -1857,7 +1857,7 @@ export default function BusinessAIOSPage() {
                       </div>
                       <div>
                         <p className="font-display text-[1.125rem] font-black text-white mb-1">{step.title}</p>
-                        <p className="text-[1rem] text-white/85 leading-[1.7]">{step.body}</p>
+                        <p className="text-[1rem] text-white leading-[1.7]">{step.body}</p>
                       </div>
                     </li>
                   ))}

@@ -112,7 +112,7 @@ export default function WhyRevayaPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   Eighteen years as the person who stood between a business need and a dev team.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   At Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. I wasn&rsquo;t the outside consultant with a framework. I was inside the machine. Managing up to $11M website redesigns. Building an email program that drove 80% revenue growth. Coordinating remote development teams globally.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white/70 mb-4">

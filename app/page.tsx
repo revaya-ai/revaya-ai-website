@@ -630,7 +630,7 @@ function TelegramPanel() {
               className="flex justify-end"
             >
               <div className="max-w-[80%] px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-[#028090]/20 border border-[#028090]/20">
-                <p className="text-[0.8rem] text-white/85">
+                <p className="text-[0.8rem] text-white">
                   Any new leads come in overnight?
                 </p>
               </div>
@@ -644,7 +644,7 @@ function TelegramPanel() {
               className="max-w-[85%]"
             >
               <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
-                <p className="text-[0.8rem] text-white/85">
+                <p className="text-[0.8rem] text-white">
                   3 form submissions. One looks qualified. Service business,
                   $400K revenue, asking about full AIOS.
                 </p>
@@ -659,7 +659,7 @@ function TelegramPanel() {
               className="max-w-[85%]"
             >
               <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
-                <p className="text-[0.8rem] text-white/85">
+                <p className="text-[0.8rem] text-white">
                   I drafted a response. Want to review before I send?
                 </p>
               </div>
@@ -673,7 +673,7 @@ function TelegramPanel() {
               className="flex justify-end"
             >
               <div className="max-w-[80%] px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-[#028090]/20 border border-[#028090]/20">
-                <p className="text-[0.8rem] text-white/85">Send it.</p>
+                <p className="text-[0.8rem] text-white">Send it.</p>
               </div>
             </motion.div>
           )}
@@ -685,7 +685,7 @@ function TelegramPanel() {
               className="max-w-[85%]"
             >
               <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
-                <p className="text-[0.8rem] text-white/85">
+                <p className="text-[0.8rem] text-white">
                   Sent. I&apos;ll follow up automatically in 48 hours if no
                   response.
                 </p>
@@ -744,7 +744,7 @@ export default function HomePage() {
 
           {/* Body */}
           <FadeIn delay={0.25}>
-            <p className="text-[1.0625rem] leading-[1.75] text-white/85 mb-10 max-w-[718px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.75] text-white mb-10 max-w-[718px] mx-auto">
               Every task, every decision, every answer still routes through you. That&rsquo;s not a business you own. That&rsquo;s a job with overhead. I build the system that changes that.
             </p>
           </FadeIn>
@@ -815,7 +815,7 @@ export default function HomePage() {
                   <br />
                   when you don&rsquo;t.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Every task, every decision, every answer still routes through you. I map where the business runs through you, then build the system that replaces you there. You step into the owner role instead of the operator role.
                 </p>
                 <Link
@@ -850,7 +850,7 @@ export default function HomePage() {
                   <br />
                   business works.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Before a single automation runs, AIOS maps how your business
                   operates. Every workflow, every decision point, every repeatable
                   task. Not a generic audit. A complete operational blueprint
@@ -882,7 +882,7 @@ export default function HomePage() {
                   <br />
                   how you work.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Feed it how you actually work. Your processes, your client
                   templates, SOPs, how you handle the recurring situations.
                   Doesn&rsquo;t have to be formal. If you&rsquo;d explain it
@@ -918,7 +918,7 @@ export default function HomePage() {
                   <br />
                   It knows your business.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Connect your CRM, your ops tools, your revenue data. AIOS
                   ingests it all. Ask it anything, revenue for the month,
                   pipeline health, what&rsquo;s overdue, and get a clear answer
@@ -948,7 +948,7 @@ export default function HomePage() {
                   <br />
                   removed.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Follow-ups, reporting, routing, intake, status updates. The
                   tasks that eat your week aren&rsquo;t complex, they&rsquo;re
                   just constant. AIOS identifies every repeatable task and
@@ -984,10 +984,10 @@ export default function HomePage() {
                   <br />
                   This replaces most of them.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   This replaces most of what you&rsquo;re already paying for. Context, data, intelligence, automations, builds. One place. All connected. Your business stops living across a dozen different tools.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   And when you get time back, you decide what to do with it. Some people take a week off. Others put it back into the business. Use it to plan. Use it to pressure-test a decision, think through a hire, figure out what to build next. It knows your business well enough to push back. Sparring partner. Strategy partner. Both.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white/70">
