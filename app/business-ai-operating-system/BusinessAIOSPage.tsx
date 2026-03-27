@@ -568,10 +568,10 @@ function BuildPanel() {
 // ─── Panel: Orbit ────────────────────────────────────────────────────────────
 
 const orbitAgents = [
-  // ring 1 — r:115, 3 nodes
-  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 115, speed: 0.38, angle: 0 },
-  { label: "IntelOS", task: "3 meetings", color: "#F45B69", ring: 115, speed: 0.38, angle: (Math.PI * 2) / 3 },
-  { label: "Content", task: "queued", color: "#028090", ring: 115, speed: 0.38, angle: (Math.PI * 4) / 3 },
+  // ring 1 — r:100, 3 nodes
+  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 100, speed: 0.38, angle: 0 },
+  { label: "IntelOS", task: "3 meetings", color: "#F45B69", ring: 100, speed: 0.38, angle: (Math.PI * 2) / 3 },
+  { label: "Content", task: "queued", color: "#028090", ring: 100, speed: 0.38, angle: (Math.PI * 4) / 3 },
   // ring 2 — r:175, 4 nodes
   { label: "CRM", task: "updated", color: "#F45B69", ring: 175, speed: 0.22, angle: 0.4 },
   { label: "Proposals", task: "ready", color: "#028090", ring: 175, speed: 0.22, angle: 0.4 + Math.PI / 2 },
@@ -633,9 +633,9 @@ function OrbitPanel() {
     ];
 
     // node sizes by ring (diameter in px, halved for radius)
-    const nodeSizeByRing: Record<number, number> = { 100: 19, 175: 23, 260: 27 };
-    const fontSizeByRing: Record<number, number> = { 100: 7, 175: 8, 260: 9 };
-    const haloSizeByRing: Record<number, number> = { 100: 28, 175: 34, 260: 40 };
+    const nodeSizeByRing: Record<number, number> = { 100: 23, 175: 23, 260: 27 };
+    const fontSizeByRing: Record<number, number> = { 100: 8, 175: 8, 260: 9 };
+    const haloSizeByRing: Record<number, number> = { 100: 32, 175: 34, 260: 40 };
 
     const parseColor = (c: string): [number, number, number] => {
       if (c.startsWith("rgba")) {
