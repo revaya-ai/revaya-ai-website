@@ -838,8 +838,8 @@ function OrbitPanel() {
         // 3. Colored border (1.8px, 0.6 opacity)
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.6)`;
-        ctx.lineWidth = 1.8;
+        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.4)`;
+        ctx.lineWidth = 0.8;
         ctx.stroke();
 
         // Secondary inner white border for glass edge
