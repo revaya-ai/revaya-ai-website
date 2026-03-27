@@ -568,14 +568,14 @@ function BuildPanel() {
 // ─── Panel: Orbit ────────────────────────────────────────────────────────────
 
 const orbitAgents = [
-  // ring 1 — r:100, 3 nodes
-  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 100, speed: 0.38, angle: 0 },
-  { label: "IntelOS", task: "3 meetings", color: "#F45B69", ring: 100, speed: 0.38, angle: (Math.PI * 2) / 3 },
-  { label: "Content", task: "queued", color: "#553555", ring: 100, speed: 0.38, angle: (Math.PI * 4) / 3 },
+  // ring 1 — r:115, 3 nodes
+  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 115, speed: 0.38, angle: 0 },
+  { label: "IntelOS", task: "3 meetings", color: "#F45B69", ring: 115, speed: 0.38, angle: (Math.PI * 2) / 3 },
+  { label: "Content", task: "queued", color: "#028090", ring: 115, speed: 0.38, angle: (Math.PI * 4) / 3 },
   // ring 2 — r:175, 4 nodes
   { label: "CRM", task: "updated", color: "#F45B69", ring: 175, speed: 0.22, angle: 0.4 },
   { label: "Proposals", task: "ready", color: "#028090", ring: 175, speed: 0.22, angle: 0.4 + Math.PI / 2 },
-  { label: "Slack", task: "2 flags", color: "#553555", ring: 175, speed: 0.22, angle: 0.4 + Math.PI },
+  { label: "Slack", task: "2 flags", color: "#F45B69", ring: 175, speed: 0.22, angle: 0.4 + Math.PI },
   { label: "Pipeline", task: "tracked", color: "rgba(228,253,225,0.8)", ring: 175, speed: 0.22, angle: 0.4 + (Math.PI * 3) / 2 },
   // ring 3 — r:260, 4 nodes
   { label: "Analytics", task: "weekly ✓", color: "#028090", ring: 260, speed: 0.13, angle: 0.9 },
