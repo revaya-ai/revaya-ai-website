@@ -832,7 +832,7 @@ function OrbitPanel() {
         // 2. Glass body
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(8,13,17,0.75)";
+        ctx.fillStyle = "rgba(8,13,17,0.85)";
         ctx.fill();
 
         // 3. Colored border (1.8px, 0.6 opacity)
