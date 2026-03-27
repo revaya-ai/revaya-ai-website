@@ -38,7 +38,7 @@ export default function QuestionCard({
     <div className="w-full max-w-2xl mx-auto animate-fade-in">
       {/* Section eyebrow */}
       <div className="mb-6">
-        <span className="text-[0.75rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
+        <span className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
           {question.section}
         </span>
       </div>
@@ -50,7 +50,7 @@ export default function QuestionCard({
 
       {/* Helper text */}
       {question.helperText && (
-        <p className="text-white/50 text-sm mb-8">{question.helperText}</p>
+        <p className="text-white/50 text-base mb-8">{question.helperText}</p>
       )}
       {!question.helperText && <div className="mb-8" />}
 
@@ -63,7 +63,7 @@ export default function QuestionCard({
               <button
                 key={i}
                 onClick={() => onSelectOption(i, option.points)}
-                className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-150 text-sm leading-snug ${
+                className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-150 text-base leading-snug ${
                   isSelected
                     ? "border-brand-accent bg-brand-accent/10 text-white"
                     : "border-white/10 bg-white/4 text-white/80 hover:border-white/25 hover:bg-white/8"
@@ -89,7 +89,7 @@ export default function QuestionCard({
           />
           <button
             onClick={onSliderConfirm}
-            className="w-full py-4 rounded-full bg-brand-primary text-white font-display font-black text-sm uppercase tracking-widest hover:bg-brand-primary/80 transition-colors"
+            className="w-full py-4 rounded-full bg-brand-primary text-white font-display font-black text-base uppercase tracking-widest hover:bg-brand-primary/80 transition-colors"
           >
             Confirm
           </button>
@@ -100,7 +100,7 @@ export default function QuestionCard({
       {showBack && (
         <button
           onClick={onBack}
-          className="mt-6 text-white text-sm hover:text-brand-accent transition-colors"
+          className="mt-6 text-white text-base hover:text-brand-accent transition-colors"
         >
           ← Back
         </button>

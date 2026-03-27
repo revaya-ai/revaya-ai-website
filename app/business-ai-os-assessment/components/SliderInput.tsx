@@ -51,7 +51,7 @@ export default function SliderInput({
       </div>
 
       {/* Min/max labels */}
-      <div className="flex justify-between text-xs text-white/40">
+      <div className="flex justify-between text-sm text-white/40">
         <span>{formatValue(min, prefix, suffix)}</span>
         <span>{formatValue(max, prefix, suffix)}</span>
       </div>

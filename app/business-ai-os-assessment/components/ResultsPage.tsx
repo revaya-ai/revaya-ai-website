@@ -206,17 +206,17 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
         {/* ─── SCORE HEADER ─── */}
         <div className="text-center space-y-6 pt-8">
           <div>
-            <p className="text-[0.75rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Your AI Readiness Score</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Your AI Readiness Score</p>
             <div className="inline-flex items-center justify-center w-28 h-28 rounded-full border-4 border-brand-accent/40 bg-brand-accent/10">
               <div className="font-display text-4xl font-black text-white leading-none">
                 {results.totalScore}
               </div>
             </div>
-            <p className="text-white/40 text-xs mt-2">out of 59 possible points across 6 sections</p>
+            <p className="text-white/40 text-sm mt-2">out of 59 possible points across 6 sections</p>
           </div>
 
           <div>
-            <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-medium border uppercase tracking-widest ${config.badge}`}>
+            <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium border uppercase tracking-widest ${config.badge}`}>
               {results.category}
             </span>
           </div>
@@ -225,7 +225,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
             <h1 className="font-display text-3xl md:text-4xl font-black leading-tight">
               {config.headline}
             </h1>
-            <p className="text-white mt-3 text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-white mt-3 text-lg max-w-xl mx-auto leading-relaxed">
               {config.sub}
             </p>
           </div>
@@ -263,7 +263,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
                     : "bg-white/4 border border-white/8"
                 }`}
               >
-                <p className="text-white text-xs mb-1">{label}</p>
+                <p className="text-white text-sm mb-1">{label}</p>
                 <p className={`font-display font-black text-lg ${highlight ? "text-brand-accent" : "text-white"}`}>
                   {value}
                 </p>
@@ -272,25 +272,25 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
           </div>
 
           <div className="border-t border-white/8 pt-4 text-center">
-            <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Annual Impact</p>
+            <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Annual Impact</p>
             <p className="font-display text-3xl font-black text-white">
               ${fmt(results.annualOpportunity)}
-              <span className="text-white/40 text-base font-normal">/year</span>
+              <span className="text-white/40 text-lg font-normal">/year</span>
             </p>
           </div>
 
           <div className="mt-6 pt-5 border-t border-white/6 space-y-2">
-            <p className="text-white text-[0.7rem] uppercase tracking-wider mb-3">How this is calculated</p>
-            <p className="text-white text-xs leading-relaxed">
+            <p className="text-white text-[0.8rem] uppercase tracking-wider mb-3">How this is calculated</p>
+            <p className="text-white text-sm leading-relaxed">
               <span className="font-bold">Hours you could reclaim</span> — estimated from your answers about founder availability, decision load, admin time, coordination, proposal creation, and client onboarding. These categories may overlap in practice.
             </p>
-            <p className="text-white text-xs leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               <span className="font-bold">Value of that time</span> — reclaimed hours × your stated hourly rate (${fmt(hourlyRate)}/hr).
             </p>
-            <p className="text-white text-xs leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               <span className="font-bold">Revenue likely missing</span> — estimated from deals going quiet due to slow follow-up, and referrals that were never asked for.
             </p>
-            <p className="text-white text-xs leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               <span className="font-bold">Total opportunity</span> — sum of the above. These are estimates based on your inputs, not guarantees. They show you where to look, not a number to take to the bank.
             </p>
           </div>
@@ -299,14 +299,14 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
         {/* ─── FOUNDER OUTPUT BENCHMARK ─── */}
         {revenuePerPersonLabel && (
           <div className="glass-card rounded-xl p-6 border-l-4 border-brand-coral">
-            <p className="text-[0.75rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Founder Output Benchmark</p>
-            <p className="text-white text-base leading-relaxed">
+            <p className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Founder Output Benchmark</p>
+            <p className="text-white text-lg leading-relaxed">
               Your business is generating <strong className="text-white">{revenuePerPersonLabel} per person.</strong>{" "}
               In high-performing founder-led knowledge businesses, that number is $300K or more. The gap
               isn't usually about market size or pricing. It's about your time. When you're the bottleneck,
               every hour spent on the wrong things is revenue the business can't generate.
             </p>
-            <p className="text-white/40 text-xs mt-3">
+            <p className="text-white/40 text-sm mt-3">
               This is a company-level metric, but the point is personal. It's about your hours, not your team's.
             </p>
           </div>
@@ -341,7 +341,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
                         <div className="flex items-center gap-2">
                           <p className="font-medium text-white text-sm">{section.name}</p>
                           {isLowest && (
-                            <span className="text-xs text-brand-coral">Focus area</span>
+                            <span className="text-sm text-brand-coral">Focus area</span>
                           )}
                         </div>
                         <div className="h-1.5 w-full rounded-full bg-white/8 mt-2">
@@ -352,23 +352,23 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
                         </div>
                       </div>
                       <div className="text-right shrink-0">
-                        <p className="text-white text-xs">
+                        <p className="text-white text-sm">
                           {section.score}/{section.maxScore}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3 flex-wrap">
-                      <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${priorityColor}`}>
+                      <span className={`text-sm px-2 py-0.5 rounded-full border font-medium ${priorityColor}`}>
                         {section.priority} Priority
                       </span>
                       {section.hoursLost && section.hoursLost > 0 && (
-                        <span className="text-xs text-white/40">
+                        <span className="text-sm text-white/40">
                           ~{fmt(section.hoursLost)} hrs/mo lost
                         </span>
                       )}
                       {section.revenueImpact && section.revenueImpact > 0 && (
-                        <span className="text-xs text-white/40">
+                        <span className="text-sm text-white/40">
                           ${fmt(section.revenueImpact)}/mo impact
                         </span>
                       )}
@@ -381,7 +381,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
 
         {/* ─── BIGGEST OPPORTUNITY ─── */}
         <div className="glass-card rounded-2xl p-8 border border-brand-coral/20">
-          <p className="text-[0.75rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">
+          <p className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">
             Your Biggest Opportunity: {results.lowestSection}
           </p>
 
@@ -389,17 +389,17 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
             {biggestOpp.headline}
           </h2>
 
-          <p className="text-white text-base leading-relaxed mb-6">
+          <p className="text-white text-lg leading-relaxed mb-6">
             {biggestOpp.intro}
           </p>
 
           <div className="bg-brand-coral/8 border border-brand-coral/20 rounded-xl p-5 mb-6">
-            <p className="text-white text-xs uppercase tracking-wider mb-2">Here's the hard truth</p>
+            <p className="text-white text-sm uppercase tracking-wider mb-2">Here's the hard truth</p>
             <p className="text-white text-sm leading-relaxed">{biggestOpp.hardTruth}</p>
           </div>
 
           <div className="mb-6">
-            <p className="text-white text-xs uppercase tracking-wider mb-3">What closes this gap</p>
+            <p className="text-white text-sm uppercase tracking-wider mb-3">What closes this gap</p>
             <ul className="space-y-2">
               {biggestOpp.whatCloses.map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-white leading-snug">
@@ -411,13 +411,13 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
           </div>
 
           <div className="bg-brand-accent/10 border border-brand-accent/20 rounded-xl p-4">
-            <p className="text-brand-accent text-xs font-medium uppercase tracking-wider mb-1">
+            <p className="text-brand-accent text-sm font-medium uppercase tracking-wider mb-1">
               Quick win
             </p>
             <p className="text-white text-sm leading-relaxed">{biggestOpp.quickWin}</p>
           </div>
 
-          <p className="text-white/25 text-xs mt-4">AIOS layer: {biggestOpp.layer}</p>
+          <p className="text-white/25 text-sm mt-4">AIOS layer: {biggestOpp.layer}</p>
         </div>
 
         {/* ─── RECOMMENDED NEXT STEPS ─── */}
@@ -433,7 +433,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
                 if (!rec) return null;
                 return (
                   <div key={section.name} className="glass-card rounded-xl p-6">
-                    <h3 className="font-display font-black text-white text-base mb-4">
+                    <h3 className="font-display font-black text-white text-lg mb-4">
                       {rec.title}
                     </h3>
                     <ul className="space-y-3">
@@ -478,7 +478,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
           {/* Tertiary — PDF */}
           <button
             onClick={handleDownloadPDF}
-            className="flex items-center justify-center gap-2 w-full py-3 text-white text-xs hover:text-brand-accent transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 text-white text-sm hover:text-brand-accent transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -488,7 +488,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
         </div>
 
         {/* Footer */}
-        <div className="text-center text-white/20 text-xs pt-4 border-t border-white/6">
+        <div className="text-center text-white/20 text-sm pt-4 border-t border-white/6">
           <p>Revaya AI | revaya.ai</p>
         </div>
       </div>

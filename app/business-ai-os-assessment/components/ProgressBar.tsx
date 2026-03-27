@@ -15,7 +15,7 @@ export default function ProgressBar({
 
   return (
     <div className="w-full space-y-2">
-      <div className="flex items-center justify-between text-xs">
+      <div className="flex items-center justify-between text-sm">
         <span className="font-medium text-brand-primary uppercase tracking-widest">
           {currentSection}
         </span>

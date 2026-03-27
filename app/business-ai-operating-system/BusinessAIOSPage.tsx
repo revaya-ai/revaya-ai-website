@@ -1621,7 +1621,7 @@ export default function BusinessAIOSPage() {
                     That&apos;s a systems problem.
                   </span>
                 </h1>
-                <p className="text-[1rem] leading-[1.7] text-white/80">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/80">
                   I find the specific thing that&apos;s costing you the most time right now. Then I build the system that removes it permanently. Not a tool. Not a stack. A system your business actually runs on. Fully auditable. Every decision visible.
                 </p>
               </motion.div>
@@ -1765,7 +1765,7 @@ export default function BusinessAIOSPage() {
                 <div className="mt-12 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-start gap-6">
                   <Link
                     href="/business-ai-os-assessment"
-                    className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
+                    className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
                   >
                     Take the Assessment →
                   </Link>
@@ -1777,7 +1777,7 @@ export default function BusinessAIOSPage() {
                       href="/business-ai-os-blueprint.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[0.9375rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
+                      className="inline-flex items-center gap-1 text-[1rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
                     >
                       Download the Blueprint →
                     </a>
@@ -1825,7 +1825,7 @@ export default function BusinessAIOSPage() {
                     </p>
                   </div>
                 </div>
-                <p className="text-[0.9375rem] text-white/55 leading-[1.7]">
+                <p className="text-[1rem] text-white/55 leading-[1.7]">
                   The retainer conversation happens at your 30-day check-in, once you&apos;ve used the system and know what you want next.
                 </p>
               </FadeUp>
@@ -2013,7 +2013,7 @@ export default function BusinessAIOSPage() {
                 </h2>
                 <Link
                   href="/work-with-me"
-                  className="inline-block font-display text-[0.9375rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+                  className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
                 >
                   Start the Conversation →
                 </Link>

@@ -87,7 +87,7 @@ export function TimelinePanel() {
                 <div className="flex items-baseline gap-3 flex-wrap mb-1">
                   <span className="text-[0.7rem] text-white/30 font-mono shrink-0">{m.year}</span>
                   <span
-                    className={`text-[0.9375rem] font-mono font-bold ${
+                    className={`text-[1rem] font-mono font-bold ${
                       isLast && visible ? "text-[#028090]" : "text-white/80"
                     }`}
                   >

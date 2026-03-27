@@ -720,7 +720,7 @@ export default function HomePage() {
           <FadeIn delay={0}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
-              <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
+              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-white/80 font-medium">
                 Business AI Operating System
               </span>
             </div>
@@ -755,7 +755,7 @@ export default function HomePage() {
               <p className="text-[0.8125rem] text-white uppercase tracking-[0.12em]">See if you&rsquo;re a fit</p>
               <Link
                 href="/business-ai-os-assessment"
-                className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
+                className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
               >
                 Take the Assessment &rarr;
               </Link>
@@ -772,7 +772,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MARQUEE ─────────────────────────────────────────────────────────── */}
-      <div style={{ zIndex: 1, position: "relative" }}>
+      <div style={{ zIndex: 1, position: "relative", paddingTop: "50px" }}>
         <div
           className="flex gap-10 whitespace-nowrap py-4"
           style={{ animation: "marquee 30s linear infinite", width: "max-content" }}
@@ -790,7 +790,7 @@ export default function HomePage() {
             ].map((item, i) => (
               <span
                 key={`${ri}-${i}`}
-                className="flex items-center gap-8 text-[0.75rem] uppercase tracking-[0.14em] text-white/20 font-medium"
+                className="flex items-center gap-8 text-[0.875rem] uppercase tracking-[0.14em] text-[#028090]/30 font-medium"
               >
                 {item}{" "}
                 <span className="text-[#028090]/40">&middot;</span>
@@ -815,12 +815,12 @@ export default function HomePage() {
                   <br />
                   when you don&rsquo;t.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   Every task, every decision, every answer still routes through you. I map where the business runs through you, then build the system that replaces you there. You step into the owner role instead of the operator role.
                 </p>
                 <Link
                   href="/business-ai-operating-system"
-                  className="inline-flex items-center gap-2 text-[0.9375rem] text-[#028090] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-[1rem] text-[#028090] hover:text-white transition-colors"
                 >
                   See how it&rsquo;s built <span>&rarr;</span>
                 </Link>
@@ -850,13 +850,13 @@ export default function HomePage() {
                   <br />
                   business works.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   Before a single automation runs, AIOS maps how your business
                   operates. Every workflow, every decision point, every repeatable
                   task. Not a generic audit. A complete operational blueprint
                   built from your actual processes.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                   Most automations skip this entirely. They solve one thing, in
                   one tool, under the right conditions. You&rsquo;re still the
                   piece that ties it all together. Context is what changes that
@@ -882,13 +882,13 @@ export default function HomePage() {
                   <br />
                   how you work.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   Feed it how you actually work. Your processes, your client
                   templates, SOPs, how you handle the recurring situations.
                   Doesn&rsquo;t have to be formal. If you&rsquo;d explain it
                   to a contractor, it&rsquo;s enough.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                   The more context it has, the more autonomous it gets. Every
                   document you give it makes the system more accurate.
                 </p>
@@ -918,13 +918,13 @@ export default function HomePage() {
                   <br />
                   It knows your business.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   Connect your CRM, your ops tools, your revenue data. AIOS
                   ingests it all. Ask it anything, revenue for the month,
                   pipeline health, what&rsquo;s overdue, and get a clear answer
                   in plain language.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                   For those who want dashboards, those get built too. For
                   everyone else, just ask.
                 </p>
@@ -948,13 +948,13 @@ export default function HomePage() {
                   <br />
                   removed.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   Follow-ups, reporting, routing, intake, status updates. The
                   tasks that eat your week aren&rsquo;t complex, they&rsquo;re
                   just constant. AIOS identifies every repeatable task and
                   handles the ones that don&rsquo;t need your judgment.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                   Task automation % is one of three KPIs tracked in every
                   engagement. You see exactly what&rsquo;s moving.
                 </p>
@@ -980,17 +980,17 @@ export default function HomePage() {
                   Your Control Center
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Stop switching between 12 tabs.
+                  Stop switching between 12 tools.
                   <br />
                   This replaces most of them.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
-                  This replaces most of what you&rsquo;re already paying for. Context, data, intelligence, automations, builds. One place. All connected. Your business stops living across a dozen different tabs.
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
+                  This replaces most of what you&rsquo;re already paying for. Context, data, intelligence, automations, builds. One place. All connected. Your business stops living across a dozen different tools.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   And when you get time back, you decide what to do with it. Some people take a week off. Others put it back into the business. Use it to plan. Use it to pressure-test a decision, think through a hire, figure out what to build next. It knows your business well enough to push back. Sparring partner. Strategy partner. Both.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                   The system runs in the background. You check in when you want to.
                 </p>
               </div>
@@ -1053,7 +1053,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/business-ai-os-assessment"
-              className="inline-block bg-[#553555] text-white text-[0.9375rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
+              className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
               Take the Assessment &rarr;
             </Link>

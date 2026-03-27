@@ -11,7 +11,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
 
         {/* Eyebrow */}
         <div>
-          <span className="text-[0.75rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
+          <span className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
             Business AI OS Assessment
           </span>
         </div>
@@ -38,7 +38,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
               key={label}
               className="glass-card rounded-xl px-4 py-5 text-center"
             >
-              <p className="font-display font-black text-white text-sm">{label}</p>
+              <p className="font-display font-black text-white text-base">{label}</p>
               <p className="text-white/40 text-[15px] mt-1">{sub}</p>
             </div>
           ))}
@@ -48,7 +48,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
         <div className="pt-4">
           <button
             onClick={onStart}
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-brand-primary text-white font-display font-black text-sm hover:bg-brand-primary/80 transition-all duration-200 glow-purple"
+            className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-brand-primary text-white font-display font-black text-base hover:bg-brand-primary/80 transition-all duration-200 glow-purple"
           >
             Start the Assessment
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -63,7 +63,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
           </button>
         </div>
 
-        <p className="text-white/25 text-xs pt-2">
+        <p className="text-white/25 text-sm pt-2">
           No sales call required to see your results.
         </p>
       </div>

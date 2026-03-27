@@ -87,16 +87,18 @@ export default function WhyRevayaPage() {
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Headshot */}
             <FadeIn direction="right" className="order-last md:order-first">
-              <div className="relative inline-block w-full">
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#028090]/50 to-[#553555]/50 blur-sm" />
-                <div className="relative rounded-2xl overflow-hidden border border-white/10">
-                  <Image
-                    src="/shannon-headshot.jpg"
-                    alt="Shannon Winnicki, founder of Revaya AI"
-                    width={560}
-                    height={600}
-                    className="w-full object-cover"
-                  />
+              <div className="md:sticky md:top-24">
+                <div className="relative inline-block w-full">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#028090]/50 to-[#553555]/50 blur-sm" />
+                  <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                    <Image
+                      src="/shannon-headshot.jpg"
+                      alt="Shannon Winnicki, founder of Revaya AI"
+                      width={560}
+                      height={600}
+                      className="w-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -110,13 +112,13 @@ export default function WhyRevayaPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   Eighteen years as the person who stood between a business need and a dev team.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/85 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/85 mb-4">
                   At Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. I wasn&rsquo;t the outside consultant with a framework. I was inside the machine. Managing up to $11M website redesigns. Building an email program that drove 80% revenue growth. Coordinating remote development teams globally.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70 mb-4">
                   I knew what the right systems looked like. I knew what it cost to build them.
                 </p>
-                <p className="text-[1rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                   And then I hit a wall I couldn&rsquo;t see past.
                 </p>
               </div>
@@ -173,7 +175,7 @@ export default function WhyRevayaPage() {
                       </h3>
                     </div>
                     {section.paragraphs.map((p, j) => (
-                      <p key={j} className="text-[1rem] leading-[1.7] text-white mb-3">
+                      <p key={j} className="text-[1.0625rem] leading-[1.7] text-white mb-3">
                         {p}
                       </p>
                     ))}
@@ -200,14 +202,14 @@ export default function WhyRevayaPage() {
                   The Business AI OS I build for clients runs this business today.
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <p className="text-[1rem] leading-[1.7] text-white/70">
+                  <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                     A quality check that reviews every piece of copy against my brand standards before it goes out. A content pipeline that drafts, approves, and publishes without me touching it. A virtual team structure that handles four business functions instead of requiring fourteen job titles.
                   </p>
-                  <p className="text-[1rem] leading-[1.7] text-white/70">
+                  <p className="text-[1.0625rem] leading-[1.7] text-white/70">
                     I built all of it before I offered it to anyone else. That&rsquo;s what an AIOS engagement looks like for your business. I map how your business actually operates, identify where custom automations would change something real, and build them to match the specific way you work. Not a generic setup. Not a template.
                   </p>
                 </div>
-                <p className="text-[1rem] leading-[1.7] text-white/55 mt-6">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/55 mt-6">
                   I didn&rsquo;t design a methodology and then start a business. I built the business first, then packaged what I learned into something I could build for others.
                 </p>
               </div>
@@ -226,7 +228,7 @@ export default function WhyRevayaPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   The specifics.
                 </h2>
-                <p className="text-[1rem] leading-[1.7] text-white/45">
+                <p className="text-[1.0625rem] leading-[1.7] text-white/45">
                   The pattern across every role: stand between what a business needs and the system that delivers it. The Business AI OS is that job, built for service businesses that can&rsquo;t afford the enterprise price tag.
                 </p>
               </div>
@@ -240,10 +242,10 @@ export default function WhyRevayaPage() {
                     <div className="flex gap-5 items-start glass-card rounded-xl px-6 py-5">
                       <div className="w-1 shrink-0 rounded-full self-stretch bg-[#028090]" />
                       <div>
-                        <p className="font-display font-black text-[0.9375rem] text-white mb-1">
+                        <p className="font-display font-black text-[1rem] text-white mb-1">
                           {cred.label}
                         </p>
-                        <p className="text-[0.9375rem] leading-[1.65] text-white/60">
+                        <p className="text-[1rem] leading-[1.65] text-white/60">
                           {cred.detail}
                         </p>
                       </div>
@@ -274,7 +276,7 @@ export default function WhyRevayaPage() {
             </p>
             <Link
               href="/work-with-me"
-              className="inline-block font-display text-[0.9375rem] font-bold px-10 py-4 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)] transition-all duration-200"
+              className="inline-block font-display text-[1rem] font-bold px-10 py-4 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)] transition-all duration-200"
             >
               Start the conversation →
             </Link>

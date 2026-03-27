@@ -48,7 +48,7 @@ export default function EmailCapture({ onSubmit, isLoading }: EmailCaptureProps)
 
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div>
-            <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">
+            <label className="block text-sm font-medium text-white/50 uppercase tracking-wider mb-2">
               First Name
             </label>
             <input
@@ -60,7 +60,7 @@ export default function EmailCapture({ onSubmit, isLoading }: EmailCaptureProps)
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">
+            <label className="block text-sm font-medium text-white/50 uppercase tracking-wider mb-2">
               Email
             </label>
             <input
@@ -73,19 +73,19 @@ export default function EmailCapture({ onSubmit, isLoading }: EmailCaptureProps)
           </div>
 
           {error && (
-            <p className="text-brand-coral text-sm">{error}</p>
+            <p className="text-brand-coral text-base">{error}</p>
           )}
 
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-4 rounded-full bg-brand-primary text-white font-display font-black text-sm uppercase tracking-widest hover:bg-brand-primary/80 transition-all duration-200 disabled:opacity-50"
+            className="w-full py-4 rounded-full bg-brand-primary text-white font-display font-black text-base uppercase tracking-widest hover:bg-brand-primary/80 transition-all duration-200 disabled:opacity-50"
           >
             {isLoading ? "Loading..." : "See My Results"}
           </button>
         </form>
 
-        <p className="text-white/25 text-xs">
+        <p className="text-white/25 text-sm">
           By submitting your email, you are opting in to receive marketing emails from Revaya AI. You can opt out anytime.
         </p>
       </div>

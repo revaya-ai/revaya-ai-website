@@ -18,7 +18,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -29,13 +29,17 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0D1A4A]/90 backdrop-blur-md border-b border-white/[0.06]"
-          : "bg-transparent"
-      }`}
+      className="fixed top-3 left-0 right-0 z-50"
+      style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
     >
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between h-16 md:h-20">
+      <div
+        className={`mx-auto flex items-center justify-between h-16 md:h-20 ${
+          scrolled
+            ? "max-w-[960px] px-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-full"
+            : "max-w-[1200px] px-6 md:px-12 lg:px-20 bg-transparent"
+        }`}
+        style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -48,7 +52,7 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -121,7 +125,7 @@ export default function Navigation() {
               <Link
                 href="/work-with-me"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 text-center font-display text-[0.9375rem] font-bold px-5 py-3 rounded-full bg-[#553555] text-white"
+                className="mt-2 text-center font-display text-[1rem] font-bold px-5 py-3 rounded-full bg-[#553555] text-white"
               >
                 Start the Conversation →
               </Link>

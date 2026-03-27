@@ -13,19 +13,19 @@ export default function NotFound() {
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-block bg-brand-primary text-white text-[0.9375rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:bg-[#3D263D]"
+            className="inline-block bg-brand-primary text-white text-[1rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:bg-[#3D263D]"
           >
             Home
           </Link>
           <Link
             href="/business-ai-operating-system"
-            className="inline-block border border-white/20 text-white text-[0.9375rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:border-white/50 hover:bg-white/5"
+            className="inline-block border border-white/20 text-white text-[1rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:border-white/50 hover:bg-white/5"
           >
             Business AIOS
           </Link>
           <Link
             href="/work-with-me"
-            className="inline-block border border-white/20 text-white text-[0.9375rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:border-white/50 hover:bg-white/5"
+            className="inline-block border border-white/20 text-white text-[1rem] font-medium px-7 py-3.5 rounded transition-all duration-150 hover:border-white/50 hover:bg-white/5"
           >
             Work With Me
           </Link>
