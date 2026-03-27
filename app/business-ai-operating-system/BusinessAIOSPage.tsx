@@ -568,20 +568,20 @@ function BuildPanel() {
 // ─── Panel: Orbit ────────────────────────────────────────────────────────────
 
 const orbitAgents = [
-  // ring 1 — r:110, 3 nodes
-  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 110, speed: 0.38, angle: 0 },
-  { label: "IntelOS", task: "3 meetings", color: "#028090", ring: 110, speed: 0.38, angle: (Math.PI * 2) / 3 },
-  { label: "Content", task: "queued", color: "#553555", ring: 110, speed: 0.38, angle: (Math.PI * 4) / 3 },
-  // ring 2 — r:185, 4 nodes
-  { label: "CRM", task: "updated", color: "#F45B69", ring: 185, speed: 0.22, angle: 0.4 },
-  { label: "Proposals", task: "ready", color: "#028090", ring: 185, speed: 0.22, angle: 0.4 + Math.PI / 2 },
-  { label: "Slack", task: "2 flags", color: "#553555", ring: 185, speed: 0.22, angle: 0.4 + Math.PI },
-  { label: "Pipeline", task: "tracked", color: "rgba(228,253,225,0.8)", ring: 185, speed: 0.22, angle: 0.4 + (Math.PI * 3) / 2 },
-  // ring 3 — r:215, 4 nodes
-  { label: "Analytics", task: "weekly ✓", color: "#028090", ring: 215, speed: 0.13, angle: 0.9 },
-  { label: "Intake", task: "submitted", color: "#F45B69", ring: 215, speed: 0.13, angle: 0.9 + Math.PI / 2 },
-  { label: "Docs", task: "SOW sent", color: "#553555", ring: 215, speed: 0.13, angle: 0.9 + Math.PI },
-  { label: "Revenue", task: "monthly ✓", color: "rgba(228,253,225,0.8)", ring: 215, speed: 0.13, angle: 0.9 + (Math.PI * 3) / 2 },
+  // ring 1 — r:100, 3 nodes
+  { label: "Email", task: "5:30am ✓", color: "#028090", ring: 100, speed: 0.38, angle: 0 },
+  { label: "IntelOS", task: "3 meetings", color: "#F45B69", ring: 100, speed: 0.38, angle: (Math.PI * 2) / 3 },
+  { label: "Content", task: "queued", color: "#553555", ring: 100, speed: 0.38, angle: (Math.PI * 4) / 3 },
+  // ring 2 — r:175, 4 nodes
+  { label: "CRM", task: "updated", color: "#F45B69", ring: 175, speed: 0.22, angle: 0.4 },
+  { label: "Proposals", task: "ready", color: "#028090", ring: 175, speed: 0.22, angle: 0.4 + Math.PI / 2 },
+  { label: "Slack", task: "2 flags", color: "#553555", ring: 175, speed: 0.22, angle: 0.4 + Math.PI },
+  { label: "Pipeline", task: "tracked", color: "rgba(228,253,225,0.8)", ring: 175, speed: 0.22, angle: 0.4 + (Math.PI * 3) / 2 },
+  // ring 3 — r:260, 4 nodes
+  { label: "Analytics", task: "weekly ✓", color: "#028090", ring: 260, speed: 0.13, angle: 0.9 },
+  { label: "Intake", task: "submitted", color: "#F45B69", ring: 260, speed: 0.13, angle: 0.9 + Math.PI / 2 },
+  { label: "Docs", task: "SOW sent", color: "#F45B69", ring: 260, speed: 0.13, angle: 0.9 + Math.PI },
+  { label: "Revenue", task: "monthly ✓", color: "rgba(228,253,225,0.8)", ring: 260, speed: 0.13, angle: 0.9 + (Math.PI * 3) / 2 },
 ];
 
 function OrbitPanel() {
@@ -624,7 +624,7 @@ function OrbitPanel() {
     };
     resize();
 
-    const ringRadii = [150, 255, 300];
+    const ringRadii = [130, 220, 310];
     const ringRotations = [0, 0, 0];
     const ringSpeeds = [0.0003, -0.0002, 0.00015];
 
@@ -647,7 +647,7 @@ function OrbitPanel() {
       const H = canvas.height / dpr;
       const cx = W / 2, cy = H / 2;
       const t = tRef.current;
-      const scale = W / 520;
+      const scale = W / 580;
 
       ctx.clearRect(0, 0, W, H);
 
@@ -792,37 +792,46 @@ function OrbitPanel() {
         const [cr, cg, cb] = parseColor(a.color);
 
         // large soft halo
-        const halo = ctx.createRadialGradient(x, y, 0, x, y, 28 * scale);
-        halo.addColorStop(0, `rgba(${cr},${cg},${cb},0.12)`);
-        halo.addColorStop(0.5, `rgba(${cr},${cg},${cb},0.04)`);
+        // outer glow halo — larger, more visible
+        const halo = ctx.createRadialGradient(x, y, 0, x, y, 38 * scale);
+        halo.addColorStop(0, `rgba(${cr},${cg},${cb},0.20)`);
+        halo.addColorStop(0.4, `rgba(${cr},${cg},${cb},0.08)`);
         halo.addColorStop(1, "transparent");
         ctx.beginPath();
-        ctx.arc(x, y, 28 * scale, 0, Math.PI * 2);
+        ctx.arc(x, y, 38 * scale, 0, Math.PI * 2);
         ctx.fillStyle = halo;
         ctx.fill();
 
-        // glass node background
-        const nodeR = 14 * scale;
+        // glass node background — more translucent, glassier
+        const nodeR = 16 * scale;
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(13,26,74,0.65)";
+        ctx.fillStyle = "rgba(13,26,74,0.45)";
         ctx.fill();
 
-        // glass border — bright edge
+        // glass border — brighter, thicker
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.5)`;
-        ctx.lineWidth = 1.2;
+        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.7)`;
+        ctx.lineWidth = 1.8;
         ctx.stroke();
 
-        // inner highlight (top-left glass reflection)
+        // second inner border — white glass edge
         ctx.beginPath();
-        ctx.arc(x - 3 * scale, y - 3 * scale, nodeR * 0.6, 0, Math.PI * 2);
+        ctx.arc(x, y, nodeR - 1.5 * scale, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(255,255,255,0.08)";
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        // top highlight — glass reflection (bigger, brighter)
+        ctx.beginPath();
+        ctx.arc(x - 3 * scale, y - 4 * scale, nodeR * 0.7, 0, Math.PI * 2);
         const highlight = ctx.createRadialGradient(
-          x - 3 * scale, y - 3 * scale, 0,
-          x - 3 * scale, y - 3 * scale, nodeR * 0.6
+          x - 3 * scale, y - 4 * scale, 0,
+          x - 3 * scale, y - 4 * scale, nodeR * 0.7
         );
-        highlight.addColorStop(0, "rgba(255,255,255,0.08)");
+        highlight.addColorStop(0, "rgba(255,255,255,0.18)");
+        highlight.addColorStop(0.5, "rgba(255,255,255,0.05)");
         highlight.addColorStop(1, "transparent");
         ctx.fillStyle = highlight;
         ctx.fill();
@@ -898,7 +907,7 @@ function OrbitPanel() {
   }, [inView]);
 
   return (
-    <div ref={containerRef} className="w-full relative overflow-visible" style={{ aspectRatio: "1 / 1.1" }}>
+    <div ref={containerRef} className="w-full relative overflow-visible -mx-[30px]" style={{ aspectRatio: "1 / 1.15" }}>
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   );
