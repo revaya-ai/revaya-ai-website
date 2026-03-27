@@ -856,7 +856,7 @@ export default function HomePage() {
                   task. Not a generic audit. A complete operational blueprint
                   built from your actual processes.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   Most automations skip this entirely. They solve one thing, in
                   one tool, under the right conditions. You&rsquo;re still the
                   piece that ties it all together. Context is what changes that
@@ -888,7 +888,7 @@ export default function HomePage() {
                   Doesn&rsquo;t have to be formal. If you&rsquo;d explain it
                   to a contractor, it&rsquo;s enough.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   The more context it has, the more autonomous it gets. Every
                   document you give it makes the system more accurate.
                 </p>
@@ -924,7 +924,7 @@ export default function HomePage() {
                   pipeline health, what&rsquo;s overdue, and get a clear answer
                   in plain language.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   For those who want dashboards, those get built too. For
                   everyone else, just ask.
                 </p>
@@ -954,7 +954,7 @@ export default function HomePage() {
                   just constant. AIOS identifies every repeatable task and
                   handles the ones that don&rsquo;t need your judgment.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   Task automation % is one of three KPIs tracked in every
                   engagement. You see exactly what&rsquo;s moving.
                 </p>
@@ -990,7 +990,7 @@ export default function HomePage() {
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   And when you get time back, you decide what to do with it. Some people take a week off. Others put it back into the business. Use it to plan. Use it to pressure-test a decision, think through a hire, figure out what to build next. It knows your business well enough to push back. Sparring partner. Strategy partner. Both.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   The system runs in the background. You check in when you want to.
                 </p>
               </div>
@@ -1010,7 +1010,7 @@ export default function HomePage() {
               <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                 I spent the last year going deep on AI. Python certified, technically trained, and part of a network of 800+ AI developers and engineers. When your build needs a specialist I don&rsquo;t have to go looking. The team is already there.
               </p>
-              <p className="text-[1.0625rem] text-white/70">
+              <p className="text-[1.0625rem] text-white">
                 You&rsquo;re hiring a strategist with 18 years of operational experience and a build team behind her that most solo consultants can&rsquo;t touch. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
@@ -1046,7 +1046,7 @@ export default function HomePage() {
               <br />
               Your business keeps going.
             </h2>
-            <p className="text-[1.0625rem] leading-[1.7] text-white/70 mb-10 max-w-[500px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.7] text-white mb-10 max-w-[500px] mx-auto">
               Your bottleneck is a solvable problem. Most owners I talk to already
               know what it is. The AIOS is built to remove it permanently, not
               manage it.

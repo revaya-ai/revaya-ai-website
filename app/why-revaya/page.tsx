@@ -115,10 +115,10 @@ export default function WhyRevayaPage() {
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   At Virgin Mobile, Papa Murphy&rsquo;s, Intermedia. I wasn&rsquo;t the outside consultant with a framework. I was inside the machine. Managing up to $11M website redesigns. Building an email program that drove 80% revenue growth. Coordinating remote development teams globally.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70 mb-4">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   I knew what the right systems looked like. I knew what it cost to build them.
                 </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   And then I hit a wall I couldn&rsquo;t see past.
                 </p>
               </div>
@@ -195,21 +195,21 @@ export default function WhyRevayaPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#028090]/15 to-[#553555]/15" />
               <div className="absolute inset-0 border border-[#028090]/25 rounded-2xl" />
               <div className="relative p-8 md:p-14">
-                <p className="text-[1.0625rem] leading-[1.65] text-white/45 mb-5">
+                <p className="text-[1.0625rem] leading-[1.65] text-white mb-5">
                   This is not a talking point.
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
                   The Business AI OS I build for clients runs this business today.
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                  <p className="text-[1.0625rem] leading-[1.7] text-white">
                     A quality check that reviews every piece of copy against my brand standards before it goes out. A content pipeline that drafts, approves, and publishes without me touching it. A virtual team structure that handles four business functions instead of requiring fourteen job titles.
                   </p>
-                  <p className="text-[1.0625rem] leading-[1.7] text-white/70">
+                  <p className="text-[1.0625rem] leading-[1.7] text-white">
                     I built all of it before I offered it to anyone else. That&rsquo;s what an AIOS engagement looks like for your business. I map how your business actually operates, identify where custom automations would change something real, and build them to match the specific way you work. Not a generic setup. Not a template.
                   </p>
                 </div>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/55 mt-6">
+                <p className="text-[1.0625rem] leading-[1.7] text-white mt-6">
                   I didn&rsquo;t design a methodology and then start a business. I built the business first, then packaged what I learned into something I could build for others.
                 </p>
               </div>
@@ -228,7 +228,7 @@ export default function WhyRevayaPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   The specifics.
                 </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white/45">
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
                   The pattern across every role: stand between what a business needs and the system that delivers it. The Business AI OS is that job, built for service businesses that can&rsquo;t afford the enterprise price tag.
                 </p>
               </FadeIn>
@@ -245,7 +245,7 @@ export default function WhyRevayaPage() {
                         <p className="font-display font-black text-[1.0625rem] text-white mb-1">
                           {cred.label}
                         </p>
-                        <p className="text-[1.0625rem] leading-[1.65] text-white/60">
+                        <p className="text-[1.0625rem] leading-[1.65] text-white">
                           {cred.detail}
                         </p>
                       </div>
@@ -271,7 +271,7 @@ export default function WhyRevayaPage() {
             <p className="text-[1.125rem] leading-[1.65] text-white/70 mb-4 max-w-[440px] mx-auto">
               Tell me about your situation.
             </p>
-            <p className="text-[1.0625rem] leading-[1.65] text-white/45 mb-10 max-w-[520px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[520px] mx-auto">
               Every month without the right system is another month of 60 hour weeks, missed opportunities, and a business that only runs when you do.
             </p>
             <Link
@@ -287,7 +287,7 @@ export default function WhyRevayaPage() {
       {/* ── SOFT SECONDARY CTA ───────────────────────────────────────────────── */}
       <section className="relative py-8 border-t border-white/[0.04]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
-          <p className="text-[1.0625rem] text-white/40">
+          <p className="text-[1.0625rem] text-white">
             If you want to follow how this builds, the methodology, the decisions, the real work, I document it on{" "}
             <a
               href="https://www.linkedin.com/in/swinnicki/"

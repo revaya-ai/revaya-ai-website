@@ -1662,7 +1662,7 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
                   That&apos;s not a people problem. It&apos;s an architecture problem.
                 </p>
-                <p className="text-[1.0625rem] text-white/70 leading-[1.7] mt-8 border-l-2 border-[#028090]/40 pl-6">
+                <p className="text-[1.0625rem] text-white leading-[1.7] mt-8 border-l-2 border-[#028090]/40 pl-6">
                   I spent 18 years inside companies like Virgin Mobile, Papa Murphy&apos;s, and Intermedia. I know what the right systems look like. I know what it costs to build them. And I built this one for my own business first.
                 </p>
               </FadeUp>
@@ -1715,7 +1715,7 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
                   Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations.
                 </p>
-                <p className="text-[1.0625rem] text-white/70 leading-[1.7] mb-8">
+                <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
                   Not for anyone looking for a quick fix. The system takes time to build and discipline to adopt.
                 </p>
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
@@ -1802,7 +1802,7 @@ export default function BusinessAIOSPage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-4">
                   The system is live.
                 </h2>
-                <p className="text-[1.0625rem] text-white/70 leading-[1.7] mb-14">
+                <p className="text-[1.0625rem] text-white leading-[1.7] mb-14">
                   Now it grows with your business.
                 </p>
                 <div className="border-t border-white/[0.08] pt-10 pb-10">
@@ -1825,7 +1825,7 @@ export default function BusinessAIOSPage() {
                     </p>
                   </div>
                 </div>
-                <p className="text-[1.0625rem] text-white/45 leading-[1.7]">
+                <p className="text-[1.0625rem] text-white leading-[1.7]">
                   The retainer conversation happens at your 30-day check-in, once you&apos;ve used the system and know what you want next.
                 </p>
               </FadeUp>
