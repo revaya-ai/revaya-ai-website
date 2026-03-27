@@ -790,7 +790,7 @@ export default function HomePage() {
             ].map((item, i) => (
               <span
                 key={`${ri}-${i}`}
-                className="flex items-center gap-8 text-[0.875rem] uppercase tracking-[0.14em] text-[#028090]/30 font-medium"
+                className="flex items-center gap-8 text-[0.875rem] uppercase tracking-[0.14em] text-white/70 font-medium"
               >
                 {item}{" "}
                 <span className="text-[#028090]/40">&middot;</span>

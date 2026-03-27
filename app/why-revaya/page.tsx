@@ -74,7 +74,7 @@ export default function WhyRevayaPage() {
               <br />
               I lived one.
             </h1>
-            <p className="text-[1.125rem] leading-[1.65] text-white/70 max-w-[580px]">
+            <p className="text-[1.125rem] leading-[1.65] text-white max-w-[580px]">
               Eighteen years on the inside of companies that operate at scale. Then I built the same system for my own business. That&rsquo;s what&rsquo;s running Revaya today.
             </p>
           </FadeIn>
@@ -154,7 +154,7 @@ export default function WhyRevayaPage() {
                     paragraphs: [
                       "I knew what the underdogs needed. Small service businesses running a 10-person workload with two people, who hadn't taken a real vacation in years, who knew AI was supposed to help but couldn't figure out where to start.",
                       "I'd spent 18 years on the other side of that equation. I knew what the right systems looked like. I knew what it cost to build them. And I knew these founders had the same problems without the same resources.",
-                      "In June 2025, I found the program that changed everything. 200+ hours of training on agentic engineering, AI agent architecture, and the Business AI OS methodology. And then I spent 9 months absorbing it before I said anything publicly. Not because I was avoiding it. Because it wasn't authentic yet. Saying I know automations wasn't the thing.",
+                      "In June 2025, I found the program that changed everything. 200+ hours of training on agentic engineering, AI agent architecture, and the Business AI OS methodology. And then I spent 10 months absorbing it before I said anything publicly. Not because I was avoiding it. Because it wasn't authentic yet. Saying I know automations wasn't the thing.",
                       "This is the thing.",
                     ],
                   },
