@@ -592,6 +592,7 @@ function OrbitPanel() {
   const agentsRef = useRef(orbitAgents.map((a) => ({ ...a })));
   const tRef = useRef(0);
   const startedRef = useRef(false);
+  const particlesRef = useRef<Array<{ agentIdx: number; progress: number; speed: number }>>([]);
 
   useEffect(() => {
     if (!inView || startedRef.current) return;
@@ -603,125 +604,285 @@ function OrbitPanel() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // initialize spoke particles (2 per agent)
+    const particles: Array<{ agentIdx: number; progress: number; speed: number }> = [];
+    agentsRef.current.forEach((_, i) => {
+      particles.push({ agentIdx: i, progress: Math.random(), speed: 0.002 + Math.random() * 0.002 });
+      particles.push({ agentIdx: i, progress: Math.random() * 0.5, speed: 0.0015 + Math.random() * 0.002 });
+    });
+    particlesRef.current = particles;
+
     const resize = () => {
+      const dpr = window.devicePixelRatio || 1;
       const w = container.clientWidth;
-      canvas.width = w;
-      canvas.height = w * 1.1;
+      const h = w * 1.1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
+
+    const ringRadii = [150, 255, 300];
+    const ringRotations = [0, 0, 0];
+    const ringSpeeds = [0.0003, -0.0002, 0.00015];
+
+    const parseColor = (c: string): [number, number, number] => {
+      if (c.startsWith("rgba")) {
+        const m = c.match(/[\d.]+/g);
+        return m ? [+m[0], +m[1], +m[2]] : [228, 253, 225];
+      }
+      const hex = c.replace("#", "");
+      return [parseInt(hex.slice(0, 2), 16), parseInt(hex.slice(2, 4), 16), parseInt(hex.slice(4, 6), 16)];
+    };
 
     const draw = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
-      const W = canvas.width;
-      const cx = W / 2, cy = canvas.height / 2;
+      const dpr = window.devicePixelRatio || 1;
+      const W = canvas.width / dpr;
+      const H = canvas.height / dpr;
+      const cx = W / 2, cy = H / 2;
       const t = tRef.current;
-
-      ctx.clearRect(0, 0, W, canvas.height);
-
-      // orbit rings
-      [150, 255, 300].forEach((r, ri) => {
-        const colors = ["rgba(2,128,144,0.12)", "rgba(85,53,85,0.12)", "rgba(2,128,144,0.10)"];
-        ctx.beginPath();
-        ctx.arc(cx, cy, r * (W / 520), 0, Math.PI * 2);
-        ctx.strokeStyle = colors[ri];
-        ctx.lineWidth = 1;
-        ctx.setLineDash([3, 9]);
-        ctx.stroke();
-        ctx.setLineDash([]);
-      });
-
       const scale = W / 520;
 
-      // pass 1 — advance angles + draw spokes (behind everything)
+      ctx.clearRect(0, 0, W, H);
+
+      // background radial glow
+      const bgGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, 280 * scale);
+      bgGlow.addColorStop(0, "rgba(85,53,85,0.06)");
+      bgGlow.addColorStop(0.5, "rgba(2,128,144,0.03)");
+      bgGlow.addColorStop(1, "transparent");
+      ctx.fillStyle = bgGlow;
+      ctx.fillRect(0, 0, W, H);
+
+      // orbit rings — smooth gradient with glow
+      ringRadii.forEach((baseR, ri) => {
+        ringRotations[ri] += ringSpeeds[ri];
+        const r = baseR * scale;
+        const opacity = [0.25, 0.15, 0.10][ri];
+        const glowOpacity = [0.08, 0.05, 0.03][ri];
+        const colors = ["rgba(2,128,144,", "rgba(85,53,85,", "rgba(2,128,144,"];
+
+        // wide glow stroke
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.strokeStyle = colors[ri] + glowOpacity + ")";
+        ctx.lineWidth = 6 * scale;
+        ctx.stroke();
+
+        // thin bright stroke
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.strokeStyle = colors[ri] + opacity + ")";
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      });
+
+      // advance agent angles
       agentsRef.current.forEach((a) => {
-        a.angle += a.speed * 0.008;
+        a.angle += a.speed * 0.005;
+      });
+
+      // pass 1 — gradient spokes (behind everything)
+      agentsRef.current.forEach((a) => {
         const r = a.ring * scale;
         const x = cx + Math.cos(a.angle) * r;
         const y = cy + Math.sin(a.angle) * r;
+
+        const spokeGrad = ctx.createLinearGradient(cx, cy, x, y);
+        const [cr, cg, cb] = parseColor(a.color);
+        spokeGrad.addColorStop(0, `rgba(${cr},${cg},${cb},0.18)`);
+        spokeGrad.addColorStop(1, `rgba(${cr},${cg},${cb},0.02)`);
+
         ctx.beginPath();
         ctx.moveTo(cx, cy);
         ctx.lineTo(x, y);
-        ctx.strokeStyle = a.color.startsWith("rgba") ? a.color.replace(/[\d.]+\)$/, "0.22)") : a.color + "38";
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = spokeGrad;
+        ctx.lineWidth = 0.5;
         ctx.stroke();
       });
 
-      // center glow
-      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 70 * scale);
-      grd.addColorStop(0, "rgba(85,53,85,0.35)");
-      grd.addColorStop(1, "transparent");
+      // spoke particles
+      particlesRef.current.forEach((p) => {
+        p.progress += p.speed;
+        if (p.progress > 1) p.progress = 0;
+
+        const a = agentsRef.current[p.agentIdx];
+        const r = a.ring * scale;
+        const x = cx + Math.cos(a.angle) * r * p.progress;
+        const y = cy + Math.sin(a.angle) * r * p.progress;
+        const [cr, cg, cb] = parseColor(a.color);
+
+        // fade in then out
+        const alpha = p.progress < 0.1 ? p.progress / 0.1 : p.progress > 0.85 ? (1 - p.progress) / 0.15 : 1;
+
+        ctx.beginPath();
+        ctx.arc(x, y, 1.2 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},${(alpha * 0.6).toFixed(3)})`;
+        ctx.fill();
+      });
+
+      // center outer glow
+      const outerGlow = ctx.createRadialGradient(cx, cy, 20 * scale, cx, cy, 80 * scale);
+      outerGlow.addColorStop(0, "rgba(85,53,85,0.20)");
+      outerGlow.addColorStop(0.5, "rgba(85,53,85,0.06)");
+      outerGlow.addColorStop(1, "transparent");
       ctx.beginPath();
-      ctx.arc(cx, cy, 70 * scale, 0, Math.PI * 2);
-      ctx.fillStyle = grd;
+      ctx.arc(cx, cy, 80 * scale, 0, Math.PI * 2);
+      ctx.fillStyle = outerGlow;
       ctx.fill();
 
-      // center pulse ring
-      const pulse = 0.4 + Math.sin(t * 0.025) * 0.15;
+      // center breathing pulse ring
+      const breathe = Math.sin(t * 0.018) * 0.5 + 0.5; // 0..1 sinusoidal
+      const pulseRadius = (36 + breathe * 8) * scale;
+      const pulseAlpha = 0.15 + breathe * 0.2;
       ctx.beginPath();
-      ctx.arc(cx, cy, (34 + Math.sin(t * 0.025) * 4) * scale, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(85,53,85,${pulse})`;
+      ctx.arc(cx, cy, pulseRadius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(2,128,144,${pulseAlpha.toFixed(3)})`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // center node
+      // second pulse ring (offset phase)
+      const breathe2 = Math.sin(t * 0.018 + Math.PI) * 0.5 + 0.5;
+      const pulseRadius2 = (38 + breathe2 * 6) * scale;
       ctx.beginPath();
-      ctx.arc(cx, cy, 28 * scale, 0, Math.PI * 2);
-      ctx.fillStyle = "#553555";
+      ctx.arc(cx, cy, pulseRadius2, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(85,53,85,${(0.08 + breathe2 * 0.1).toFixed(3)})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // center node — gradient fill with breathing scale
+      const centerScale = 1 + breathe * 0.06;
+      const centerR = 28 * scale * centerScale;
+      const centerGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, centerR);
+      centerGrad.addColorStop(0, "rgba(85,53,85,1)");
+      centerGrad.addColorStop(0.7, "rgba(85,53,85,0.85)");
+      centerGrad.addColorStop(1, "rgba(85,53,85,0.4)");
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, centerR, 0, Math.PI * 2);
+      ctx.fillStyle = centerGrad;
       ctx.fill();
 
-      ctx.fillStyle = "white";
-      ctx.font = `700 ${11 * scale}px Inter, sans-serif`;
+      // center border
+      ctx.beginPath();
+      ctx.arc(cx, cy, centerR, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(255,255,255,0.15)";
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // "YOU" text
+      ctx.fillStyle = "rgba(255,255,255,0.95)";
+      ctx.font = `600 ${12 * scale}px Inter, sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText("YOU", cx, cy);
+      ctx.letterSpacing = `${2 * scale}px`;
+      ctx.fillText("YOU", cx + 1 * scale, cy);
+      ctx.letterSpacing = "0px";
 
-      // pass 2 — draw nodes + labels (on top of center)
+      // pass 2 — agent nodes
       agentsRef.current.forEach((a) => {
         const r = a.ring * scale;
         const x = cx + Math.cos(a.angle) * r;
         const y = cy + Math.sin(a.angle) * r;
+        const [cr, cg, cb] = parseColor(a.color);
 
-        // node glow
-        const ng = ctx.createRadialGradient(x, y, 0, x, y, 20 * scale);
-        ng.addColorStop(0, a.color.startsWith("rgba") ? "rgba(228,253,225,0.2)" : a.color + "30");
-        ng.addColorStop(1, "transparent");
+        // large soft halo
+        const halo = ctx.createRadialGradient(x, y, 0, x, y, 28 * scale);
+        halo.addColorStop(0, `rgba(${cr},${cg},${cb},0.12)`);
+        halo.addColorStop(0.5, `rgba(${cr},${cg},${cb},0.04)`);
+        halo.addColorStop(1, "transparent");
         ctx.beginPath();
-        ctx.arc(x, y, 20 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = ng;
+        ctx.arc(x, y, 28 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = halo;
         ctx.fill();
 
-        // node circle
+        // glass node background
+        const nodeR = 14 * scale;
         ctx.beginPath();
-        ctx.arc(x, y, 14 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(13,26,74,0.95)";
+        ctx.arc(x, y, nodeR, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(13,26,74,0.65)";
         ctx.fill();
-        ctx.strokeStyle = a.color.startsWith("rgba") ? "rgba(228,253,225,0.5)" : a.color + "99";
-        ctx.lineWidth = 1.5;
+
+        // glass border — bright edge
+        ctx.beginPath();
+        ctx.arc(x, y, nodeR, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.5)`;
+        ctx.lineWidth = 1.2;
         ctx.stroke();
 
-        // live dot
-        const dotAlpha = 0.5 + Math.sin(t * 0.05 + a.angle * 3) * 0.5;
+        // inner highlight (top-left glass reflection)
         ctx.beginPath();
-        ctx.arc(x + 9 * scale, y - 9 * scale, 3 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(34,197,94,${dotAlpha})`;
+        ctx.arc(x - 3 * scale, y - 3 * scale, nodeR * 0.6, 0, Math.PI * 2);
+        const highlight = ctx.createRadialGradient(
+          x - 3 * scale, y - 3 * scale, 0,
+          x - 3 * scale, y - 3 * scale, nodeR * 0.6
+        );
+        highlight.addColorStop(0, "rgba(255,255,255,0.08)");
+        highlight.addColorStop(1, "transparent");
+        ctx.fillStyle = highlight;
         ctx.fill();
 
-        // label — clamp x to canvas bounds to prevent clipping
-        ctx.font = `500 ${12 * scale}px Inter, sans-serif`;
-        const lw = ctx.measureText(a.label).width;
-        const lx = Math.min(Math.max(x, lw / 2 + 4), W - lw / 2 - 4);
-        const ly = y > cy ? y - 36 * scale : y + 18 * scale; // flip above if in bottom half
-        ctx.fillStyle = "#ffffff";
+        // live dot — smooth pulse
+        const dotPhase = Math.sin(t * 0.03 + a.angle * 2) * 0.5 + 0.5;
+        const dotAlpha = 0.4 + dotPhase * 0.6;
+        const dotSize = (2.5 + dotPhase * 1) * scale;
+
+        // dot glow
+        ctx.beginPath();
+        ctx.arc(x + 9 * scale, y - 9 * scale, dotSize * 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(34,197,94,${(dotAlpha * 0.25).toFixed(3)})`;
+        ctx.fill();
+
+        // dot core
+        ctx.beginPath();
+        ctx.arc(x + 9 * scale, y - 9 * scale, dotSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(34,197,94,${dotAlpha.toFixed(3)})`;
+        ctx.fill();
+
+        // label — position with background pill
+        ctx.font = `500 ${11 * scale}px Inter, sans-serif`;
+        const labelText = a.label;
+        const taskText = a.task;
+        const lw = ctx.measureText(labelText).width;
+        const lx = Math.min(Math.max(x, lw / 2 + 6), W - lw / 2 - 6);
+        const ly = y > cy ? y - 38 * scale : y + 20 * scale;
+
+        // pill background
+        const pillW = Math.max(lw, ctx.measureText(taskText).width) + 12 * scale;
+        const pillH = 28 * scale;
+        const pillX = lx - pillW / 2;
+        const pillY = ly - 2 * scale;
+
+        ctx.beginPath();
+        const pillR = 6 * scale;
+        ctx.moveTo(pillX + pillR, pillY);
+        ctx.lineTo(pillX + pillW - pillR, pillY);
+        ctx.quadraticCurveTo(pillX + pillW, pillY, pillX + pillW, pillY + pillR);
+        ctx.lineTo(pillX + pillW, pillY + pillH - pillR);
+        ctx.quadraticCurveTo(pillX + pillW, pillY + pillH, pillX + pillW - pillR, pillY + pillH);
+        ctx.lineTo(pillX + pillR, pillY + pillH);
+        ctx.quadraticCurveTo(pillX, pillY + pillH, pillX, pillY + pillH - pillR);
+        ctx.lineTo(pillX, pillY + pillR);
+        ctx.quadraticCurveTo(pillX, pillY, pillX + pillR, pillY);
+        ctx.closePath();
+        ctx.fillStyle = "rgba(13,26,74,0.35)";
+        ctx.fill();
+
+        // label text
+        ctx.fillStyle = "rgba(255,255,255,0.95)";
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
-        ctx.fillText(a.label, lx, ly);
+        ctx.fillText(labelText, lx, ly + 1 * scale);
 
-        ctx.fillStyle = "rgba(255,255,255,0.65)";
-        ctx.font = `400 ${10 * scale}px Inter, sans-serif`;
-        ctx.fillText(a.task, lx, ly + 14 * scale);
+        // task text
+        ctx.fillStyle = "rgba(255,255,255,0.5)";
+        ctx.font = `400 ${9.5 * scale}px Inter, sans-serif`;
+        ctx.fillText(taskText, lx, ly + 14 * scale);
       });
 
       tRef.current++;
@@ -729,7 +890,11 @@ function OrbitPanel() {
     };
 
     draw();
-    return () => cancelAnimationFrame(animRef.current);
+    window.addEventListener("resize", resize);
+    return () => {
+      cancelAnimationFrame(animRef.current);
+      window.removeEventListener("resize", resize);
+    };
   }, [inView]);
 
   return (
