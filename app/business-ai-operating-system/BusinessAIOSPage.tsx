@@ -1636,11 +1636,14 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* BEFORE STATE — text L, panel R */}
+        {/* BEFORE STATE — panel L, text R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-[1.3fr_1fr] gap-16 items-center">
-              <FadeUp direction="right">
+            <div className="grid md:grid-cols-[1fr_1.3fr] gap-16 items-center">
+              <FadeUp delay={0.15} direction="right" className="md:pr-[95px]">
+                <PainQueuePanel />
+              </FadeUp>
+              <FadeUp direction="left">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Business AI Operating System
                 </p>
@@ -1665,9 +1668,6 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1.0625rem] text-white leading-[1.7] mt-8 border-l-2 border-[#028090]/40 pl-6">
                   I spent 18 years inside companies like Virgin Mobile, Papa Murphy&apos;s, and Intermedia. I know what the right systems look like. I know what it costs to build them. And I built this one for my own business first.
                 </p>
-              </FadeUp>
-              <FadeUp delay={0.15} direction="left" className="md:pl-[75px]">
-                <PainQueuePanel />
               </FadeUp>
             </div>
           </div>
@@ -1817,11 +1817,14 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* AFTER THE BUILD — text L, panel R */}
+        {/* AFTER THE BUILD — orbit L, text R */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1140px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp direction="right">
+              <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
+                <OrbitPanel />
+              </FadeUp>
+              <FadeUp direction="left" className="order-first md:order-last">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   After the Build
                 </p>
@@ -1854,9 +1857,6 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1.0625rem] text-white leading-[1.7]">
                   The retainer conversation happens at your 30-day check-in, once you&apos;ve used the system and know what you want next.
                 </p>
-              </FadeUp>
-              <FadeUp delay={0.15} direction="left">
-                <OrbitPanel />
               </FadeUp>
             </div>
           </div>
