@@ -633,7 +633,7 @@ function OrbitPanel() {
     ];
 
     // node sizes by ring (diameter in px, halved for radius)
-    const nodeSizeByRing: Record<number, number> = { 100: 24, 175: 27, 260: 33 };
+    const nodeSizeByRing: Record<number, number> = { 100: 25, 175: 30, 260: 35 };
     const fontSizeByRing: Record<number, number> = { 100: 8, 175: 9, 260: 10 };
     const haloSizeByRing: Record<number, number> = { 100: 34, 175: 40, 260: 48 };
 
