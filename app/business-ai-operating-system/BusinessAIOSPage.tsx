@@ -2036,7 +2036,7 @@ export default function BusinessAIOSPage() {
         <section className="py-28 md:py-36">
           <div className="max-w-[1280px] mx-auto px-6 md:px-[15px] text-center">
             <FadeUp>
-              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8 max-w-[850px] mx-auto">
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8 max-w-[950px] mx-auto">
                 You take a week off. Your business keeps going. That&apos;s not a fantasy. It&apos;s what the system is built to do.
               </h2>
               <Link
