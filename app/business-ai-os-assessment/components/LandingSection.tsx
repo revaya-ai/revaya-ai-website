@@ -11,7 +11,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
 
         {/* Eyebrow */}
         <div>
-          <span className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
+          <span className="text-[0.875rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
             Business AI OS Assessment
           </span>
         </div>

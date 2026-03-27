@@ -206,7 +206,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
         {/* ─── SCORE HEADER ─── */}
         <div className="text-center space-y-6 pt-8">
           <div>
-            <p className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Your AI Readiness Score</p>
+            <p className="text-[0.875rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Your AI Readiness Score</p>
             <div className="inline-flex items-center justify-center w-28 h-28 rounded-full border-4 border-brand-accent/40 bg-brand-accent/10">
               <div className="font-display text-4xl font-black text-white leading-none">
                 {results.totalScore}
@@ -299,7 +299,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
         {/* ─── FOUNDER OUTPUT BENCHMARK ─── */}
         {revenuePerPersonLabel && (
           <div className="glass-card rounded-xl p-6 border-l-4 border-brand-coral">
-            <p className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Founder Output Benchmark</p>
+            <p className="text-[0.875rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">Founder Output Benchmark</p>
             <p className="text-white text-lg leading-relaxed">
               Your business is generating <strong className="text-white">{revenuePerPersonLabel} per person.</strong>{" "}
               In high-performing founder-led knowledge businesses, that number is $300K or more. The gap
@@ -381,7 +381,7 @@ export default function ResultsPage({ results, answers, email }: ResultsPageProp
 
         {/* ─── BIGGEST OPPORTUNITY ─── */}
         <div className="glass-card rounded-2xl p-8 border border-brand-coral/20">
-          <p className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">
+          <p className="text-[0.875rem] uppercase tracking-[0.14em] text-brand-accent font-medium mb-3">
             Your Biggest Opportunity: {results.lowestSection}
           </p>
 

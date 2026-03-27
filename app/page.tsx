@@ -720,7 +720,7 @@ export default function HomePage() {
           <FadeIn delay={0}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
-              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-white/80 font-medium">
+              <span className="text-[0.875rem] uppercase tracking-[0.12em] text-white/80 font-medium">
                 Business AI Operating System
               </span>
             </div>
@@ -744,7 +744,7 @@ export default function HomePage() {
 
           {/* Body */}
           <FadeIn delay={0.25}>
-            <p className="text-[1rem] leading-[1.75] text-white/85 mb-10 max-w-[718px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.75] text-white/85 mb-10 max-w-[718px] mx-auto">
               Every task, every decision, every answer still routes through you. That&rsquo;s not a business you own. That&rsquo;s a job with overhead. I build the system that changes that.
             </p>
           </FadeIn>
@@ -807,7 +807,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   The Problem &rarr; The Fix
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -842,7 +842,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Step 1 — Map
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -874,7 +874,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Knowledge
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -910,7 +910,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Intelligence
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -940,7 +940,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Automate Busy Work
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -976,7 +976,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
-                <span className="text-[0.75rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium block mb-5">
                   Your Control Center
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">

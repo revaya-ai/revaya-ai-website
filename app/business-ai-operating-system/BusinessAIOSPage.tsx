@@ -2005,19 +2005,17 @@ export default function BusinessAIOSPage() {
 
         {/* CLOSING CTA */}
         <section className="py-28 md:py-36">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
             <FadeUp>
-              <div className="max-w-[560px]">
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
-                  You take a week off. Your business keeps going. That&apos;s not a fantasy. It&apos;s what the system is built to do.
-                </h2>
-                <Link
-                  href="/work-with-me"
-                  className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
-                >
-                  Start the Conversation →
-                </Link>
-              </div>
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8 max-w-[560px] mx-auto">
+                You take a week off. Your business keeps going. That&apos;s not a fantasy. It&apos;s what the system is built to do.
+              </h2>
+              <Link
+                href="/work-with-me"
+                className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+              >
+                Start the Conversation →
+              </Link>
             </FadeUp>
           </div>
         </section>

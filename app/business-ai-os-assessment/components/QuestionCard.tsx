@@ -38,7 +38,7 @@ export default function QuestionCard({
     <div className="w-full max-w-2xl mx-auto animate-fade-in">
       {/* Section eyebrow */}
       <div className="mb-6">
-        <span className="text-[0.65rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
+        <span className="text-[0.875rem] uppercase tracking-[0.14em] text-brand-accent font-medium">
           {question.section}
         </span>
       </div>

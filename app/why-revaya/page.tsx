@@ -65,7 +65,7 @@ export default function WhyRevayaPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
-              <span className="text-[0.75rem] uppercase tracking-[0.12em] text-white/80 font-medium">
+              <span className="text-[0.875rem] uppercase tracking-[0.12em] text-white/80 font-medium">
                 The Founder&rsquo;s Story
               </span>
             </div>
@@ -85,9 +85,9 @@ export default function WhyRevayaPage() {
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Headshot */}
-            <FadeIn direction="right" className="order-last md:order-first">
-              <div className="md:sticky md:top-24">
+            {/* Headshot — sticky on desktop */}
+            <div className="order-last md:order-first md:sticky md:top-24 md:self-start">
+              <FadeIn direction="right">
                 <div className="relative inline-block w-full">
                   <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#028090]/50 to-[#553555]/50 blur-sm" />
                   <div className="relative rounded-2xl overflow-hidden border border-white/10">
@@ -100,13 +100,13 @@ export default function WhyRevayaPage() {
                     />
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
 
             {/* Intro text */}
             <FadeIn direction="left" delay={0.15} className="order-first md:order-last">
               <div className="md:pt-6">
-                <p className="text-[0.8125rem] uppercase tracking-[0.1em] text-[#028090] font-medium mb-6">
+                <p className="text-[0.875rem] uppercase tracking-[0.1em] text-[#028090] font-medium mb-6">
                   Shannon Winnicki
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
@@ -131,12 +131,12 @@ export default function WhyRevayaPage() {
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Timeline panel */}
-            <FadeIn direction="right" className="order-last md:order-first">
-              <div className="md:sticky md:top-24">
+            {/* Timeline panel — sticky on desktop */}
+            <div className="order-last md:order-first md:sticky md:top-24 md:self-start">
+              <FadeIn direction="right">
                 <TimelinePanel />
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
 
             {/* Story text */}
             <FadeIn direction="left" delay={0.15} className="order-first md:order-last">
@@ -195,7 +195,7 @@ export default function WhyRevayaPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#028090]/15 to-[#553555]/15" />
               <div className="absolute inset-0 border border-[#028090]/25 rounded-2xl" />
               <div className="relative p-8 md:p-14">
-                <p className="text-[1rem] leading-[1.65] text-white/50 mb-5">
+                <p className="text-[1.0625rem] leading-[1.65] text-white/50 mb-5">
                   This is not a talking point.
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8">
@@ -222,17 +222,17 @@ export default function WhyRevayaPage() {
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start">
-            {/* Left: heading */}
-            <FadeIn direction="right">
-              <div className="md:sticky md:top-24">
+            {/* Left: heading — sticky on desktop */}
+            <div className="md:sticky md:top-24 md:self-start">
+              <FadeIn direction="right">
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   The specifics.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white/45">
                   The pattern across every role: stand between what a business needs and the system that delivers it. The Business AI OS is that job, built for service businesses that can&rsquo;t afford the enterprise price tag.
                 </p>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
 
             {/* Right: credential cards */}
             <FadeIn direction="left" delay={0.15}>
@@ -242,10 +242,10 @@ export default function WhyRevayaPage() {
                     <div className="flex gap-5 items-start glass-card rounded-xl px-6 py-5">
                       <div className="w-1 shrink-0 rounded-full self-stretch bg-[#028090]" />
                       <div>
-                        <p className="font-display font-black text-[1rem] text-white mb-1">
+                        <p className="font-display font-black text-[1.0625rem] text-white mb-1">
                           {cred.label}
                         </p>
-                        <p className="text-[1rem] leading-[1.65] text-white/60">
+                        <p className="text-[1.0625rem] leading-[1.65] text-white/60">
                           {cred.detail}
                         </p>
                       </div>
@@ -271,7 +271,7 @@ export default function WhyRevayaPage() {
             <p className="text-[1.125rem] leading-[1.65] text-white/65 mb-4 max-w-[440px] mx-auto">
               Tell me about your situation.
             </p>
-            <p className="text-[1rem] leading-[1.65] text-white/45 mb-10 max-w-[520px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.65] text-white/45 mb-10 max-w-[520px] mx-auto">
               Every month without the right system is another month of 60 hour weeks, missed opportunities, and a business that only runs when you do.
             </p>
             <Link
@@ -287,7 +287,7 @@ export default function WhyRevayaPage() {
       {/* ── SOFT SECONDARY CTA ───────────────────────────────────────────────── */}
       <section className="relative py-8 border-t border-white/[0.04]" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
-          <p className="text-[1rem] text-white/40">
+          <p className="text-[1.0625rem] text-white/40">
             If you want to follow how this builds, the methodology, the decisions, the real work, I document it on{" "}
             <a
               href="https://www.linkedin.com/in/swinnicki/"
