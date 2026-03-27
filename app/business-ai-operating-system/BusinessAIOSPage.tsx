@@ -1638,9 +1638,9 @@ export default function BusinessAIOSPage() {
 
         {/* BEFORE STATE — panel L, text R */}
         <section className="py-24 md:py-32">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-[1fr_1.3fr] gap-16 items-center">
-              <FadeUp delay={0.15} direction="right" className="md:pr-[95px]">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-[1fr_1.4fr] gap-20 items-center">
+              <FadeUp delay={0.15} direction="right">
                 <PainQueuePanel />
               </FadeUp>
               <FadeUp direction="left">
@@ -2034,9 +2034,9 @@ export default function BusinessAIOSPage() {
 
         {/* CLOSING CTA */}
         <section className="py-28 md:py-36">
-          <div className="max-w-[1140px] mx-auto px-6 md:px-10 text-center">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-10 text-center">
             <FadeUp>
-              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8 max-w-[600px] mx-auto">
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8 max-w-[680px] mx-auto">
                 You take a week off. Your business keeps going. That&apos;s not a fantasy. It&apos;s what the system is built to do.
               </h2>
               <Link
