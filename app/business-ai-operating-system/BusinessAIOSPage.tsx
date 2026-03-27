@@ -633,9 +633,9 @@ function OrbitPanel() {
     ];
 
     // node sizes by ring (diameter in px, halved for radius)
-    const nodeSizeByRing: Record<number, number> = { 100: 25, 175: 30, 260: 35 };
-    const fontSizeByRing: Record<number, number> = { 100: 8, 175: 9, 260: 10 };
-    const haloSizeByRing: Record<number, number> = { 100: 34, 175: 40, 260: 48 };
+    const nodeSizeByRing: Record<number, number> = { 100: 30, 175: 35, 260: 40 };
+    const fontSizeByRing: Record<number, number> = { 100: 9, 175: 10, 260: 11 };
+    const haloSizeByRing: Record<number, number> = { 100: 42, 175: 48, 260: 55 };
 
     const parseColor = (c: string): [number, number, number] => {
       if (c.startsWith("rgba")) {
@@ -832,7 +832,7 @@ function OrbitPanel() {
         // 2. Glass body
         ctx.beginPath();
         ctx.arc(x, y, nodeR, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(8,13,17,0.85)";
+        ctx.fillStyle = "rgba(8,13,17,0.90)";
         ctx.fill();
 
         // 3. Colored border (1.8px, 0.6 opacity)
