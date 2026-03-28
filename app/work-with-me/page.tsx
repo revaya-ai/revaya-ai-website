@@ -23,7 +23,7 @@ export default function WorkWithMePage() {
       <JsonLd data={workWithMeContactPageSchema} />
 
       {/* Page header */}
-      <section className="relative overflow-hidden pt-36 pb-8 md:pt-44 md:pb-10">
+      <section className="relative overflow-hidden pt-32 pb-8 md:pt-44 md:pb-10">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#553555]/20 blur-[130px] animate-pulse-glow" />
           <div

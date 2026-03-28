@@ -917,7 +917,7 @@ function OrbitPanel() {
   }, [inView]);
 
   return (
-    <div ref={containerRef} className="w-full relative overflow-visible -mx-[50px]" style={{ aspectRatio: "1 / 1.15" }}>
+    <div ref={containerRef} className="w-full relative overflow-visible mx-auto" style={{ aspectRatio: "1 / 1.15" }}>
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   );
@@ -1784,7 +1784,7 @@ export default function BusinessAIOSPage() {
       <div className="relative" style={{ zIndex: 1 }}>
 
         {/* HERO */}
-        <section className="pt-48 md:pt-36 pb-24 md:pb-32">
+        <section className="pt-32 pb-24 md:pt-44 md:pb-32">
           <div className="max-w-[1280px] mx-auto px-6 md:px-0">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -1824,10 +1824,10 @@ export default function BusinessAIOSPage() {
         <section className="py-24 md:py-32">
           <div className="max-w-[1280px] mx-auto px-6 md:px-0">
             <div className="grid md:grid-cols-[1fr_1.4fr] gap-20 items-center">
-              <FadeUp delay={0.15} direction="right">
+              <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
                 <PainQueuePanel />
               </FadeUp>
-              <FadeUp direction="left">
+              <FadeUp direction="left" className="order-first md:order-last">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Business AI Operating System
                 </p>
@@ -1912,10 +1912,10 @@ export default function BusinessAIOSPage() {
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp delay={0.15} direction="right">
+              <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
                 <WhoPanel />
               </FadeUp>
-              <FadeUp direction="left">
+              <FadeUp direction="left" className="order-first md:order-last">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                   Who This Is For
                 </p>
