@@ -1784,7 +1784,7 @@ export default function BusinessAIOSPage() {
       <div className="relative" style={{ zIndex: 1 }}>
 
         {/* HERO */}
-        <section className="pt-32 pb-24 md:pt-44 md:pb-32">
+        <section className="pt-36 pb-24 md:pt-44 md:pb-32">
           <div className="max-w-[1280px] mx-auto px-6 md:px-0">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <motion.div
