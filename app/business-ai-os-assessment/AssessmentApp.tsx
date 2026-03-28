@@ -120,7 +120,7 @@ export function AssessmentApp() {
 
   // Questions screen
   return (
-    <div className="min-h-screen bg-base-bg flex items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-base-bg flex items-center justify-center px-6 pt-32 pb-16 md:pt-44">
       <div className="w-full max-w-2xl mx-auto">
         <div className="mb-8">
           <ProgressBar

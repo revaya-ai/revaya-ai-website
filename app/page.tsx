@@ -713,7 +713,7 @@ export default function HomePage() {
       </div>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-36 pb-0 md:pt-44" style={{ zIndex: 1 }}>
+      <section className="relative overflow-hidden pt-32 pb-0 md:pt-44" style={{ zIndex: 1 }}>
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
 
           {/* Eyebrow */}
