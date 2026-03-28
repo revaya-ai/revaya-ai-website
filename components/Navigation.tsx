@@ -29,24 +29,25 @@ export default function Navigation() {
 
   return (
     <header
-      className="fixed top-3 left-0 right-0 z-50"
+      className="fixed top-3 left-0 right-0 z-50 overflow-x-hidden"
       style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
     >
       <div
-        className={`mx-auto flex items-center justify-between h-16 md:h-20 ${
+        className={`mx-auto flex items-center justify-between h-16 md:h-20 w-full ${
           scrolled
-            ? "max-w-[960px] px-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-full"
-            : "max-w-[1200px] px-6 md:px-12 lg:px-20 bg-transparent"
+            ? "max-w-[960px] px-4 md:px-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-full"
+            : "max-w-[1200px] px-4 md:px-12 lg:px-20 bg-transparent"
         }`}
         style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex-shrink-0 flex items-center">
           <Image
             src="/revaya-logo-white.png"
             alt="Revaya AI"
             width={140}
             height={40}
+            className="w-[120px] md:w-[140px] h-auto"
             priority
           />
         </Link>
