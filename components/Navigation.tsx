@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const navLinks = [
   { href: "/business-ai-operating-system", label: "Business AIOS" },
   { href: "/why-revaya", label: "Why Revaya" },
+  { href: "/resources", label: "Resources" },
   { href: "/business-ai-os-assessment", label: "Free Assessment" },
 ];
 
@@ -35,7 +36,7 @@ export default function Navigation() {
       <div
         className={`mx-auto flex items-center justify-between h-16 md:h-20 w-full ${
           scrolled
-            ? "max-w-[960px] px-4 md:px-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-full"
+            ? "max-w-[960px] px-4 md:px-6 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-full"
             : "max-w-[1200px] px-4 md:px-12 lg:px-20 bg-transparent"
         }`}
         style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
@@ -47,19 +48,29 @@ export default function Navigation() {
             alt="Revaya AI"
             width={140}
             height={40}
-            className="w-[120px] md:w-[140px] h-auto"
+            className={`h-auto transition-all duration-400 ${
+              scrolled ? "w-[110px] md:w-[120px]" : "w-[120px] md:w-[140px]"
+            }`}
             priority
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        {/* Desktop nav — gap reduces when scrolled */}
+        <nav
+          className={`hidden md:flex items-center transition-all duration-400 ${
+            scrolled ? "gap-5" : "gap-10"
+          }`}
+        >
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className={`font-display text-[0.875rem] font-bold tracking-wide transition-colors duration-150 ${
-                pathname === href ? "text-[#028090]" : "text-white/60 hover:text-white"
+              className={`font-display font-bold tracking-wide transition-all duration-200 whitespace-nowrap ${
+                scrolled ? "text-[0.8rem]" : "text-[0.875rem]"
+              } ${
+                pathname === href
+                  ? "text-[#028090]"
+                  : "text-white/60 hover:text-white"
               }`}
             >
               {label}
@@ -67,10 +78,11 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        {/* CTA — same size always */}
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <Link
             href="/work-with-me"
-            className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+            className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 whitespace-nowrap"
           >
             Start the Conversation →
           </Link>

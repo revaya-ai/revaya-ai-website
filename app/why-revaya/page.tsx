@@ -86,21 +86,23 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Headshot — sticky on desktop */}
-            <div className="order-last md:order-first md:sticky md:top-24 md:self-start">
-              <FadeIn direction="right">
-                <div className="relative inline-block w-full">
-                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#028090]/50 to-[#553555]/50 blur-sm" />
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10">
-                    <Image
-                      src="/shannon-headshot.jpg"
-                      alt="Shannon Winnicki, founder of Revaya AI"
-                      width={560}
-                      height={600}
-                      className="w-full object-cover"
-                    />
+            <div className="order-last md:order-first">
+              <div className="md:sticky md:top-24">
+                <FadeIn direction="right">
+                  <div className="relative inline-block w-full">
+                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#028090]/50 to-[#553555]/50 blur-sm" />
+                    <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                      <Image
+                        src="/shannon-headshot.jpg"
+                        alt="Shannon Winnicki, founder of Revaya AI"
+                        width={560}
+                        height={600}
+                        className="w-full object-cover"
+                      />
+                    </div>
                   </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+              </div>
             </div>
 
             {/* Intro text */}
@@ -132,10 +134,12 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Timeline panel — sticky on desktop */}
-            <div className="order-last md:order-first md:sticky md:top-24 md:self-start">
-              <FadeIn direction="right">
-                <TimelinePanel />
-              </FadeIn>
+            <div className="order-last md:order-first">
+              <div className="md:sticky md:top-24">
+                <FadeIn direction="right">
+                  <TimelinePanel />
+                </FadeIn>
+              </div>
             </div>
 
             {/* Story text */}
@@ -223,15 +227,17 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start">
             {/* Left: heading — sticky on desktop */}
-            <div className="md:sticky md:top-24 md:self-start">
-              <FadeIn direction="right">
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  The specifics.
-                </h2>
-                <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  The pattern across every role: stand between what a business needs and the system that delivers it. The Business AI OS is that job, built for service businesses that can&rsquo;t afford the enterprise price tag.
-                </p>
-              </FadeIn>
+            <div>
+              <div className="md:sticky md:top-24">
+                <FadeIn direction="right">
+                  <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                    The specifics.
+                  </h2>
+                  <p className="text-[1.0625rem] leading-[1.7] text-white">
+                    The pattern across every role: stand between what a business needs and the system that delivers it. The Business AI OS is that job, built for service businesses that can&rsquo;t afford the enterprise price tag.
+                  </p>
+                </FadeIn>
+              </div>
             </div>
 
             {/* Right: credential cards */}
