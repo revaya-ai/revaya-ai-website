@@ -1850,7 +1850,7 @@ export default function BusinessAIOSPage() {
                   That&apos;s not a people problem. It&apos;s an architecture problem.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mt-8 border-l-2 border-[#028090]/40 pl-6">
-                  I spent 18 years inside companies like Virgin Mobile, Papa Murphy&apos;s, and Intermedia. I know what the right systems look like. I know what it costs to build them. And I built this one for my own business first.
+                  I spent 18 years as a digital product manager. Virgin Mobile, Boost Mobile, Papa Murphy&apos;s, Intermedia. I wasn&apos;t an outside consultant looking in. I was on the inside, sitting between the business and the builders. The work was always the same: understand the problems, understand the constraints, define the solution, build the roadmap, ship it, evolve it. Business AIOS is that same work.
                 </p>
               </FadeUp>
             </div>

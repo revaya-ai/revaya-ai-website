@@ -690,9 +690,7 @@ export default function ComparisonPage() {
                   paddingLeft: "20px",
                 }}
               >
-                I spent 18 years as a digital product manager. Virgin Mobile, Boost Mobile,
-                Papa Murphy&apos;s, Intermedia. I have managed systems at scale. I know what
-                breaks when there is no strategic layer underneath.
+                I know what the right systems look like. And I know what breaks. I spent 18 years on the inside at Fortune 500 companies, sitting between the business and the builders. That&apos;s not a credential. That&apos;s a different way of seeing the problem.
                 <br /><br />
                 I&apos;ve seen OpenClaw alternatives floating around. The cloud wrappers, the
                 managed platforms, the no-code builders. They handle the hosting. Some handle the
