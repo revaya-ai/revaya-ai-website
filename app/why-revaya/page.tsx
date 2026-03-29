@@ -86,7 +86,7 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Headshot — sticky on desktop */}
-            <div className="order-last md:order-first">
+            <div className="order-last md:order-first md:self-stretch">
               <div className="md:sticky md:top-24">
                 <FadeIn direction="right">
                   <div className="relative inline-block w-full">
@@ -134,7 +134,7 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Timeline panel — sticky on desktop */}
-            <div className="order-last md:order-first">
+            <div className="order-last md:order-first md:self-stretch">
               <div className="md:sticky md:top-24">
                 <FadeIn direction="right">
                   <TimelinePanel />
@@ -227,7 +227,7 @@ export default function WhyRevayaPage() {
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start">
             {/* Left: heading — sticky on desktop */}
-            <div>
+            <div className="md:self-stretch">
               <div className="md:sticky md:top-24">
                 <FadeIn direction="right">
                   <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
