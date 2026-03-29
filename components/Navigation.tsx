@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const navLinks = [
   { href: "/business-ai-operating-system", label: "Business AIOS" },
   { href: "/why-revaya", label: "Why Revaya" },
+  { href: "/resources", label: "Resources" },
   { href: "/business-ai-os-assessment", label: "Free Assessment" },
 ];
 
