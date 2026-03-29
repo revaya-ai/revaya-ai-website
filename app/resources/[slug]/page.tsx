@@ -219,7 +219,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {frontmatter.image && (
         <section className="pb-8 md:pb-12">
           <FadeIn>
-            <div className="max-w-[1170px] mx-auto px-6 md:px-10">
+            <div className="max-w-[936px] mx-auto px-6 md:px-10">
               <div className="rounded-2xl border border-[#1E2A38] overflow-hidden aspect-[16/9] relative">
                 <Image
                   src={frontmatter.image}
@@ -336,7 +336,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {/* Related Content */}
       {related.length > 0 && (
         <section className="pb-24 md:pb-32">
-          <div className="max-w-[1430px] mx-auto px-6 md:px-10">
+          <div className="max-w-[936px] mx-auto px-6 md:px-10">
             <FadeIn>
               <h2 className="font-display font-bold text-[1.5rem] md:text-[1.75rem] text-white mb-8">
                 Related Resources
@@ -355,7 +355,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
       {/* Closing CTA */}
       <section className="py-28 md:py-36">
-        <div className="max-w-[1430px] mx-auto px-6 md:px-10 text-center">
+        <div className="max-w-[936px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
             <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[1235px] mx-auto">
               {cta.heading}
