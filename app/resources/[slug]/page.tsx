@@ -178,7 +178,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
       {/* Article Header */}
       <section className="pt-32 pb-8 md:pt-40 md:pb-12">
-        <div className="max-w-[720px] mx-auto px-6 md:px-10">
+        <div className="max-w-[936px] mx-auto px-6 md:px-10">
           <FadeIn>
             {/* Breadcrumbs */}
             <nav className="text-[#556677] text-[0.8rem] mb-6 flex items-center gap-2">
@@ -219,7 +219,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {frontmatter.image && (
         <section className="pb-8 md:pb-12">
           <FadeIn>
-            <div className="max-w-[900px] mx-auto px-6 md:px-10">
+            <div className="max-w-[1170px] mx-auto px-6 md:px-10">
               <div className="rounded-2xl border border-[#1E2A38] overflow-hidden aspect-[16/9] relative">
                 <Image
                   src={frontmatter.image}
@@ -238,7 +238,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {headings.length > 2 && (
         <section className="pb-8 md:pb-12">
           <FadeIn>
-            <div className="max-w-[720px] mx-auto px-6 md:px-10">
+            <div className="max-w-[936px] mx-auto px-6 md:px-10">
               <div className="rounded-xl border border-[#1E2A38] bg-[#0C1219] p-6 md:p-8">
                 <p className="font-display font-bold text-[0.8rem] text-[#6B7A8D] tracking-wide uppercase mb-4">
                   In this article
@@ -268,7 +268,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <section className="pb-16 md:pb-20">
         <FadeIn>
           <div
-            className="max-w-[720px] mx-auto px-6 md:px-10 article-body"
+            className="max-w-[936px] mx-auto px-6 md:px-10 article-body"
             dangerouslySetInnerHTML={{ __html: processedHtml }}
           />
         </FadeIn>
@@ -278,7 +278,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {author && (
         <section className="pb-16 md:pb-20">
           <FadeIn>
-            <div className="max-w-[720px] mx-auto px-6 md:px-10">
+            <div className="max-w-[936px] mx-auto px-6 md:px-10">
               <div className="rounded-2xl border border-[#1E2A38] bg-[#0E1620] p-8 md:p-10">
                 <p className="font-display font-bold text-[0.75rem] text-[#556677] tracking-wide uppercase mb-3">
                   Written by
@@ -322,7 +322,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {/* FAQs */}
       {frontmatter.faqs && frontmatter.faqs.length > 0 && (
         <section className="pb-16 md:pb-20">
-          <div className="max-w-[720px] mx-auto px-6 md:px-10">
+          <div className="max-w-[936px] mx-auto px-6 md:px-10">
             <FadeIn>
               <h2 className="font-display font-black text-[1.5rem] md:text-[1.75rem] text-white mb-6">
                 Frequently Asked Questions
@@ -336,7 +336,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {/* Related Content */}
       {related.length > 0 && (
         <section className="pb-24 md:pb-32">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="max-w-[1430px] mx-auto px-6 md:px-10">
             <FadeIn>
               <h2 className="font-display font-bold text-[1.5rem] md:text-[1.75rem] text-white mb-8">
                 Related Resources
@@ -355,12 +355,12 @@ export default async function ArticlePage({ params }: PageProps) {
 
       {/* Closing CTA */}
       <section className="py-28 md:py-36">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
+        <div className="max-w-[1430px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
-            <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[950px] mx-auto">
+            <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[1235px] mx-auto">
               {cta.heading}
             </h2>
-            <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[520px] mx-auto">
+            <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[676px] mx-auto">
               {cta.text}
             </p>
             <Link
