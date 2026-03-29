@@ -47,8 +47,13 @@ export function getAllResources(): ResourceSummary[] {
     .map((filename) => {
       const filePath = path.join(resourcesDirectory, filename);
       const fileContents = fs.readFileSync(filePath, "utf8");
-      const { data } = matter(fileContents);
-      return { frontmatter: data as ResourceFrontmatter };
+      const { data, content } = matter(fileContents);
+      const frontmatter = data as ResourceFrontmatter;
+      if (!frontmatter.read_time) {
+        const words = content.trim().split(/\s+/).length;
+        frontmatter.read_time = `${Math.ceil(words / 200)} min read`;
+      }
+      return { frontmatter };
     })
     .filter((r) => r.frontmatter.published)
     .sort(
@@ -74,6 +79,10 @@ export function getResourceBySlug(slug: string): Resource | null {
     const frontmatter = data as ResourceFrontmatter;
     if (frontmatter.slug === slug && frontmatter.published) {
       const processedContent = remark().use(html).processSync(content);
+      if (!frontmatter.read_time) {
+        const words = content.trim().split(/\s+/).length;
+        frontmatter.read_time = `${Math.ceil(words / 200)} min read`;
+      }
       return {
         frontmatter,
         content,

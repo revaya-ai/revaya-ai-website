@@ -81,10 +81,10 @@ const ctaVariants: Record<string, { heading: string; text: string; href: string;
 };
 
 const authorData: Record<string, { title: string; bio: string; linkedin: string }> = {
-  "Shannon Short": {
+  "Shannon Winnicki": {
     title: "Founder, Revaya AI",
-    bio: "18+ years building digital products at Virgin Mobile, Boost Mobile, Ultra Mobile, Papa Murphy's, and Intermedia. Now building Business AI Operating Systems for founder-led businesses.",
-    linkedin: "https://www.linkedin.com/in/shannonshort/",
+    bio: "18 years as a digital product manager inside Fortune 500 companies. Virgin Mobile. Papa Murphy's. Intermedia. Not an outside consultant looking in. On the inside, sitting between the business and the builders. Business AIOS is the same work.",
+    linkedin: "https://www.linkedin.com/in/swinnicki/",
   },
 };
 
@@ -345,7 +345,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {related.map((r, i) => (
                 <FadeIn key={r.frontmatter.slug} delay={i * 0.05}>
-                  <ResourceCard frontmatter={r.frontmatter} />
+                  <ResourceCard frontmatter={r.frontmatter} index={i} />
                 </FadeIn>
               ))}
             </div>

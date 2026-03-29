@@ -3,7 +3,7 @@ title: "OpenClaw Has Real Security Risks. Here's What Service Businesses Should 
 subtitle: "OpenClaw looks impressive in demos. But for service businesses handling client data, the security gaps and missing audit trail are dealbreakers."
 slug: "openclaw-alternative-service-businesses"
 category: "article"
-author: "Shannon Short"
+author: "Shannon Winnicki"
 date: "2026-03-21"
 read_time: "7 min read"
 image: null
