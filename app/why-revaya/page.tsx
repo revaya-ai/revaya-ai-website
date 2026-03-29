@@ -84,9 +84,9 @@ export default function WhyRevayaPage() {
       {/* ── HEADSHOT + INTRO ─────────────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-16">
             {/* Headshot — sticky on desktop */}
-            <div className="order-last md:order-first md:self-stretch">
+            <div className="order-last md:order-first">
               <div className="md:sticky md:top-24">
                 <FadeIn direction="right">
                   <div className="relative inline-block w-full">
@@ -132,9 +132,9 @@ export default function WhyRevayaPage() {
       {/* ── STORY ARC + TIMELINE ─────────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-16">
             {/* Timeline panel — sticky on desktop */}
-            <div className="order-last md:order-first md:self-stretch">
+            <div className="order-last md:order-first">
               <div className="md:sticky md:top-24">
                 <FadeIn direction="right">
                   <TimelinePanel />
@@ -225,9 +225,9 @@ export default function WhyRevayaPage() {
       {/* ── CREDENTIALS ──────────────────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start">
+          <div className="grid md:grid-cols-[1fr_1.2fr] gap-16">
             {/* Left: heading — sticky on desktop */}
-            <div className="md:self-stretch">
+            <div>
               <div className="md:sticky md:top-24">
                 <FadeIn direction="right">
                   <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">

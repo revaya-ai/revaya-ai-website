@@ -274,7 +274,7 @@ export default function ResourcesPage() {
           <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-[#553555]/[0.05] rounded-full blur-[120px]" />
         </div>
 
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1430px] mx-auto px-4 md:px-8">
           <FadeIn>
             <h1 className="font-display font-black text-[2.5rem] md:text-[4rem] leading-[1.05] text-white mb-2">
               Resource Center
@@ -290,7 +290,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Collage Grid — V2: unique shapes, tight column gaps, 40px row gaps */}
-      <section className="max-w-[1100px] mx-auto px-6 md:px-10 pb-24 md:pb-32">
+      <section className="max-w-[1430px] mx-auto px-4 md:px-8 pb-24 md:pb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[230px] gap-x-2.5 gap-y-10 md:gap-x-3 md:gap-y-10">
           {/* Featured — hero shape */}
           {featured && (
@@ -326,7 +326,7 @@ export default function ResourcesPage() {
 
       {/* Closing CTA */}
       <section className="py-28 md:py-36">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
+        <div className="max-w-[1430px] mx-auto px-4 md:px-8 text-center">
           <FadeIn>
             <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[950px] mx-auto">
               Ready to build your agentic Business AI Operating System?

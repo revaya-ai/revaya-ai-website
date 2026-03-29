@@ -153,7 +153,7 @@ const faqItems = [
   },
   {
     q: "Does OpenClaw work with WhatsApp and Telegram?",
-    a: "Yes, that is part of its appeal. OpenClaw is designed to receive commands through WhatsApp or Telegram and execute them — sending messages, running tasks, controlling your browser — from a messaging interface you already use. The setup that makes that work requires a self-hosted server, API keys, and Docker configuration. The interface is familiar. The infrastructure behind it is not.",
+    a: "Yes, that is part of its appeal. OpenClaw is designed to receive commands through WhatsApp or Telegram and execute them — sending messages, running tasks, controlling your browser — from a messaging interface you already use. The setup that makes that work requires a self-hosted server, API keys, and Docker configuration. The interface is familiar. The infrastructure behind it is not. So does the Business AI Operating System.",
   },
   {
     q: "Can OpenClaw access my email and files?",
@@ -1066,14 +1066,17 @@ export default function ComparisonPage() {
           <div
             className="faq-grid"
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "0 48px",
+              display: "flex",
+              gap: "48px",
               maxWidth: "1200px",
               margin: "0 auto",
             }}
           >
-            {faqItems.map((item, i) => (
+           {[faqItems.slice(0, Math.ceil(faqItems.length / 2)), faqItems.slice(Math.ceil(faqItems.length / 2))].map((column, colIndex) => (
+            <div key={colIndex} style={{ flex: 1 }}>
+            {column.map((item, i) => {
+              const globalIndex = colIndex === 0 ? i : i + Math.ceil(faqItems.length / 2);
+              return (
               <div
                 key={item.q}
                 style={{
@@ -1081,7 +1084,7 @@ export default function ComparisonPage() {
                 }}
               >
                 <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  onClick={() => setOpenFaq(openFaq === globalIndex ? null : globalIndex)}
                   style={{
                     width: "100%",
                     background: "none",
@@ -1110,7 +1113,7 @@ export default function ComparisonPage() {
                       fontSize: "18px",
                       color: "#028090",
                       flexShrink: 0,
-                      transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)",
+                      transform: openFaq === globalIndex ? "rotate(45deg)" : "rotate(0deg)",
                       transition: "transform 0.2s ease",
                       display: "inline-block",
                     }}
@@ -1118,13 +1121,16 @@ export default function ComparisonPage() {
                     +
                   </span>
                 </button>
-                {openFaq === i && (
+                {openFaq === globalIndex && (
                   <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#fff", paddingBottom: "24px" }}>
                     {item.a}
                   </p>
                 )}
               </div>
-            ))}
+              );
+            })}
+            </div>
+           ))}
           </div>
         </FadeUp>
       </section>
