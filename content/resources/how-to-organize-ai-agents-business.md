@@ -11,6 +11,19 @@ featured: true
 cta_variant: "assessment"
 related_slugs: []
 published: true
+faqs:
+  - question: "How should I organize AI agents for my business?"
+    answer: "Organize AI agents around your customer lifecycle, not around corporate departments. A customer lifecycle model like ACRA (Attract, Convert, Retain and Deliver, Ascend) ensures every agent maps to revenue and nothing falls through the cracks between departments."
+  - question: "What is the ACRA model for AI agents?"
+    answer: "ACRA stands for Attract, Convert, Retain and Deliver, Ascend. It is a customer lifecycle framework for organizing AI agents in a small business. Instead of replicating a corporate org chart with separate marketing, sales, and operations departments, ACRA groups agents by the stage of the customer journey they serve, with Finance and AI HR as shared support departments."
+  - question: "How many AI agents does a small business need?"
+    answer: "Most founder-led businesses with 1 to 15 people need 10 to 20 specialized agents organized into 4 to 6 departments. The number matters less than the organizing principle. Agents organized around customer lifecycle stages outperform agents organized around corporate departments."
+  - question: "Why don't my AI tools work together?"
+    answer: "AI tools don't work together because most businesses organize them by function with no shared structure connecting them. The problem is organizational design, not technology. When you organize agents around the customer lifecycle, handoffs between stages become natural rather than forced."
+  - question: "What is the difference between AI tools and an AI operating system?"
+    answer: "AI tools solve individual problems. An AI operating system connects those solutions into a structure that runs your business. The difference is what happens when you are not in the room. A tool waits. An operating system acts, logs what it did, and lets you review the decisions it made."
+  - question: "Can I build a Business AI OS myself?"
+    answer: "You can start building one yourself. The frameworks, models, and decision logic are published in the Revaya AI Resource Center. The gap between DIY and a managed build is not the tools. It is knowing which problems to solve first, how to connect the layers, and how to avoid the architectural mistakes that cost months of rework."
 ---
 
 I organized my AI like a Fortune 500 company. Marketing department, sales department, operations, finance, legal, HR. 27 roles total. It looked impressive on a whiteboard.

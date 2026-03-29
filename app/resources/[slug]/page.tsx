@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/FadeIn";
 import ResourceCard from "@/components/resources/ResourceCard";
 import CategoryPill from "@/components/resources/CategoryPill";
 import JsonLd from "@/components/JsonLd";
+import FaqAccordion from "@/components/FaqAccordion";
 import {
   getResourceBySlug,
   getAllSlugs,
@@ -154,10 +155,26 @@ export default async function ArticlePage({ params }: PageProps) {
     ],
   };
 
+  const faqLd = frontmatter.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: frontmatter.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <JsonLd data={articleLd} />
       <JsonLd data={breadcrumbLd} />
+      {faqLd && <JsonLd data={faqLd} />}
 
       {/* Article Header */}
       <section className="pt-32 pb-8 md:pt-40 md:pb-12">
@@ -299,6 +316,20 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
             </div>
           </FadeIn>
+        </section>
+      )}
+
+      {/* FAQs */}
+      {frontmatter.faqs && frontmatter.faqs.length > 0 && (
+        <section className="pb-16 md:pb-20">
+          <div className="max-w-[720px] mx-auto px-6 md:px-10">
+            <FadeIn>
+              <h2 className="font-display font-black text-[1.5rem] md:text-[1.75rem] text-white mb-6">
+                Frequently Asked Questions
+              </h2>
+              <FaqAccordion items={frontmatter.faqs} />
+            </FadeIn>
+          </div>
         </section>
       )}
 

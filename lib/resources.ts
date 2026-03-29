@@ -20,6 +20,7 @@ export interface ResourceFrontmatter {
   cta_variant?: "default" | "assessment" | "discovery" | "newsletter";
   related_slugs?: string[];
   external_url?: string;
+  faqs?: { question: string; answer: string }[];
   published: boolean;
 }
 
