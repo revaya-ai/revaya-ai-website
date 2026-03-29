@@ -6,7 +6,7 @@ category: "article"
 author: "Shannon Winnicki"
 date: "2026-03-21"
 read_time: "7 min read"
-image: null
+image: "/comparison/hero-option-a.png"
 featured: false
 cta_variant: "assessment"
 related_slugs: ["how-to-organize-ai-agents-business"]
