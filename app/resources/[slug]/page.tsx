@@ -322,35 +322,22 @@ export default async function ArticlePage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Bottom CTA */}
-      <section className="pb-24 md:pb-32">
-        <div className="bg-gradient-to-b from-[#028090]/[0.06] to-transparent py-20 md:py-24">
+      {/* Closing CTA */}
+      <section className="py-28 md:py-36">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
-            <div className="max-w-[600px] mx-auto px-6 md:px-10 text-center">
-              <h2 className="font-display font-bold text-[1.5rem] md:text-[2rem] text-white mb-4">
-                {cta.heading}
-              </h2>
-              <p className="text-[#8899AA] text-[1rem] mb-8">{cta.text}</p>
-              <Link
-                href={cta.href}
-                className="inline-flex items-center gap-2 font-display text-[0.95rem] font-bold px-7 py-3 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
-              >
-                {cta.label}
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </Link>
-            </div>
+            <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[950px] mx-auto">
+              {cta.heading}
+            </h2>
+            <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[520px] mx-auto">
+              {cta.text}
+            </p>
+            <Link
+              href={cta.href}
+              className="inline-block font-display text-[1rem] font-bold px-10 py-4 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)] transition-all duration-200"
+            >
+              {cta.label} →
+            </Link>
           </FadeIn>
         </div>
       </section>
