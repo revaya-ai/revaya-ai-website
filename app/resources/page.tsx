@@ -10,11 +10,11 @@ import type { ResourceFrontmatter } from "@/lib/resources";
 export const metadata: Metadata = {
   title: "Resource Center",
   description:
-    "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+    "Guides, frameworks, and case studies on building an agentic Business AI Operating System for founder-led businesses.",
   openGraph: {
     title: "Resource Center | Revaya AI",
     description:
-      "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+      "Guides, frameworks, and case studies on building an agentic Business AI Operating System for founder-led businesses.",
     type: "website",
     url: "https://revaya.ai/resources",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Resource Center | Revaya AI",
     description:
-      "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+      "Guides, frameworks, and case studies on building an agentic Business AI Operating System for founder-led businesses.",
   },
 };
 
@@ -242,7 +242,7 @@ export default function ResourcesPage() {
     "@type": "CollectionPage",
     name: "Resource Center",
     description:
-      "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+      "Guides, frameworks, and case studies on building an agentic Business AI Operating System for founder-led businesses.",
     url: "https://revaya.ai/resources",
     publisher: {
       "@type": "Organization",
@@ -282,7 +282,7 @@ export default function ResourcesPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-white text-[1.1rem] md:text-[1.2rem] max-w-[500px]">
-              Frameworks, guides, and lessons from building Business AI
+              Frameworks, guides, and lessons from building agentic Business AI
               Operating Systems.
             </p>
           </FadeIn>
