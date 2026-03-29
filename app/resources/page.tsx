@@ -330,11 +330,12 @@ export default function ResourcesPage() {
           <FadeIn>
             <div className="max-w-[600px] mx-auto px-6 md:px-10 text-center">
               <h2 className="font-display font-bold text-[1.5rem] md:text-[2rem] text-white mb-4">
-                Ready to build your Business AI OS?
+                Ready to build your agentic Business AI Operating System?
               </h2>
               <p className="text-white text-[1rem] mb-8">
-                Start with a $2,500 AIOS Audit. Two weeks. Full diagnostic.
-                Deductible if you move into a full setup.
+                Every month without a system is 15+ hours of your time on
+                work that should run itself. At $150/hour, that is $9,750 a
+                month you do not get back.
               </p>
               <Link
                 href="/work-with-me"
