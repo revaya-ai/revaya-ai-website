@@ -1005,7 +1005,10 @@ export default function HomePage() {
           <FadeIn>
             <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-10 md:p-14 text-center max-w-[800px] mx-auto">
               <p className="font-display font-black text-[1.5rem] md:text-[2rem] text-white leading-[1.2] mb-6">
-                &ldquo;I spent 18 years as a digital product manager. Virgin Mobile. Papa Murphy&rsquo;s. Intermedia. I wasn&rsquo;t an outside consultant looking in. I was on the inside, sitting between the business and the builders. My job was to take what a company needed and turn it into a working digital product. Business AIOS is the same work.&rdquo;
+                &ldquo;I spent 18 years as a digital product manager for Fortune 500. I wasn&rsquo;t an outside consultant looking in. I was on the inside, sitting between the business and the builders.&rdquo;
+              </p>
+              <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                I spent 18 years as a digital product manager. Virgin Mobile. Papa Murphy&rsquo;s. Intermedia. I wasn&rsquo;t an outside consultant looking in. I was on the inside, sitting between the business and the builders. My job was to take what a company needed and turn it into a working digital product. Business AIOS is the same work.
               </p>
               <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                 I spent the last year going deep on AI. Python certified, technically trained, and part of a network of 800+ AI developers and engineers. When your build needs a specialist I don&rsquo;t have to go looking. The team is already there.
