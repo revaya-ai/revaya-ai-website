@@ -30,6 +30,88 @@ function TypedText({ text, active }: { text: string; active: boolean }) {
   return <span className="text-[0.8125rem] text-white/80 font-mono">{displayed}</span>;
 }
 
+// ── PainQueuePanel ───────────────────────────────────────────────────────────
+const painMessages = [
+  { initials: "RC", sender: "Rachel · Bloom Creative", text: "Hey, quick question on the timeline for deliverables..." },
+  { initials: "MK", sender: "Marcus · Studio K", text: "What does revision rounds look like for this project?" },
+  { initials: "JT", sender: "Jamie · Thorn & Co", text: "Can you send over the contract again? Can't find it." },
+  { initials: "PL", sender: "Priya L.", text: "Following up — did you get my last message?" },
+  { initials: "RC", sender: "Rachel · Bloom Creative", text: "One more thing — what's included in the next phase?" },
+];
+
+function PainQueuePanel() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+  const [showFooter, setShowFooter] = useState(false);
+
+  useEffect(() => {
+    if (!inView) return;
+    let i = 0;
+    const timer = setInterval(() => {
+      i++;
+      setCount(i);
+      if (i >= painMessages.length) {
+        clearInterval(timer);
+        setTimeout(() => setShowFooter(true), 600);
+      }
+    }, 750);
+    return () => clearInterval(timer);
+  }, [inView]);
+
+  return (
+    <div ref={ref} className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]">
+      <div className="border-b border-white/[0.08] px-5 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#F45B69] animate-pulse" />
+          <span className="text-[0.65rem] font-medium text-white/40 tracking-[0.12em] uppercase">
+            inbox · unread
+          </span>
+        </div>
+        <span className="text-[0.65rem] font-medium text-[#F45B69]">
+          {count > 0 ? `${count} new` : ""}
+        </span>
+      </div>
+      <div className="p-4 space-y-2 min-h-[260px]">
+        <AnimatePresence>
+          {painMessages.slice(0, count).map((msg, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/[0.05]"
+            >
+              <div className="w-7 h-7 rounded-full bg-[#553555]/50 flex items-center justify-center shrink-0">
+                <span className="text-[0.6rem] font-bold text-white/70">{msg.initials}</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-2 mb-0.5">
+                  <span className="text-[0.75rem] font-medium text-white/80">{msg.sender}</span>
+                  <span className="text-[0.6rem] text-[#F45B69]/60 shrink-0">→ you</span>
+                </div>
+                <p className="text-[0.7rem] text-white/40 truncate">{msg.text}</p>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+      <AnimatePresence>
+        {showFooter && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="border-t border-white/[0.08] px-5 py-3 flex items-center justify-between"
+          >
+            <span className="text-[0.65rem] text-white/30">Every decision routes through you.</span>
+            <span className="text-[0.65rem] font-medium text-[#F45B69]/60">47 this week</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 // ── HeroPanel ─────────────────────────────────────────────────────────────────
 function HeroPanel() {
   const [taskCount, setTaskCount] = useState(0);
