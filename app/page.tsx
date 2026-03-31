@@ -835,7 +835,7 @@ export default function HomePage() {
           <FadeIn delay={0.35}>
             <div className="flex flex-col items-center gap-3 mb-16">
               <Link
-                href="/business-ai-os-assessment"
+                href="/work-with-me"
                 className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
               >
                 Book an Audit &rarr;
@@ -1150,7 +1150,7 @@ export default function HomePage() {
               manage it.
             </p>
             <Link
-              href="/business-ai-os-assessment"
+              href="/work-with-me"
               className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
               Book an Audit &rarr;

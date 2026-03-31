@@ -2355,7 +2355,7 @@ export default function BusinessAIOSPage() {
             <FadeUp delay={0.2} className="mt-10 text-center">
               <p className="text-[0.9375rem] text-white/40 mb-5">Not sure which path fits? The Audit answers that.</p>
               <Link
-                href="/business-ai-os-assessment"
+                href="/work-with-me"
                 className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
               >
                 Book an Audit &rarr;
@@ -2405,7 +2405,7 @@ export default function BusinessAIOSPage() {
                     href="/business-ai-os-assessment"
                     className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
                   >
-                    Book an Audit &rarr;
+                    Take the Assessment &rarr;
                   </Link>
                   <div className="flex flex-col justify-center sm:pt-3">
                     <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">

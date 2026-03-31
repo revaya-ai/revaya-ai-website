@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/business-ai-operating-system", label: "Business AIOS" },
   { href: "/why-revaya", label: "Why Revaya" },
   { href: "/resources", label: "Resources" },
-  { href: "/business-ai-os-assessment", label: "Book an Audit" },
+  { href: "/business-ai-os-assessment", label: "Free Assessment" },
 ];
 
 export default function Navigation() {
@@ -84,7 +84,7 @@ export default function Navigation() {
             href="/work-with-me"
             className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 whitespace-nowrap"
           >
-            Start the Conversation →
+            Book an Audit →
           </Link>
         </div>
 
@@ -140,7 +140,7 @@ export default function Navigation() {
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 text-center font-display text-[1rem] font-bold px-5 py-3 rounded-full bg-[#553555] text-white"
               >
-                Start the Conversation →
+                Book an Audit →
               </Link>
             </div>
           </motion.div>
