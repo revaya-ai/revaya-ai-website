@@ -79,11 +79,11 @@ const timeline = [
 ];
 
 const processSteps = [
-  { num: "01", title: "Audit", body: "Map your business." },
-  { num: "02", title: "Scope", body: "Define exactly what gets built and at what cost." },
-  { num: "03", title: "Build", body: "I architect the system. My team builds it. 800+ AI developers behind every engagement." },
-  { num: "04", title: "Deliver", body: "The system is installed, tested, and running." },
-  { num: "05", title: "Train + Support", body: "Three sessions, 30 days of direct support, then a check-in at day 30. Questions answered, adoption protected." },
+  { num: "01", title: "Audit", body: "We map exactly where your business runs through you. Not what you think is broken — what's actually broken. Every workflow, every decision bottleneck, every repeatable task that lands on you. You walk away with a gap map, a prioritized roadmap, and a clear recommendation. If the numbers don't show payback within 3 to 6 months, I won't recommend moving forward." },
+  { num: "02", title: "Scope", body: "We take the Audit findings and define exactly what gets built and at what cost. No surprises. You approve the scope before a single line of work begins." },
+  { num: "03", title: "Build", body: "I architect the system. My network of 800+ AI developers builds it. Five layers configured to how your business actually works — not a generic template dropped into your ops." },
+  { num: "04", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built, how every layer works, and how to use it daily. Nothing is handed off without you understanding it." },
+  { num: "05", title: "Train + Support", body: "Three dedicated sessions across your first 30 days. Hands-on with your actual workflows. A 30-day check-in to review what's working, optimize what isn't, and map what to build next. Questions answered throughout. Adoption protected." },
 ];
 
 // ─── FadeUp helper ──────────────────────────────────────────────────────────
@@ -1767,6 +1767,307 @@ function HeroLiveFeedPanel() {
   );
 }
 
+// ─── Panel: Connect (Knowledge) ─────────────────────────────────────────────
+
+function ConnectPanelAIOS() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [indexed, setIndexed] = useState(0);
+
+  const sources = [
+    { name: "client-onboarding-sop.pdf", type: "SOP" },
+    { name: "service-delivery-playbook.docx", type: "Playbook" },
+    { name: "proposal-template-v3.docx", type: "Template" },
+    { name: "brand-voice-guidelines.md", type: "Brand" },
+    { name: "pricing-and-scope-matrix.xlsx", type: "Pricing" },
+  ];
+
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setInterval(() => {
+      setIndexed((c) => (c < sources.length ? c + 1 : c));
+    }, 800);
+    return () => clearInterval(timer);
+  }, [inView, sources.length]);
+
+  return (
+    <div ref={ref} className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]">
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
+          <span className="ml-2 text-[0.7rem] text-white/25 font-mono">knowledge · indexing sources</span>
+        </div>
+        <span className="text-[0.7rem] font-mono text-[#028090]">{indexed}/{sources.length} indexed</span>
+      </div>
+      <div className="p-5 space-y-2">
+        {sources.map((source, i) => {
+          const done = i < indexed;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 8 }}
+              animate={{ opacity: done ? 1 : 0.35, x: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-white/[0.04]"
+            >
+              <motion.div
+                animate={{
+                  backgroundColor: done ? "rgba(2,128,144,0.15)" : "rgba(255,255,255,0.04)",
+                  borderColor: done ? "rgba(2,128,144,0.3)" : "rgba(255,255,255,0.06)",
+                }}
+                transition={{ duration: 0.3 }}
+                className="w-7 h-7 rounded border flex items-center justify-center shrink-0"
+              >
+                <motion.span
+                  animate={{ color: done ? "#028090" : "rgba(255,255,255,0.3)" }}
+                  className="text-[0.7rem] font-mono font-bold"
+                >
+                  {done ? "✓" : source.type.slice(0, 2).toUpperCase()}
+                </motion.span>
+              </motion.div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[0.8rem] text-white/75 font-mono truncate">{source.name}</p>
+                <p className="text-[0.65rem] text-white/30 font-mono">{source.type}</p>
+              </div>
+              {done && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-[0.65rem] text-[#028090] font-mono shrink-0"
+                >
+                  indexed
+                </motion.span>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Panel: Integrations (Intelligence) ─────────────────────────────────────
+
+function IntegrationsPanelAIOS() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  const tools = [
+    { name: "HubSpot",          slug: "hubspot",          bg: "rgba(255,122,89,0.12)"  },
+    { name: "Salesforce",       slug: "salesforce",       bg: "rgba(0,161,224,0.12)"   },
+    { name: "Shopify",          slug: "shopify",          bg: "rgba(150,191,72,0.12)"  },
+    { name: "Slack",            slug: "slack",            bg: "rgba(236,178,46,0.12)"  },
+    { name: "Gmail",            slug: "gmail",            bg: "rgba(234,67,53,0.12)"   },
+    { name: "Notion",           slug: "notion",           bg: "rgba(255,255,255,0.06)" },
+    { name: "Airtable",         slug: "airtable",         bg: "rgba(24,191,255,0.12)"  },
+    { name: "LinkedIn",         slug: "linkedin",         bg: "rgba(10,102,194,0.12)"  },
+    { name: "Google Ads",       slug: "googleads",        bg: "rgba(66,133,244,0.12)"  },
+    { name: "QuickBooks",       slug: "quickbooks",       bg: "rgba(44,160,28,0.12)"   },
+    { name: "Meta",             slug: "meta",             bg: "rgba(0,128,251,0.12)"   },
+    { name: "Google Analytics", slug: "googleanalytics",  bg: "rgba(232,113,10,0.12)"  },
+  ];
+
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setInterval(() => {
+      setVisibleCount((c) => (c < tools.length ? c + 1 : c));
+    }, 120);
+    return () => clearInterval(timer);
+  }, [inView, tools.length]);
+
+  return (
+    <div ref={ref} className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]">
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
+          <span className="ml-2 text-[0.7rem] text-white/25 font-mono">intelligence · connected stack</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
+          <span className="text-[0.7rem] text-[#028090] font-mono">{visibleCount} connected</span>
+        </div>
+      </div>
+      <div className="p-5 grid grid-cols-4 gap-3">
+        {tools.map((tool, i) => (
+          <motion.div
+            key={tool.name}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={i < visibleCount ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
+            transition={{ duration: 0.25, type: "spring", stiffness: 300, damping: 20 }}
+            className="flex flex-col items-center gap-2 p-3 rounded-xl border border-white/[0.05] hover:border-white/[0.1] transition-colors"
+            style={{ backgroundColor: i < visibleCount ? tool.bg : "transparent" }}
+          >
+            <div className="w-9 h-9 flex items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/icons/${tool.slug}.svg`} alt={tool.name} width={28} height={28} />
+            </div>
+            <span className="text-[0.6rem] text-white/40 text-center leading-tight">{tool.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Panel: Automate ─────────────────────────────────────────────────────────
+
+function AutomatePanelAIOS() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [doneCount, setDoneCount] = useState(0);
+
+  const tasks = [
+    "Send weekly client status report",
+    "Follow up with unresponsive leads",
+    "Process new client intake form",
+    "Generate monthly revenue summary",
+    "Draft next week's content from the content calendar",
+    "Schedule recurring team standup",
+  ];
+
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setInterval(() => {
+      setDoneCount((c) => (c < tasks.length ? c + 1 : c));
+    }, 900);
+    return () => clearInterval(timer);
+  }, [inView, tasks.length]);
+
+  return (
+    <div ref={ref} className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]">
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
+          <span className="ml-2 text-[0.7rem] text-white/25 font-mono">automate · task queue</span>
+        </div>
+        <span className="text-[0.7rem] font-mono text-[#028090]">{doneCount}/{tasks.length} handled</span>
+      </div>
+      <div className="p-5 space-y-2">
+        {tasks.map((task, i) => {
+          const done = i < doneCount;
+          return (
+            <motion.div
+              key={i}
+              animate={{ opacity: done ? 0.5 : 1 }}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-white/[0.04]"
+            >
+              <motion.div
+                animate={{
+                  backgroundColor: done ? "#028090" : "transparent",
+                  borderColor: done ? "#028090" : "rgba(255,255,255,0.15)",
+                }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="w-4 h-4 rounded border flex items-center justify-center shrink-0"
+              >
+                {done && (
+                  <motion.svg
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  >
+                    <path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </motion.svg>
+                )}
+              </motion.div>
+              <span className={`text-[0.8125rem] font-mono transition-all duration-300 ${done ? "line-through text-white/25" : "text-white/65"}`}>
+                {task}
+              </span>
+              {done && (
+                <motion.span
+                  initial={{ opacity: 0, x: -4 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="ml-auto text-[0.65rem] text-[#028090] font-mono shrink-0"
+                >
+                  automated
+                </motion.span>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Panel: Telegram (Control Center) ────────────────────────────────────────
+
+function TelegramPanelAIOS() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const delays = [400, 1200, 2100, 2900, 3700];
+    const timers = delays.map((d, i) => setTimeout(() => setStep(i + 1), d));
+    return () => timers.forEach(clearTimeout);
+  }, [inView]);
+
+  return (
+    <div ref={ref} className="w-full rounded-2xl overflow-hidden border border-white/[0.07] bg-[#080D11]">
+      <div className="flex items-center gap-3 px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+        <div className="w-8 h-8 rounded-full bg-[#028090]/15 border border-[#028090]/25 flex items-center justify-center text-[0.55rem] font-bold text-[#028090]">
+          AI
+        </div>
+        <div>
+          <div className="text-[0.8rem] text-white/75 font-medium">Revaya AIOS</div>
+          <div className="flex items-center gap-1">
+            <div className="w-1 h-1 rounded-full bg-[#028090]" />
+            <span className="text-[0.65rem] text-[#028090]">online</span>
+          </div>
+        </div>
+      </div>
+      <div className="p-4 space-y-3 min-h-[260px]">
+        <AnimatePresence>
+          {step >= 1 && (
+            <motion.div key="q1" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
+              <div className="max-w-[80%] px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-[#028090]/20 border border-[#028090]/20">
+                <p className="text-[0.8rem] text-white">Any new leads come in overnight?</p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 2 && (
+            <motion.div key="a1" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-[85%]">
+              <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
+                <p className="text-[0.8rem] text-white">3 form submissions. One looks qualified. Service business, $400K revenue, asking about full AIOS.</p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 3 && (
+            <motion.div key="a2" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-[85%]">
+              <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
+                <p className="text-[0.8rem] text-white">I drafted a response. Want to review before I send?</p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 4 && (
+            <motion.div key="q2" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
+              <div className="max-w-[80%] px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-[#028090]/20 border border-[#028090]/20">
+                <p className="text-[0.8rem] text-white">Send it.</p>
+              </div>
+            </motion.div>
+          )}
+          {step >= 5 && (
+            <motion.div key="a3" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-[85%]">
+              <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
+                <p className="text-[0.8rem] text-white">Sent. I&apos;ll follow up automatically in 48 hours if no reply.</p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Page ──────────────────────────────────────────────────────────────
 
 export default function BusinessAIOSPage() {
@@ -1795,7 +2096,7 @@ export default function BusinessAIOSPage() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-6 mt-5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
                   <span className="text-[0.875rem] uppercase tracking-[0.12em] text-white/80 font-medium">
-                    Does This Sound Familiar?
+                    The Problem
                   </span>
                 </div>
                 <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
@@ -1829,7 +2130,7 @@ export default function BusinessAIOSPage() {
               </FadeUp>
               <FadeUp direction="left" className="order-first md:order-last">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  Business AI Operating System
+                  Sound Familiar?
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-7">
                   You answer the same questions 20 times a month.
@@ -1939,15 +2240,154 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
+        {/* THE PROCESS */}
+        <section className="py-24 md:py-32">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <FadeUp direction="right">
+                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
+                  The Process
+                </p>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-14">
+                  How I work with you.
+                </h2>
+                <ol className="space-y-0">
+                  {processSteps.map((step, i, arr) => (
+                    <li key={step.num} className={`flex gap-8 ${i < arr.length - 1 ? "pb-7" : ""}`}>
+                      <div className="flex flex-col items-center">
+                        <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium leading-none mt-1">
+                          {step.num}
+                        </span>
+                        {i < arr.length - 1 && (
+                          <div className="w-px flex-1 bg-white/[0.06] mt-3" />
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-display text-[1.125rem] font-black text-white mb-1">{step.title}</p>
+                        <p className="text-[1.0625rem] text-white leading-[1.7]">{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <ProcessGanttPanel />
+              </FadeUp>
+            </div>
+          </div>
+        </section>
+
+        {/* TWO PATHS */}
+        <section className="py-24 md:py-32">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <FadeUp className="mb-16 text-center max-w-[700px] mx-auto">
+              <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
+                Two Paths
+              </p>
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                Every transformation starts with the Audit.
+                <br />
+                Where it goes depends on your business.
+              </h2>
+              <p className="text-[1.0625rem] text-white leading-[1.7]">
+                The Audit tells us both which path makes sense. Some businesses are ready for the full Agentic OS. Some want to start with a governed AI environment for their team first. We figure that out from the evidence, not a guess.
+              </p>
+            </FadeUp>
+            <div className="grid md:grid-cols-2 gap-8">
+
+              {/* Starter Path */}
+              <FadeUp direction="right">
+                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 h-full flex flex-col">
+                  <div className="mb-8">
+                    <p className="text-[0.75rem] uppercase tracking-[0.16em] text-white/40 font-medium mb-3">Starter Path</p>
+                    <h3 className="font-display font-black text-[1.625rem] text-white leading-[1.1] mb-4">
+                      Claude Co-Work
+                    </h3>
+                    <p className="text-[1.0rem] text-white/60 leading-[1.7]">
+                      A governed AI environment your whole team can use from day one. Not a blank tool to figure out yourself.
+                    </p>
+                  </div>
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {[
+                      "Education and onboarding so your team actually uses it",
+                      "Done-for-you setup, or guided DIY if you prefer",
+                      "Skills library built around your workflows",
+                      "Ongoing support as you get going",
+                      "No API keys, no technical overhead",
+                    ].map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="text-[#028090] shrink-0 mt-[2px]">→</span>
+                        <span className="text-[0.9375rem] text-white/70 leading-[1.6]">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-6 border-t border-white/[0.06]">
+                    <p className="text-[0.8125rem] text-white/35 leading-[1.6]">
+                      Good fit if your team needs AI now and you want a safe, governed starting point before committing to a full OS build.
+                    </p>
+                  </div>
+                </div>
+              </FadeUp>
+
+              {/* All-In Path */}
+              <FadeUp direction="left" delay={0.1}>
+                <div className="rounded-2xl border border-[#028090]/30 bg-[#028090]/[0.05] p-8 md:p-10 h-full flex flex-col relative overflow-hidden">
+                  <div className="absolute top-0 right-0 px-4 py-2 bg-[#028090]/20 border-b border-l border-[#028090]/30 rounded-bl-xl">
+                    <span className="text-[0.65rem] uppercase tracking-[0.16em] text-[#028090] font-medium">Recommended</span>
+                  </div>
+                  <div className="mb-8">
+                    <p className="text-[0.75rem] uppercase tracking-[0.16em] text-[#028090]/70 font-medium mb-3">All-In Path</p>
+                    <h3 className="font-display font-black text-[1.625rem] text-white leading-[1.1] mb-4">
+                      Agentic Business OS
+                    </h3>
+                    <p className="text-[1.0rem] text-white/70 leading-[1.7]">
+                      A full operating system built around how your business works. Five layers. Configured to your workflows, your data, your decisions. It runs when you don&apos;t.
+                    </p>
+                  </div>
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {[
+                      "Complete five-layer build scoped to your business",
+                      "Agents trained on your actual context and data",
+                      "Recurring tasks permanently removed from your plate",
+                      "Full transparency — every decision visible and auditable",
+                      "The business can run 48 hours without you in the loop",
+                    ].map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="text-[#028090] shrink-0 mt-[2px]">→</span>
+                        <span className="text-[0.9375rem] text-white/80 leading-[1.6]">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-6 border-t border-[#028090]/20">
+                    <p className="text-[0.8125rem] text-[#028090]/60 leading-[1.6]">
+                      The right path if you&apos;re the bottleneck and you want a system that removes you from the day-to-day permanently, not just partially.
+                    </p>
+                  </div>
+                </div>
+              </FadeUp>
+
+            </div>
+            <FadeUp delay={0.2} className="mt-10 text-center">
+              <p className="text-[0.9375rem] text-white/40 mb-5">Not sure which path fits? The Audit answers that.</p>
+              <Link
+                href="/business-ai-os-assessment"
+                className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+              >
+                Book an Audit &rarr;
+              </Link>
+            </FadeUp>
+          </div>
+        </section>
+
         {/* FIVE LAYERS */}
         <section className="pt-24 md:pt-32 pb-10">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <FadeUp className="mb-12">
               <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                The System
+                Agentic Business Operating System
               </p>
               <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white">
-                Five layers. One operating system.
+                Five layers. One system that runs your business.
               </h2>
             </FadeUp>
             <FadeUp delay={0.1}>
@@ -1957,7 +2397,7 @@ export default function BusinessAIOSPage() {
         </section>
 
         {/* WHAT'S INCLUDED */}
-        <section className="pt-10 pb-24 md:pb-32">
+        <section className="pt-10 pb-16 md:pb-20">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <FadeUp>
               <div className="max-w-[760px]">
@@ -1980,7 +2420,7 @@ export default function BusinessAIOSPage() {
                     href="/business-ai-os-assessment"
                     className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
                   >
-                    Take the Assessment →
+                    Book an Audit &rarr;
                   </Link>
                   <div className="flex flex-col justify-center sm:pt-3">
                     <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
@@ -1998,6 +2438,103 @@ export default function BusinessAIOSPage() {
                 </div>
               </div>
             </FadeUp>
+          </div>
+        </section>
+
+        {/* SYSTEM COMPONENTS — four modules from homepage */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <FadeUp className="mb-12">
+              <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
+                Inside the System
+              </p>
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white">
+                What it looks like when it&apos;s running.
+              </h2>
+            </FadeUp>
+
+            {/* Knowledge */}
+            <div className="grid md:grid-cols-2 gap-16 items-center mb-24 md:mb-32">
+              <FadeUp direction="right" className="order-last md:order-first">
+                <ConnectPanelAIOS />
+              </FadeUp>
+              <FadeUp direction="left" className="order-first md:order-last">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">Knowledge</span>
+                <h3 className="font-display font-black text-[1.75rem] md:text-[2.25rem] leading-[1.05] text-white mb-6">
+                  Your business context, baked in.
+                </h3>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Feed it how you actually work. Processes, client templates, SOPs, how you handle recurring situations. It doesn&apos;t need to be formal. If you&apos;d explain it to a new hire, it&apos;s enough.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
+                  The more context the system has, the more autonomous it gets. Not a generic AI that forgets who you are every conversation. Your business, permanently in context.
+                </p>
+              </FadeUp>
+            </div>
+
+            {/* Intelligence */}
+            <div className="grid md:grid-cols-2 gap-16 items-center mb-24 md:mb-32">
+              <FadeUp direction="right">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">Intelligence</span>
+                <h3 className="font-display font-black text-[1.75rem] md:text-[2.25rem] leading-[1.05] text-white mb-6">
+                  Ask anything.
+                  <br />
+                  It knows your business.
+                </h3>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Connect your CRM, ops tools, revenue data. Ask it anything. Revenue for the month, pipeline health, what&apos;s overdue. Clear answers in plain language, pulled from your actual data.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
+                  For those who want dashboards, those get built too. For everyone else, just ask.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <IntegrationsPanelAIOS />
+              </FadeUp>
+            </div>
+
+            {/* Automate */}
+            <div className="grid md:grid-cols-2 gap-16 items-center mb-24 md:mb-32">
+              <FadeUp direction="right" className="order-last md:order-first">
+                <AutomatePanelAIOS />
+              </FadeUp>
+              <FadeUp direction="left" className="order-first md:order-last">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">Automate</span>
+                <h3 className="font-display font-black text-[1.75rem] md:text-[2.25rem] leading-[1.05] text-white mb-6">
+                  The work that repeats,
+                  <br />
+                  removed.
+                </h3>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex — they&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
+                  Task automation % is one of three KPIs tracked in every engagement. You see exactly what&apos;s moving.
+                </p>
+              </FadeUp>
+            </div>
+
+            {/* Control Center */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <FadeUp direction="right">
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">Your Control Center</span>
+                <h3 className="font-display font-black text-[1.75rem] md:text-[2.25rem] leading-[1.05] text-white mb-6">
+                  The system runs in the background.
+                  <br />
+                  You check in when you want to.
+                </h3>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Ask what happened overnight. Review what the system queued up. Approve or redirect. The system knows your business well enough to push back. Sparring partner. Strategy partner. Both.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white">
+                  You stay in control. You just stop being in every loop.
+                </p>
+              </FadeUp>
+              <FadeUp delay={0.15} direction="left">
+                <TelegramPanelAIOS />
+              </FadeUp>
+            </div>
+
           </div>
         </section>
 
@@ -2041,43 +2578,6 @@ export default function BusinessAIOSPage() {
                 <p className="text-[1.0625rem] text-white leading-[1.7]">
                   The retainer conversation happens at your 30-day check-in, once you&apos;ve used the system and know what you want next.
                 </p>
-              </FadeUp>
-            </div>
-          </div>
-        </section>
-
-        {/* THE PROCESS */}
-        <section className="py-24 md:py-32">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp direction="right">
-                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  The Process
-                </p>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-14">
-                  How I work with you.
-                </h2>
-                <ol className="space-y-0">
-                  {processSteps.map((step, i, arr) => (
-                    <li key={step.num} className={`flex gap-8 ${i < arr.length - 1 ? "pb-7" : ""}`}>
-                      <div className="flex flex-col items-center">
-                        <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium leading-none mt-1">
-                          {step.num}
-                        </span>
-                        {i < arr.length - 1 && (
-                          <div className="w-px flex-1 bg-white/[0.06] mt-3" />
-                        )}
-                      </div>
-                      <div>
-                        <p className="font-display text-[1.125rem] font-black text-white mb-1">{step.title}</p>
-                        <p className="text-[1.0625rem] text-white leading-[1.7]">{step.body}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </FadeUp>
-              <FadeUp delay={0.15} direction="left">
-                <ProcessGanttPanel />
               </FadeUp>
             </div>
           </div>
