@@ -2121,37 +2121,31 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* BEFORE STATE — panel L, text R */}
+        {/* WHO THIS IS FOR — panel L, text R */}
         <section className="py-24 md:py-32">
-          <div className="max-w-[1280px] mx-auto px-6 md:px-0">
-            <div className="grid md:grid-cols-[1fr_1.4fr] gap-20 items-center">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
               <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
-                <PainQueuePanel />
+                <WhoPanel />
               </FadeUp>
               <FadeUp direction="left" className="order-first md:order-last">
                 <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  Sound Familiar?
+                  Who This Is For
                 </p>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-7">
-                  You answer the same questions 20 times a month.
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  Built for founders where everything waits on you.
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&apos;re unavailable, nothing moves.
-                </p>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  Or you&apos;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&apos;s no one to hand off to. The business doesn&apos;t run when you&apos;re not in it. It waits.
-                </p>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  You make decisions from memory because clean data takes a week to pull.
+                  Founder-led businesses with 1 to 15 people where the work requires expertise, judgment, or relationships, and the founder is the one everything waits on.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Your business stops when you stop.
+                  Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations.
+                </p>
+                <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
+                  Not for anyone looking for a quick fix. The system takes time to build and discipline to adopt.
                 </p>
                 <p className="text-[1rem] text-white font-medium leading-[1.7]">
-                  That&apos;s not a people problem. It&apos;s an architecture problem.
-                </p>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mt-8 border-l-2 border-[#028090]/40 pl-6">
-                  I spent 18 years as a digital product manager. Virgin Mobile, Boost Mobile, Papa Murphy&apos;s, Intermedia. I wasn&apos;t an outside consultant looking in. I was on the inside, sitting between the business and the builders. The work was always the same: understand the problems, understand the constraints, define the solution, build the roadmap, ship it, evolve it. Business AIOS is that same work.
+                  If that&apos;s you, start with the Audit. It will tell us both if you&apos;re ready.
                 </p>
               </FadeUp>
             </div>
@@ -2209,56 +2203,28 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* WHO THIS IS FOR — panel L, text R */}
-        <section className="py-24 md:py-32">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <FadeUp delay={0.15} direction="right" className="order-last md:order-first">
-                <WhoPanel />
-              </FadeUp>
-              <FadeUp direction="left" className="order-first md:order-last">
-                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  Who This Is For
-                </p>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Built for founders where everything waits on you.
-                </h2>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  Founder-led businesses with 1 to 15 people where the work requires expertise, judgment, or relationships, and the founder is the one everything waits on.
-                </p>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations.
-                </p>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Not for anyone looking for a quick fix. The system takes time to build and discipline to adopt.
-                </p>
-                <p className="text-[1rem] text-white font-medium leading-[1.7]">
-                  If that&apos;s you, start with the Audit. It will tell us both if you&apos;re ready.
-                </p>
-              </FadeUp>
-            </div>
-          </div>
-        </section>
-
         {/* THE PROCESS */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeUp className="mb-14">
+              <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
+                The Process
+              </p>
+              <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white">
+                How I work with you.
+              </h2>
+            </FadeUp>
+            <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+              {/* Left column: steps 01–03 */}
               <FadeUp direction="right">
-                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  The Process
-                </p>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-14">
-                  How I work with you.
-                </h2>
                 <ol className="space-y-0">
-                  {processSteps.map((step, i, arr) => (
-                    <li key={step.num} className={`flex gap-8 ${i < arr.length - 1 ? "pb-7" : ""}`}>
+                  {processSteps.slice(0, 3).map((step, i) => (
+                    <li key={step.num} className={`flex gap-8 ${i < 2 ? "pb-8" : ""}`}>
                       <div className="flex flex-col items-center">
                         <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium leading-none mt-1">
                           {step.num}
                         </span>
-                        {i < arr.length - 1 && (
+                        {i < 2 && (
                           <div className="w-px flex-1 bg-white/[0.06] mt-3" />
                         )}
                       </div>
@@ -2270,8 +2236,26 @@ export default function BusinessAIOSPage() {
                   ))}
                 </ol>
               </FadeUp>
-              <FadeUp delay={0.15} direction="left">
-                <ProcessGanttPanel />
+              {/* Right column: steps 04–05 */}
+              <FadeUp delay={0.1} direction="left">
+                <ol className="space-y-0">
+                  {processSteps.slice(3).map((step, i) => (
+                    <li key={step.num} className={`flex gap-8 ${i < 1 ? "pb-8" : ""}`}>
+                      <div className="flex flex-col items-center">
+                        <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium leading-none mt-1">
+                          {step.num}
+                        </span>
+                        {i < 1 && (
+                          <div className="w-px flex-1 bg-white/[0.06] mt-3" />
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-display text-[1.125rem] font-black text-white mb-1">{step.title}</p>
+                        <p className="text-[1.0625rem] text-white leading-[1.7]">{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
               </FadeUp>
             </div>
           </div>

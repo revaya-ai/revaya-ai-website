@@ -835,7 +835,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── ROW 2: Context — ContextPanel LEFT, text RIGHT ───────────────────── */}
+      {/* ── ROW 2: Sound Familiar — PainQueuePanel LEFT, text RIGHT ─────────── */}
+      <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-[1fr_1.4fr] gap-20 items-center">
+            <FadeIn direction="right" className="order-last md:order-first">
+              <PainQueuePanel />
+            </FadeIn>
+            <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
+              <div>
+                <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
+                  Sound Familiar?
+                </span>
+                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
+                  You answer the same questions 20 times a month.
+                </h2>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&rsquo;re unavailable, nothing moves.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Or you&rsquo;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&rsquo;s no one to hand off to. The business doesn&rsquo;t run when you&rsquo;re not in it. It waits.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-8">
+                  Your business stops when you stop. That&rsquo;s not a people problem. It&rsquo;s an architecture problem.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROW 3: The Audit — ContextPanel LEFT, text RIGHT ────────────────── */}
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
