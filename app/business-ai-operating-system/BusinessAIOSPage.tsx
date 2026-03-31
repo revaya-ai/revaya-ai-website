@@ -79,11 +79,12 @@ const timeline = [
 ];
 
 const processSteps = [
-  { num: "01", title: "Audit", body: "We map exactly where your business runs through you. Not what you think is broken — what's actually broken. Every workflow, every decision bottleneck, every repeatable task that lands on you. You walk away with a gap map, a prioritized roadmap, and a clear recommendation. If the numbers don't show payback within 3 to 6 months, I won't recommend moving forward." },
+  { num: "01", title: "Audit", body: "We map how your business actually operates today. Where time goes, where decisions bottleneck, what keeps landing on the founder, and what the broader business needs to run without constant intervention. You walk away with a gap map, a prioritized roadmap, and a clear recommendation built from what we found. If the numbers don't show payback within 3 to 6 months, I won't recommend moving forward." },
   { num: "02", title: "Scope", body: "We take the Audit findings and define exactly what gets built and at what cost. No surprises. You approve the scope before a single line of work begins." },
-  { num: "03", title: "Build", body: "I architect the system. My network of 800+ AI developers builds it. Five layers configured to how your business actually works — not a generic template dropped into your ops." },
+  { num: "03", title: "Build", body: "I architect the system, with support from a network of 800+ AI developers. The infrastructure is configured to how your business actually works, not a generic template dropped into your ops." },
   { num: "04", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built, how every layer works, and how to use it daily. Nothing is handed off without you understanding it." },
   { num: "05", title: "Train + Support", body: "Three dedicated sessions across your first 30 days. Hands-on with your actual workflows. A 30-day check-in to review what's working, optimize what isn't, and map what to build next. Questions answered throughout. Adoption protected." },
+  { num: "06", title: "Ongoing Partnership", body: "The first 30 days is the foundation. After that, we stay involved as your transformation partner. Continuously optimizing what's running, building new layers as your business grows, and making sure the system evolves with you. This isn't a handoff. It's a long-term build." },
 ];
 
 // ─── FadeUp helper ──────────────────────────────────────────────────────────
@@ -2167,7 +2168,7 @@ export default function BusinessAIOSPage() {
                   If you&apos;re spending 15 hours a week on tasks a system could handle, and your time is worth $150 an hour, that&apos;s $117,000 a year. Every month this continues is another $9,750 you don&apos;t get back.
                 </p>
                 <p className="text-[1.0625rem] text-white font-medium leading-[1.7]">
-                  The AIOS Setup pays for itself in 2 to 3 months.
+                  Build the right infrastructure once, and it pays for itself faster than most people expect.
                 </p>
               </FadeUp>
               <FadeUp delay={0.15} direction="left">
@@ -2236,16 +2237,16 @@ export default function BusinessAIOSPage() {
                   ))}
                 </ol>
               </FadeUp>
-              {/* Right column: steps 04–05 */}
+              {/* Right column: steps 04–06 */}
               <FadeUp delay={0.1} direction="left">
                 <ol className="space-y-0">
                   {processSteps.slice(3).map((step, i) => (
-                    <li key={step.num} className={`flex gap-8 ${i < 1 ? "pb-8" : ""}`}>
+                    <li key={step.num} className={`flex gap-8 ${i < 2 ? "pb-8" : ""}`}>
                       <div className="flex flex-col items-center">
                         <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#028090] font-medium leading-none mt-1">
                           {step.num}
                         </span>
-                        {i < 1 && (
+                        {i < 2 && (
                           <div className="w-px flex-1 bg-white/[0.06] mt-3" />
                         )}
                       </div>
@@ -2264,7 +2265,7 @@ export default function BusinessAIOSPage() {
         {/* TWO PATHS */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <FadeUp className="mb-16 text-center max-w-[700px] mx-auto">
+            <FadeUp className="mb-16 text-center max-w-[900px] mx-auto">
               <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
                 Two Paths
               </p>
