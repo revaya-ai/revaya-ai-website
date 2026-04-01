@@ -2361,7 +2361,7 @@ export default function BusinessAIOSPage() {
                 href="/work-with-me"
                 className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
               >
-                Book an Audit &rarr;
+                Book a Discovery Call &rarr;
               </Link>
             </FadeUp>
           </div>

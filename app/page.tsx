@@ -838,7 +838,7 @@ export default function HomePage() {
                 href="/work-with-me"
                 className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
               >
-                Book an Audit &rarr;
+                Book a Discovery Call &rarr;
               </Link>
             </div>
           </FadeIn>
@@ -1153,7 +1153,7 @@ export default function HomePage() {
               href="/work-with-me"
               className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
-              Book an Audit &rarr;
+              Book a Discovery Call &rarr;
             </Link>
             <p className="mt-4 text-[0.8125rem] text-white/40">
               Or if you already know,{" "}
