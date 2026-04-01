@@ -4,7 +4,7 @@ import { AssessmentApp } from "./AssessmentApp";
 export const metadata: Metadata = {
   title: "Business AI OS Assessment | Revaya AI",
   description:
-    "Find out where your founder-led business is leaking time and revenue. 29 questions. Personalized ROI scorecard. See exactly what a Business AI OS could do for your operation.",
+    "Find out where your founder-led business is leaking time and revenue. 29 questions. Personalized ROI scorecard. See what a Business AI OS could do.",
   keywords: [
     "business AI OS assessment",
     "business AI operating system",
