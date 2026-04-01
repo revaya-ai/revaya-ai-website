@@ -2134,19 +2134,13 @@ export default function BusinessAIOSPage() {
                   Who This Is For
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Built for founders where everything waits on you.
+                  Built for founders where the business still needs you in it.
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  Founder-led businesses with 1 to 15 people where the work requires expertise, judgment, or relationships, and the founder is the one everything waits on.
+                  The business requires you because it was built that way. Not by accident. Just by never stopping to build it differently. Every system that should exist is still a conversation. Every decision that should be automated still lands on you.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations.
-                </p>
-                <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Not for anyone looking for a quick fix. The system takes time to build and discipline to adopt.
-                </p>
-                <p className="text-[1rem] text-white font-medium leading-[1.7]">
-                  If that&apos;s you, start with the Audit. It will tell us both if you&apos;re ready.
+                  This isn&apos;t for founders looking for a quick fix or a tool to try. Building a Business AI Operating System takes time and honest input about how your business actually works. If you&apos;re willing to do that, the output compounds.
                 </p>
               </FadeUp>
             </div>
