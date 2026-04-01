@@ -1,6 +1,6 @@
 ---
-title: "You Don't Have an AI Strategy. You Have a Subscription List."
-subtitle: "Most founders are paying for 5+ AI tools that don't connect. Here's the difference between a tool stack and a real AI strategy, and what to do instead."
+title: "You Don't Have an AI Strategy. You Have a Subscription List. (AI Tools for Small Business)"
+subtitle: "Most founders are paying for 5+ AI tools for small business that don't connect. Here's the difference between a tool stack and a real AI strategy, and what to do instead."
 slug: "ai-tools-vs-system-small-business"
 category: "article"
 author: "Shannon Winnicki"
