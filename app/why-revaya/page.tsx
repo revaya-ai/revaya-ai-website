@@ -158,7 +158,7 @@ export default function WhyRevayaPage() {
                     paragraphs: [
                       "I knew what the underdogs needed. Small service businesses running a 10-person workload with two people, who hadn't taken a real vacation in years, who knew AI was supposed to help but couldn't figure out where to start.",
                       "I'd spent 18 years on the other side of that equation. I knew what the right systems looked like. I knew what it cost to build them. And I knew these founders had the same problems without the same resources.",
-                      "In June 2025, I found the program that changed everything. 200+ hours of training on agentic engineering, AI agent architecture, and the Business AI OS methodology. And then I spent 10 months absorbing it before I said anything publicly. Not because I was avoiding it. Because it wasn't authentic yet. Saying I know automations wasn't the thing.",
+                      "In May 2025, I found the program that changed everything. 200+ hours of training on agentic engineering, AI agent architecture, and the Business AI OS methodology. And then I spent 10 months absorbing it before I said anything publicly. Not because I was avoiding it. Because it wasn't authentic yet. Saying I know automations wasn't the thing.",
                       "This is the thing.",
                     ],
                   },
@@ -210,7 +210,7 @@ export default function WhyRevayaPage() {
                     A quality check that reviews every piece of copy against my brand standards before it goes out. A content pipeline that drafts, approves, and publishes without me touching it. A virtual team structure that handles four business functions instead of requiring fourteen job titles.
                   </p>
                   <p className="text-[1.0625rem] leading-[1.7] text-white">
-                    I built all of it before I offered it to anyone else. That&rsquo;s what an AIOS engagement looks like for your business. I map how your business actually operates, identify where custom automations would change something real, and build them to match the specific way you work. Not a generic setup. Not a template.
+                    I built all of it before I offered it to anyone else. That&rsquo;s what an AIOS engagement looks like for your business. I map how your business actually operates, identify where custom automations, build them to match the specific way you work. Not a generic setup. Not a template. Everything connected.
                   </p>
                 </div>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mt-6">
