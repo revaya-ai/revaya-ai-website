@@ -2332,7 +2332,7 @@ export default function BusinessAIOSPage() {
                       "Agents trained on your actual context and data",
                       "Recurring tasks permanently removed from your plate",
                       "Full transparency — every decision visible and auditable",
-                      "The business can run 48 hours without you in the loop",
+                      "Time back to spend it how you want.",
                     ].map((item) => (
                       <li key={item} className="flex gap-3">
                         <span className="text-[#028090] shrink-0 mt-[2px]">→</span>
