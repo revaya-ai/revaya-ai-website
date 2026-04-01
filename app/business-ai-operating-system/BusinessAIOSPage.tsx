@@ -2162,13 +2162,16 @@ export default function BusinessAIOSPage() {
                   The Math
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  What This Costs You Every Month You Don&apos;t Fix It
+                  What This Costs You Every Month You Stay the Same
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
                   If you&apos;re spending 15 hours a week on tasks a system could handle, and your time is worth $150 an hour, that&apos;s $117,000 a year. Every month this continues is another $9,750 you don&apos;t get back.
                 </p>
-                <p className="text-[1.0625rem] text-white font-medium leading-[1.7]">
+                <p className="text-[1.0625rem] text-white font-medium leading-[1.7] mb-4">
                   Build the right infrastructure once, and it pays for itself faster than most people expect.
+                </p>
+                <p className="text-[1.0625rem] text-white leading-[1.7]">
+                  Your competitors are adopting this now. Every month you stay static is ground you give them. Not dramatically, not all at once. Just steadily.
                 </p>
               </FadeUp>
               <FadeUp delay={0.15} direction="left">
