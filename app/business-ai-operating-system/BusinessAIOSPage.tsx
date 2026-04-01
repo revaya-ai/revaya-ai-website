@@ -2350,7 +2350,7 @@ export default function BusinessAIOSPage() {
 
             </div>
             <FadeUp delay={0.2} className="mt-10 text-center">
-              <p className="text-[0.9375rem] text-white/40 mb-5">Not sure which path fits? The Audit answers that.</p>
+              <p className="text-[0.9375rem] text-white/40 mb-5">Not sure which path fits? The Discovery Call answers that.</p>
               <Link
                 href="/work-with-me"
                 className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
