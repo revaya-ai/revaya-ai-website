@@ -895,7 +895,7 @@ export default function HomePage() {
                   Sound Familiar?
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  You answer the same questions 20 times a month.
+                  You&rsquo;re the system. That&rsquo;s what has to change.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&rsquo;re unavailable, nothing moves.
