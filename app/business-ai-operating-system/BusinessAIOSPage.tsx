@@ -2101,14 +2101,14 @@ export default function BusinessAIOSPage() {
                   </span>
                 </div>
                 <h1 className="font-display text-[2.75rem] md:text-[3.5rem] font-black leading-[1.05] text-white mb-8">
-                  Your business breaks every time you step away.
+                  Your business is ready for the next version.
                   <br />
                   <span className="text-[#F45B69]">
-                    That&apos;s a systems problem.
+                    Are you?
                   </span>
                 </h1>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  I find the specific thing that&apos;s costing you the most time right now. Then I build the system that removes it permanently. Not a tool. Not a stack. A system your business actually runs on. Fully auditable. Every decision visible.
+                  I find the specific thing that&apos;s costing you the most time right now. Then I build the system that removes it permanently. And we build on that. Not a tool. Not a stack. A business that actually runs.
                 </p>
               </motion.div>
               <motion.div
