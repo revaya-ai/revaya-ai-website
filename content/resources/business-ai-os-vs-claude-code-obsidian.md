@@ -1,6 +1,6 @@
 ---
-title: "Claude Code + Obsidian Has a Ceiling. Here's Where It Stops Working."
-subtitle: "Claude Code and Obsidian are powerful tools. But for service businesses, DIY has a ceiling that most founders hit in month two."
+title: "Claude Code + Obsidian Has a Ceiling. Here's Where It Stops Working. (Business AI Operating System)"
+subtitle: "Claude Code and Obsidian get you far. But for service businesses, DIY has a ceiling that most founders hit in month two — and a Business AI Operating System is what's on the other side."
 slug: "business-ai-os-vs-claude-code-obsidian"
 category: "article"
 author: "Shannon Winnicki"
@@ -12,6 +12,17 @@ cta_variant: "discovery"
 related_slugs: ["how-to-organize-ai-agents-business", "openclaw-alternative-service-businesses"]
 external_url: "/business-ai-os-vs-claude-code-obsidian"
 published: true
+faqs:
+  - question: "Can you build a Business AI Operating System with Claude Code and Obsidian?"
+    answer: "Yes, and many technical founders do. Claude Code handles agent logic and automation. Obsidian handles persistent knowledge as markdown files Claude can read and write. The combination is the closest DIY path to a Business AI Operating System. The ceiling hits around month two when context management becomes a maintenance job, multi-agent coordination requires manual handoffs, and team members can't use a terminal-based system."
+  - question: "What is the difference between Claude Code and a Business AI Operating System?"
+    answer: "Claude Code is a tool. A Business AI Operating System is an architecture. Claude Code gives you the capability to build agents and automations from your terminal. A Business AI OS is the structured set of agents, context layers, and workflows organized around how your business actually makes money. You can build a Business AI OS using Claude Code, but the OS is the structure — not the tool."
+  - question: "When does DIY AI stop making sense for a service business?"
+    answer: "DIY stops making sense when the maintenance cost exceeds the automation value. Three signals: you are spending more than 3 to 4 hours a week maintaining the system, team members can't access or use it without your help, or agents in different parts of your business don't share context and you're the connector between them. Those are architectural problems that new tools don't solve."
+  - question: "What are the three walls founders hit with Claude Code and Obsidian?"
+    answer: "The three walls are context management (CLAUDE.md grows until it slows your agents down), multi-agent coordination (no native handoff between agents means you relay context manually), and team access (terminal-based systems block non-technical team members and clients from interacting with the system). These are ceilings built into the architecture, not bugs to fix."
+  - question: "How long does it take to hit the limits of Claude Code for a Business AI OS?"
+    answer: "Most service business founders hit the first wall in 4 to 8 weeks. Context management becomes a problem once you have more than 6 to 8 active agents and a growing CLAUDE.md. Multi-agent coordination becomes a problem when you want two departments to share information. Team access becomes a problem the moment you want someone other than yourself to use the system."
 ---
 
 I built my entire Business AI Operating System using Claude Code and Obsidian. So when I say it has a ceiling, I'm not guessing. I hit that ceiling, worked around it, and eventually built through it. Here's what I learned.

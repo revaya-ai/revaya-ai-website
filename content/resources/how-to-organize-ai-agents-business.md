@@ -1,6 +1,6 @@
 ---
 title: "How to Organize AI Agents for Your Business"
-subtitle: "I organized my AI like a Fortune 500. It broke. Here's the customer lifecycle model that actually works for founder-led businesses."
+subtitle: "I tried to organize AI agents like a Fortune 500. It broke. Here's the customer lifecycle model that actually works — and why most founder AI setups fail for the same reason."
 slug: "how-to-organize-ai-agents-business"
 category: "article"
 author: "Shannon Winnicki"
@@ -9,7 +9,7 @@ read_time: "10 min read"
 image: "/images/resources/ai-agents-org-design.png"
 featured: true
 cta_variant: "assessment"
-related_slugs: []
+related_slugs: ["ai-tools-vs-system-small-business", "business-ai-os-vs-claude-code-obsidian"]
 published: true
 faqs:
   - question: "How should I organize AI agents for my business?"
@@ -30,7 +30,7 @@ I organized my AI like a Fortune 500 company. Marketing department, sales depart
 
 Half of them never got used. And the ones that did? They didn't talk to each other. I had an AI agent writing marketing copy that had no idea what my sales process looked like. A finance agent that couldn't see what my delivery agent was building. I'd spent 18 years in corporate product management at Virgin Mobile, Papa Murphy's, and Intermedia, and I built the exact same broken structure with AI that I'd spent my career trying to fix with people.
 
-The reason your AI tools don't work together isn't a technology problem. It's an org design problem. And the org chart you'd instinctively draw is wrong.
+The reason your AI tools don't work together isn't a technology problem. It's an org design problem. And the org chart you'd instinctively draw when organizing AI agents for your business is wrong.
 
 ## I organized my AI like a Fortune 500 (and it was the worst decision I made)
 
