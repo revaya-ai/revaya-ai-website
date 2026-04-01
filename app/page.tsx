@@ -820,14 +820,14 @@ export default function HomePage() {
           {/* Subhead */}
           <FadeIn delay={0.2}>
             <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white mb-5 max-w-[620px] mx-auto">
-              You didn&rsquo;t build a business. You built something that quietly owns you.
+              Some founders can&rsquo;t step away. Others can&rsquo;t scale without hiring. Different situations. Same ceiling: the business is still built around you being in it.
             </p>
           </FadeIn>
 
           {/* Body */}
           <FadeIn delay={0.25}>
             <p className="text-[1.0625rem] leading-[1.75] text-white mb-10 max-w-[718px] mx-auto">
-              Every task, every decision, every answer still routes through you. That&rsquo;s not a business you own. That&rsquo;s a job with overhead. I build the system that changes that.
+              I build the system that lets you do exactly what you do, only better, faster, without the ceiling. Not a tool. A Business AI Operating System.
             </p>
           </FadeIn>
 
