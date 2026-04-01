@@ -1668,7 +1668,7 @@ function WhoPanel() {
             animate={{ opacity: 1 }}
             className="border-t border-white/[0.06] px-5 py-3 flex items-center justify-between bg-white/[0.02]"
           >
-            <span className="text-[0.7rem] font-mono text-white/25">1–15 people · $200K+ revenue</span>
+            <span className="text-[0.7rem] font-mono text-white/25">1–15 people · $250K+ revenue</span>
             <span className="text-[0.7rem] font-mono text-[#028090]">5 of 5 matched</span>
           </motion.div>
         )}
