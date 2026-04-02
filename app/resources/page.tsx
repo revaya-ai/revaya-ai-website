@@ -154,7 +154,7 @@ function CollageCardV2({
         <div
           className={`absolute inset-0 ${
             hasImage
-              ? "bg-gradient-to-t from-[#080D11] via-[#080D11]/60 to-transparent"
+              ? "bg-gradient-to-b from-[#080D11]/80 via-transparent to-[#080D11]"
               : "bg-gradient-to-t from-[#080D11]/30 to-transparent"
           }`}
         />
