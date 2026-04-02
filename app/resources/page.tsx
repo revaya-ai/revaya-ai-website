@@ -54,7 +54,7 @@ const shapes: CardShape[] = [
     minH: "min-h-[460px] md:min-h-[500px]",
     titleSize: "text-[1.5rem] md:text-[2.1rem] leading-[1.08]",
     showSubtitle: true,
-    padding: "p-6 md:p-8",
+    padding: "px-6 pt-6 pb-5 md:px-8 md:pt-8 md:pb-5",
   },
   // 1: Tall pill — narrow, very rounded
   {
