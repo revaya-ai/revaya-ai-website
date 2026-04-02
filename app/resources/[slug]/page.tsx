@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 const ctaVariants: Record<string, { heading: string; text: string; href: string; label: string }> = {
   default: {
-    heading: "Ready to build your Business AI OS?",
-    text: "Start with a $2,500 AIOS Audit. Two weeks. Full diagnostic. Deductible if you move into a full setup.",
+    heading: "Ready to build your agentic Business AI OS?",
+    text: "",
     href: "/work-with-me",
     label: "Start the Conversation",
   },
@@ -360,9 +360,11 @@ export default async function ArticlePage({ params }: PageProps) {
             <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[1235px] mx-auto">
               {cta.heading}
             </h2>
-            <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[676px] mx-auto">
-              {cta.text}
-            </p>
+            {cta.text && (
+              <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[676px] mx-auto">
+                {cta.text}
+              </p>
+            )}
             <Link
               href={cta.href}
               className="inline-block font-display text-[1rem] font-bold px-10 py-4 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)] transition-all duration-200"
