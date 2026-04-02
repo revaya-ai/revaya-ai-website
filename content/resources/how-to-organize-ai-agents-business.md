@@ -7,7 +7,7 @@ author: "Shannon Winnicki"
 date: "2026-03-28"
 read_time: "10 min read"
 image: "/images/resources/ai-agents-org-design.png"
-featured: true
+featured: false
 cta_variant: "assessment"
 related_slugs: ["ai-tools-vs-system-small-business", "business-ai-os-vs-claude-code-obsidian"]
 published: true
