@@ -294,7 +294,7 @@ export default function ResourcesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[230px] gap-x-2.5 gap-y-10 md:gap-x-3 md:gap-y-10">
           {/* Featured — hero shape */}
           {featured && (
-            <FadeIn className={`${shapes[0].colSpan} ${shapes[0].rowSpan}`}>
+            <FadeIn className={`${shapes[0].colSpan} ${shapes[0].rowSpan} h-full`}>
               <CollageCardV2
                 frontmatter={featured.frontmatter}
                 shape={shapes[0]}
@@ -311,7 +311,7 @@ export default function ResourcesPage() {
               <FadeIn
                 key={resource.frontmatter.slug}
                 delay={(i + 1) * 0.05}
-                className={`${shape.colSpan} ${shape.rowSpan}${i === 2 ? " pt-[30px]" : ""}`}
+                className={`${shape.colSpan} ${shape.rowSpan} h-full${i === 2 ? " pt-[30px]" : ""}`}
               >
                 <CollageCardV2
                   frontmatter={resource.frontmatter}
