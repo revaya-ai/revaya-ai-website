@@ -6,7 +6,7 @@ category: "article"
 author: "Shannon Winnicki"
 date: "2026-04-01"
 read_time: "7 min read"
-image: "/images/resources/ai-tools-vs-system-hero-a.png"
+image: "/images/resources/ai-tools-vs-system-hero-a.jpg"
 featured: false
 cta_variant: "default"
 related_slugs: ["how-to-organize-ai-agents-business"]
