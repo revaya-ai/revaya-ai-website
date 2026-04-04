@@ -46,8 +46,8 @@ const layers = [
 ];
 
 const included = [
-  "Full five-layer build, scoped to your business",
-  "Master Training Guide — how the system was built, how every layer works, how to use it daily",
+  "Module build scoped to your business — Core (3 modules), Pro (7 modules), or Complete (15+)",
+  "Master Training Guide — how the system was built, how every module works, how to use it daily",
   "Command Dashboard — your full system reference",
   "Session 1: How It Was Built. Architecture walkthrough, what lives where and why.",
   "Session 2: How to Use It Daily. Hands-on with your actual workflows.",
@@ -69,22 +69,23 @@ const timeline = [
   {
     month: "Month 6",
     label: "Running without you",
-    body: "Operational decisions are being made without your input. New workflows are running on autopilot. If you're on a Growth retainer, the second layer of builds is underway. You're working on the business more than in it. That's the shift.",
+    body: "Operational decisions are being made without your input. New workflows are running on autopilot. If you're on Option B subscription, active monthly build credits are expanding the system. You're working on the business more than in it. That's the shift.",
   },
   {
     month: "Month 12",
     label: "The OS is how your business runs",
-    body: "You can take a week off. The business doesn't pause. New hires onboard in hours, not weeks. The routine runs without you in it. Your away-from-desk autonomy is measurable, not theoretical. You're generating more without working more. The system isn't something you use anymore. It's how the business works.",
+    body: "You can take a week off. The business doesn't pause. New hires onboard in hours, not weeks. The routine runs without you in it. Hours recovered per week is measurable, not theoretical. Monthly ROI is a number on your dashboard, not a feeling. You're generating more without working more. The system isn't something you use anymore. It's how the business works.",
   },
 ];
 
 const processSteps = [
-  { num: "01", title: "Audit", body: "We map how your business actually operates today. Where time goes, where decisions bottleneck, what keeps landing on the founder, and what the broader business needs to run without constant intervention. You walk away with a gap map, a prioritized roadmap, and a clear recommendation built from what we found. If the numbers don't show payback within 3 to 6 months, I won't recommend moving forward." },
-  { num: "02", title: "Scope", body: "We take the Audit findings and define exactly what gets built and at what cost. No surprises. You approve the scope before a single line of work begins." },
-  { num: "03", title: "Build", body: "I architect the system. The infrastructure is configured to how your business actually works, not a generic template dropped into your ops." },
-  { num: "04", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built, how every layer works, and how to use it daily. Nothing is handed off without you understanding it." },
-  { num: "05", title: "Train + Support", body: "Three dedicated sessions across your first 30 days. Hands-on with your actual workflows. A 30-day check-in to review what's working, optimize what isn't, and map what to build next. Questions answered throughout. Adoption protected." },
-  { num: "06", title: "Ongoing Partnership", body: "The first 30 days is the foundation. After that, we stay involved as your transformation partner. Continuously optimizing what's running, building new layers as your business grows, and making sure the system evolves with you. This isn't a handoff. It's a long-term build." },
+  { num: "01", title: "Assessment", body: "I map how your business actually operates today. Where time goes, where decisions bottleneck, what keeps landing on the founder, and what the broader business needs to run without constant intervention. You walk away with a gap map, a prioritized roadmap, and a clear recommendation built from what I found. $2,500. If the numbers don't show payback within 3 to 6 months, I won't recommend moving forward." },
+  { num: "02", title: "Scope", body: "I take the Assessment findings and define exactly what gets built and at what cost. No surprises. You approve the scope before a single line of work begins." },
+  { num: "03", title: "Choose Your Path", body: "Two ways to engage. Option A: a defined build fee plus a monthly retainer. Option B: a monthly subscription starting with your Exploration Month, full refund if you walk at 30 days. You choose after you see the roadmap." },
+  { num: "04", title: "Build", body: "I architect the system. The infrastructure is configured to how your business actually works, not a generic template dropped into your ops." },
+  { num: "05", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built, how every module works, and how to use it daily. Nothing is handed off without you understanding it." },
+  { num: "06", title: "Train + Support", body: "Three dedicated sessions across your first 30 days. Hands-on with your actual workflows. A 30-day check-in to review what's working, optimize what isn't, and map what to build next. Questions answered throughout. Adoption protected." },
+  { num: "07", title: "Ongoing Partnership", body: "The first 30 days is the foundation. After that, I stay involved as your transformation partner. Continuously optimizing what's running, building new modules as your business grows, and making sure the system evolves with you. This isn't a handoff. It's a long-term build." },
 ];
 
 // ─── FadeUp helper ──────────────────────────────────────────────────────────
@@ -270,7 +271,7 @@ function ContextPanel() {
                 </span>
               </div>
               <p className="text-[0.8rem] text-white/75 leading-[1.6]">
-                The Audit is $2,500 (deductible from your Setup). Setup ranges from $10K to $30K depending on scope. Retainer starts post-setup.
+                The Assessment is $2,500 — deductible from your build, or it&apos;s Month 1 of your subscription. Option A: Build $6,500 + $1,500/mo. Option B: $2,500/mo — with a full refund if you walk after 30 days. You don&apos;t pay for results you haven&apos;t seen.
               </p>
             </motion.div>
           )}
@@ -2267,12 +2268,12 @@ export default function BusinessAIOSPage() {
                 Two Paths
               </p>
               <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                Every transformation starts with the Audit.
+                Every transformation starts with the Assessment.
                 <br />
                 Where it goes depends on your business.
               </h2>
               <p className="text-[1.0625rem] text-white leading-[1.7]">
-                The Audit tells us both which path makes sense. Some businesses are ready for the full Agentic OS. Some want to start with a governed AI environment for their team first. We figure that out from the evidence, not a guess.
+                The Assessment tells us both which path makes sense. Some businesses are ready for the full Agentic OS. Some want to start with a governed AI environment for their team first. I figure that out from the evidence, not a guess.
               </p>
             </FadeUp>
             <div className="grid md:grid-cols-2 gap-8">
@@ -2328,7 +2329,7 @@ export default function BusinessAIOSPage() {
                   </div>
                   <ul className="space-y-3 mb-8 flex-1">
                     {[
-                      "Complete five-layer build scoped to your business",
+                      "Module build scoped to your business (Core, Pro, or Complete)",
                       "Agents trained on your actual context and data",
                       "Recurring tasks permanently removed from your plate",
                       "Full transparency — every decision visible and auditable",
@@ -2491,7 +2492,7 @@ export default function BusinessAIOSPage() {
                   Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex — they&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  Task automation % is one of three KPIs tracked in every engagement. You see exactly what&apos;s moving.
+                  Three KPIs tracked in every engagement: Task Automation %, Hours Recovered per Week, Monthly ROI ($). You see exactly what&apos;s moving.
                 </p>
               </FadeUp>
             </div>
@@ -2605,7 +2606,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What does a Business AI OS actually do day to day?",
-                  answer: "It depends on what's built into it, but the typical outcomes are concrete. Founders get 10 or more hours a week back. Recurring tasks that used to need your decision get handled automatically. New team members onboard faster because the knowledge lives in the system, not your head. The three metrics I measure against: away-from-desk autonomy, task automation percentage, and revenue per headcount. If those don't move, the system isn't working.",
+                  answer: "It depends on what's built into it, but the typical outcomes are concrete. Founders get 10 or more hours a week back. Recurring tasks that used to need your decision get handled automatically. New team members onboard faster because the knowledge lives in the system, not your head. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI ($). If those don't move, the system isn't working.",
                 },
                 {
                   question: "I've tried AI tools before and they didn't stick. Why would this be different?",
@@ -2625,7 +2626,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "How long does this take?",
-                  answer: "The Audit runs across one to two sessions and produces a specific deliverable within a week of completion. The Setup is scoped after the Audit. We work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, it's best to have in-person sessions. Then we create a support plan based on your business and needs.",
+                  answer: "The Assessment runs across one to two sessions and produces a specific deliverable within a week of completion. The scope is confirmed after the Assessment. I work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, it's best to have in-person sessions for Pro and Complete tier clients. Then I create a support plan based on your business and needs.",
                 },
                 {
                   question: "Do I need to be technical?",
@@ -2637,7 +2638,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What happens if something breaks after Setup?",
-                  answer: "Ongoing support is built into every engagement. You're not handed a system and wished luck. Maintenance retainers cover system monitoring, minor updates, and a quarterly review. Growth retainers include active monthly builds if the system needs to expand. You'll know exactly what support looks like before Setup begins.",
+                  answer: "Ongoing support is built into every engagement. You're not handed a system and wished luck. Option A retainer ($1,500/mo) covers system monitoring, minor updates, and a quarterly review. Option B subscription ($2,500/mo) includes active monthly build credits plus strategy sessions. You'll know exactly what support looks like before we begin.",
                 },
                 {
                   question: "What do you actually need from me?",
@@ -2653,7 +2654,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What does this cost, and how do I know it will pay off?",
-                  answer: "The Audit is $2,500 and deductible against Setup if you proceed. If you decide not to move forward, you still walk away with a comprehensive audit of your operations, a clear gap map, and a roadmap you can execute on your own. It's yours either way. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders I've worked with get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount. If those do not move, the system is not working.",
+                  answer: "The Assessment is $2,500. If you proceed, it's deductible from your build on Option A, or it counts as Month 1 of your subscription on Option B. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It's yours either way. Option A: Build $6,500 + $1,500/mo retainer. Option B: $2,500/mo subscription — full refund if you walk after 30 days. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI ($). Founders get 10 or more hours a week back. At $100/hr, that's $1,000 a month in recovered capacity, every month, permanently. If those numbers don't move, the system isn't working.",
                 },
                 {
                   question: "What if the AI makes a wrong decision or does something I didn't intend?",

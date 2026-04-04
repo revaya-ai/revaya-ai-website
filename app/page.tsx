@@ -947,7 +947,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── ROW 3: The Audit — ContextPanel LEFT, text RIGHT ────────────────── */}
+      {/* ── ROW 3: The Assessment — ContextPanel LEFT, text RIGHT ───────────── */}
       <section className="relative py-24 md:py-32" style={{ zIndex: 1 }}>
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -957,18 +957,18 @@ export default function HomePage() {
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
                 <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  Step 1 — The Audit
+                  Step 1 — The Assessment
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  We find what&rsquo;s actually broken.
+                  I find what&rsquo;s actually broken.
                   <br />
                   It&rsquo;s often not what you think.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Audit is a structured diagnostic of how your business actually operates. Where time goes. Where decisions bottleneck. What&rsquo;s repeatable but still lands on you. We go area by area, and most founders are surprised by what surfaces.
+                  The Assessment is a structured diagnostic of how your business actually operates. Where time goes. Where decisions bottleneck. What&rsquo;s repeatable but still lands on you. I go area by area, and most founders are surprised by what surfaces.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  You walk away with a gap map, a prioritized automation roadmap, and a clear recommendation built on your current reality. Not a generic playbook. A specific path forward for your business, based on what we found.
+                  You walk away with a gap map, a prioritized automation roadmap, and a clear recommendation built on your current reality. Not a generic playbook. A specific path forward for your business, based on what I found.
                 </p>
               </div>
             </FadeIn>
@@ -992,10 +992,10 @@ export default function HomePage() {
                   Not a generic plan.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Audit produces a deliverable. A gap map of where time is lost. A prioritized roadmap of what to fix first. A concrete ROI projection built from your actual numbers. And a clear recommendation for which path makes sense for your business.
+                  The Assessment produces a deliverable. A gap map of where time is lost. A prioritized roadmap of what to fix first. A concrete ROI projection built from your actual numbers. And a clear recommendation for which path makes sense for your business.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  Some founders need a Business AI OS for themselves first. Some need a governed AI environment for their whole team. Some need both, in sequence. We figure that out from the evidence. You decide whether to proceed. If the numbers don&rsquo;t show clear payback within 3 to 6 months, we won&rsquo;t recommend moving forward.
+                  Some founders need a Business AI OS for themselves first. Some need a governed AI environment for their whole team. Some need both, in sequence. I figure that out from the evidence. You decide whether to proceed. If the numbers don&rsquo;t show clear payback within 3 to 6 months, I won&rsquo;t recommend moving forward.
                 </p>
               </div>
             </FadeIn>
@@ -1006,7 +1006,7 @@ export default function HomePage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-[#F45B69]/50" />
                     <div className="w-2.5 h-2.5 rounded-full bg-[#F4B45B]/50" />
                     <div className="w-2.5 h-2.5 rounded-full bg-[#028090]/50" />
-                    <span className="ml-2 text-[0.7rem] text-white/25 font-mono">audit · recommendation</span>
+                    <span className="ml-2 text-[0.7rem] text-white/25 font-mono">assessment · recommendation</span>
                   </div>
                   <span className="text-[0.7rem] text-[#028090] font-mono">ready</span>
                 </div>
@@ -1078,15 +1078,15 @@ export default function HomePage() {
                   Step 3 — The Build
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  We build the system.
+                  I build the system.
                   <br />
                   You own it completely.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  We take the roadmap and build it. Not ChatGPT prompts stitched together. A real operating system configured to how your business actually works. Five layers: your business context, your data connected, specialized agents for your specific workflows, recurring tasks automated, and custom tools built on top.
+                  I take the roadmap and build it. Not ChatGPT prompts stitched together. A real operating system configured to how your business actually works. Five layers: your business context, your data connected, specialized agents for your specific workflows, recurring tasks automated, and custom tools built on top.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  Full transparency throughout. No black boxes. You see every decision, every automation, every agent. When we hand it off, you understand what&rsquo;s running and why. It runs your business. You stay in control.
+                  Full transparency throughout. No black boxes. You see every decision, every automation, every agent. When I hand it off, you understand what&rsquo;s running and why. It runs your business. You stay in control.
                 </p>
               </div>
             </FadeIn>
