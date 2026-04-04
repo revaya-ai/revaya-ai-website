@@ -79,13 +79,12 @@ const timeline = [
 ];
 
 const processSteps = [
-  { num: "01", title: "Assessment", body: "I map how your business actually operates today. Where time goes, where decisions bottleneck, what keeps landing on the founder, and what the broader business needs to run without constant intervention. You walk away with a gap map, a prioritized roadmap, and a clear recommendation built from what I found. $2,500. If the numbers don't show payback within 3 to 6 months, I won't recommend moving forward." },
-  { num: "02", title: "Scope", body: "I take the Assessment findings and define exactly what gets built and at what cost. No surprises. You approve the scope before a single line of work begins." },
-  { num: "03", title: "Choose Your Path", body: "Two ways to engage. Option A: a defined build fee plus a monthly retainer. Option B: a monthly subscription starting with your Exploration Month, full refund if you walk at 30 days. You choose after you see the roadmap." },
-  { num: "04", title: "Build", body: "I architect the system. The infrastructure is configured to how your business actually works, not a generic template dropped into your ops." },
-  { num: "05", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built, how every module works, and how to use it daily. Nothing is handed off without you understanding it." },
-  { num: "06", title: "Train + Support", body: "Three dedicated sessions across your first 30 days. Hands-on with your actual workflows. A 30-day check-in to review what's working, optimize what isn't, and map what to build next. Questions answered throughout. Adoption protected." },
-  { num: "07", title: "Ongoing Partnership", body: "The first 30 days is the foundation. After that, I stay involved as your transformation partner. Continuously optimizing what's running, building new modules as your business grows, and making sure the system evolves with you. This isn't a handoff. It's a long-term build." },
+  { num: "01", title: "Assessment", body: "I map how your business actually operates. Where time goes, where decisions bottleneck, what keeps landing on you. You walk away with a gap map, a prioritized roadmap, and a clear next step." },
+  { num: "02", title: "Roadmap", body: "I take the Assessment findings and map out the build. Starting with your biggest bottleneck, the three modules with the highest ROI, and the priority order for everything that follows." },
+  { num: "03", title: "Build", body: "I architect the system around how your business actually works. Not a generic template." },
+  { num: "04", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built and how to use it daily. Nothing is handed off without you understanding it." },
+  { num: "05", title: "Train + Support", body: "Three dedicated sessions across your first 30 days, hands-on with your actual workflows. A 30-day check-in to review what's working and map what to build next. Questions answered throughout." },
+  { num: "06", title: "Ongoing Partnership", body: "After the first 30 days, I stay involved, optimizing what's running and executing the roadmap. New modules, new automations, the system keeps expanding. This isn't a handoff. It's a long-term build." },
 ];
 
 // ─── FadeUp helper ──────────────────────────────────────────────────────────
