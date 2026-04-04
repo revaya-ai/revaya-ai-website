@@ -243,7 +243,7 @@ function ContextPanel() {
         <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 min-h-[44px] flex items-center">
           {phase >= 1 ? (
             <span className="text-[0.8rem] text-white/70">
-              <TypedText text="What's the pricing for enterprise clients?" speed={42} />
+              <TypedText text="What were the top 3 performing ads this week?" speed={42} />
             </span>
           ) : (
             <span className="text-[0.8rem] text-white/20">Ask anything...</span>
@@ -263,7 +263,11 @@ function ContextPanel() {
                 </span>
               </div>
               <p className="text-[0.8rem] text-white/75 leading-[1.6]">
-                The Assessment is $2,500 — deductible from your build, or it&apos;s Month 1 of your subscription. Option A: Build $6,500 + $1,500/mo. Option B: $2,500/mo — with a full refund if you walk after 30 days. You don&apos;t pay for results you haven&apos;t seen.
+                Based on your ad data this week:<br /><br />
+                1. &ldquo;Stop losing clients to bad onboarding&rdquo; — $340 spend · 4.2% CTR · 38 leads<br />
+                2. &ldquo;Your AI tools don&apos;t talk to each other&rdquo; — $290 spend · 3.8% CTR · 31 leads<br />
+                3. &ldquo;What 10 hours a week back looks like&rdquo; — $210 spend · 3.1% CTR · 26 leads<br /><br />
+                All three outperformed last week&apos;s average by 40%+. &ldquo;Bad onboarding&rdquo; is pulling the highest-intent traffic — recommend pausing the other two and scaling budget there.
               </p>
             </motion.div>
           )}
