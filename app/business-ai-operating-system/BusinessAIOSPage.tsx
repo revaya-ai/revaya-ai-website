@@ -2500,7 +2500,7 @@ export default function BusinessAIOSPage() {
                       Growth
                     </h3>
                     <p className="text-[1.0625rem] text-white leading-[1.7]">
-                      Active build credits every month. Pricing varies based on the number of workflow builds, plus monthly strategy sessions. For businesses ready to keep expanding the OS, layer by layer.
+                      Monthly module builds keep the system expanding. Pricing varies based on scope, plus monthly strategy sessions. For businesses ready to keep building the OS, module by module.
                     </p>
                   </div>
                 </div>
@@ -2545,7 +2545,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "Is a Business AI OS right for a small business?",
-                  answer: "It's built specifically for small businesses, not enterprise. If you have 1 to 15 people and you're the one keeping everything from falling apart, this is exactly the situation it was designed for. Enterprise companies have operations teams. You don't. That's the gap this fills.",
+                  answer: "It's built specifically for small businesses, not enterprise. If you have 1 to 15 people and you're the one keeping everything from falling apart, this is exactly the situation it was designed for.",
                 },
                 {
                   question: "What does a Business AI OS actually do day to day?",
@@ -2569,7 +2569,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "How long does this take?",
-                  answer: "The Assessment runs across one to two sessions and produces a specific deliverable within a week of completion. The scope is confirmed after the Assessment. I work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, it's best to have in-person sessions for Pro and Complete tier clients. Then I create a support plan based on your business and needs.",
+                  answer: "The Assessment runs across one to two sessions and produces a specific deliverable within a week of completion. The scope is confirmed after the Assessment. I work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, it's best to have in-person sessions. Then I create a support plan based on your business and needs.",
                 },
                 {
                   question: "Do I need to be technical?",
@@ -2581,7 +2581,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What happens if something breaks after Setup?",
-                  answer: "Ongoing support is built into every engagement. You're not handed a system and wished luck. Option A retainer ($1,500/mo) covers system monitoring, minor updates, and a quarterly review. Option B subscription ($2,500/mo) includes active monthly build credits plus strategy sessions. You'll know exactly what support looks like before we begin.",
+                  answer: "Ongoing support is built into every engagement. You're not handed a system and wished luck. Monthly module builds keep the system expanding, plus strategy sessions and system monitoring.",
                 },
                 {
                   question: "What do you actually need from me?",
