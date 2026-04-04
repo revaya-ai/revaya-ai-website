@@ -36,13 +36,6 @@ const layers = [
     what: "The repetitive, rules-based work handed off permanently. Not automated in the abstract. Actually gone from your plate.",
     produces: "The hour you used to spend on the thing you've always hated doing.",
   },
-  {
-    num: "05",
-    name: "Build",
-    problem: "Every new AI capability you want feels like starting over. New tool, new setup, new context to configure. Nothing connects to what you already have.",
-    what: "An expandable foundation. Each new agent, workflow, or integration gets added to the system you've already built. It inherits the context, the data, the standards. You think it, you build it.",
-    produces: "New capability without the setup tax. You add, you don't rebuild.",
-  },
 ];
 
 const included = [
