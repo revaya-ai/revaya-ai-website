@@ -987,15 +987,21 @@ export default function HomePage() {
                   Step 2 — The Recommendation
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  A specific path.
+                  Your biggest bottleneck, first.
                   <br />
-                  Not a generic plan.
+                  Everything else, in order.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Assessment produces a deliverable. A gap map of where time is lost. A prioritized roadmap of what to fix first. A concrete ROI projection built from your actual numbers. And a clear recommendation for which path makes sense for your business.
+                  The Assessment produces a deliverable. A gap map of where time is lost. A prioritized roadmap of what to fix first. A concrete ROI projection built from your actual numbers.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Then I tell you exactly which business function to start with, sales, marketing, ops, or finance, and which three things inside that function will move the most. That&rsquo;s where the build begins. Not a guess. The highest-impact work, sequenced from your actual numbers.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  From there, the roadmap runs. Each month, the system gets deeper. More of your recurring work handled. More hours back. The bottlenecks don&rsquo;t stop at one function, and neither does the build.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  Some founders need a Business AI OS for themselves first. Some need a governed AI environment for their whole team. Some need both, in sequence. I figure that out from the evidence. You decide whether to proceed. If the numbers don&rsquo;t show clear payback within 3 to 6 months, I won&rsquo;t recommend moving forward.
+                  If you don&rsquo;t see the system working within the first 30 days, you get your money back. No conditions.
                 </p>
               </div>
             </FadeIn>
