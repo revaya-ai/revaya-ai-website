@@ -1086,7 +1086,7 @@ export default function HomePage() {
                   You own it completely.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  I take the roadmap and build it. Not ChatGPT prompts stitched together. A real operating system configured to how your business actually works. Five layers: your business context, your data connected, specialized agents for your specific workflows, recurring tasks automated, and custom tools built on top.
+                  I take the roadmap and build it. Not ChatGPT prompts stitched together. A real operating system configured to how your business actually works. Four layers: your business context, your data connected, specialized agents for your specific workflows, and recurring tasks automated without you.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   Full transparency throughout. No black boxes. You see every decision, every automation, every agent. When I hand it off, you understand what&rsquo;s running and why. It runs your business. You stay in control.

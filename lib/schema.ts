@@ -5,7 +5,7 @@ export const organizationSchema = {
   url: "https://www.revaya.ai",
   logo: "https://www.revaya.ai/revaya-ai-logo.png",
   description:
-    "Revaya AI builds Business AI Operating Systems for founder-led businesses. Founder: Shannon Winnicki. The AIOS methodology covers five layers — Context, Data, Intelligence, Automate, Build — and delivers three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per headcount.",
+    "Revaya AI builds Business AI Operating Systems for founder-led businesses. Founder: Shannon Winnicki. The AIOS methodology covers four layers — Context, Data, Intelligence, Automate — and delivers three measurable outcomes: Task Automation %, Hours Recovered per Week, and Monthly ROI ($).",
   founder: {
     "@type": "Person",
     name: "Shannon Winnicki",
@@ -27,7 +27,7 @@ export const homeWebPageSchema = {
   "@type": "WebPage",
   name: "Business AI OS for Founder-Led Businesses — Revaya AI",
   description:
-    "Your business shouldn't run only when you do. I build Business AI Operating Systems for founder-led businesses — five layers, three measurable outcomes.",
+    "Your business shouldn't run only when you do. I build Business AI Operating Systems for founder-led businesses — four layers, three measurable outcomes.",
   url: "https://www.revaya.ai",
   isPartOf: {
     "@type": "WebSite",
@@ -38,7 +38,7 @@ export const homeWebPageSchema = {
     "@type": "Thing",
     name: "Business AI Operating System",
     description:
-      "A Business AI Operating System is a structured methodology for building the operational infrastructure of a service business using AI. It covers five layers — Context, Data, Intelligence, Automate, Build — and is designed to deliver three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per headcount.",
+      "A Business AI Operating System is a structured methodology for building the operational infrastructure of a service business using AI. It covers four layers — Context, Data, Intelligence, Automate — and is designed to deliver three measurable outcomes: Task Automation %, Hours Recovered per Week, and Monthly ROI ($).",
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
@@ -108,7 +108,7 @@ export const aiosSetupServiceSchema = {
   name: "Business AI Operating System Setup",
   alternateName: "AIOS Setup",
   description:
-    "Full Business AI OS installation for founder-led businesses. Covers five layers: Context (the system knows your business), Data (real numbers connected), Intelligence (what's happening surfaces automatically), Automate (recurring work runs without you), Build (freed capacity directed at growth). Delivers three measurable outcomes: away-from-desk autonomy, task automation percentage, and revenue per headcount.",
+    "Full Business AI OS installation for founder-led businesses. Covers four layers: Context (the system knows your business), Data (real numbers connected), Intelligence (what's happening surfaces automatically), Automate (recurring work runs without you). Each month, new modules expand the build. Delivers three measurable outcomes: Task Automation %, Hours Recovered per Week, and Monthly ROI ($).",
   provider: {
     "@type": "Person",
     name: "Shannon Winnicki",
@@ -294,7 +294,7 @@ export const shannonPersonSchema = {
     url: "https://www.revaya.ai",
   },
   description:
-    "Shannon Winnicki has 18 years of product leadership experience at Virgin Mobile, Boost Mobile, Ultra Mobile, Papa Murphy's, and Intermedia. She is the founder of Revaya AI and the creator of the five-layer Business AI OS methodology, which she built and validated on her own company before offering it as a service.",
+    "Shannon Winnicki has 18 years of product leadership experience at Virgin Mobile, Boost Mobile, Ultra Mobile, Papa Murphy's, and Intermedia. She is the founder of Revaya AI and the creator of the four-layer Business AI OS methodology, which she built and validated on her own company before offering it as a service.",
   knowsAbout: [
     "Business AI Operating Systems",
     "AI consulting for founder-led businesses",

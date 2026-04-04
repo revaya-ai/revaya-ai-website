@@ -19,7 +19,7 @@ faqs:
   - question: "How do I know if my AI subscriptions are actually saving me time?"
     answer: "Ask three questions for each subscription: Does this tool know anything about my business beyond what I typed in the last session? Am I the one connecting this tool to everything else? Has this subscription measurably shifted where my hours go? If most answers point to no, you have a collection, not a strategy."
   - question: "What is a Business AI Operating System and do I need one?"
-    answer: "A Business AI Operating System is an architecture built around how your business actually works. It has five layers: Context, Data, Intelligence, Automate, and Build. The Context layer is what most people skip. It captures what your business knows and makes it persistent across every AI interaction. Without it, every tool you add starts from scratch. You don't buy a Business AI OS. You design it."
+    answer: "A Business AI Operating System is an architecture built around how your business actually works. It has four layers: Context, Data, Intelligence, and Automate. The Context layer is what most people skip. It captures what your business knows and makes it persistent across every AI interaction. Without it, every tool you add starts from scratch. You don't buy a Business AI OS. You design it."
   - question: "How do small businesses build a connected AI workflow?"
     answer: "Start with context before you build any workflow. Document your business: who you serve, what you sell, how you communicate, what decisions you've already made. Get that captured and organized as your Context layer. Then every tool you connect has something to work from. Most founders skip this step and wonder why their automations keep breaking."
 ---
@@ -92,7 +92,7 @@ This is what a Business AI Operating System does that subscriptions can't. It's 
 
 The question founders ask me most often is: "How do I know if my AI subscriptions are actually saving me time?" The honest answer is: if you have to ask, they probably aren't. Not in a meaningful way.
 
-A Business AI Operating System changes that. It's built on five layers: Context, Data, Intelligence, Automate, and Build. The first layer is the one most people skip entirely. Context is where the system learns your business. Everything else depends on it.
+A Business AI Operating System changes that. It's built on four layers: Context, Data, Intelligence, and Automate. The first layer is the one most people skip entirely. Context is where the system learns your business. Everything else depends on it.
 
 Without context, automation is just speed applied to chaos. You get faster outputs that still don't fit. You get more content that still doesn't sound like you. You get workflows that still break when reality doesn't match the template.
 

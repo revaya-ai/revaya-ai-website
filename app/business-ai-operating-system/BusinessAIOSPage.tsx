@@ -2324,7 +2324,7 @@ export default function BusinessAIOSPage() {
                       Agentic Business OS
                     </h3>
                     <p className="text-[1.0rem] text-white/70 leading-[1.7]">
-                      A full operating system built around how your business works. Five layers. Configured to your workflows, your data, your decisions. It runs when you don&apos;t.
+                      A full operating system built around how your business works. Four layers. Configured to your workflows, your data, your decisions. It runs when you don&apos;t.
                     </p>
                   </div>
                   <ul className="space-y-3 mb-8 flex-1">
@@ -2370,7 +2370,7 @@ export default function BusinessAIOSPage() {
                 Agentic Business Operating System
               </p>
               <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white">
-                Five layers. One system that runs your business.
+                Four layers. One system that runs your business.
               </h2>
             </FadeUp>
             <FadeUp delay={0.1}>
@@ -2598,7 +2598,7 @@ export default function BusinessAIOSPage() {
               <FaqAccordion columns={2} items={[
                 {
                   question: "What is a Business AI Operating System?",
-                  answer: "Most AI tools solve one problem. A Business AI Operating System connects your entire operation, so the business runs on information and systems instead of your constant attention. It has five layers: Context (what the business knows), Data (what the business tracks), Intelligence (how decisions get made), Automate (what happens without you), and Build (the custom tools that make it yours). The goal is simple. You stop being the business. You start owning one.",
+                  answer: "Most AI tools solve one problem. A Business AI Operating System connects your entire operation, so the business runs on information and systems instead of your constant attention. It has four layers: Context (what the business knows), Data (what the business tracks), Intelligence (how decisions get made), and Automate (what happens without you). Each month, the build expands, new modules, new automations, more of your business running without you. The goal is simple. You stop being the business. You start owning one.",
                 },
                 {
                   question: "Is a Business AI OS right for a small business?",

@@ -133,7 +133,7 @@ const faqItems = [
   },
   {
     q: "What is a Business AI Operating System?",
-    a: "A Business AI Operating System is a five-layer architecture built specifically around your business. The five layers are Context (everything the AI needs to know about your business), Data (your live business data), Intelligence (AI that understands your goals and current bottleneck), Automate (workflows that run without you watching), and Build (custom systems that compound over time). The result is a business that can run without you in the room, with a full audit trail of every decision.",
+    a: "A Business AI Operating System is a four-layer architecture built specifically around your business. The four layers are Context (everything the AI needs to know about your business), Data (your live business data), Intelligence (AI that understands your goals and current bottleneck), and Automate (workflows that run without you watching). Each month, the build expands with new modules. The result is a business that can run without you in the room, with a full audit trail of every decision.",
   },
   {
     q: "Who should use OpenClaw vs. a Business AI Operating System?",
@@ -725,8 +725,8 @@ export default function ComparisonPage() {
         <div className="split-image-right" style={{ flex: 1, position: "relative", overflow: "hidden" }}>
           <Image
             src="/comparison/aios-layers.png"
-            alt="Business AI Operating System five-layer architecture: Context, Data, Intelligence, Automate, Build"
-            title="Business AI Operating System five-layer architecture for founder-led service businesses"
+            alt="Business AI Operating System four-layer architecture: Context, Data, Intelligence, Automate"
+            title="Business AI Operating System four-layer architecture for founder-led service businesses"
             fill
             style={{ objectFit: "cover", objectPosition: "center right", transform: "translateX(8%)" }}
             sizes="50vw"

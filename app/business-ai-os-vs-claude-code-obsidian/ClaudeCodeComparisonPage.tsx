@@ -970,7 +970,7 @@ export default function ClaudeCodeComparisonPage() {
                 color: "rgba(255,255,255,0.80)",
               }}
             >
-              The DIY Claude Code tutorials are teaching the same five layers, one
+              The DIY Claude Code tutorials are teaching the same four layers, one
               video at a time, built by the founder, maintained by the founder. There is a
               faster path.
             </p>
@@ -1021,8 +1021,8 @@ export default function ClaudeCodeComparisonPage() {
         >
           <Image
             src="/images/claude-code-comparison/section4-aios.png"
-            alt="Business AI Operating System — five layers: Context, Data, Intelligence, Automate, Build"
-            title="The five-layer Business AI Operating System architecture"
+            alt="Business AI Operating System — four layers: Context, Data, Intelligence, Automate"
+            title="The four-layer Business AI Operating System architecture"
             fill
             loading="lazy"
             decoding="async"

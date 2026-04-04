@@ -10,24 +10,25 @@ Shannon Winnicki — 18 years of product leadership at Virgin Mobile, Boost Mobi
 Revaya AI builds Business AI Operating Systems (AIOS) for founder-led businesses with 1–15 people where the work requires expertise, judgment, or relationships — and the founder is the one everything waits on. Service businesses, agencies, consultancies, professional practices, and founder-led product brands with DTC or retail operations. The AIOS is a structured engagement that installs the operational infrastructure to let the business run on systems instead of the founder running on fumes.
 
 ## The Business AI OS
-A Business AI Operating System is a complete operational infrastructure built on five layers:
+A Business AI Operating System is a complete operational infrastructure built on four layers:
 
 1. **Context** — The system learns your business: your terminology, clients, priorities, and decision-making style.
 2. **Data** — Your business data connects. Numbers surface automatically instead of being pulled manually from four platforms.
 3. **Intelligence** — What's happening in your business becomes visible without you asking. The system flags what needs your attention.
 4. **Automate** — Recurring work runs without you scheduling it. Intake, onboarding, follow-up, reporting.
-5. **Build** — Freed capacity goes to growth. Custom tools built for what your business needs that don't exist off the shelf.
+
+Each month, the build expands with new modules.
 
 ## Three Measurable Outcomes
-- Away-from-desk autonomy: Can you disconnect without things falling apart?
-- Task automation percentage: What share of recurring operational work runs without you?
-- Revenue per headcount: Is the business getting more valuable per person as it scales?
+- Task Automation %: What share of recurring operational work runs without you?
+- Hours Recovered per Week: Time back in your life, measured weekly.
+- Monthly ROI ($): Dollar value of automated work at your hourly rate, updated every month.
 
 ## Services
 - **AI Training** — Customized training built around your team's actual tools and workflows.
-- **AIOS Audit** — Operational mapping that produces a gap map, AI readiness score, opportunity matrix, and 90-day roadmap. Fee is deductible against the Setup.
-- **AIOS Setup** — Full five-layer Business AI OS installation for founder-led businesses.
-- **Ongoing Support** — Maintenance and Growth retainers post-Setup.
+- **AIOS Assessment** — Operational mapping that produces a gap map, AI readiness score, opportunity matrix, and 90-day roadmap. Fee is deductible against the build.
+- **AIOS Build** — Full four-layer Business AI OS installation for founder-led businesses.
+- **Ongoing Support** — Option A retainer ($1,500/mo) or Option B subscription ($2,500/mo) post-build.
 
 ## Shannon Built This For Herself First
 Revaya AI runs on the same Business AI OS that Shannon builds for clients. The web delivery pipeline that built this site, the content engine, the client intake system — all of it runs on the methodology. No competitor can say that.

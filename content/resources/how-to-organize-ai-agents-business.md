@@ -60,9 +60,9 @@ Everyone already knows corporate structure is broken. Silos. Handoff gaps. Depar
 
 A Business AI Operating System is a structured set of AI agents, workflows, and knowledge systems that run recurring business operations without the founder being the bottleneck. It replaces scattered AI tools with a unified system organized around how the business actually makes money.
 
-I think of it in five layers. The first is Context: persistent knowledge about your business, your clients, your processes, your decisions. Without this layer, every AI interaction starts from zero. You re-explain your business every time. That context amnesia is the thing most founders experience as "AI doesn't work for me." It works fine. It just doesn't know you.
+I think of it in four layers. The first is Context: persistent knowledge about your business, your clients, your processes, your decisions. Without this layer, every AI interaction starts from zero. You re-explain your business every time. That context amnesia is the thing most founders experience as "AI doesn't work for me." It works fine. It just doesn't know you.
 
-After Context comes Data (your actual business data, connected and queryable), Intelligence (agents that reason and surface patterns), Automate (recurring workflows running without you), and Build (new capabilities as the business evolves).
+After Context comes Data (your actual business data, connected and queryable), Intelligence (agents that reason and surface patterns), and Automate (recurring workflows running without you). Each month, the build expands with new modules as the business grows.
 
 Most founders are stuck at layer zero. They have tools but no context layer. No persistent knowledge. No organizational structure. Building an AI agent team for small business isn't about picking the right tools. It's about building the structure those tools plug into.
 
