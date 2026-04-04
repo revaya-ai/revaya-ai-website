@@ -62,7 +62,7 @@ const timeline = [
   {
     month: "Month 6",
     label: "Running without you",
-    body: "Operational decisions are being made without your input. New workflows are running on autopilot. If you're on Option B subscription, active monthly build credits are expanding the system. You're working on the business more than in it. That's the shift.",
+    body: "Operational decisions are being made without your input. New workflows are running on autopilot. You're working on the business more than in it. That's the shift.",
   },
   {
     month: "Month 12",
@@ -2504,9 +2504,6 @@ export default function BusinessAIOSPage() {
                     </p>
                   </div>
                 </div>
-                <p className="text-[1.0625rem] text-white leading-[1.7]">
-                  The retainer conversation happens at your 30-day check-in, once you&apos;ve used the system and know what you want next.
-                </p>
               </FadeUp>
             </div>
           </div>
