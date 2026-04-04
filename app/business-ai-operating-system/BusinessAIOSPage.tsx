@@ -2325,14 +2325,28 @@ export default function BusinessAIOSPage() {
               </FadeUp>
 
             </div>
-            <FadeUp delay={0.2} className="mt-10 text-center">
-              <p className="text-[0.9375rem] text-white/40 mb-5">Ready to start? The Assessment is the first step.</p>
-              <Link
-                href="/work-with-me"
-                className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
-              >
-                Book a Discovery Call &rarr;
-              </Link>
+            <FadeUp delay={0.2} className="mt-12 pt-10 border-t border-white/[0.08]">
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <Link
+                  href="/business-ai-os-assessment"
+                  className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
+                >
+                  Take the Assessment &rarr;
+                </Link>
+                <div className="flex flex-col justify-center sm:pt-3">
+                  <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
+                    Want the full methodology?
+                  </p>
+                  <a
+                    href="/business-ai-os-blueprint.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[1rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
+                  >
+                    Download the Blueprint →
+                  </a>
+                </div>
+              </div>
             </FadeUp>
           </div>
         </section>
@@ -2350,51 +2364,6 @@ export default function BusinessAIOSPage() {
             </FadeUp>
             <FadeUp delay={0.1}>
               <LayersTabs />
-            </FadeUp>
-          </div>
-        </section>
-
-        {/* WHAT'S INCLUDED */}
-        <section className="pt-10 pb-16 md:pb-20">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-10">
-            <FadeUp>
-              <div className="max-w-[760px]">
-                <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  What&apos;s Included
-                </p>
-                <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-10">
-                  Every AIOS Setup includes:
-                </h2>
-                <ul className="space-y-4">
-                  {included.map((item, i) => (
-                    <li key={i} className="flex gap-4">
-                      <span className="text-[#028090] mt-[3px] shrink-0">→</span>
-                      <span className="text-[1.0625rem] text-white leading-[1.7]">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-12 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-start gap-6">
-                  <Link
-                    href="/business-ai-os-assessment"
-                    className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
-                  >
-                    Take the Assessment &rarr;
-                  </Link>
-                  <div className="flex flex-col justify-center sm:pt-3">
-                    <p className="text-[0.875rem] text-white/50 leading-[1.6] mb-1">
-                      Want the full methodology?
-                    </p>
-                    <a
-                      href="/business-ai-os-blueprint.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[1rem] font-medium text-[#028090] hover:text-[#E4FDE1] transition-colors duration-200"
-                    >
-                      Download the Blueprint →
-                    </a>
-                  </div>
-                </div>
-              </div>
             </FadeUp>
           </div>
         </section>
