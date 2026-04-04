@@ -2330,7 +2330,7 @@ export default function BusinessAIOSPage() {
 
             </div>
             <FadeUp delay={0.2} className="mt-12 pt-10 border-t border-white/[0.08]">
-              <div className="flex flex-col sm:flex-row items-start gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link
                   href="/business-ai-os-assessment"
                   className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 shrink-0"
@@ -2440,7 +2440,7 @@ export default function BusinessAIOSPage() {
                   Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex — they&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
-                  Three KPIs tracked in every engagement: Task Automation %, Hours Recovered per Week, Monthly ROI ($). You see exactly what&apos;s moving.
+                  Every repeatable task that gets handled is time that comes back to you. That&apos;s the only metric that matters.
                 </p>
               </FadeUp>
             </div>
@@ -2450,12 +2450,10 @@ export default function BusinessAIOSPage() {
               <FadeUp direction="right">
                 <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">Your Control Center</span>
                 <h3 className="font-display font-black text-[1.75rem] md:text-[2.25rem] leading-[1.05] text-white mb-6">
-                  The system runs in the background.
-                  <br />
-                  You check in when you want to.
+                  Your business, running from one place.
                 </h3>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Ask what happened overnight. Review what the system queued up. Approve or redirect. The system knows your business well enough to push back. Sparring partner. Strategy partner. Both.
+                  This is where you run your business every day. Ask what&apos;s happening, review what the system queued up, redirect priorities, get a briefing before a client call. The system knows your business well enough to push back.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   You stay in control. You just stop being in every loop.
