@@ -2260,80 +2260,39 @@ export default function BusinessAIOSPage() {
           </div>
         </section>
 
-        {/* TWO PATHS */}
+        {/* WHAT YOU GET */}
         <section className="py-24 md:py-32">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <FadeUp className="mb-16 text-center max-w-[900px] mx-auto">
               <p className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                Two Paths
+                What You Get
               </p>
               <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                Every transformation starts with the Assessment.
-                <br />
-                Where it goes depends on your business.
+                The system. And everything you need to use it.
               </h2>
-              <p className="text-[1.0625rem] text-white leading-[1.7]">
-                The Assessment tells us both which path makes sense. Some businesses are ready for the full Agentic OS. Some want to start with a governed AI environment for their team first. I figure that out from the evidence, not a guess.
-              </p>
             </FadeUp>
             <div className="grid md:grid-cols-2 gap-8">
 
-              {/* Starter Path */}
+              {/* The System */}
               <FadeUp direction="right">
-                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 h-full flex flex-col">
+                <div className="rounded-2xl border border-[#028090]/30 bg-[#028090]/[0.05] p-8 md:p-10 h-full flex flex-col">
                   <div className="mb-8">
-                    <p className="text-[0.75rem] uppercase tracking-[0.16em] text-white/40 font-medium mb-3">Starter Path</p>
-                    <h3 className="font-display font-black text-[1.625rem] text-white leading-[1.1] mb-4">
-                      Claude Co-Work
-                    </h3>
-                    <p className="text-[1.0rem] text-white/60 leading-[1.7]">
-                      A governed AI environment your whole team can use from day one. Not a blank tool to figure out yourself.
-                    </p>
-                  </div>
-                  <ul className="space-y-3 mb-8 flex-1">
-                    {[
-                      "Education and onboarding so your team actually uses it",
-                      "Done-for-you setup, or guided DIY if you prefer",
-                      "Skills library built around your workflows",
-                      "Ongoing support as you get going",
-                      "No API keys, no technical overhead",
-                    ].map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="text-[#028090] shrink-0 mt-[2px]">→</span>
-                        <span className="text-[0.9375rem] text-white/70 leading-[1.6]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="pt-6 border-t border-white/[0.06]">
-                    <p className="text-[0.8125rem] text-white/35 leading-[1.6]">
-                      Good fit if your team needs AI now and you want a safe, governed starting point before committing to a full OS build.
-                    </p>
-                  </div>
-                </div>
-              </FadeUp>
-
-              {/* All-In Path */}
-              <FadeUp direction="left" delay={0.1}>
-                <div className="rounded-2xl border border-[#028090]/30 bg-[#028090]/[0.05] p-8 md:p-10 h-full flex flex-col relative overflow-hidden">
-                  <div className="absolute top-0 right-0 px-4 py-2 bg-[#028090]/20 border-b border-l border-[#028090]/30 rounded-bl-xl">
-                    <span className="text-[0.65rem] uppercase tracking-[0.16em] text-[#028090] font-medium">Recommended</span>
-                  </div>
-                  <div className="mb-8">
-                    <p className="text-[0.75rem] uppercase tracking-[0.16em] text-[#028090]/70 font-medium mb-3">All-In Path</p>
+                    <p className="text-[0.75rem] uppercase tracking-[0.16em] text-[#028090]/70 font-medium mb-3">The System</p>
                     <h3 className="font-display font-black text-[1.625rem] text-white leading-[1.1] mb-4">
                       Agentic Business OS
                     </h3>
                     <p className="text-[1.0rem] text-white/70 leading-[1.7]">
-                      A full operating system built around how your business works. Four layers. Configured to your workflows, your data, your decisions. It runs when you don&apos;t.
+                      A full operating system built around how your business works. Four layers. Configured to your workflows, your data, your decisions.
                     </p>
                   </div>
-                  <ul className="space-y-3 mb-8 flex-1">
+                  <ul className="space-y-3 flex-1">
                     {[
-                      "Module build scoped to your business (Core, Pro, or Complete)",
+                      "Module build scoped to your business",
                       "Agents trained on your actual context and data",
+                      "Automated workflows running without you",
                       "Recurring tasks permanently removed from your plate",
-                      "Full transparency — every decision visible and auditable",
-                      "Time back to spend it how you want.",
+                      "Full transparency, every decision visible and auditable",
+                      "Time back to spend it how you want",
                     ].map((item) => (
                       <li key={item} className="flex gap-3">
                         <span className="text-[#028090] shrink-0 mt-[2px]">→</span>
@@ -2341,17 +2300,41 @@ export default function BusinessAIOSPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-6 border-t border-[#028090]/20">
-                    <p className="text-[0.8125rem] text-[#028090]/60 leading-[1.6]">
-                      The right path if you&apos;re the bottleneck and you want a system that removes you from the day-to-day permanently, not just partially.
+                </div>
+              </FadeUp>
+
+              {/* Included in Every Build */}
+              <FadeUp direction="left" delay={0.1}>
+                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 h-full flex flex-col">
+                  <div className="mb-8">
+                    <p className="text-[0.75rem] uppercase tracking-[0.16em] text-white/40 font-medium mb-3">Included in Every Build</p>
+                    <h3 className="font-display font-black text-[1.625rem] text-white leading-[1.1] mb-4">
+                      Every AIOS build includes
+                    </h3>
+                    <p className="text-[1.0rem] text-white/60 leading-[1.7]">
+                      The build is only part of it. Every engagement includes the training and support to make sure the system actually runs.
                     </p>
                   </div>
+                  <ul className="space-y-3 flex-1">
+                    {[
+                      "Master Training Guide, how the system was built, how every module works, how to use it daily",
+                      "Session 1: How It Was Built. Architecture walkthrough, what lives where and why.",
+                      "Session 2: How to Use It Daily. Hands-on with your actual workflows.",
+                      "30 days of launch support",
+                      "Session 3: 30-Day Check-In. What's working, what to optimize, what's next on the build map.",
+                    ].map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="text-[#028090] shrink-0 mt-[2px]">→</span>
+                        <span className="text-[0.9375rem] text-white/70 leading-[1.6]">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </FadeUp>
 
             </div>
             <FadeUp delay={0.2} className="mt-10 text-center">
-              <p className="text-[0.9375rem] text-white/40 mb-5">Not sure which path fits? The Discovery Call answers that.</p>
+              <p className="text-[0.9375rem] text-white/40 mb-5">Ready to start? The Assessment is the first step.</p>
               <Link
                 href="/work-with-me"
                 className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
