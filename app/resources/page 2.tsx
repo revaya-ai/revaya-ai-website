@@ -1,0 +1,347 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { FadeIn } from "@/components/FadeIn";
+import CategoryPill from "@/components/resources/CategoryPill";
+import JsonLd from "@/components/JsonLd";
+import { getAllResources, getFeaturedResource } from "@/lib/resources";
+import type { ResourceFrontmatter } from "@/lib/resources";
+
+export const metadata: Metadata = {
+  title: "Resource Center",
+  description:
+    "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+  openGraph: {
+    title: "Resource Center | Revaya AI",
+    description:
+      "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+    type: "website",
+    url: "https://revaya.ai/resources",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resource Center | Revaya AI",
+    description:
+      "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+  },
+};
+
+/* ─── Solid color palette for cards without images ─── */
+const solidColors = [
+  { bg: "bg-[#0A2028]", accent: "border-[#15393F]" }, // teal-dark
+  { bg: "bg-[#1A1020]", accent: "border-[#2E1F2E]" }, // purple-dark
+  { bg: "bg-[#0C1A24]", accent: "border-[#1A2E3A]" }, // navy
+  { bg: "bg-[#1A0F14]", accent: "border-[#30171F]" }, // warm-dark
+];
+
+/* ─── Shape definitions for the collage grid ─── */
+interface CardShape {
+  colSpan: string;
+  rowSpan: string;
+  radius: string;
+  minH: string;
+  titleSize: string;
+  showSubtitle: boolean;
+  padding: string;
+}
+
+const shapes: CardShape[] = [
+  // 0: Hero — large, extra-rounded
+  {
+    colSpan: "md:col-span-2",
+    rowSpan: "md:row-span-2",
+    radius: "rounded-[2rem]",
+    minH: "min-h-[460px] md:min-h-[500px]",
+    titleSize: "text-[1.5rem] md:text-[2.1rem] leading-[1.08]",
+    showSubtitle: true,
+    padding: "p-6 md:p-8",
+  },
+  // 1: Tall pill — narrow, very rounded
+  {
+    colSpan: "md:col-span-1",
+    rowSpan: "md:row-span-2",
+    radius: "rounded-[2.5rem]",
+    minH: "min-h-[460px] md:min-h-[500px]",
+    titleSize: "text-[1.2rem] md:text-[1.4rem] leading-[1.12]",
+    showSubtitle: true,
+    padding: "p-6 md:p-7",
+  },
+  // 2: Wide bar — short and wide, standard rounded
+  {
+    colSpan: "md:col-span-2",
+    rowSpan: "md:row-span-1",
+    radius: "rounded-2xl",
+    minH: "min-h-[220px]",
+    titleSize: "text-[1.15rem] md:text-[1.35rem] leading-[1.12]",
+    showSubtitle: false,
+    padding: "p-5 md:p-7",
+  },
+  // 3: Square — compact, extra-rounded
+  {
+    colSpan: "md:col-span-1",
+    rowSpan: "md:row-span-1",
+    radius: "rounded-[2rem]",
+    minH: "min-h-[220px]",
+    titleSize: "text-[1.05rem] md:text-[1.2rem] leading-[1.12]",
+    showSubtitle: false,
+    padding: "p-5 md:p-6",
+  },
+  // 4: Standard card — mid rounded
+  {
+    colSpan: "md:col-span-1",
+    rowSpan: "md:row-span-1",
+    radius: "rounded-3xl",
+    minH: "min-h-[240px]",
+    titleSize: "text-[1.1rem] md:text-[1.25rem] leading-[1.12]",
+    showSubtitle: false,
+    padding: "p-5 md:p-6",
+  },
+];
+
+/*
+ * Image rule: every 3rd card (index 0, 3, 6...) gets the image slot.
+ * The rest are solid-color cards. This creates a rhythm:
+ * image → solid → solid → image → solid → solid
+ */
+function shouldShowImage(globalIndex: number): boolean {
+  return globalIndex % 3 === 0;
+}
+
+function CollageCardV2({
+  frontmatter,
+  shape,
+  globalIndex,
+}: {
+  frontmatter: ResourceFrontmatter;
+  shape: CardShape;
+  globalIndex: number;
+}) {
+  const formattedDate = new Date(frontmatter.date).toLocaleDateString(
+    "en-US",
+    { month: "short", day: "numeric", year: "numeric" }
+  );
+
+  const hasImage = frontmatter.image && shouldShowImage(globalIndex);
+  const solid = solidColors[globalIndex % solidColors.length];
+
+  return (
+    <Link
+      href={`/resources/${frontmatter.slug}`}
+      className={`group block relative overflow-hidden h-full ${shape.radius} ${shape.minH}`}
+    >
+      {/* Background */}
+      <div className={`absolute inset-0 ${hasImage ? "bg-[#111820]" : solid.bg}`}>
+        {hasImage && frontmatter.image && (
+          <Image
+            src={frontmatter.image}
+            alt={frontmatter.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+        )}
+        {/* Gradient overlay — heavier on image cards, subtle on solid */}
+        <div
+          className={`absolute inset-0 ${
+            hasImage
+              ? "bg-gradient-to-t from-[#080D11] via-[#080D11]/60 to-transparent"
+              : "bg-gradient-to-t from-[#080D11]/30 to-transparent"
+          }`}
+        />
+      </div>
+
+      {/* Decorative border — visible on solid cards */}
+      {!hasImage && (
+        <div className={`absolute inset-0 ${shape.radius} border ${solid.accent}`} />
+      )}
+
+      {/* Content */}
+      <div className={`relative h-full flex flex-col justify-end ${shape.padding}`}>
+        <div className="flex items-center gap-3 mb-2.5">
+          <CategoryPill category={frontmatter.category} size="sm" />
+          <span className="text-[#6B7A8D] text-[0.72rem]">
+            {formattedDate}
+          </span>
+        </div>
+
+        <h2
+          className={`font-display font-bold text-white ${shape.titleSize} mb-1.5`}
+        >
+          {frontmatter.title}
+        </h2>
+
+        {shape.showSubtitle && (
+          <p className="text-[#8899AA] text-[0.85rem] leading-relaxed line-clamp-2 mb-2.5">
+            {frontmatter.subtitle}
+          </p>
+        )}
+
+        <div className="flex items-center justify-between mt-auto pt-1">
+          <span className="text-[#6B7A8D] text-[0.78rem]">
+            {frontmatter.read_time}
+          </span>
+          <span className="w-7 h-7 rounded-full border border-[#2A3544] flex items-center justify-center group-hover:border-[#028090] group-hover:bg-[#0D2428] transition-all duration-300">
+            <svg
+              className="w-3 h-3 text-[#6B7A8D] group-hover:text-[#028090] transition-colors duration-300 -rotate-45"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+export default function ResourcesPage() {
+  const allResources = getAllResources();
+  const featured = getFeaturedResource();
+  const others = featured
+    ? allResources.filter(
+        (r) => r.frontmatter.slug !== featured.frontmatter.slug
+      )
+    : allResources.slice(1);
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://revaya.ai",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Resources",
+        item: "https://revaya.ai/resources",
+      },
+    ],
+  };
+
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Resource Center",
+    description:
+      "Guides, frameworks, and case studies on building a Business AI Operating System for founder-led businesses.",
+    url: "https://revaya.ai/resources",
+    publisher: {
+      "@type": "Organization",
+      name: "Revaya AI",
+      url: "https://revaya.ai",
+    },
+  };
+
+  // Shape assignment: hero gets shape 0, then cycle through 1-4
+  const otherShapes = [1, 2, 3, 4];
+
+  return (
+    <>
+      <JsonLd data={breadcrumbLd} />
+      <JsonLd data={collectionLd} />
+
+      {/* Hero */}
+      <section className="relative pt-32 pb-10 md:pt-44 md:pb-12 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] bg-[#028090]/[0.04] rounded-full blur-[140px]" />
+          <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-[#553555]/[0.05] rounded-full blur-[120px]" />
+        </div>
+
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10">
+          <FadeIn>
+            <h1 className="font-display font-black text-[2.5rem] md:text-[4rem] leading-[1.05] text-white mb-2">
+              Resource Center
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="text-[#8899AA] text-[1.1rem] md:text-[1.2rem] max-w-[500px]">
+              Frameworks, guides, and lessons from building Business AI
+              Operating Systems.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Collage Grid — V2: unique shapes, tight gaps, image/solid rhythm */}
+      <section className="max-w-[1100px] mx-auto px-6 md:px-10 pb-24 md:pb-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[230px] gap-x-2.5 gap-y-10 md:gap-x-3 md:gap-y-10">
+          {/* Featured — hero shape */}
+          {featured && (
+            <FadeIn className={`${shapes[0].colSpan} ${shapes[0].rowSpan}`}>
+              <CollageCardV2
+                frontmatter={featured.frontmatter}
+                shape={shapes[0]}
+                globalIndex={0}
+              />
+            </FadeIn>
+          )}
+
+          {/* Remaining — cycle through shapes 1-4 */}
+          {others.map((resource, i) => {
+            const shapeIndex = otherShapes[i % otherShapes.length];
+            const shape = shapes[shapeIndex];
+            return (
+              <FadeIn
+                key={resource.frontmatter.slug}
+                delay={(i + 1) * 0.05}
+                className={`${shape.colSpan} ${shape.rowSpan}`}
+              >
+                <CollageCardV2
+                  frontmatter={resource.frontmatter}
+                  shape={shape}
+                  globalIndex={i + 1}
+                />
+              </FadeIn>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="pb-24 md:pb-32">
+        <div className="bg-gradient-to-b from-[#028090]/[0.06] to-transparent py-20 md:py-24">
+          <FadeIn>
+            <div className="max-w-[600px] mx-auto px-6 md:px-10 text-center">
+              <h2 className="font-display font-bold text-[1.5rem] md:text-[2rem] text-white mb-4">
+                Ready to build your Business AI OS?
+              </h2>
+              <p className="text-[#8899AA] text-[1rem] mb-8">
+                Start with a $2,500 AIOS Audit. Two weeks. Full diagnostic.
+                Deductible if you move into a full setup.
+              </p>
+              <Link
+                href="/work-with-me"
+                className="inline-flex items-center gap-2 font-display text-[0.95rem] font-bold px-7 py-3 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
+              >
+                Start the Conversation
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </>
+  );
+}

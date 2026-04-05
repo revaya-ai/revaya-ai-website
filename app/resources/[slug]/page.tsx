@@ -274,6 +274,44 @@ export default async function ArticlePage({ params }: PageProps) {
         </FadeIn>
       </section>
 
+      {/* Sources */}
+      {frontmatter.sources && frontmatter.sources.length > 0 && (
+        <section className="pb-12 md:pb-16">
+          <FadeIn>
+            <div className="max-w-[936px] mx-auto px-6 md:px-10">
+              <div className="rounded-xl border border-[#1E2A38] bg-[#0C1219] p-6 md:p-8">
+                <p className="font-display font-bold text-[0.75rem] text-[#556677] tracking-wide uppercase mb-4">
+                  Sources
+                </p>
+                <ol className="space-y-2">
+                  {frontmatter.sources.map((source, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="text-[#3D4E5F] text-[0.8rem] font-display font-bold mt-0.5 shrink-0">
+                        {i + 1}.
+                      </span>
+                      {source.url ? (
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#028090] text-[0.875rem] leading-relaxed hover:text-[#02a0b0] transition-colors"
+                        >
+                          {source.label}
+                        </a>
+                      ) : (
+                        <span className="text-white/40 text-[0.875rem] leading-relaxed">
+                          {source.label}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </FadeIn>
+        </section>
+      )}
+
       {/* Author Card */}
       {author && (
         <section className="pb-16 md:pb-20">

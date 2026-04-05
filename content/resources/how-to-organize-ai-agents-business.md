@@ -11,6 +11,12 @@ featured: false
 cta_variant: "assessment"
 related_slugs: ["ai-tools-vs-system-small-business", "business-ai-os-vs-claude-code-obsidian"]
 published: true
+sources:
+  - label: "Lencioni, P. — Silos, Politics and Turf Wars (Jossey-Bass, 2006)"
+  - label: "Deloitte Insights — The Spatial Organization: How teams become the building blocks of the enterprise (2016)"
+    url: "https://www2.deloitte.com/insights/us/en/focus/human-capital-trends/2016/organizational-models-network-of-teams.html"
+  - label: "McKinsey & Company — How to make agile work for the C-suite (2018)"
+    url: "https://www.mckinsey.com/business-functions/people-and-organizational-performance/our-insights/how-to-make-agile-work-for-the-c-suite"
 faqs:
   - question: "How should I organize AI agents for my business?"
     answer: "Organize AI agents around your customer lifecycle, not around corporate departments. A customer lifecycle model like ACRA (Attract, Convert, Retain and Deliver, Ascend) ensures every agent maps to revenue and nothing falls through the cracks between departments."

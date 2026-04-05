@@ -19,9 +19,6 @@ export interface ResourceFrontmatter {
   featured?: boolean;
   cta_variant?: "default" | "assessment" | "discovery" | "newsletter";
   related_slugs?: string[];
-  external_url?: string;
-  faqs?: { question: string; answer: string }[];
-  sources?: { label: string; url?: string }[];
   published: boolean;
 }
 
@@ -48,13 +45,8 @@ export function getAllResources(): ResourceSummary[] {
     .map((filename) => {
       const filePath = path.join(resourcesDirectory, filename);
       const fileContents = fs.readFileSync(filePath, "utf8");
-      const { data, content } = matter(fileContents);
-      const frontmatter = data as ResourceFrontmatter;
-      if (!frontmatter.read_time) {
-        const words = content.trim().split(/\s+/).length;
-        frontmatter.read_time = `${Math.ceil(words / 200)} min read`;
-      }
-      return { frontmatter };
+      const { data } = matter(fileContents);
+      return { frontmatter: data as ResourceFrontmatter };
     })
     .filter((r) => r.frontmatter.published)
     .sort(
@@ -80,10 +72,6 @@ export function getResourceBySlug(slug: string): Resource | null {
     const frontmatter = data as ResourceFrontmatter;
     if (frontmatter.slug === slug && frontmatter.published) {
       const processedContent = remark().use(html).processSync(content);
-      if (!frontmatter.read_time) {
-        const words = content.trim().split(/\s+/).length;
-        frontmatter.read_time = `${Math.ceil(words / 200)} min read`;
-      }
       return {
         frontmatter,
         content,
@@ -95,9 +83,7 @@ export function getResourceBySlug(slug: string): Resource | null {
 }
 
 export function getAllSlugs(): string[] {
-  return getAllResources()
-    .filter((r) => !r.frontmatter.external_url)
-    .map((r) => r.frontmatter.slug);
+  return getAllResources().map((r) => r.frontmatter.slug);
 }
 
 export function getRelatedResources(
