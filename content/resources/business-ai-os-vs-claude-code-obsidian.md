@@ -11,7 +11,7 @@ featured: false
 cta_variant: "discovery"
 related_slugs: ["how-to-organize-ai-agents-business", "openclaw-alternative-service-businesses"]
 external_url: "/business-ai-os-vs-claude-code-obsidian"
-published: true
+published: false
 faqs:
   - question: "Can you build a Business AI Operating System with Claude Code and Obsidian?"
     answer: "Yes, and many technical founders do. Claude Code handles agent logic and automation. Obsidian handles persistent knowledge as markdown files Claude can read and write. The combination is the closest DIY path to a Business AI Operating System. The ceiling hits around month two when context management becomes a maintenance job, multi-agent coordination requires manual handoffs, and team members can't use a terminal-based system."

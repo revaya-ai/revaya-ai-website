@@ -36,9 +36,6 @@ export default function Footer() {
             <Link href="/business-ai-os-vs-openclaw" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Business AI OS vs OpenClaw
             </Link>
-            <Link href="/business-ai-os-vs-claude-code-obsidian" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
-              Business AI OS vs Claude Code + Obsidian
-            </Link>
           </nav>
 
           {/* Legal + social */}

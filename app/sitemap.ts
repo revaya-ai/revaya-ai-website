@@ -62,12 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: "https://www.revaya.ai/business-ai-os-vs-claude-code-obsidian",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
       url: "https://www.revaya.ai/privacy-policy",
       lastModified: new Date(),
       changeFrequency: "yearly",
