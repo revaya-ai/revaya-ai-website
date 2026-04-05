@@ -52,7 +52,7 @@ Personal. That word matters. I'll come back to it.
 
 Chase AI made a video that explains the value well. He described a spectrum. On one end: papers thrown on the floor. Everything unorganized, Claude drowning in noise. On the other end: the Library of Congress. Full RAG embeddings, vector databases, infrastructure most founders will never actually build or maintain. In the middle: a filing cabinet. Organized, accessible, functional. That's what Obsidian + Claude Code buys you. A filing cabinet that's almost free to set up and that Claude already knows how to use.
 
-That's genuinely worth having. I use this stack in my own business. I'm not here to undercut it.
+That's genuinely worth having. And if it works for how you operate, keep using it.
 
 ## What This Stack Actually Buys You
 
@@ -100,17 +100,19 @@ A Business AIOS routes, acts, and reports. Intake processes while you sleep. Fol
 
 Both are useful. They solve different problems. Most founders who say "AI doesn't work for me" have a second brain when they need an operating system.
 
-## How a Business AIOS Uses Obsidian as Its Knowledge Source
+## How a Business AIOS Connects to Your Knowledge Base
 
-I want to be specific about this because the framing matters.
+Obsidian is one example. It is not the only one.
 
-Obsidian does not go away. In my own Business AIOS, my vault is the knowledge source. Decisions, client context, meeting notes, project history — all of it lives in markdown, organized and linked. Claude Code sessions read from it. The content engine pulls from it. The GTD system processes against it.
+A Business AIOS connects to wherever your knowledge already lives. Notion, NotebookLM, a structured folder of markdown files, a shared Google Drive your team actually uses. The connection is the point, not the tool. The AIOS treats your existing knowledge base as a source, reads from it, and acts on it. You do not have to rebuild your knowledge infrastructure to make it work.
 
-The AIOS is the operating layer on top of the knowledge layer. It acts on the context instead of waiting for me to ask it to.
+If you are in Obsidian, it connects to your vault. If you are in Notion, it connects to your workspace. If your knowledge lives in meeting transcripts and email threads, it connects to those. The architecture is the same: your knowledge layer feeds the operating layer.
 
-Karpathy said there is room for an incredible new product. He described exactly what a Business AIOS is: raw data compiled by an LLM into an organized structure, operated on by agents to produce outputs, with the founder reviewing results instead of doing the work.
+The AIOS is what sits on top and acts. It routes decisions, triggers workflows, and surfaces what is relevant before you know to ask. Your knowledge base does not change. It becomes the foundation the system runs on instead of the thing you consult manually.
 
-He was describing the architecture. I've built the business version of it.
+Karpathy said there is room for an incredible new product. He described exactly what a Business AIOS is: raw data compiled into an organized structure, operated on by agents to produce outputs, with the founder reviewing results instead of doing the work.
+
+He was describing the architecture. The business version of it connects to wherever you already are.
 
 If you are running Obsidian + Claude Code and finding that you are still the bottleneck, that the system is smart but not autonomous, that it knows your business but does not run it, that is the ceiling he named. And it is not a flaw in your setup. It is the edge of what a second brain can do.
 
