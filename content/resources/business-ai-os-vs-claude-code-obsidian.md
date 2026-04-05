@@ -66,6 +66,8 @@ A system you own. No subscription that changes its terms. No vendor that owns yo
 
 PenfieldLabs built this workflow for a content creator and ended up with a 1,150-note vault with 4,700 typed relationships. Claude Code managed all of it. Obsidian as the frontend. It works.
 
+![A founder sitting at a kitchen table, overwhelmed, hand on forehead, laptop open, coffee nearby — still the bottleneck in her own business](/images/resources/obsidian-aios-body-1.png)
+
 ## Where It Stops Working for Founders
 
 Here's the thing nobody says out loud.
@@ -99,6 +101,8 @@ The distinction is who does the routing. In Obsidian + Claude Code, you are alwa
 A Business AIOS routes, acts, and reports. Intake processes while you sleep. Follow-ups fire while you are with a client. The weekly report runs on schedule and lands in your inbox. You review decisions the system made. You do not make all the decisions yourself.
 
 Both are useful. They solve different problems. Most founders who say "AI doesn't work for me" have a second brain when they need an operating system.
+
+![A founder relaxed on the sofa reading a book, laptop on the coffee table showing a running dashboard — business operating without him](/images/resources/obsidian-aios-body-2.png)
 
 ## How a Business AIOS Connects to Your Knowledge Base
 
