@@ -1,9 +1,13 @@
 ---
-slug: ai-operating-system-stack-decisions-sub-15-person-companies
-date: 2026-04-08
-description: "Choosing AI tools before designing your system is the #1 stack mistake small businesses make. Here's the architecture-first framework for teams under 15."
-heroImage: "/articles/2026-04-08-ai-operating-system-stack-decisions-sub-15-person-companies/hero.png"
+title: "The AI Stack Decision Most Small Businesses Are Making Backwards"
+subtitle: "Choosing AI tools before designing your system is the #1 stack mistake small businesses make. Here's the architecture-first framework for teams under 15."
+slug: "ai-operating-system-stack-decisions-sub-15-person-companies"
+category: "article"
+author: "Shannon Winnicki"
+date: "2026-04-08"
+image: "/articles/2026-04-08-ai-operating-system-stack-decisions-sub-15-person-companies/hero.png"
 published: true
+cta_variant: "discovery"
 ---
 
 # The AI Stack Decision Most Small Businesses Are Making Backwards

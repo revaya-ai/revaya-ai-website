@@ -1,9 +1,13 @@
 ---
-slug: ai-powered-knowledge-management-founder-expertise
-date: 2026-04-06
-description: "Founder expertise stuck in your head is your biggest growth ceiling. Learn how AI-powered knowledge management makes your expertise retrievable, scalable, and usable — without 40 hours of documentation."
-heroImage: "/articles/2026-04-06-ai-powered-knowledge-management-founder-expertise/hero.png"
+title: "How AI-Powered Knowledge Management Turns Founder Expertise Into a Scalable Business Asset"
+subtitle: "Founder expertise stuck in your head is your biggest growth ceiling. Learn how AI-powered knowledge management makes your expertise retrievable, scalable, and usable — without 40 hours of documentation."
+slug: "ai-powered-knowledge-management-founder-expertise"
+category: "article"
+author: "Shannon Winnicki"
+date: "2026-04-06"
+image: "/articles/2026-04-06-ai-powered-knowledge-management-founder-expertise/hero.png"
 published: true
+cta_variant: "discovery"
 ---
 
 # How AI-Powered Knowledge Management Turns Founder Expertise Into a Scalable Business Asset
