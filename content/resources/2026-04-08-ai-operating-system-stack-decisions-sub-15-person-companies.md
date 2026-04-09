@@ -40,7 +40,7 @@ At a company with 50 or 100 people, someone eventually gets hired to untangle th
 
 At a sub-15 person company, you inherit your own mess. There's no one coming to fix it. The fragmented stack you build in month three is the one you're still running on in month eighteen, except by then it has seven more tools bolted onto it.
 
-This is exactly what I saw across the operational rebuilds I've done inside companies including Virgin Mobile Canada, Boost Mobile, and Papa Murphy's. The pattern holds regardless of company size. The businesses that scaled without compounding operational debt were the ones where someone made architecture decisions before tool decisions. The ones that didn't scale cleanly had point-solution thinking baked into their foundation. Every new problem got a new tool. Every new tool created a new data silo. Every new silo required a new integration. The founder ended up managing the integrations instead of the business.
+This is exactly what I saw across the operational rebuilds I've done inside companies including Virgin Mobile, Boost Mobile, and Papa Murphy's. The pattern holds regardless of company size. The businesses that scaled without compounding operational debt were the ones where someone made architecture decisions before tool decisions. The ones that didn't scale cleanly had point-solution thinking baked into their foundation. Every new problem got a new tool. Every new tool created a new data silo. Every new silo required a new integration. The founder ended up managing the integrations instead of the business.
 
 For a small business making AI stack decisions right now, the window to get this right is actually narrow. The first six months of building AI into your operations is when the architecture either gets established or gets skipped. Most founders skip it because no one told them it existed.
 
@@ -54,7 +54,7 @@ This is not about drawing a diagram before you're allowed to buy software. Archi
 Every business has a primary record, the place where the most important information about clients, projects, and decisions is supposed to exist. Most sub-15 person businesses either haven't chosen one, or they've chosen one but don't enforce it. Before adding any AI tool, this question needs a clear answer.
 
 **Two: How does information flow between functions?**
-When a sale closes, what happens? Where does that information go, in what form, triggered by what? When a project completes, how does that feed back into your client record? Most small businesses have these flows in the founder's head, not in the system. AI can't work from what's in your head.
+When a sale closes, what happens? Where does that information go, in what form, triggered by what? When a project completes, how does that feed back into your client record? Most small businesses have these flows in the founder's head, or scattered across tools that don't connect. AI can't work from memory, and it can't work from a system with no spine.
 
 **Three: What is each layer of the system responsible for?**
 There's a difference between storage, coordination, execution, and intelligence. Airtable and Notion are storage and coordination tools. Zapier and Make are execution tools. GPT and Claude are intelligence layers. A lot of small businesses are asking their intelligence layer to do the work of their coordination layer, then wondering why the outputs are inconsistent. The layers need to be defined and respected.
@@ -62,7 +62,6 @@ There's a difference between storage, coordination, execution, and intelligence.
 **Four: Where is the single point of truth for each category of information?**
 Clients live here. Projects live here. Communications live here. Decisions live here. When you can answer that question with one specific location per category, you have an architecture. When the answer is "kind of everywhere," you have a stack with no spine.
 
-[INTERNAL LINK: how to build a single source of truth for a founder-led business]
 
 ---
 
@@ -80,7 +79,6 @@ Second, map two or three high-friction workflows before automating anything. Fri
 
 Third, add an AI layer to your coordination system rather than alongside it. AI that can read your project records and your client history is worth ten times more than AI that can only see what you paste into a chat window.
 
-[INTERNAL LINK: how to audit your current ai tool stack]
 
 ---
 
@@ -100,12 +98,10 @@ Most small business AI stack decisions never get there because the architecture 
 
 If you're currently sitting with a stack that has more than five tools and no clear answer to "where does context live," the right next step is an audit before another purchase.
 
-I work with founder-led businesses to map the current operational system, identify where the architecture breaks down, and build the coordination layer that makes AI actually useful instead of just busy.
+I work with founder-led businesses to understand where they are operationally, identify where the architecture breaks down, and build the coordination layer that makes AI actually useful instead of just busy.
 
-If that's where you are, a Discovery Call is the right place to start. We spend 45 minutes mapping what you have, what's breaking, and what the sequence of fixes looks like. No pitch deck. Just the map.
+If that's where you are, a Discovery Call is the right place to start. We spend 45 minutes looking at what you have, what's breaking, and what the sequence of fixes looks like. No pitch deck. Just the map.
 
-[Book a Discovery Call]
+[Book a Discovery Call](/work-with-me)
 
-Or if you want to understand the full framework first, the [INTERNAL LINK: Revaya AIOS Setup] page walks through how I approach the full operating system build for businesses under 15 people.
-
-Either way, stop buying tools until you've answered the architecture questions. The stack can wait. The design cannot.
+Stop buying tools until you've answered the architecture questions. The stack can wait. The design cannot.

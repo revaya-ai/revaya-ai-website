@@ -83,7 +83,7 @@ const ctaVariants: Record<string, { heading: string; text: string; href: string;
 const authorData: Record<string, { title: string; bio: string; linkedin: string }> = {
   "Shannon Winnicki": {
     title: "Founder, Revaya AI",
-    bio: "Not an outside consultant looking in. On the inside, sitting between the business and the builders translating business needs into digital solutions. Business AIOS is the same work. Different product.",
+    bio: "18 years building digital products inside companies like Virgin Mobile, Boost Mobile, and Papa Murphy's. I sat between the business and the builders, translating what the business needed into what the tech actually delivered. Business AI OS is the same work. Different product.",
     linkedin: "https://www.linkedin.com/in/swinnicki/",
   },
 };
