@@ -57,7 +57,7 @@ const timeline = [
   {
     month: "Month 3",
     label: "The first real return",
-    body: "The rough edges are gone. The agents know your patterns. You've stopped second-guessing the outputs and started trusting them. Most clients recover 8 to 12 hours a week by month three. The 30-day check-in has happened. You know what to build next.",
+    body: "The rough edges are gone. The agents know your patterns. You stopped second-guessing the outputs somewhere around week six and never went back. Most clients recover 8 to 12 hours a week by month one. By month three, you and the system are rocking and rolling.",
   },
   {
     month: "Month 6",
