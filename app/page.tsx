@@ -803,7 +803,7 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8 mt-5">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
               <span className="text-[0.875rem] uppercase tracking-[0.12em] text-white/80 font-medium">
-                Your AI Transformation Partner
+                Business AI Operating System for Owner-Operators
               </span>
             </div>
           </FadeIn>
@@ -811,23 +811,23 @@ export default function HomePage() {
           {/* H1 */}
           <FadeIn delay={0.1}>
             <h1 className="font-display font-black text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] leading-[1.0] text-white mb-6 tracking-tight">
-              Stop Being the Business.
+              Your business is running you.
               <br />
-              Start Owning One.
+              Let&rsquo;s fix that.
             </h1>
           </FadeIn>
 
           {/* Subhead */}
           <FadeIn delay={0.2}>
             <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white mb-5 max-w-[620px] mx-auto">
-              Some founders can&rsquo;t step away. Others can&rsquo;t scale without hiring. Different situations. Same ceiling: the business is still built around you being in it.
+              You didn&rsquo;t build this to be the single point of failure. But right now, every decision routes through you. The business runs on you being in it constantly. That&rsquo;s the ceiling.
             </p>
           </FadeIn>
 
           {/* Body */}
           <FadeIn delay={0.25}>
             <p className="text-[1.0625rem] leading-[1.75] text-white mb-10 max-w-[718px] mx-auto">
-              I build the system that lets you do exactly what you do, only better, faster, without the ceiling. Not a tool. A Business AI Operating System.
+              I build the operational backbone that lets you do exactly what you do. Only better, faster, and without every answer running through you first. Not a tool. A Business AI Operating System.
             </p>
           </FadeIn>
 
@@ -838,7 +838,7 @@ export default function HomePage() {
                 href="/work-with-me"
                 className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
               >
-                Book a Discovery Call &rarr;
+                Book a Strategy Call &rarr;
               </Link>
             </div>
           </FadeIn>
@@ -863,7 +863,7 @@ export default function HomePage() {
               "Everything routes through me",
               "Can't take a week off",
               "Team texts me at 9pm",
-              "Business stops when I stop",
+              "No system underneath it",
               "Wearing all the hats",
               "No time to think",
               "Just need a system",
@@ -904,7 +904,7 @@ export default function HomePage() {
                   Or you&rsquo;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&rsquo;s no one to hand off to. The business doesn&rsquo;t run when you&rsquo;re not in it. It waits.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-8">
-                  Your business stops when you stop. That&rsquo;s not a people problem. It&rsquo;s an architecture problem.
+                  Have you ever felt like your business is running you instead of the other way around? That&rsquo;s not a you problem. That&rsquo;s an architecture problem.
                 </p>
               </div>
             </FadeIn>
@@ -922,21 +922,21 @@ export default function HomePage() {
                   The Problem &rarr; What&rsquo;s Possible
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  A version of your business
+                  A business that runs on systems.
                   <br />
-                  that runs without you in the loop.
+                  Not on you being in every decision.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Right now the business stops when you stop. Not because your team can&rsquo;t execute, but because the systems aren&rsquo;t there. Everything routes through you by default, not by design.
+                  Right now, everything routes through you by default, not by design. Not because your team can&rsquo;t execute. Because there&rsquo;s no system underneath the work to carry it.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-6">
-                  There&rsquo;s a different version. One where the recurring work runs on its own, your team has what they need without asking, and you step into the role of owner instead of operator. That&rsquo;s the transformation. The path to it starts with understanding exactly where you are now.
+                  There&rsquo;s a different version. One where the recurring work runs on its own, your team has what they need without asking, and the capacity of the operation grows without adding headcount. One person running a business that operates like a team of ten. The path to it starts with understanding exactly where you are now.
                 </p>
                 <Link
                   href="/business-ai-operating-system"
                   className="inline-flex items-center gap-2 text-[1rem] text-[#028090] hover:text-white transition-colors"
                 >
-                  See what&rsquo;s possible &rarr;
+                  See how it works &rarr;
                 </Link>
               </div>
             </FadeIn>
@@ -965,7 +965,7 @@ export default function HomePage() {
                   It&rsquo;s often not what you think.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Assessment is a structured diagnostic of how your business actually operates. Where time goes. Where decisions bottleneck. What&rsquo;s repeatable but still lands on you. I go area by area, and most founders are surprised by what surfaces.
+                  The Assessment is a structured diagnostic of how your business actually operates. Where time goes. Where decisions pile up on you. What&rsquo;s repeatable but still lands on you. I go area by area, and most owner-operators are surprised by what surfaces.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   You walk away with a gap map, a prioritized automation roadmap, and a clear recommendation built on your current reality. Not a generic playbook. A specific path forward for your business, based on what I found.
@@ -987,7 +987,7 @@ export default function HomePage() {
                   Step 2 — The Recommendation
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Your biggest bottleneck, first.
+                  The highest-cost function, first.
                   <br />
                   Everything else, in order.
                 </h2>
@@ -1111,8 +1111,11 @@ export default function HomePage() {
               <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                 I spent the last year going deep on AI. Python certified, technically trained, and part of a network of 800+ AI developers and engineers. When your build needs a specialist I don&rsquo;t have to go looking. The team is already there.
               </p>
-              <p className="text-[1.0625rem] text-white">
+              <p className="text-[1.0625rem] text-white mb-4">
                 You&rsquo;re hiring a strategist with 18 years of operational experience and a build team behind her that most solo consultants can&rsquo;t touch. And before I build for clients, I build for myself. The AIOS running Revaya today is the same system I deliver to you.
+              </p>
+              <p className="text-[1.0625rem] text-white">
+                So you get the capacity of a bigger team without the grind or the payroll.
               </p>
               <div className="mt-8 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-center gap-6 text-[0.8125rem] text-white/30">
                 <span>18+ years product leadership</span>
@@ -1143,20 +1146,21 @@ export default function HomePage() {
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-10 text-center">
           <FadeIn>
             <h2 className="font-display font-black text-[2rem] md:text-[3.25rem] leading-[1.05] text-white mb-5">
-              You take a week off.
+              The business runs on systems.
               <br />
-              Your business keeps going.
+              Not on you.
             </h2>
             <p className="text-[1.0625rem] leading-[1.7] text-white mb-10 max-w-[500px] mx-auto">
-              Your bottleneck is a solvable problem. Most owners I talk to already
-              know what it is. The AIOS is built to remove it permanently, not
-              manage it.
+              Most owner-operators I talk to already know the function that&rsquo;s
+              costing them the most. That&rsquo;s exactly where we start. The
+              Assessment maps it. The build fixes it. And when that system is
+              running, the business runs on that foundation instead of on you.
             </p>
             <Link
               href="/work-with-me"
               className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
-              Book a Discovery Call &rarr;
+              Book a Strategy Call &rarr;
             </Link>
             <p className="mt-4 text-[0.8125rem] text-white/40">
               Or if you already know,{" "}

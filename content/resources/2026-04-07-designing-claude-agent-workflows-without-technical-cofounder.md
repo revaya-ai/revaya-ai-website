@@ -1,8 +1,13 @@
 ---
-slug: designing-claude-agent-workflows-without-technical-cofounder
-date: 2026-04-07
-description: "Design Claude agent workflows without a technical cofounder. Learn the non-technical framework that gives solo founders real AI automation — no coding required."
-heroImage: "/articles/2026-04-07-designing-claude-agent-workflows-without-technical-cofounder/hero.png"
+title: "How to Design Claude Agent Workflows Without a Technical Cofounder"
+subtitle: "Design Claude agent workflows without a technical cofounder. Learn the non-technical framework that gives solo founders real AI automation — no coding required."
+slug: "designing-claude-agent-workflows-without-technical-cofounder"
+category: "article"
+author: "Shannon Winnicki"
+date: "2026-04-07"
+image: "/articles/2026-04-07-designing-claude-agent-workflows-without-technical-cofounder/hero.png"
+published: true
+cta_variant: "discovery"
 ---
 
 # How to Design Claude Agent Workflows Without a Technical Cofounder
