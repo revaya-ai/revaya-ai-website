@@ -312,13 +312,15 @@ export default function ResourcesPage() {
               <FadeIn
                 key={resource.frontmatter.slug}
                 delay={(i + 1) * 0.05}
-                className={`${shape.colSpan}${isTall ? " md:row-span-2 md:row-start-1 md:col-start-3 md:h-[500px]" : ` ${shape.rowSpan} h-full`}${i === 2 ? " pt-[30px]" : ""}`}
+                className={`${shape.colSpan}${isTall ? " md:row-span-2 md:row-start-1 md:col-start-3" : ` ${shape.rowSpan} h-full`}${i === 2 ? " pt-[30px]" : ""}`}
               >
-                <CollageCardV2
-                  frontmatter={resource.frontmatter}
-                  shape={shape}
-                  globalIndex={i + 1}
-                />
+                <div style={isTall ? { height: "500px" } : undefined} className={isTall ? "" : "h-full"}>
+                  <CollageCardV2
+                    frontmatter={resource.frontmatter}
+                    shape={shape}
+                    globalIndex={i + 1}
+                  />
+                </div>
               </FadeIn>
             );
           })}
