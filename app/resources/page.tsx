@@ -1,3 +1,5 @@
+// Tailwind v4 safelist — keep these literal strings so the scanner includes them:
+// md:col-span-1 md:col-span-2 md:col-span-3 md:row-span-1 md:row-span-2 md:row-start-1 md:col-start-3
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";

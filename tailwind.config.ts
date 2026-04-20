@@ -45,11 +45,6 @@ const config: Config = {
       },
     },
   },
-  safelist: [
-    "md:col-span-1", "md:col-span-2", "md:col-span-3",
-    "md:row-span-1", "md:row-span-2",
-    "md:row-start-1", "md:col-start-3",
-  ],
   plugins: [],
 };
 
