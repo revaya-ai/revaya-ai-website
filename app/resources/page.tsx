@@ -311,7 +311,7 @@ export default function ResourcesPage() {
               <FadeIn
                 key={resource.frontmatter.slug}
                 delay={(i + 1) * 0.05}
-                className={`${shape.colSpan} ${shape.rowSpan} h-full${i === 2 ? " pt-[30px]" : ""}`}
+                className={`${shape.colSpan} ${shape.rowSpan} h-full${i === 2 ? " pt-[30px]" : ""}${i === 0 ? " md:row-start-1" : ""}`}
               >
                 <CollageCardV2
                   frontmatter={resource.frontmatter}
