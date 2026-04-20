@@ -252,10 +252,10 @@ export default function ContactForm() {
         </select>
       </div>
 
-      {/* Bottleneck — required */}
+      {/* What's costing you — required */}
       <div>
         <label htmlFor="bottleneck" className={labelClass}>
-          What&rsquo;s the operational bottleneck you&rsquo;re dealing with right now?{" "}
+          What&rsquo;s the function costing you the most right now?{" "}
           <span className="text-[#F45B69]">*</span>
         </label>
         <textarea

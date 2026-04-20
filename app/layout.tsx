@@ -25,16 +25,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.revaya.ai"),
   title: {
-    default: "Business AI Operating System for Founder-Led Businesses | Revaya AI",
+    default: "Business AI Operating System for Owner-Operators | Revaya AI",
     template: "%s | Revaya AI",
   },
   description:
-    "Your business only works when you do. That's a systems problem I can fix. Business AI Operating Systems for founder-led businesses.",
+    "Every decision routes through you. That's an architecture problem. I build Business AI Operating Systems for owner-operators.",
   keywords: [
     "Business AI Operating System",
     "Business AI OS",
     "AI consultant",
-    "founder-led business automation",
+    "owner-operator business automation",
     "AI operating system for small business",
     "Shannon Winnicki",
     "Revaya AI",
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
     siteName: "Revaya AI",
     locale: "en_US",
     description:
-      "Your business only works when you do. That's a systems problem I can fix. Business AI Operating Systems for founder-led businesses.",
+      "Every decision routes through you. That's an architecture problem. I build Business AI Operating Systems for owner-operators.",
   },
   twitter: {
     card: "summary_large_image",
     description:
-      "Stop being the business. Start owning one. I build Business AI Operating Systems for founder-led service businesses.",
+      "Your business is running you. I build the operational backbone that fixes it. Business AI Operating Systems for owner-operators.",
   },
   other: {
     "msvalidate.01": "A2EA5C970EB8CE94A778035751E3EC69",
