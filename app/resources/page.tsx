@@ -309,21 +309,24 @@ export default function ResourcesPage() {
           {others.map((resource, i) => {
             const shapeIndex = cyclingShapes[i % cyclingShapes.length];
             const shape = shapes[shapeIndex];
-            const isTall = i === 0; // sits beside featured, must span 2 rows
+            const isTall = i === 0;
             return (
-              <FadeIn
+              <div
                 key={resource.frontmatter.slug}
-                delay={(i + 1) * 0.05}
-                className={`${shape.colSpan}${isTall ? " md:row-span-2 md:row-start-1 md:col-start-3" : ` ${shape.rowSpan} h-full`}${i === 2 ? " pt-[30px]" : ""}`}
+                className={`${shape.colSpan}${i === 2 ? " pt-[30px]" : ""}`}
+                style={isTall
+                  ? { gridRow: "1 / span 2", gridColumn: "3 / span 1", height: "500px" }
+                  : undefined
+                }
               >
-                <div style={isTall ? { height: "500px" } : undefined} className={isTall ? "" : "h-full"}>
+                <FadeIn delay={(i + 1) * 0.05} className="h-full">
                   <CollageCardV2
                     frontmatter={resource.frontmatter}
                     shape={shape}
                     globalIndex={i + 1}
                   />
-                </div>
-              </FadeIn>
+                </FadeIn>
+              </div>
             );
           })}
         </div>
