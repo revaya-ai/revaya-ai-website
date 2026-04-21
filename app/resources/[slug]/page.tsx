@@ -64,7 +64,7 @@ const ctaVariants: Record<string, { heading: string; text: string; href: string;
     heading: "Find out where your business stands.",
     text: "Take the free Business AI OS Assessment. Five minutes. Instant score. See where a system would give you back the most time.",
     href: "/business-ai-os-assessment",
-    label: "Take the Free Assessment",
+    label: "Take the Assessment Quiz",
   },
   discovery: {
     heading: "Let's talk about your business.",
