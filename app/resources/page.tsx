@@ -1,3 +1,5 @@
+// Tailwind v4 safelist — keep these literal strings so the scanner includes them:
+// md:col-span-1 md:col-span-2 md:col-span-3 md:row-span-1 md:row-span-2 md:row-start-1 md:col-start-3
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -294,7 +296,7 @@ export default function ResourcesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[230px] gap-x-2.5 gap-y-10 md:gap-x-3 md:gap-y-10">
           {/* Featured — hero shape */}
           {featured && (
-            <FadeIn className={`${shapes[0].colSpan} ${shapes[0].rowSpan} h-full`}>
+            <FadeIn className={`md:col-span-2 md:row-span-2 h-full`}>
               <CollageCardV2
                 frontmatter={featured.frontmatter}
                 shape={shapes[0]}
@@ -307,18 +309,24 @@ export default function ResourcesPage() {
           {others.map((resource, i) => {
             const shapeIndex = cyclingShapes[i % cyclingShapes.length];
             const shape = shapes[shapeIndex];
+            const isTall = i === 0;
             return (
-              <FadeIn
+              <div
                 key={resource.frontmatter.slug}
-                delay={(i + 1) * 0.05}
-                className={`${shape.colSpan} ${shape.rowSpan} h-full${i === 2 ? " pt-[30px]" : ""}`}
+                className={`${shape.colSpan}${i === 2 ? " pt-[30px]" : ""}`}
+                style={isTall
+                  ? { gridRow: "1 / span 2", gridColumn: "3 / span 1", height: "500px" }
+                  : undefined
+                }
               >
-                <CollageCardV2
-                  frontmatter={resource.frontmatter}
-                  shape={shape}
-                  globalIndex={i + 1}
-                />
-              </FadeIn>
+                <FadeIn delay={(i + 1) * 0.05} className="h-full">
+                  <CollageCardV2
+                    frontmatter={resource.frontmatter}
+                    shape={shape}
+                    globalIndex={i + 1}
+                  />
+                </FadeIn>
+              </div>
             );
           })}
         </div>

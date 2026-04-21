@@ -813,7 +813,7 @@ export default function HomePage() {
             <h1 className="font-display font-black text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] leading-[1.0] text-white mb-6 tracking-tight">
               Your business is running you.
               <br />
-              Let&rsquo;s fix that.
+              <span className="text-[#F45B69]">Let&rsquo;s fix that.</span>
             </h1>
           </FadeIn>
 

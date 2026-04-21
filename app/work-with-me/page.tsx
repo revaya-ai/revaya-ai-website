@@ -8,7 +8,7 @@ import { StaggerChildren, StaggerItem } from "@/components/StaggerChildren";
 export const metadata: Metadata = {
   title: "Work With Me | Business AI Operating System",
   description:
-    "You already know something has to change. Tell Shannon Winnicki about your business. Business AI Operating System engagements for founder-led service businesses.",
+    "You already know something has to change. Tell Shannon Winnicki about your business. Business AI Operating System engagements for owner-operators.",
 };
 
 const nextSteps = [

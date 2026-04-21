@@ -23,7 +23,7 @@ export default function Footer() {
               Why Revaya
             </Link>
             <Link href="/business-ai-os-assessment" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
-              Business AI OS Assessment
+              Assessment Quiz
             </Link>
             <Link href="/work-with-me" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Work With Me

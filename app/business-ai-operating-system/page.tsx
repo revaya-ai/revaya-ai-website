@@ -4,7 +4,7 @@ import BusinessAIOSPage from "./BusinessAIOSPage";
 export const metadata: Metadata = {
   title: "Business AI Operating System | AIOS Services",
   description:
-    "Your business breaks when you step away. I build the system that keeps it running. The Business AI Operating System for founder-led businesses, custom to how you work.",
+    "Every decision routes through you. That's the ceiling. I build the operational backbone that changes it. The Business AI Operating System for owner-operators, custom to how you work.",
 };
 
 const faqSchema = {
@@ -32,7 +32,7 @@ const faqSchema = {
       name: "What does this cost, and how do I know it will pay off?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Audit is $2,500 and deductible against Setup if you proceed. If you decide not to move forward, you still walk away with a comprehensive audit of your operations, a clear gap map, and a roadmap you can execute on your own. It\u2019s yours either way. Setup runs $10K to $30K depending on the complexity of your business and the depth of the Build layer. Founders get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are away-from-desk autonomy, task automation percentage, and revenue per headcount.",
+        text: "The Assessment is $2,500 and deductible against your build if you proceed. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It\u2019s yours either way. Most owner-operators get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are task automation percentage, hours recovered per week, and monthly ROI.",
       },
     },
     {
@@ -48,7 +48,7 @@ const faqSchema = {
       name: "Can't I just set up Claude Code and Obsidian myself? Why pay for this?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You could. The tools are not the product. Knowing what to build is. You could open Obsidian today and still be staring at a blank vault asking what to put in it. The system design requires understanding your business, your clients, your workflows, your decision bottlenecks. That takes discovery, not installation. My clients pay because mapping their business and building the right system is worth more than three months of trial and error.",
+        text: "You could. The tools are not the product. Knowing what to build is. You could open Obsidian today and still be staring at a blank vault asking what to put in it. The system design requires understanding your business: your clients, your workflows, where decisions pile up on you. That takes discovery, not installation. My clients pay because mapping their business and building the right system is worth more than three months of trial and error.",
       },
     },
     {

@@ -57,23 +57,23 @@ const timeline = [
   {
     month: "Month 3",
     label: "The first real return",
-    body: "The rough edges are gone. The agents know your patterns. You've stopped second-guessing the outputs and started trusting them. Most clients recover 8 to 12 hours a week by month three. The 30-day check-in has happened. You know what to build next.",
+    body: "The rough edges are gone. The agents know your patterns. You stopped second-guessing the outputs somewhere around week six and never went back. Most clients recover 8 to 12 hours a week by month one. By month three, you and the system are rocking and rolling.",
   },
   {
     month: "Month 6",
-    label: "Running without you",
-    body: "Operational decisions are being made without your input. New workflows are running on autopilot. You're working on the business more than in it. That's the shift.",
+    label: "The system is carrying the load",
+    body: "Operational decisions are being handled by the system, not by you. New workflows are running on autopilot. You're focused on the work that actually moves the business forward. That's the shift.",
   },
   {
     month: "Month 12",
     label: "The OS is how your business runs",
-    body: "You can take a week off. The business doesn't pause. New hires onboard in hours, not weeks. The routine runs without you in it. Hours recovered per week is measurable, not theoretical. Monthly ROI is a number on your dashboard, not a feeling. You're generating more without working more. The system isn't something you use anymore. It's how the business works.",
+    body: "New hires onboard in hours, not weeks. The system handles what it always should have handled. Hours recovered per week is measurable, not theoretical. Monthly ROI is a number on your dashboard, not a feeling. You're generating more without working more. The system isn't something you use anymore. It's how the business works.",
   },
 ];
 
 const processSteps = [
-  { num: "01", title: "Assessment", body: "I map how your business actually operates. Where time goes, where decisions bottleneck, what keeps landing on you. You walk away with a gap map, a prioritized roadmap, and a clear next step." },
-  { num: "02", title: "Roadmap", body: "I take the Assessment findings and map out the build. Starting with your biggest bottleneck, the three modules with the highest ROI, and the priority order for everything that follows." },
+  { num: "01", title: "Assessment", body: "I map how your business actually operates. Where time goes, where decisions pile up on you, what keeps landing on your plate. You walk away with a gap map, a prioritized roadmap, and a clear next step." },
+  { num: "02", title: "Roadmap", body: "I take the Assessment findings and map out the build. Starting with the function costing you the most, the three modules with the highest ROI, and the priority order for everything that follows." },
   { num: "03", title: "Build", body: "I architect the system around how your business actually works. Not a generic template." },
   { num: "04", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built and how to use it daily. Nothing is handed off without you understanding it." },
   { num: "05", title: "Train + Support", body: "Three dedicated sessions across your first 30 days, hands-on with your actual workflows. A 30-day check-in to review what's working and map what to build next. Questions answered throughout." },
@@ -1084,7 +1084,7 @@ function ProcessPanel() {
 // ─── Panel: Process Gantt ────────────────────────────────────────────────────
 
 const ganttPhases = [
-  { title: "Audit",          fill: "15%",  ongoing: false },
+  { title: "Assessment",     fill: "15%",  ongoing: false },
   { title: "Scope",          fill: "28%",  ongoing: false },
   { title: "Build",          fill: "70%",  ongoing: false },
   { title: "Deliver",        fill: "15%",  ongoing: false },
@@ -1665,7 +1665,7 @@ function WhoPanel() {
             animate={{ opacity: 1 }}
             className="border-t border-white/[0.06] px-5 py-3 flex items-center justify-between bg-white/[0.02]"
           >
-            <span className="text-[0.7rem] font-mono text-white/25">1–15 people · $250K+ revenue</span>
+            <span className="text-[0.7rem] font-mono text-white/25">1–15 people · $500K+ revenue</span>
             <span className="text-[0.7rem] font-mono text-[#028090]">5 of 5 matched</span>
           </motion.div>
         )}
@@ -2131,13 +2131,13 @@ export default function BusinessAIOSPage() {
                   Who This Is For
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Built for founders where the business still needs you in it.
+                  Built for owner-operators where the business still runs through you.
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
                   The business requires you because it was built that way. Not by accident. Just by never stopping to build it differently. Every system that should exist is still a conversation. Every decision that should be automated still lands on you.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  This isn&apos;t for founders looking for a quick fix or a tool to try. Building a Business AI Operating System takes time and honest input about how your business actually works. If you&apos;re willing to do that, the output compounds.
+                  Most owner-operators already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath — context, data, intelligence, automation — so the business runs on the system instead of on you holding it together.
                 </p>
               </FadeUp>
             </div>
@@ -2577,7 +2577,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What if my business is too small or too early?",
-                  answer: "The Audit will answer that. I've told founders their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
+                  answer: "The Assessment will answer that. I've told owner-operators their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
                 },
                 {
                   question: "What happens if something breaks after Setup?",
@@ -2585,7 +2585,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What do you actually need from me?",
-                  answer: "Time for the Audit interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Audit is only as good as the information it's built on. You'll also want to set aside a few days during Delivery and Training so we can work side by side as the system goes live.",
+                  answer: "Time for the Assessment interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Assessment is only as good as the information it's built on. You'll also want to set aside a few days during Delivery and Training so we can work side by side as the system goes live.",
                 },
                 {
                   question: "Claude Desktop and Cowork look like they do the same thing. Why would I need a custom AI OS?",
@@ -2593,11 +2593,11 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "Can't I just set up Claude Code and Obsidian myself? Why pay for this?",
-                  answer: "You could. The tools are not the product. Knowing what to build is. You could open Obsidian today and still be staring at a blank vault asking what to put in it. The system design requires understanding your business — your clients, your workflows, your decision bottlenecks. That takes discovery, not installation. My clients pay because mapping their business and building the right system is worth more than three months of trial and error.",
+                  answer: "You could. The tools are not the product. Knowing what to build is. You could open Obsidian today and still be staring at a blank vault asking what to put in it. The system design requires understanding your business: your clients, your workflows, where decisions pile up on you. That takes discovery, not installation. My clients pay because mapping their business and building the right system is worth more than three months of trial and error.",
                 },
                 {
                   question: "What does this cost, and how do I know it will pay off?",
-                  answer: "The Assessment is $2,500. If you proceed, it's deductible from your build on Option A, or it counts as Month 1 of your subscription on Option B. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It's yours either way. Option A: Build $6,500 + $1,500/mo retainer. Option B: $2,500/mo subscription — full refund if you walk after 30 days. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI ($). Founders get 10 or more hours a week back. At $100/hr, that's $1,000 a month in recovered capacity, every month, permanently. If those numbers don't move, the system isn't working.",
+                  answer: "The Assessment is $2,500. If you proceed, it's deductible from your build on Option A, or it counts as Month 1 of your subscription on Option B. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It's yours either way. Option A: Build $6,500 + $1,500/mo retainer. Option B: $2,500/mo subscription — full refund if you walk after 30 days. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI ($). Most owner-operators get 10 or more hours a week back. At $100/hr, that's $1,000 a month in recovered capacity, every month, permanently. If those numbers don't move, the system isn't working.",
                 },
                 {
                   question: "What if the AI makes a wrong decision or does something I didn't intend?",
@@ -2605,7 +2605,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "I already use a bunch of tools. Does this replace everything or layer on top?",
-                  answer: "It replaces some and connects the rest. The Audit maps what you already have. If something in your stack is redundant, I will tell you. But most founders do not have too many tools. They have tools that do not talk to each other. The AIOS connects your core stack into one system, replaces anything that is not pulling its weight, and fills the gaps with custom builds. The result is fewer subscriptions, less context switching, and one place where everything lives.",
+                  answer: "It replaces some and connects the rest. The Assessment maps what you already have. If something in your stack is redundant, I will tell you. But most owner-operators do not have too many tools. They have tools that do not talk to each other. The AIOS connects your core stack into one system, replaces anything that is not pulling its weight, and fills the gaps with custom builds. The result is fewer subscriptions, less context switching, and one place where everything lives.",
                 },
                 {
                   question: "Is this basically a custom ChatGPT wrapper for my business?",
@@ -2647,7 +2647,7 @@ export default function BusinessAIOSPage() {
           <div className="max-w-[1280px] mx-auto px-6 md:px-[15px] text-center">
             <FadeUp>
               <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-8 max-w-[950px] mx-auto">
-                You take a week off. Your business keeps going. That&apos;s not a fantasy. It&apos;s what the system is built to do.
+                The business runs on systems. Not on you.
               </h2>
               <Link
                 href="/work-with-me"
