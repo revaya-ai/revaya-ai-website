@@ -29,17 +29,14 @@ export default function Navigation() {
   }, [pathname]);
 
   return (
-    <header
-      className="fixed top-3 left-0 right-0 z-50 overflow-x-hidden"
-      style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 w-full">
       <div
-        className={`mx-auto flex items-center justify-between h-16 md:h-20 w-full ${
+        className={`flex items-center justify-between h-16 w-full px-4 ${
           scrolled
-            ? "max-w-[960px] px-4 md:px-6 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl rounded-full"
-            : "max-w-[1200px] px-4 md:px-12 lg:px-20 bg-transparent"
+            ? "bg-[#0d1a4a]/90 backdrop-blur-xl border-b border-white/[0.06]"
+            : "bg-transparent"
         }`}
-        style={{ transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)" }}
+        style={{ transition: "background 0.4s ease" }}
       >
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 flex items-center">
@@ -49,18 +46,14 @@ export default function Navigation() {
             width={140}
             height={40}
             className={`h-auto transition-all duration-400 ${
-              scrolled ? "w-[110px] md:w-[120px]" : "w-[120px] md:w-[140px]"
+              scrolled ? "w-[110px] lg:w-[120px]" : "w-[120px] lg:w-[140px]"
             }`}
             priority
           />
         </Link>
 
-        {/* Desktop nav — gap reduces when scrolled */}
-        <nav
-          className={`hidden md:flex items-center transition-all duration-400 ${
-            scrolled ? "gap-5" : "gap-10"
-          }`}
-        >
+        {/* Desktop nav — hidden below lg via CSS, no JS gating */}
+        <nav className={`hidden lg:flex items-center ${scrolled ? "gap-5" : "gap-10"}`}>
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -78,8 +71,8 @@ export default function Navigation() {
           ))}
         </nav>
 
-        {/* CTA — same size always */}
-        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+        {/* Desktop CTA — hidden below lg via CSS */}
+        <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
           <Link
             href="/work-with-me"
             className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 whitespace-nowrap"
@@ -88,9 +81,9 @@ export default function Navigation() {
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — visible below lg via CSS, no JS gating */}
         <button
-          className="md:hidden p-2 text-white"
+          className="flex lg:hidden p-2 text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation"
         >
@@ -122,9 +115,9 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="md:hidden bg-[#0D1A4A] border-b border-white/[0.06] overflow-hidden"
+            className="overflow-hidden lg:hidden"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="bg-[#0D1A4A] border-b border-white/[0.06] px-6 py-4 flex flex-col gap-4">
               {navLinks.map(({ href, label }) => (
                 <Link
                   key={href}

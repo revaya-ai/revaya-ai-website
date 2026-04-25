@@ -853,7 +853,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MARQUEE ─────────────────────────────────────────────────────────── */}
-      <div style={{ zIndex: 1, position: "relative", paddingTop: "50px" }}>
+      <div style={{ zIndex: 1, position: "relative", paddingTop: "50px", overflowX: "hidden" }}>
         <div
           className="flex gap-10 whitespace-nowrap py-4"
           style={{ animation: "marquee 30s linear infinite", width: "max-content" }}
