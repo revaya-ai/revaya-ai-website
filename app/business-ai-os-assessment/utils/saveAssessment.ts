@@ -1,4 +1,4 @@
-import { supabase } from "../lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 import { AssessmentAnswers, ROIResults } from "../types/assessment";
 import { questions } from "../data/questions";
 
