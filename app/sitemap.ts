@@ -56,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.revaya.ai/ai-prep-check",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://www.revaya.ai/business-ai-os-vs-openclaw",
       lastModified: new Date(),
       changeFrequency: "monthly",
