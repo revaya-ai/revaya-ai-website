@@ -117,9 +117,12 @@ export default function ResultsPage({ result }: ResultsPageProps) {
 
         {/* Tier 3 next step framing */}
         {result.tier === 3 && (
-          <div className="glass-card rounded-xl p-6 border border-brand-accent/20 text-center">
+          <div className="glass-card rounded-xl p-6 border border-brand-accent/20 text-center space-y-3">
             <p className="text-white/80 text-base leading-relaxed">
-              The question now isn't whether you're ready. It's where to start, and what the highest-ROI function to systematize first actually is. That's what the Business AI OS Assessment surfaces.
+              The question now isn't whether you're ready. It's where to start. The Business AI OS Assessment scores your business across 30 dimensions, calculates the real cost in hours and dollars of your specific gaps, and surfaces your single highest-ROI area to systematize first.
+            </p>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Most people who take it walk away with a number they didn't expect. That number tends to make the decision easy.
             </p>
           </div>
         )}

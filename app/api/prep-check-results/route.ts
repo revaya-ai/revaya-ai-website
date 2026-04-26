@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 
     const tier3NextStep =
       tier === 3
-        ? `The question now isn't whether you're ready. It's where to start, and what the highest-ROI function to systematize first actually is. That's what the Business AI OS Assessment surfaces.`
+        ? `The question now isn't whether you're ready. It's where to start. The Business AI OS Assessment scores your business across 30 dimensions, calculates the real cost in hours and dollars of your specific gaps, and surfaces your single highest-ROI area to systematize first.\n\nMost people who take it walk away with a number they didn't expect. That number tends to make the decision easy.`
         : "";
 
     const assessmentCta =
