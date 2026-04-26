@@ -25,5 +25,18 @@ export async function savePrepCheckResponse({ name, email, result }: SavePrepChe
     throw error;
   }
 
+  // Send results email non-blocking
+  fetch("/api/prep-check-results", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name,
+      email,
+      score: result.score,
+      tier: result.tier,
+      gaps: result.gaps,
+    }),
+  }).catch((e) => console.error("Results email failed:", e));
+
   return { success: true };
 }

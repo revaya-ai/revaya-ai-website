@@ -17,21 +17,21 @@ const TIER_CONFIG = {
     bgClass: "bg-brand-coral/15",
     borderClass: "border-brand-coral/25",
     secondaryCta:
-      "Curious what staying here is actually costing you? The Business AI OS Assessment calculates the real number — in hours and dollars — based on how your business runs today.",
+      "Curious what staying here is actually costing you? The Business AI OS Assessment calculates the real number, in hours and dollars, based on how your business runs today.",
     knowledgeBase:
-      "As you document each process, keep them in one place. A Notion page, a shared drive folder, even a set of Google Docs. The goal is one place where your business knowledge lives and grows. That's your working knowledge base — and it's what makes AI useful later.",
+      "As you document each process, keep them in one place. A Notion page, a shared drive folder, even a set of Google Docs. The goal is one place where your business knowledge lives and grows. That's your working knowledge base, and it's what makes AI useful. Add to it every week. Every process you document is one less thing that lives only in your head.",
   },
   2: {
     name: "You Have Pieces. You Need a System.",
     diagnosis:
-      "You've done some of the work. Parts of your business are documented, some tools connect, some processes are consistent. But patchy foundations produce patchy AI results. The gaps are specific — and specific gaps have specific fixes.",
+      "You've done some of the work. Parts of your business are documented, some tools connect, some processes are consistent. But patchy foundations produce patchy AI results. The gaps are specific, and specific gaps have specific fixes.",
     colorClass: "text-yellow-400",
     bgClass: "bg-yellow-400/10",
     borderClass: "border-yellow-400/20",
     secondaryCta:
-      "Want to see what these gaps are costing you right now? The Business AI OS Assessment breaks it down in real dollars — time you're losing, revenue that's slipping through.",
+      "Want to see what these gaps are costing you right now? The Business AI OS Assessment breaks it down in real dollars, time you're losing, revenue that's slipping through.",
     knowledgeBase:
-      "The pieces you have are a start. Now connect them. One folder, one system, one place where everything you've already documented lives together. That's the difference between scattered notes and a working knowledge base.",
+      "The pieces you have are a start. Now connect them. One folder, one system, one place where everything you've already documented lives together. That's the difference between scattered notes and a working knowledge base. Add to it weekly. It gets more useful every time you do.",
   },
   3: {
     name: "Your Business Is Documented. Now Build the System.",
@@ -46,11 +46,11 @@ const TIER_CONFIG = {
 };
 
 const GAP_RECOMMENDATIONS: Record<number, string> = {
-  0: "Start with one process. Open a doc. Write down every step, in order, the way you actually do it — not how it should work. That's your first SOP. Do this for your top 3 recurring tasks this week.",
-  1: "Pick one task you do more than twice a week. Do it the same way, on purpose, for 30 days. Write down the steps the first time. That's your process. Everything else is variation you haven't decided to standardize yet.",
-  2: "List every tool you use. Note what data lives in each. Circle every place you re-enter the same information. That list is your integration roadmap — start with the one you touch most.",
-  3: "Pick one thing only you know how to do. Record yourself doing it, or write it out step by step. Don't clean it up. Just capture it. That's your first delegation document.",
-  4: "For one week, track every task you do and how long it takes. Use a notes app, a spreadsheet, anything. At the end of the week, group tasks by type. That's your time map. Do this once before anything else.",
+  0: "Start with one process. Open a doc. Write down every step, in order, the way you actually do it, not how it should work. That's your first SOP. Do this for your top 3 recurring tasks this week. Then repeat it weekly until every core process is captured.",
+  1: "Pick one task you do more than twice a week. Do it the same way, on purpose, for 30 days. Write down the steps the first time. That's your process. Repeat this weekly, one new process at a time, until your recurring work runs the same way every time.",
+  2: "List every tool you use. Note what data lives in each. Circle every place you re-enter the same information. That list is your integration roadmap. Start with the one you touch most. Work through it weekly until your core tools share data automatically.",
+  3: "Pick one thing only you know how to do. Record yourself doing it, or write it out step by step. Don't clean it up. Just capture it. That's your first delegation document. Add one more each week until someone could run your business without you explaining anything.",
+  4: "For one week, track every task you do and how long it takes. Use a notes app, a spreadsheet, anything. At the end of the week, group tasks by type. That's your time map. Repeat this once a month until you know exactly where your hours go.",
 };
 
 export default function ResultsPage({ result }: ResultsPageProps) {
@@ -93,7 +93,7 @@ export default function ResultsPage({ result }: ResultsPageProps) {
 
             {result.gaps.map((gapId) => (
               <div key={gapId} className="glass-card rounded-xl p-5 space-y-2">
-                <p className={`text-[0.8125rem] font-medium uppercase tracking-wider ${tier.colorClass}`}>
+                <p className={`text-[0.8125rem] font-bold uppercase tracking-wider ${tier.colorClass}`}>
                   {questions[gapId].dimension}
                 </p>
                 <p className="text-white/80 text-base leading-relaxed">
@@ -104,7 +104,7 @@ export default function ResultsPage({ result }: ResultsPageProps) {
 
             {tier.knowledgeBase && (
               <div className="glass-card rounded-xl p-5 border border-brand-accent/20">
-                <p className="text-[0.8125rem] font-medium uppercase tracking-wider text-brand-accent mb-2">
+                <p className="text-[0.8125rem] font-bold uppercase tracking-wider text-brand-accent mb-2">
                   Build Your Working Knowledge Base
                 </p>
                 <p className="text-white/80 text-base leading-relaxed">
@@ -119,7 +119,7 @@ export default function ResultsPage({ result }: ResultsPageProps) {
         {result.tier === 3 && (
           <div className="glass-card rounded-xl p-6 border border-brand-accent/20 text-center">
             <p className="text-white/80 text-base leading-relaxed">
-              The question now isn't whether you're ready. It's where to start — and what the highest-ROI function to systematize first actually is. That's what the Business AI OS Assessment surfaces.
+              The question now isn't whether you're ready. It's where to start, and what the highest-ROI function to systematize first actually is. That's what the Business AI OS Assessment surfaces.
             </p>
           </div>
         )}
@@ -138,6 +138,10 @@ export default function ResultsPage({ result }: ResultsPageProps) {
           >
             Take the Business AI OS Assessment →
           </Link>
+
+          <p className="text-white/25 text-sm text-center">
+            A copy of these results has been sent to your email.
+          </p>
         </div>
 
       </div>
