@@ -33,6 +33,9 @@ export default function Footer() {
           {/* Resources */}
           <nav className="flex flex-col gap-3">
             <Link href="/resources" className="text-[0.75rem] uppercase tracking-[0.1em] text-white/30 font-medium mb-1 hover:text-white/50 transition-colors">Resources</Link>
+            <Link href="/ai-prep-check" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
+              AI Prep Check
+            </Link>
             <Link href="/business-ai-os-vs-openclaw" className="text-[0.8125rem] text-white/55 hover:text-white transition-colors">
               Business AI OS vs OpenClaw
             </Link>

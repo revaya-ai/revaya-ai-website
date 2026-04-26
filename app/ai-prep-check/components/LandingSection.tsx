@@ -21,7 +21,7 @@ export default function LandingSection({ onStart }: LandingSectionProps) {
 
       <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
         5 questions. 2 minutes. Find out if your business is documented enough
-        for AI to do real work — and exactly what to fix if it isn't.
+        for AI to do real work, and exactly what to fix if it isn't.
       </p>
 
       <div className="flex justify-center gap-4 mb-10 flex-wrap">

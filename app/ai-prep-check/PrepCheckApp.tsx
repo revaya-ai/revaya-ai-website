@@ -49,7 +49,7 @@ export default function PrepCheckApp() {
         await savePrepCheckResponse({ name, email, result });
       }
     } catch {
-      // Non-blocking — show results even if save fails
+      // Non-blocking. Show results even if save fails.
     } finally {
       setIsSubmitting(false);
       setScreen("results");

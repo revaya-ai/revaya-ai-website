@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey || apiKey.startsWith("re_placeholder")) {
-      console.log("[PREP CHECK RESULTS — no Resend key]", { name, email, tier });
+      console.log("[PREP CHECK RESULTS: no Resend key]", { name, email, tier });
       return NextResponse.json({ success: true });
     }
 
@@ -102,9 +102,9 @@ https://www.revaya.ai
     `.trim();
 
     await resend.emails.send({
-      from: "Shannon Winnicki — Revaya AI <shannon@revaya.ai>",
+      from: "Shannon Winnicki, Revaya AI <shannon@revaya.ai>",
       to: email,
-      subject: `Your AI Prep Check results — ${tierLabel}`,
+      subject: `Your AI Prep Check results: ${tierLabel}`,
       text: emailText,
     });
 

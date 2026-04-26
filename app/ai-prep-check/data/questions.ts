@@ -11,14 +11,14 @@ export const questions: PrepQuestion[] = [
   {
     id: 0,
     dimension: "Knowledge Capture",
-    text: "The way you do things in your business — is it written down somewhere, or does it mostly live in your head?",
+    text: "The way you do things in your business: is it written down somewhere, or does it mostly live in your head?",
     yesLabel: "Written down somewhere",
     noLabel: "Mostly in my head",
   },
   {
     id: 1,
     dimension: "Process Repeatability",
-    text: "When you do a recurring task — onboarding a client, sending a proposal, following up on a lead — do you do it the same way every time?",
+    text: "When you do a recurring task, onboarding a client, sending a proposal, following up on a lead, do you do it the same way every time?",
     yesLabel: "Consistent process, same way every time",
     noLabel: "Depends on the situation",
   },
@@ -40,7 +40,7 @@ export const questions: PrepQuestion[] = [
   {
     id: 4,
     dimension: "Time Visibility",
-    text: "Do you know, roughly, where your time actually goes each week — broken down by type of work?",
+    text: "Do you know, roughly, where your time actually goes each week, broken down by type of work?",
     yesLabel: "I have a clear picture",
     noLabel: "Hard to say exactly",
   },
