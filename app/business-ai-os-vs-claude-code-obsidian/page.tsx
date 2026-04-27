@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.revaya.ai/business-ai-os-vs-claude-code-obsidian",
   },
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 
 export default function Page() {
