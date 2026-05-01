@@ -72,12 +72,11 @@ const timeline = [
 ];
 
 const processSteps = [
-  { num: "01", title: "Assessment", body: "I map how your business actually operates. Where time goes, where decisions pile up on you, what keeps landing on your plate. You walk away with a gap map, a prioritized roadmap, and a clear next step." },
-  { num: "02", title: "Roadmap", body: "I take the Assessment findings and map out the build. Starting with the function costing you the most, the three modules with the highest ROI, and the priority order for everything that follows." },
-  { num: "03", title: "Build", body: "I architect the system around how your business actually works. Not a generic template." },
-  { num: "04", title: "Deliver", body: "The system is installed, tested, and running. You get a full walkthrough of what was built and how to use it daily. Nothing is handed off without you understanding it." },
-  { num: "05", title: "Train + Support", body: "Three dedicated sessions across your first 30 days, hands-on with your actual workflows. A 30-day check-in to review what's working and map what to build next. Questions answered throughout." },
-  { num: "06", title: "Ongoing Partnership", body: "After the first 30 days, I stay involved, optimizing what's running and executing the roadmap. New modules, new automations, the system keeps expanding. This isn't a handoff. It's a long-term build." },
+  { num: "Phase I", title: "Discovery", body: "Every engagement starts here. No exceptions. The Discovery Assessment is a paid engagement, one to four calls scaled to your team size. I map exactly where your business is losing time and money, identify the single biggest pain point, and produce a Priority Roadmap you own regardless of what you decide next. If we move forward, the fee comes off your build cost. If you don't, you walk away with a clear plan you can act on yourself." },
+  { num: "Phase II", title: "Scope", body: "The Discovery findings become a full roadmap, everything that could be built, prioritized by pain point and ROI. You see the complete picture first. What to tackle, what comes next, and why. Then you decide where to start and how far you want to go." },
+  { num: "Phase III", title: "Build", body: "The system is architected around how your business actually works. Not a template I repurpose. Every component is built against the specific workflows, decisions, and data surfaced in Discovery. It knows your business before it goes live." },
+  { num: "Phase IV", title: "Deliver + Train", body: "The system is installed, tested, and running. Three dedicated sessions across your first 30 days, working hands-on through your actual workflows. A 30-day check-in to review what's working and map what comes next. Nothing ships without you understanding it." },
+  { num: "Phase V", title: "Ongoing Partnership", body: "After the first 30 days, I stay involved. New modules added as the roadmap progresses. Automations expanded. The system keeps building as the business grows. You're not handed off to a support queue. This is a long-term build." },
 ];
 
 // ─── FadeUp helper ──────────────────────────────────────────────────────────
@@ -2569,7 +2568,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "How long does this take?",
-                  answer: "The Assessment runs across one to two sessions and produces a specific deliverable within a week of completion. The scope is confirmed after the Assessment. I work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, it's best to have in-person sessions. Then I create a support plan based on your business and needs.",
+                  answer: "The Discovery Assessment runs across one to four calls depending on your team size, and produces a Priority Roadmap within a week of completion. The scope is confirmed after Discovery. I work hand in hand to build your AIOS over the first 30 days, or more based on complexity. For Delivery and Training, in-person sessions work best. Then I create a support plan based on your business and needs.",
                 },
                 {
                   question: "Do I need to be technical?",
@@ -2577,7 +2576,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What if my business is too small or too early?",
-                  answer: "The Assessment will answer that. I've told owner-operators their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
+                  answer: "The Discovery Assessment will answer that. I've told owner-operators their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
                 },
                 {
                   question: "What happens if something breaks after Setup?",
@@ -2585,7 +2584,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What do you actually need from me?",
-                  answer: "Time for the Assessment interview, usually one to two sessions. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Assessment is only as good as the information it's built on. You'll also want to set aside a few days during Delivery and Training so we can work side by side as the system goes live.",
+                  answer: "Time for the Discovery Assessment, usually one to four calls depending on your team size. Access to your current tools and platforms so I can understand the actual state of things, not just what you think the state of things is. And honest answers about how the business works, including the parts that don't work. The Discovery Assessment is only as good as the information it's built on. You'll also want to set aside a few days during Delivery and Training so we can work side by side as the system goes live.",
                 },
                 {
                   question: "Claude Desktop and Cowork look like they do the same thing. Why would I need a custom AI OS?",
@@ -2594,6 +2593,10 @@ export default function BusinessAIOSPage() {
                 {
                   question: "Can't I just set up Claude Code and Obsidian myself? Why pay for this?",
                   answer: "You could. The tools are not the product. Knowing what to build is. You could open Obsidian today and still be staring at a blank vault asking what to put in it. The system design requires understanding your business: your clients, your workflows, where decisions pile up on you. That takes discovery, not installation. My clients pay because mapping their business and building the right system is worth more than three months of trial and error.",
+                },
+                {
+                  question: "Why is the Discovery Assessment a paid engagement?",
+                  answer: "Because the diagnosis is the product. Most consultants give you a free discovery call and then guess at what you need. I don't. You walk away from the Discovery Assessment with a Priority Roadmap you own, regardless of what you decide next. That's not a sales call. That's real work with a real deliverable. Think about how a surgeon operates. You wouldn't let one cut before running diagnostics. I map exactly where your business is losing time and money, identify the single biggest problem, and hand you a prioritized plan. The fee comes off your build cost if you move forward. If you don't, you still have something you can act on.",
                 },
                 {
                   question: "What does this cost, and how do I know it will pay off?",
