@@ -901,10 +901,7 @@ export default function HomePage() {
                   You&rsquo;ve worn all the hats long enough to know which ones are costing you the most. Sales. Ops. Client follow-up. The work that never stops because there&rsquo;s no one else to do it.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Maybe you&rsquo;ve thought about hiring. But the budget isn&rsquo;t there yet. Or you brought someone on and found yourself still doing the job alongside them. The Business AI OS fills the gaps that headcount can&rsquo;t. The work nobody is doing because there&rsquo;s no person to do it. The follow-up that falls through the cracks. The 2am invoice chase. The report that takes four hours to pull manually every week. Not replacing the people you have. Handling the work that wasn&rsquo;t getting done at all.
-                </p>
-                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&rsquo;re unavailable, nothing moves.
+                  Maybe you&rsquo;ve thought about hiring. But the budget isn&rsquo;t there yet. Or you brought someone on and found yourself still doing the job alongside them. The Business AI OS fills the gaps that headcount can&rsquo;t. Not replacing the people you have. Handling the work that wasn&rsquo;t getting done at all.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Or you&rsquo;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&rsquo;s no one to hand off to. The business doesn&rsquo;t run when you&rsquo;re not in it. It waits.
@@ -930,7 +927,7 @@ export default function HomePage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   Can your business run without you?
                   <br />
-                  It can. Here&rsquo;s what that takes.
+                  It can.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Right now, everything routes through you by default, not by design. Not because your team can&rsquo;t execute. Because there&rsquo;s no system underneath the work to carry it.
@@ -996,15 +993,15 @@ export default function HomePage() {
                   Step 2 — The Priority Roadmap
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  The highest-cost function, first.
+                  The biggest pain point, first.
                   <br />
                   Everything else, in order.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Assessment produces a deliverable. A gap map of where time is lost. A prioritized roadmap of what to fix first. A concrete ROI projection built from your actual numbers.
+                  The Discovery Assessment produces a Priority Roadmap. A gap map of where time is lost. A prioritized list of what to fix first. A concrete ROI projection built from your actual numbers.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Then I tell you exactly which business function to start with, sales, marketing, ops, or finance, and which three things inside that function will move the most. That&rsquo;s where the build begins. Not a guess. The highest-impact work, sequenced from your actual numbers.
+                  Then I tell you exactly which business function to start with, sales, marketing, ops, or finance, and which three things inside that function will move the most. Not a guess. The highest-impact work, sequenced from your actual numbers.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   If you don&rsquo;t see the system working within the first 30 days, you get your money back. No conditions.
@@ -1092,7 +1089,7 @@ export default function HomePage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   I build the system.
                   <br />
-                  You own it completely.
+                  Your transformation begins.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   I take the roadmap and build it. Not ChatGPT prompts stitched together. A real operating system configured to how your business actually works. Four layers: your business context, your data connected, specialized agents for your specific workflows, and recurring tasks automated without you.
