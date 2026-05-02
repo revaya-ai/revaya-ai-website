@@ -728,7 +728,7 @@ function TelegramPanel() {
               <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
                 <p className="text-[0.8rem] text-white">
                   3 form submissions. One looks qualified. Service business,
-                  $400K revenue, asking about full AIOS.
+                  650K revenue, asking about a full AIOS build.
                 </p>
               </div>
             </motion.div>
@@ -803,7 +803,7 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8 mt-5">
               <div className="w-1.5 h-1.5 rounded-full bg-[#028090] animate-pulse" />
               <span className="text-[0.875rem] uppercase tracking-[0.12em] text-white/80 font-medium">
-                Business AI Operating System for Owner-Operators
+                Business AI Operating System for Business Owners
               </span>
             </div>
           </FadeIn>
@@ -838,7 +838,7 @@ export default function HomePage() {
                 href="/work-with-me"
                 className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)]"
               >
-                Book a Strategy Call &rarr;
+                Start a Conversation &rarr;
               </Link>
             </div>
           </FadeIn>
@@ -895,10 +895,13 @@ export default function HomePage() {
                   Sound Familiar?
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  You&rsquo;re the system. That&rsquo;s what has to change.
+                  How do you stop being the bottleneck?
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  New hires take 40 hours to onboard. Your business knowledge lives in your head, and when you&rsquo;re unavailable, nothing moves.
+                  You build something that runs instead of you. You&rsquo;ve worn all the hats long enough to know which ones are costing you the most. Sales. Ops. Client follow-up. The work that never stops because there&rsquo;s no one else to do it.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
+                  Maybe you&rsquo;ve thought about hiring. But the budget isn&rsquo;t there yet. Or you brought someone on and found yourself still doing the job alongside them. The Business AI OS fills the gaps that headcount can&rsquo;t. Not replacing the people you have. Handling the work that wasn&rsquo;t getting done at all.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Or you&rsquo;re running it alone. You left a job to have freedom. You have less of it now than when you had a boss. There&rsquo;s no one to hand off to. The business doesn&rsquo;t run when you&rsquo;re not in it. It waits.
@@ -922,15 +925,18 @@ export default function HomePage() {
                   The Problem &rarr; What&rsquo;s Possible
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  A business that runs on systems.
+                  Can your business run without you?
                   <br />
-                  Not on you being in every decision.
+                  It can.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Right now, everything routes through you by default, not by design. Not because your team can&rsquo;t execute. Because there&rsquo;s no system underneath the work to carry it.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-6">
                   There&rsquo;s a different version. One where the recurring work runs on its own, your team has what they need without asking, and the capacity of the operation grows without adding headcount. One person running a business that operates like a team of ten. The path to it starts with understanding exactly where you are now.
+                </p>
+                <p className="text-[1.0625rem] leading-[1.7] text-white mb-6">
+                  A business that only works when you do isn&rsquo;t an asset. It&rsquo;s a job with overhead. You can&rsquo;t step away from it. You can&rsquo;t hand it off. And you can&rsquo;t grow past the ceiling that&rsquo;s sitting at your capacity.
                 </p>
                 <Link
                   href="/business-ai-operating-system"
@@ -957,7 +963,7 @@ export default function HomePage() {
             <FadeIn delay={0.15} direction="left" className="order-first md:order-last">
               <div>
                 <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  Step 1 — The Assessment
+                  Step 1 — The Discovery Assessment
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   I find what&rsquo;s actually broken.
@@ -965,7 +971,7 @@ export default function HomePage() {
                   It&rsquo;s often not what you think.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Assessment is a structured diagnostic of how your business actually operates. Where time goes. Where decisions pile up on you. What&rsquo;s repeatable but still lands on you. I go area by area, and most owner-operators are surprised by what surfaces.
+                  The Assessment is a structured diagnostic of how your business actually operates. Where time goes. Where decisions pile up on you. What&rsquo;s repeatable but still lands on you. I go area by area, and most business owners are surprised by what surfaces.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   You walk away with a gap map, a prioritized automation roadmap, and a clear recommendation built on your current reality. Not a generic playbook. A specific path forward for your business, based on what I found.
@@ -984,18 +990,18 @@ export default function HomePage() {
             <FadeIn direction="right">
               <div>
                 <span className="text-[0.875rem] uppercase tracking-[0.14em] text-[#F45B69] font-medium block mb-5">
-                  Step 2 — The Recommendation
+                  Step 2 — The Priority Roadmap
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  The highest-cost function, first.
+                  The biggest pain point, first.
                   <br />
                   Everything else, in order.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  The Assessment produces a deliverable. A gap map of where time is lost. A prioritized roadmap of what to fix first. A concrete ROI projection built from your actual numbers.
+                  The Discovery Assessment produces a Priority Roadmap. A gap map of where time is lost. A prioritized list of what to fix first. A concrete ROI projection built from your actual numbers.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Then I tell you exactly which business function to start with, sales, marketing, ops, or finance, and which three things inside that function will move the most. That&rsquo;s where the build begins. Not a guess. The highest-impact work, sequenced from your actual numbers.
+                  Then I tell you exactly which business function to start with, sales, marketing, ops, or finance, and which three things inside that function will move the most. Not a guess. The highest-impact work, sequenced from your actual numbers.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   If you don&rsquo;t see the system working within the first 30 days, you get your money back. No conditions.
@@ -1018,7 +1024,7 @@ export default function HomePage() {
                     { label: "Gap Map", value: "14 workflows identified. 9 automatable." },
                     { label: "Quick Wins", value: "4 tasks removed in weeks 1–4." },
                     { label: "ROI Projection", value: "11 hrs/week back. Payback in 6 weeks." },
-                    { label: "Recommended Path", value: "Business AI OS — founder first." },
+                    { label: "Recommended Path", value: "Business AI OS — owner first." },
                   ].map((item) => (
                     <div key={item.label} className="flex flex-col gap-1 px-4 py-3 rounded-lg border border-white/[0.05] bg-white/[0.02]">
                       <span className="text-[0.7rem] text-[#028090] font-mono uppercase tracking-wide">{item.label}</span>
@@ -1083,7 +1089,7 @@ export default function HomePage() {
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
                   I build the system.
                   <br />
-                  You own it completely.
+                  Your transformation begins.
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   I take the roadmap and build it. Not ChatGPT prompts stitched together. A real operating system configured to how your business actually works. Four layers: your business context, your data connected, specialized agents for your specific workflows, and recurring tasks automated without you.
@@ -1151,7 +1157,7 @@ export default function HomePage() {
               Not on you.
             </h2>
             <p className="text-[1.0625rem] leading-[1.7] text-white mb-10 max-w-[500px] mx-auto">
-              Most owner-operators I talk to already know the function that&rsquo;s
+              Most business owners I talk to already know the function that&rsquo;s
               costing them the most. That&rsquo;s exactly where we start. The
               Assessment maps it. The build fixes it. And when that system is
               running, the business runs on that foundation instead of on you.
@@ -1160,12 +1166,12 @@ export default function HomePage() {
               href="/work-with-me"
               className="inline-block bg-[#553555] text-white text-[1rem] font-bold px-10 py-4 rounded-full transition-all duration-200 hover:bg-[#4a2d4a] hover:shadow-[0_0_50px_rgba(85,53,85,0.5)]"
             >
-              Book a Strategy Call &rarr;
+              Start a Conversation &rarr;
             </Link>
             <p className="mt-4 text-[0.8125rem] text-white/40">
-              Or if you already know,{" "}
-              <Link href="/work-with-me" className="text-white/50 underline underline-offset-2 hover:text-white/70 transition-colors">
-                start the conversation &rarr;
+              Not sure yet?{" "}
+              <Link href="/business-ai-os-assessment" className="text-white/50 underline underline-offset-2 hover:text-white/70 transition-colors">
+                See how much it costs you to stay the same &rarr;
               </Link>
             </p>
           </FadeIn>
