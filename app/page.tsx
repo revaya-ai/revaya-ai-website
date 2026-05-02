@@ -1169,9 +1169,9 @@ export default function HomePage() {
               Start a Conversation &rarr;
             </Link>
             <p className="mt-4 text-[0.8125rem] text-white/40">
-              Or if you already know,{" "}
-              <Link href="/work-with-me" className="text-white/50 underline underline-offset-2 hover:text-white/70 transition-colors">
-                start the conversation &rarr;
+              Not sure yet?{" "}
+              <Link href="/business-ai-os-assessment" className="text-white/50 underline underline-offset-2 hover:text-white/70 transition-colors">
+                See how much it costs you to stay the same &rarr;
               </Link>
             </p>
           </FadeIn>
