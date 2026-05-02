@@ -895,10 +895,10 @@ export default function HomePage() {
                   Sound Familiar?
                 </span>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  How do you stop being the bottleneck? You build something that runs instead of you.
+                  How do you stop being the bottleneck?
                 </h2>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  You&rsquo;ve worn all the hats long enough to know which ones are costing you the most. Sales. Ops. Client follow-up. The work that never stops because there&rsquo;s no one else to do it.
+                  You build something that runs instead of you. You&rsquo;ve worn all the hats long enough to know which ones are costing you the most. Sales. Ops. Client follow-up. The work that never stops because there&rsquo;s no one else to do it.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
                   Maybe you&rsquo;ve thought about hiring. But the budget isn&rsquo;t there yet. Or you brought someone on and found yourself still doing the job alongside them. The Business AI OS fills the gaps that headcount can&rsquo;t. Not replacing the people you have. Handling the work that wasn&rsquo;t getting done at all.
