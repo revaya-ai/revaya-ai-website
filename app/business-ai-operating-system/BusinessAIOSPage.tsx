@@ -1598,7 +1598,7 @@ const businessTypes = [
   "Agencies",
   "Consultancies / Solo Operators",
   "Professional practices",
-  "Founder-led product brands",
+  "Owner-operated product brands",
   "DTC & retail operations",
 ];
 
@@ -2034,7 +2034,7 @@ function TelegramPanelAIOS() {
           {step >= 2 && (
             <motion.div key="a1" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-[85%]">
               <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
-                <p className="text-[0.8rem] text-white">3 form submissions. One looks qualified. Service business, $400K revenue, asking about full AIOS.</p>
+                <p className="text-[0.8rem] text-white">3 form submissions. One looks qualified. Service business, 650K revenue, asking about a full AIOS build.</p>
               </div>
             </motion.div>
           )}
@@ -2130,13 +2130,13 @@ export default function BusinessAIOSPage() {
                   Who This Is For
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Built for owner-operators where the business still runs through you.
+                  Built for business owners where the business still runs through you.
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
                   The business requires you because it was built that way. Not by accident. Just by never stopping to build it differently. Every system that should exist is still a conversation. Every decision that should be automated still lands on you.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Most owner-operators already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath — context, data, intelligence, automation — so the business runs on the system instead of on you holding it together.
+                  Most business owners already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath — context, data, intelligence, automation — so the business runs on the system instead of on you holding it together.
                 </p>
               </FadeUp>
             </div>
@@ -2576,7 +2576,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What if my business is too small or too early?",
-                  answer: "The Discovery Assessment will answer that. I've told owner-operators their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
+                  answer: "The Discovery Assessment will answer that. I've told business owners their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
                 },
                 {
                   question: "What happens if something breaks after Setup?",
@@ -2600,7 +2600,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What does this cost, and how do I know it will pay off?",
-                  answer: "The Assessment is $2,500. If you proceed, it's deductible from your build on Option A, or it counts as Month 1 of your subscription on Option B. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It's yours either way. Option A: Build $6,500 + $1,500/mo retainer. Option B: $2,500/mo subscription — full refund if you walk after 30 days. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI ($). Most owner-operators get 10 or more hours a week back. At $100/hr, that's $1,000 a month in recovered capacity, every month, permanently. If those numbers don't move, the system isn't working.",
+                  answer: "The Assessment starts at 2,500. If you move forward, it comes off your build. If you don't, you walk away with a clear gap map and a Priority Roadmap you can act on yourself. It's yours either way. Three build packages based on scope: Starter at 7,000, Core at 11,000, or Full Build at custom pricing. Each comes with a monthly subscription that scales to the package. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI. Most business owners get 10 or more hours a week back. At a conservative 100 an hour, that's 1,000 a month in reclaimed capacity, every month, permanently. If those numbers don't move, the system isn't working.",
                 },
                 {
                   question: "What if the AI makes a wrong decision or does something I didn't intend?",
@@ -2656,7 +2656,7 @@ export default function BusinessAIOSPage() {
                 href="/work-with-me"
                 className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
               >
-                Start the Conversation →
+                Start a Conversation →
               </Link>
             </FadeUp>
           </div>

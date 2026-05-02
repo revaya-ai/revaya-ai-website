@@ -32,7 +32,7 @@ const faqSchema = {
       name: "What does this cost, and how do I know it will pay off?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Discovery Assessment is deductible against your build if you move forward. If you decide not to, you still walk away with a clear gap map and a Priority Roadmap you can act on yourself. It\u2019s yours either way. Most business owners get 10 or more hours a week back. At a conservative 100 an hour, that is 1,000 a month in reclaimed capacity, every month, permanently. The three metrics I track: task automation percentage, hours recovered per week, and monthly ROI.",
+        text: "The Assessment starts at 2,500. If you move forward, it comes off your build. If you don't, you walk away with a clear gap map and a Priority Roadmap you can act on yourself. It's yours either way. Three build packages based on scope: Starter at 7,000, Core at 11,000, or Full Build at custom pricing. Each comes with a monthly subscription that scales to the package. The three metrics I track: Task Automation %, Hours Recovered per Week, and Monthly ROI. Most business owners get 10 or more hours a week back. At a conservative 100 an hour, that's 1,000 a month in reclaimed capacity, every month, permanently. If those numbers don't move, the system isn't working.",
       },
     },
     {
