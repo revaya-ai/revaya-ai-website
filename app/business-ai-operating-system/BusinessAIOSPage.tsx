@@ -39,9 +39,9 @@ const layers = [
 ];
 
 const included = [
-  "Module build scoped to your business — Core (3 modules), Pro (7 modules), or Complete (15+)",
-  "Master Training Guide — how the system was built, how every module works, how to use it daily",
-  "Command Dashboard — your full system reference",
+  "Module build scoped to your business. Core (3 modules), Pro (7 modules), or Complete (15+)",
+  "Master Training Guide: how the system was built, how every module works, how to use it daily",
+  "Command Dashboard: your full system reference",
   "Session 1: How It Was Built. Architecture walkthrough, what lives where and why.",
   "Session 2: How to Use It Daily. Hands-on with your actual workflows.",
   "30 days of direct support",
@@ -137,8 +137,8 @@ const painMessages = [
   { initials: "RC", sender: "Rachel · Bloom Creative", text: "Hey, quick question on the timeline for deliverables..." },
   { initials: "MK", sender: "Marcus · Studio K", text: "What does revision rounds look like for this project?" },
   { initials: "JT", sender: "Jamie · Thorn & Co", text: "Can you send over the contract again? Can't find it." },
-  { initials: "PL", sender: "Priya L.", text: "Following up — did you get my last message?" },
-  { initials: "RC", sender: "Rachel · Bloom Creative", text: "One more thing — what's included in the next phase?" },
+  { initials: "PL", sender: "Priya L.", text: "Following up, did you get my last message?" },
+  { initials: "RC", sender: "Rachel · Bloom Creative", text: "One more thing, what's included in the next phase?" },
 ];
 
 function PainQueuePanel() {
@@ -263,10 +263,10 @@ function ContextPanel() {
               </div>
               <p className="text-[0.8rem] text-white/75 leading-[1.6]">
                 Based on your ad data this week:<br /><br />
-                1. &ldquo;Stop losing clients to bad onboarding&rdquo; — $340 spend · 4.2% CTR · 38 leads<br />
-                2. &ldquo;Your AI tools don&apos;t talk to each other&rdquo; — $290 spend · 3.8% CTR · 31 leads<br />
-                3. &ldquo;What 10 hours a week back looks like&rdquo; — $210 spend · 3.1% CTR · 26 leads<br /><br />
-                All three outperformed last week&apos;s average by 40%+. &ldquo;Bad onboarding&rdquo; is pulling the highest-intent traffic — recommend pausing the other two and scaling budget there.
+                1. &ldquo;Stop losing clients to bad onboarding&rdquo;: $340 spend · 4.2% CTR · 38 leads<br />
+                2. &ldquo;Your AI tools don&apos;t talk to each other&rdquo;: $290 spend · 3.8% CTR · 31 leads<br />
+                3. &ldquo;What 10 hours a week back looks like&rdquo;: $210 spend · 3.1% CTR · 26 leads<br /><br />
+                All three outperformed last week&apos;s average by 40%+. &ldquo;Bad onboarding&rdquo; is pulling the highest-intent traffic. Recommend pausing the other two and scaling budget there.
               </p>
             </motion.div>
           )}
@@ -1153,7 +1153,7 @@ function ProcessGanttPanel() {
 // ─── Timeline Panel: Month 1 — Refinement Loop ─────────────────────────────
 
 const refinementRows = [
-  { draft: "Proposal draft — attached for your review.", revised: "Proposal ready. Specs from the 3/12 call included." },
+  { draft: "Proposal draft, attached for your review.", revised: "Proposal ready. Specs from the 3/12 call included." },
   { draft: "Weekly summary attached.", revised: "3 wins, 2 blockers, next actions listed." },
   { draft: "Onboarding doc updated.", revised: "New hire can start without a walkthrough." },
 ];
@@ -1677,7 +1677,7 @@ function WhoPanel() {
 
 const feedEvents = [
   { time: "7:02 AM", event: "Morning brief delivered", detail: "Revenue, pipeline, 3 priorities", dot: "#028090" },
-  { time: "7:45 AM", event: "Follow-up sent — Henderson Industries", detail: "Proposal sent March 12 · no response yet", dot: "#028090" },
+  { time: "7:45 AM", event: "Follow-up sent. Henderson Industries.", detail: "Proposal sent March 12 · no response yet", dot: "#028090" },
   { time: "8:30 AM", event: "Intake form processed", detail: "2 new leads qualified and routed", dot: "#028090" },
   { time: "9:15 AM", event: "Weekly status emails sent", detail: "8 clients notified automatically", dot: "#028090" },
   { time: "11:00 AM", event: "Invoice reminder triggered", detail: "3 overdue · $12,400 outstanding", dot: "#F45B69" },
@@ -2136,7 +2136,7 @@ export default function BusinessAIOSPage() {
                   The business requires you because it was built that way. Not by accident. Just by never stopping to build it differently. Every system that should exist is still a conversation. Every decision that should be automated still lands on you.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Most business owners already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath — context, data, intelligence, automation — so the business runs on the system instead of on you holding it together.
+                  Most business owners already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath (context, data, intelligence, automation) so the business runs on the system instead of on you holding it together.
                 </p>
               </FadeUp>
             </div>
@@ -2188,7 +2188,7 @@ export default function BusinessAIOSPage() {
                   <div className="mt-8 pt-6 border-t border-[#028090]/20 bg-[#028090]/[0.04] rounded-xl p-4 -mx-2">
                     <div className="flex justify-between items-baseline">
                       <span className="text-[0.875rem] text-[#028090] font-medium">AIOS ROI timeline</span>
-                      <span className="font-display font-black text-[1.25rem] text-[#028090]">2-3 months</span>
+                      <span className="font-display font-black text-[1.25rem] text-[#028090]">1-2 months</span>
                     </div>
                   </div>
                 </div>
@@ -2436,7 +2436,7 @@ export default function BusinessAIOSPage() {
                   removed.
                 </h3>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex — they&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
+                  Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex. They&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   Every repeatable task that gets handled is time that comes back to you. That&apos;s the only metric that matters.
@@ -2616,7 +2616,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "Claude Computer Use can click buttons, fill forms, and log into accounts. Can your system do that too?",
-                  answer: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
+                  answer: "Yes. Claude Computer Use is Anthropic's approach. It works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
                 },
               ]} />
             </FadeUp>
