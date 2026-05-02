@@ -16,7 +16,7 @@ const faqSchema = {
       name: "Claude Desktop and Cowork look like they do the same thing. Why would I need a custom AI OS?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Claude Desktop is a better assistant. A Business AI OS is the system that runs your business when you're not in the room. Every Cowork session starts fresh. It does not know your clients, your pricing, or what you decided last week. What I build holds that context permanently and logs every decision so you know what happened when something goes wrong. Anthropic will never build that for your specific company.",
+        text: "Claude Desktop is a better assistant. A Business AI OS is the system that runs your business when you're not in the room. Every Cowork session starts fresh. It does not know your clients, your pricing, or what you decided last week. What I build holds that context permanently and logs every decision so you know exactly what happened when something goes wrong. Anthropic builds tools for everyone. I build a system for your specific business. That's not something they will ever do.",
       },
     },
     {
@@ -32,7 +32,7 @@ const faqSchema = {
       name: "What does this cost, and how do I know it will pay off?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Assessment is $2,500 and deductible against your build if you proceed. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It\u2019s yours either way. Most owner-operators get 10 or more hours a week back. At a conservative $100 per hour, that is $1,000 a month in reclaimed capacity, every month, permanently. The three metrics I measure against are task automation percentage, hours recovered per week, and monthly ROI.",
+        text: "The Discovery Assessment is deductible against your build if you move forward. If you decide not to, you still walk away with a clear gap map and a Priority Roadmap you can act on yourself. It\u2019s yours either way. Most business owners get 10 or more hours a week back. At a conservative 100 an hour, that is 1,000 a month in reclaimed capacity, every month, permanently. The three metrics I track: task automation percentage, hours recovered per week, and monthly ROI.",
       },
     },
     {
@@ -57,6 +57,30 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between AI tools and an AI operating system?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "AI tools are point solutions. You buy one to do email, one to do scheduling, one to do analytics. Then you become the connector between all of them. An AI operating system is the architecture that all of those functions connect to. You set it up once. It runs. You stop being the middleware. The difference is whether you are managing the tools or the tools are managing the work.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can a small business run without the owner?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The condition is that the business runs on systems, not on one person's presence and memory. Most small businesses were never built that way. The owner became the operating system by default, filling gaps because it was faster than documenting anything. A Business AI OS replaces that dependency layer. It holds the business knowledge, handles the repeatable work, and keeps things moving when the owner steps back. The 30-day mark is when you know whether it's real.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I stop being the bottleneck in my business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Start by naming what's actually routing through you. Not the big decisions. The repeatable ones. The follow-up email. The status update. The answer to a question someone asked last Tuesday and last month and will ask again next week. Those are not leadership tasks. Those are systems problems. A Business AI OS maps every place the business is running through you, and replaces you as the operating system for the repeatable layer. You stay in the decisions that actually require you. Everything else runs.",
       },
     },
   ],

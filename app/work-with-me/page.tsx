@@ -86,6 +86,11 @@ export default function WorkWithMePage() {
                   ))}
                 </StaggerChildren>
                 <div className="mt-8 glass-card rounded-xl p-5 border-l-2 border-[#028090]">
+                  <p className="text-[0.875rem] text-white/80 leading-[1.65]">
+                    The first conversation leads to the Discovery Assessment, where I map exactly where your business is losing time and money. You walk away with a Priority Roadmap whether or not you decide to build.
+                  </p>
+                </div>
+                <div className="mt-4 glass-card rounded-xl p-5 border-l-2 border-[#028090]">
                   <p className="text-[0.875rem] text-white/50 leading-[1.65]">
                     If it&rsquo;s not the right fit, I&rsquo;ll tell you that. No pitch, no pressure. Just an honest read on whether this makes sense for your business.
                   </p>
