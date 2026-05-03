@@ -11,30 +11,34 @@ const layers = [
   {
     num: "01",
     name: "Context",
+    role: "Founder's Brain",
     problem: "Your business knowledge isn't nowhere. It's everywhere. A Notion doc from 2023. A ChatGPT thread you can't find. A decision you explained in a Slack message that's now buried. A process that lives in your head because that's faster than documenting it.",
     what: "A structured knowledge layer that pulls it together, decisions, processes, standards, context, and puts it somewhere your AI can actually use it.",
-    produces: "A business that doesn't require you to re-explain itself every time you start a new tool, hire someone, or hand something off.",
+    after: "You hire someone on a Tuesday. By Friday they're operating without a single question routed to you.",
   },
   {
     num: "02",
     name: "Data",
+    role: "Your Manager",
     problem: "You know roughly what's happening in your business. Not exactly. You check three tools, do mental math, and make a call. That's not strategy. That's guessing with extra steps.",
     what: "Your data sources connected and queryable. Revenue, pipeline, time, utilization, pulled on demand, not assembled manually.",
-    produces: "Decisions you can explain. Numbers that match reality, not memory.",
+    after: "Someone asks how the month is tracking. The answer was already in your inbox at 7am.",
   },
   {
     num: "03",
     name: "Intelligence",
+    role: "Your Advisor",
     problem: "You probably have AI tools already. Maybe a ChatGPT project. A Claude workspace. A few prompts you've saved somewhere. They help. But they only know what you told them, in that tool, the day you set it up. They don't talk to each other. They don't know your real numbers. They don't know how you handled the last three situations like this one.",
     what: "Agents trained on your actual business, not a description of it. Connected to your context layer, your data layer, your real decisions. They know what you know.",
-    produces: "AI that gives answers your business would actually give. Not generic responses dressed up with your company name.",
+    after: "A client situation comes up you've handled a dozen times. The system already knows how you'd respond.",
   },
   {
     num: "04",
     name: "Automate",
-    problem: "You know which tasks don't need a human. You've thought it a hundred times while doing them. The follow-up email. The intake form. The weekly report nobody asked for but everyone needs. You do it anyway because stopping to set it up always felt like more work than just doing it.",
+    role: "AI Employees",
+    problem: "You know which tasks don't need you. You've thought it a hundred times while doing them. The follow-up email. The intake form. The weekly report nobody asked for but everyone needs. You do it anyway because stopping to set it up always felt like more work than just doing it.",
     what: "The repetitive, rules-based work handed off permanently. Not automated in the abstract. Actually gone from your plate.",
-    produces: "The hour you used to spend on the thing you've always hated doing.",
+    after: "It's Thursday. The follow-ups went out. You didn't think about them once.",
   },
 ];
 
@@ -1544,16 +1548,18 @@ function LayersTabs() {
           <button
             key={layer.num}
             onClick={() => setActive(i)}
-            className={`flex items-center gap-2 px-5 py-4 shrink-0 border-b-2 transition-all duration-200 ${
+            className={`flex flex-col items-start px-5 py-4 shrink-0 border-b-2 transition-all duration-200 ${
               active === i
                 ? "border-[#028090] text-white"
                 : "border-transparent text-white/40 hover:text-white/65"
             }`}
           >
-            <span className={`text-[0.875rem] font-medium tracking-widest ${active === i ? "text-[#028090]" : "text-white/25"}`}>
-              {layer.num}
+            <span className={`text-[0.9375rem] font-display font-black whitespace-nowrap ${active === i ? "text-white" : "text-white/40"}`}>
+              {layer.role}
             </span>
-            <span className="text-[0.875rem] font-display font-black">{layer.name}</span>
+            <span className={`text-[0.65rem] font-medium tracking-[0.12em] uppercase mt-0.5 ${active === i ? "text-[#028090]" : "text-white/20"}`}>
+              {layer.name}
+            </span>
           </button>
         ))}
       </div>
@@ -1579,8 +1585,8 @@ function LayersTabs() {
               <p className="text-[1.0625rem] text-white leading-[1.7]">{layers[active].what}</p>
             </div>
             <div className="bg-[#028090]/[0.08] border border-[#028090]/20 rounded-lg p-4">
-              <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090]/65 mb-2">What it produces</p>
-              <p className="text-[1rem] text-white font-medium leading-[1.7]">{layers[active].produces}</p>
+              <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090]/65 mb-2">After</p>
+              <p className="text-[1rem] text-white font-medium leading-[1.7] italic">{layers[active].after}</p>
             </div>
           </div>
 
