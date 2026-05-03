@@ -11,37 +11,41 @@ const layers = [
   {
     num: "01",
     name: "Context",
+    role: "Founder's Brain",
     problem: "Your business knowledge isn't nowhere. It's everywhere. A Notion doc from 2023. A ChatGPT thread you can't find. A decision you explained in a Slack message that's now buried. A process that lives in your head because that's faster than documenting it.",
     what: "A structured knowledge layer that pulls it together, decisions, processes, standards, context, and puts it somewhere your AI can actually use it.",
-    produces: "A business that doesn't require you to re-explain itself every time you start a new tool, hire someone, or hand something off.",
+    after: "You hire someone on a Tuesday. By Friday they're operating without a single question routed to you.",
   },
   {
     num: "02",
     name: "Data",
+    role: "Your Manager",
     problem: "You know roughly what's happening in your business. Not exactly. You check three tools, do mental math, and make a call. That's not strategy. That's guessing with extra steps.",
     what: "Your data sources connected and queryable. Revenue, pipeline, time, utilization, pulled on demand, not assembled manually.",
-    produces: "Decisions you can explain. Numbers that match reality, not memory.",
+    after: "Someone asks how the month is tracking. The answer was already in your inbox at 7am.",
   },
   {
     num: "03",
     name: "Intelligence",
+    role: "Your Advisor",
     problem: "You probably have AI tools already. Maybe a ChatGPT project. A Claude workspace. A few prompts you've saved somewhere. They help. But they only know what you told them, in that tool, the day you set it up. They don't talk to each other. They don't know your real numbers. They don't know how you handled the last three situations like this one.",
     what: "Agents trained on your actual business, not a description of it. Connected to your context layer, your data layer, your real decisions. They know what you know.",
-    produces: "AI that gives answers your business would actually give. Not generic responses dressed up with your company name.",
+    after: "A client situation comes up you've handled a dozen times. The system already knows how you'd respond.",
   },
   {
     num: "04",
     name: "Automate",
-    problem: "You know which tasks don't need a human. You've thought it a hundred times while doing them. The follow-up email. The intake form. The weekly report nobody asked for but everyone needs. You do it anyway because stopping to set it up always felt like more work than just doing it.",
+    role: "AI Employees",
+    problem: "You know which tasks don't need you. You've thought it a hundred times while doing them. The follow-up email. The intake form. The weekly report nobody asked for but everyone needs. You do it anyway because stopping to set it up always felt like more work than just doing it.",
     what: "The repetitive, rules-based work handed off permanently. Not automated in the abstract. Actually gone from your plate.",
-    produces: "The hour you used to spend on the thing you've always hated doing.",
+    after: "It's Thursday. The follow-ups went out. You didn't think about them once.",
   },
 ];
 
 const included = [
-  "Module build scoped to your business — Core (3 modules), Pro (7 modules), or Complete (15+)",
-  "Master Training Guide — how the system was built, how every module works, how to use it daily",
-  "Command Dashboard — your full system reference",
+  "Module build scoped to your business. Core (3 modules), Pro (7 modules), or Complete (15+)",
+  "Master Training Guide: how the system was built, how every module works, how to use it daily",
+  "Command Dashboard: your full system reference",
   "Session 1: How It Was Built. Architecture walkthrough, what lives where and why.",
   "Session 2: How to Use It Daily. Hands-on with your actual workflows.",
   "30 days of direct support",
@@ -137,8 +141,8 @@ const painMessages = [
   { initials: "RC", sender: "Rachel · Bloom Creative", text: "Hey, quick question on the timeline for deliverables..." },
   { initials: "MK", sender: "Marcus · Studio K", text: "What does revision rounds look like for this project?" },
   { initials: "JT", sender: "Jamie · Thorn & Co", text: "Can you send over the contract again? Can't find it." },
-  { initials: "PL", sender: "Priya L.", text: "Following up — did you get my last message?" },
-  { initials: "RC", sender: "Rachel · Bloom Creative", text: "One more thing — what's included in the next phase?" },
+  { initials: "PL", sender: "Priya L.", text: "Following up, did you get my last message?" },
+  { initials: "RC", sender: "Rachel · Bloom Creative", text: "One more thing, what's included in the next phase?" },
 ];
 
 function PainQueuePanel() {
@@ -263,10 +267,10 @@ function ContextPanel() {
               </div>
               <p className="text-[0.8rem] text-white/75 leading-[1.6]">
                 Based on your ad data this week:<br /><br />
-                1. &ldquo;Stop losing clients to bad onboarding&rdquo; — $340 spend · 4.2% CTR · 38 leads<br />
-                2. &ldquo;Your AI tools don&apos;t talk to each other&rdquo; — $290 spend · 3.8% CTR · 31 leads<br />
-                3. &ldquo;What 10 hours a week back looks like&rdquo; — $210 spend · 3.1% CTR · 26 leads<br /><br />
-                All three outperformed last week&apos;s average by 40%+. &ldquo;Bad onboarding&rdquo; is pulling the highest-intent traffic — recommend pausing the other two and scaling budget there.
+                1. &ldquo;Stop losing clients to bad onboarding&rdquo;: $340 spend · 4.2% CTR · 38 leads<br />
+                2. &ldquo;Your AI tools don&apos;t talk to each other&rdquo;: $290 spend · 3.8% CTR · 31 leads<br />
+                3. &ldquo;What 10 hours a week back looks like&rdquo;: $210 spend · 3.1% CTR · 26 leads<br /><br />
+                All three outperformed last week&apos;s average by 40%+. &ldquo;Bad onboarding&rdquo; is pulling the highest-intent traffic. Recommend pausing the other two and scaling budget there.
               </p>
             </motion.div>
           )}
@@ -1153,7 +1157,7 @@ function ProcessGanttPanel() {
 // ─── Timeline Panel: Month 1 — Refinement Loop ─────────────────────────────
 
 const refinementRows = [
-  { draft: "Proposal draft — attached for your review.", revised: "Proposal ready. Specs from the 3/12 call included." },
+  { draft: "Proposal draft, attached for your review.", revised: "Proposal ready. Specs from the 3/12 call included." },
   { draft: "Weekly summary attached.", revised: "3 wins, 2 blockers, next actions listed." },
   { draft: "Onboarding doc updated.", revised: "New hire can start without a walkthrough." },
 ];
@@ -1544,16 +1548,18 @@ function LayersTabs() {
           <button
             key={layer.num}
             onClick={() => setActive(i)}
-            className={`flex items-center gap-2 px-5 py-4 shrink-0 border-b-2 transition-all duration-200 ${
+            className={`flex flex-col items-start px-5 py-4 shrink-0 border-b-2 transition-all duration-200 ${
               active === i
                 ? "border-[#028090] text-white"
                 : "border-transparent text-white/40 hover:text-white/65"
             }`}
           >
-            <span className={`text-[0.875rem] font-medium tracking-widest ${active === i ? "text-[#028090]" : "text-white/25"}`}>
-              {layer.num}
+            <span className={`text-[0.9375rem] font-display font-black whitespace-nowrap ${active === i ? "text-white" : "text-white/40"}`}>
+              {layer.role}
             </span>
-            <span className="text-[0.875rem] font-display font-black">{layer.name}</span>
+            <span className={`text-[0.65rem] font-medium tracking-[0.12em] uppercase mt-0.5 ${active === i ? "text-[#028090]" : "text-white/20"}`}>
+              {layer.name}
+            </span>
           </button>
         ))}
       </div>
@@ -1579,8 +1585,8 @@ function LayersTabs() {
               <p className="text-[1.0625rem] text-white leading-[1.7]">{layers[active].what}</p>
             </div>
             <div className="bg-[#028090]/[0.08] border border-[#028090]/20 rounded-lg p-4">
-              <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090]/65 mb-2">What it produces</p>
-              <p className="text-[1rem] text-white font-medium leading-[1.7]">{layers[active].produces}</p>
+              <p className="text-[0.875rem] font-medium tracking-[0.14em] uppercase text-[#028090]/65 mb-2">After</p>
+              <p className="text-[1rem] text-white font-medium leading-[1.7] italic">{layers[active].after}</p>
             </div>
           </div>
 
@@ -1598,8 +1604,8 @@ const businessTypes = [
   "Agencies",
   "Consultancies / Solo Operators",
   "Professional practices",
-  "Founder-led product brands",
-  "DTC & retail operations",
+  "Owner-operated businesses",
+  "Service-based operations",
 ];
 
 function WhoPanel() {
@@ -1677,7 +1683,7 @@ function WhoPanel() {
 
 const feedEvents = [
   { time: "7:02 AM", event: "Morning brief delivered", detail: "Revenue, pipeline, 3 priorities", dot: "#028090" },
-  { time: "7:45 AM", event: "Follow-up sent — Henderson Industries", detail: "Proposal sent March 12 · no response yet", dot: "#028090" },
+  { time: "7:45 AM", event: "Follow-up sent. Henderson Industries.", detail: "Proposal sent March 12 · no response yet", dot: "#028090" },
   { time: "8:30 AM", event: "Intake form processed", detail: "2 new leads qualified and routed", dot: "#028090" },
   { time: "9:15 AM", event: "Weekly status emails sent", detail: "8 clients notified automatically", dot: "#028090" },
   { time: "11:00 AM", event: "Invoice reminder triggered", detail: "3 overdue · $12,400 outstanding", dot: "#F45B69" },
@@ -2034,7 +2040,7 @@ function TelegramPanelAIOS() {
           {step >= 2 && (
             <motion.div key="a1" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-[85%]">
               <div className="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white/[0.05] border border-white/[0.07]">
-                <p className="text-[0.8rem] text-white">3 form submissions. One looks qualified. Service business, $400K revenue, asking about full AIOS.</p>
+                <p className="text-[0.8rem] text-white">3 form submissions. One looks qualified. Service business, 650K revenue, asking about a full AIOS build.</p>
               </div>
             </motion.div>
           )}
@@ -2130,13 +2136,13 @@ export default function BusinessAIOSPage() {
                   Who This Is For
                 </p>
                 <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6">
-                  Built for owner-operators where the business still runs through you.
+                  Built for business owners where the business still runs through you.
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  The business requires you because it was built that way. Not by accident. Just by never stopping to build it differently. Every system that should exist is still a conversation. Every decision that should be automated still lands on you.
+                  Most business owners already know they&apos;re the bottleneck. The problem isn&apos;t that they don&apos;t see it. It&apos;s that fixing it requires time they don&apos;t have, because they&apos;re spending that time being the bottleneck. You can&apos;t build the system that frees you when you are the system.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
-                  Most owner-operators already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath — context, data, intelligence, automation — so the business runs on the system instead of on you holding it together.
+                  You may already have the tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath (context, data, intelligence, automation) so the business runs on the system instead of on you holding it together.
                 </p>
               </FadeUp>
             </div>
@@ -2188,7 +2194,7 @@ export default function BusinessAIOSPage() {
                   <div className="mt-8 pt-6 border-t border-[#028090]/20 bg-[#028090]/[0.04] rounded-xl p-4 -mx-2">
                     <div className="flex justify-between items-baseline">
                       <span className="text-[0.875rem] text-[#028090] font-medium">AIOS ROI timeline</span>
-                      <span className="font-display font-black text-[1.25rem] text-[#028090]">2-3 months</span>
+                      <span className="font-display font-black text-[1.25rem] text-[#028090]">1-2 months</span>
                     </div>
                   </div>
                 </div>
@@ -2436,7 +2442,7 @@ export default function BusinessAIOSPage() {
                   removed.
                 </h3>
                 <p className="text-[1.0625rem] leading-[1.7] text-white mb-4">
-                  Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex — they&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
+                  Follow-ups, reporting, routing, intake, status updates. The tasks that eat your week aren&apos;t complex. They&apos;re just constant. The system identifies every repeatable task and handles the ones that don&apos;t need your judgment.
                 </p>
                 <p className="text-[1.0625rem] leading-[1.7] text-white">
                   Every repeatable task that gets handled is time that comes back to you. That&apos;s the only metric that matters.
@@ -2576,7 +2582,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What if my business is too small or too early?",
-                  answer: "The Discovery Assessment will answer that. I've told owner-operators their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
+                  answer: "The Discovery Assessment will answer that. I've told business owners their business isn't ready for a full AIOS build. That's not a failure. It's an accurate read. If your operations aren't complex enough to justify the system yet, I'd rather tell you that upfront than build something you don't need.",
                 },
                 {
                   question: "What happens if something breaks after Setup?",
@@ -2600,7 +2606,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "What does this cost, and how do I know it will pay off?",
-                  answer: "The Assessment is $2,500. If you proceed, it's deductible from your build on Option A, or it counts as Month 1 of your subscription on Option B. If you decide not to move forward, you still walk away with a clear gap map and a roadmap you can act on yourself. It's yours either way. Option A: Build $6,500 + $1,500/mo retainer. Option B: $2,500/mo subscription — full refund if you walk after 30 days. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI ($). Most owner-operators get 10 or more hours a week back. At $100/hr, that's $1,000 a month in recovered capacity, every month, permanently. If those numbers don't move, the system isn't working.",
+                  answer: "The Assessment starts at 2,500. If you move forward, it comes off your build. If you don't, you walk away with a clear gap map and a Priority Roadmap you can act on yourself. It's yours either way. Three build packages based on scope: Starter at 7,000, Core at 11,000, or Full Build at custom pricing. Each comes with a monthly subscription that scales to the package. The three metrics I measure against: Task Automation %, Hours Recovered per Week, and Monthly ROI. Most business owners get 10 or more hours a week back. At a conservative 100 an hour, that's 1,000 a month in reclaimed capacity, every month, permanently. If those numbers don't move, the system isn't working.",
                 },
                 {
                   question: "What if the AI makes a wrong decision or does something I didn't intend?",
@@ -2616,7 +2622,7 @@ export default function BusinessAIOSPage() {
                 },
                 {
                   question: "Claude Computer Use can click buttons, fill forms, and log into accounts. Can your system do that too?",
-                  answer: "Yes. Claude Computer Use is Anthropic's approach — it works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
+                  answer: "Yes. Claude Computer Use is Anthropic's approach. It works by controlling your screen directly. The AIOS uses Playwright, which is the production-grade version of the same capability. It can click, type, navigate, download files, and log into accounts just like Computer Use, but it runs cross-platform, does not require your screen to be visible, and is built for repeatable production tasks. Computer Use is Anthropic's fallback for when a structured integration does not exist. Playwright is how I do it in production. Faster, more reliable, and with a full audit trail.",
                 },
               ]} />
             </FadeUp>
@@ -2656,7 +2662,7 @@ export default function BusinessAIOSPage() {
                 href="/work-with-me"
                 className="inline-block font-display text-[1rem] font-bold px-8 py-3.5 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200"
               >
-                Start the Conversation →
+                Start a Conversation →
               </Link>
             </FadeUp>
           </div>
