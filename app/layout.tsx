@@ -50,11 +50,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     description:
       "Every decision routes through you. That's an architecture problem. I build Business AI Operating Systems for owner-operators.",
+    images: [
+      {
+        url: "/images/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Business AI Operating Systems for Owner-Operators — Revaya AI",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     description:
       "Your business is running you. I build the operational backbone that fixes it. Business AI Operating Systems for owner-operators.",
+    images: ["/images/og-default.png"],
   },
   other: {
     "msvalidate.01": "A2EA5C970EB8CE94A778035751E3EC69",

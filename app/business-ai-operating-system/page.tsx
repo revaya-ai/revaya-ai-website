@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BusinessAIOSPage from "./BusinessAIOSPage";
+import { howToAIOSSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Business AI Operating System | AIOS Services",
@@ -92,6 +93,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToAIOSSchema) }}
       />
       <BusinessAIOSPage />
     </>

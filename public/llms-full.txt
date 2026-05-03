@@ -1,0 +1,89 @@
+# Revaya AI — Full Content Index
+> Machine-readable page-by-page content breakdown. See /llms.txt for site overview.
+> Updated: 2026-05-01
+
+---
+
+## Home — /
+
+**Title:** Business AI Operating System for Owner-Operators | Revaya AI
+**Purpose:** Primary landing page. Introduces the Business AI OS concept, the problem it solves (founder as bottleneck), and the three measurable outcomes.
+**Key content:**
+Every decision in your business routes through you. That is not a productivity problem — it is an architecture problem. The Business AI Operating System installs the operational backbone that lets an owner-operated business run on systems instead of the owner running on fumes. Four layers: Context (the system learns your business: terminology, clients, priorities, decision-making style), Data (your business numbers surface automatically instead of being pulled manually), Intelligence (what needs your attention becomes visible without you asking), Automate (recurring work runs without you scheduling it). Three measurable outcomes: Task Automation %, Hours Recovered per Week, Monthly ROI ($). Founded by Shannon Winnicki — 18 years at Virgin Mobile, Boost Mobile, Papa Murphy's, Ultra Mobile, and Intermedia. Revaya AI runs on the same AIOS Shannon builds for clients.
+
+---
+
+## Business AI Operating System — /business-ai-operating-system
+
+**Title:** Business AI Operating System | AIOS Services | Revaya AI
+**Purpose:** Core service page. Full four-layer methodology, five-phase engagement model, Discovery Assessment entry point, FAQ, pricing context.
+**Key content:**
+The Business AI OS is a complete operational infrastructure built in four layers. Engagement runs in five phases: Phase I Discovery Assessment (paid, 1-4 calls scaled to team size, produces a Priority Roadmap the client owns regardless of what they decide next, fee deductible against build), Phase II Scope, Phase III Build, Phase IV Deliver and Train, Phase V Ongoing Partnership. Discovery Assessment fee starts at $2,500 scaled to business complexity. Three tiers: Core (3 modules, one business function), Pro (7 modules, full function end-to-end), Full Build (15+ modules). Two payment structures: upfront build plus retainer, or bundled subscription. 30-day satisfaction guarantee. Three measured outcomes tracked monthly: Task Automation %, Hours Recovered per Week, Monthly ROI ($). FAQ covers: AIOS vs. Claude Desktop Cowork, AIOS vs. chatbot, cost and ROI, decision logging and audit trails, DIY vs. hiring Shannon.
+
+---
+
+## Solutions — /solutions
+
+**Title:** Business AI OS Services | Revaya AI
+**Purpose:** All services overview — AI Training, Discovery Assessment, AIOS Build, Ongoing Support.
+**Key content:**
+Four service lines. AI Training: customized to your team's actual tools and workflows. AIOS Assessment (now called Discovery Assessment): operational mapping that produces a gap map, AI readiness score, opportunity matrix, and 90-day roadmap. Fee deductible against the build. AIOS Build: full four-layer Business AI OS installation. Ongoing Support: Option A retainer ($1,500/mo) or Option B subscription ($2,500/mo) post-build.
+
+---
+
+## Why Revaya — /why-revaya
+
+**Title:** Why Revaya AI — Shannon Winnicki, Business AI OS Consultant
+**Purpose:** Shannon's story, credentials, and meta-proof. Establishes authority. Answers "Why you?"
+**Key content:**
+Shannon Winnicki — 18 years building digital products at scale across Virgin Mobile, Boost Mobile, Ultra Mobile, Papa Murphy's, and Intermedia. Founder of Revaya AI. Revaya AI runs on the same Business AI OS Shannon builds for clients — the web delivery pipeline that built this site, the content engine, the client intake system. No competitor can say that. Freedom-first philosophy. Works remotely. Builds systems that run the business when the owner is not in the room.
+
+---
+
+## Work With Me — /work-with-me
+
+**Title:** Start a Conversation | Revaya AI
+**Purpose:** Primary contact and intake page. Entry point for all new client conversations.
+**Key content:**
+Contact form to start an AIOS conversation. All inquiries reviewed within one business day. Discovery Assessment is the first paid engagement. No free strategy calls.
+
+---
+
+## Business AI OS Assessment — /business-ai-os-assessment
+
+**Title:** Business AI OS Assessment | Revaya AI
+**Purpose:** Explains the Discovery Assessment engagement — what it covers, what it produces, who it is for.
+**Key content:**
+The Discovery Assessment is a structured operational mapping engagement. 1 to 4 calls depending on team size. Covers 7 operational areas: context and knowledge management, data and reporting, communications and client operations, team and delegation, automation readiness, financial visibility, and AI maturity. Produces a gap map, AI readiness score, opportunity matrix, and 90-day roadmap. Fee starts at $2,500, deductible against the full build if you proceed. The Priority Roadmap is yours regardless of what you decide next.
+
+---
+
+## AI Prep Check — /ai-prep-check
+
+**Title:** AI Readiness Quiz | Revaya AI
+**Purpose:** Free interactive quiz that scores a business's AI readiness across five dimensions.
+**Key content:**
+Short quiz covering 5 dimensions of AI readiness for owner-operated businesses. Results delivered by email. Produces a readiness score and recommended next step. Free. No sales call required. Entry point for leads who are not ready for the Assessment.
+
+---
+
+## Resources — /resources
+
+**Title:** Business AI OS Resources | Revaya AI
+**Purpose:** Content hub. Articles, guides, and comparisons on Business AI Operating Systems for owner-operators.
+**Key content:**
+Articles covering Business AI OS concepts, evaluation guides, comparison content, and operational frameworks for owner-operators. Includes comparison pieces: Business AI OS vs. Claude Code plus Obsidian, Business AI OS vs. OpenClaw. Each article includes structured metadata and is indexed in the sitemap.
+
+---
+
+## Business AI OS vs. OpenClaw — /business-ai-os-vs-openclaw
+
+**Title:** Business AI OS vs. OpenClaw | Revaya AI
+**Purpose:** Comparison page. Positions Business AI OS against OpenClaw for owner-operators evaluating alternatives.
+**Key content:**
+Structured comparison of the Business AI Operating System (Revaya AI) versus OpenClaw. Covers: target audience, depth of customization, ongoing support model, cost structure, and time-to-value. Written for owner-operators who are actively evaluating AI infrastructure options.
+
+---
+
+## Full Content Index
+For page-by-page full content breakdown: https://www.revaya.ai/llms-full.txt

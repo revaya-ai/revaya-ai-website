@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       { source: "/ai-website-services", destination: "/business-ai-operating-system", permanent: true },
       { source: "/website-redesign-services", destination: "/business-ai-operating-system", permanent: true },
       { source: "/website-audit-small-business", destination: "/business-ai-operating-system", permanent: true },
+      { source: "/blog", destination: "/resources", permanent: true },
     ];
   },
 };

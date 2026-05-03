@@ -38,3 +38,6 @@ Revaya AI runs on the same Business AI OS that Shannon builds for clients. The w
 - `/solutions` — Full explanation of all services: AI Training, AIOS Audit, AIOS Setup, and Ongoing Support.
 - `/why-revaya` — Shannon's story, credentials, and the meta-proof that Revaya AI runs on its own system.
 - `/work-with-me` — Contact form to start a conversation about whether the AIOS is a fit.
+
+## Full Content Index
+For page-by-page full content breakdown: https://www.revaya.ai/llms-full.txt
