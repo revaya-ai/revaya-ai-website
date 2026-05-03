@@ -415,6 +415,55 @@ export const claudeCodeComparisonFaqSchema = {
   ]
 };
 
+export const howToAIOSSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Build a Business AI Operating System for Your Company",
+  description:
+    "A Business AI Operating System is built in four layers. Each layer installs a specific capability. Together they let an owner-operated business run on systems instead of the owner running on fumes.",
+  totalTime: "P30D",
+  estimatedCost: {
+    "@type": "MonetaryAmount",
+    currency: "USD",
+    value: "10000",
+  },
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Context Layer",
+      text: "Install business context so the system knows your terminology, clients, priorities, and decision-making style. This is the foundation — without it, every AI interaction starts from zero.",
+      url: "https://www.revaya.ai/business-ai-operating-system",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Data Layer",
+      text: "Connect your business data. Revenue, pipeline, and operational metrics surface automatically instead of being pulled manually from four different platforms.",
+      url: "https://www.revaya.ai/business-ai-operating-system",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Intelligence Layer",
+      text: "Add monitoring and flagging so what needs your attention becomes visible without you asking. The system tells you what matters instead of waiting for you to query it.",
+      url: "https://www.revaya.ai/business-ai-operating-system",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Automate Layer",
+      text: "Run recurring work automatically. Client intake, onboarding, follow-up, and reporting — scheduled and executed without you triggering each one.",
+      url: "https://www.revaya.ai/business-ai-operating-system",
+    },
+  ],
+  tool: [
+    { "@type": "HowToTool", name: "Claude AI" },
+    { "@type": "HowToTool", name: "Business process documentation" },
+    { "@type": "HowToTool", name: "API integrations" },
+  ],
+};
+
 export const claudeCodeComparisonPageSchema = (url: string) => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
