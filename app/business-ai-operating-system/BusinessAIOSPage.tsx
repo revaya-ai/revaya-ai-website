@@ -1604,8 +1604,8 @@ const businessTypes = [
   "Agencies",
   "Consultancies / Solo Operators",
   "Professional practices",
-  "Owner-operated product brands",
-  "DTC & retail operations",
+  "Owner-operated businesses",
+  "Service-based operations",
 ];
 
 function WhoPanel() {
@@ -2139,7 +2139,7 @@ export default function BusinessAIOSPage() {
                   Built for business owners where the business still runs through you.
                 </h2>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-4">
-                  The business requires you because it was built that way. Not by accident. Just by never stopping to build it differently. Every system that should exist is still a conversation. Every decision that should be automated still lands on you.
+                  Most business owners already know they&apos;re the bottleneck. The problem isn&apos;t that they don&apos;t see it. It&apos;s that fixing it requires time they don&apos;t have, because they&apos;re spending that time being the bottleneck. You can&apos;t build the system that frees you when you are the system.
                 </p>
                 <p className="text-[1.0625rem] text-white leading-[1.7] mb-8">
                   Most business owners already have tools. A CRM that doesn&apos;t talk to the inbox. A project tracker that doesn&apos;t talk to the client file. An AI assistant that doesn&apos;t know any of it. Each one works. None of them connect. So every handoff still runs through you, because you&apos;re the only thing that knows all of it. That&apos;s not a tool problem. That&apos;s an architecture problem. A Business AI Operating System connects the layer underneath (context, data, intelligence, automation) so the business runs on the system instead of on you holding it together.
