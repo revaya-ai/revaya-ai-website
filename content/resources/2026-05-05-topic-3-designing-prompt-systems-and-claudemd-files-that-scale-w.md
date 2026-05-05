@@ -4,7 +4,7 @@ subtitle: "Every new Claude conversation starts from zero. Here's the infrastruc
 slug: "designing-prompt-systems-and-claudemd-files-that-scale-w"
 category: "article"
 author: "Shannon Winnicki"
-date: "2026-05-05-topic-3"
+date: "2026-05-05"
 image: "/articles/2026-05-05-topic-3-designing-prompt-systems-and-claudemd-files-that-scale-w/hero.png"
 published: true
 cta_variant: "discovery"

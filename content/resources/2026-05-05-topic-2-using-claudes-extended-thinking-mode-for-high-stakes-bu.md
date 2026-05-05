@@ -4,7 +4,7 @@ subtitle: "Most founders use AI the same way for everything. That's the problem 
 slug: "using-claudes-extended-thinking-mode-for-high-stakes-bu"
 category: "article"
 author: "Shannon Winnicki"
-date: "2026-05-05-topic-2"
+date: "2026-05-05"
 image: "/articles/2026-05-05-topic-2-using-claudes-extended-thinking-mode-for-high-stakes-bu/hero.png"
 published: true
 cta_variant: "discovery"

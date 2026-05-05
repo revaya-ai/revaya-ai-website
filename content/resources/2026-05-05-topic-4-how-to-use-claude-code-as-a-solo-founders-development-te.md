@@ -4,7 +4,7 @@ subtitle: "You don't need to know how to code to direct an AI that does. Here's 
 slug: "how-to-use-claude-code-as-a-solo-founders-development-te"
 category: "article"
 author: "Shannon Winnicki"
-date: "2026-05-05-topic-4"
+date: "2026-05-05"
 image: "/articles/2026-05-05-topic-4-how-to-use-claude-code-as-a-solo-founders-development-te/hero.png"
 published: true
 cta_variant: "discovery"

@@ -4,7 +4,7 @@ subtitle: "Most small business owners check on competitors when they lose a deal
 slug: "ai-powered-search-as-a-competitive-research-tool-for-sma"
 category: "article"
 author: "Shannon Winnicki"
-date: "2026-05-05-topic-5"
+date: "2026-05-05"
 image: "/articles/2026-05-05-topic-5-ai-powered-search-as-a-competitive-research-tool-for-sma/hero.png"
 published: true
 cta_variant: "discovery"
