@@ -26,6 +26,8 @@ Here's how to fix that.
 
 Extended thinking is a mode where Claude allocates reasoning tokens before generating its response. Think of it as the model showing its work internally, not in a way that clutters your output, but in a way that meaningfully changes the quality of the conclusion it reaches.
 
+![A side-by-side diagram showing single-pass Claude output on the left and extended thinking staged output on the right, with a reasoning layer visible between prompt and response on the right side.](image-placeholder-1)
+
 Standard Claude prompting produces what I'd call single-pass outputs. The model reads your prompt and generates a response in one motion. That's fast and often good enough for simple, well-scoped tasks: summarize this, draft that, reformat this list.
 
 But for anything that involves tradeoffs, edge cases, ambiguous inputs, or decisions with downstream consequences, single-pass outputs tend to flatten the complexity. Claude gives you an answer because you asked for one, not because it's fully reasoned through the problem.
@@ -56,6 +58,8 @@ This matters more when you're building repeatable workflows than when you're doi
 
 Claude extended thinking mode prompting isn't primarily about keywords or toggle switches. It's about structuring your prompt so that reasoning is a required stage, not an assumed byproduct of good instructions.
 
+![A prompt structure template showing the four-part sequence: reasoning request, decision structure, uncertainty permission, and staged output request, formatted as a practical reference.](image-placeholder-2)
+
 Four things that actually change the output quality:
 
 **1. Separate the reasoning request from the answer request.**
@@ -85,6 +89,8 @@ Claude extended thinking mode prompting works better when you don't try to compr
 ## Where Extended Thinking Pays Off Most in Operator Workflows
 
 Not every task needs this. Summarization, formatting, first drafts, data extraction — those are single-pass tasks. Prompting for extended thinking on a simple task adds friction without adding value.
+
+![A task classification matrix showing single-pass tasks on one axis and extended thinking tasks on the other, with example use cases mapped to each category.](image-placeholder-3)
 
 The tasks where extended thinking is worth the architecture: anything that would require a capable human to pause and think before answering. Pricing decisions with multiple variables. Hiring assessments where candidate profiles pull in different directions. Risk flags in contracts or proposals. Strategic prioritization when resources are constrained. Any decision where the right answer changes significantly depending on context you might not have fully specified.
 
