@@ -199,7 +199,7 @@ export default function ClaudeCodeComparisonPage() {
           .split-copy-col { width: 100% !important; padding: 48px 24px !important; }
           .split-image-right { height: 300px !important; flex: none !important; width: 100% !important; }
           .section-header { padding: 0 24px !important; }
-          .pullquote-block { padding: 24px !important; }
+          .pullquote-block { padding: 20px !important; margin: 24px 16px 0 !important; }
           .ceiling-grid { grid-template-columns: 1fr !important; padding: 24px 16px 48px !important; }
           .citation-block { padding: 0 16px 40px !important; }
           .section-table { padding: 64px 16px !important; }
@@ -473,44 +473,40 @@ export default function ClaudeCodeComparisonPage() {
         </div>
 
         {/* Blockquote */}
-        <FadeUp delay={0.2} style={{ display: "block", width: "100%" }}>
+        <FadeUp delay={0.2}>
           <div
             className="pullquote-block"
             style={{
               background: "rgba(244,91,105,0.08)",
               borderLeft: "3px solid #F45B69",
-              padding: "28px 0",
-              margin: "40px 0 0",
-              width: "100%",
-              boxSizing: "border-box",
+              padding: "28px 32px",
+              margin: "40px 80px 0",
             }}
           >
-            <div style={{ padding: "0 80px" }}>
-              <p
-                style={{
-                  fontSize: "18px",
-                  fontStyle: "italic",
-                  lineHeight: "1.6",
-                  margin: 0,
-                }}
-              >
-                &ldquo;I run a small consulting business and was drowning in admin.&rdquo;
-              </p>
-              <p
-                style={{
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  color: "#F45B69",
-                  fontStyle: "normal",
-                  marginTop: "12px",
-                  marginBottom: 0,
-                }}
-              >
-                r/ClaudeAI, consulting founder
-              </p>
-            </div>
+            <p
+              style={{
+                fontSize: "18px",
+                fontStyle: "italic",
+                lineHeight: "1.6",
+                margin: 0,
+              }}
+            >
+              &ldquo;I run a small consulting business and was drowning in admin.&rdquo;
+            </p>
+            <p
+              style={{
+                fontSize: "12px",
+                fontWeight: 600,
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                color: "#F45B69",
+                fontStyle: "normal",
+                marginTop: "12px",
+                marginBottom: 0,
+              }}
+            >
+              r/ClaudeAI, consulting founder
+            </p>
           </div>
         </FadeUp>
 
@@ -1211,7 +1207,7 @@ export default function ClaudeCodeComparisonPage() {
                 marginBottom: "24px",
               }}
             >
-              Your instinct was right. Someone already mapped the territory.
+              The setup is everywhere. The question is who owns it after.
             </h2>
           </FadeUp>
 
@@ -1221,21 +1217,45 @@ export default function ClaudeCodeComparisonPage() {
                 fontSize: "18px",
                 lineHeight: "1.75",
                 color: "rgba(255,255,255,0.80)",
-                margin: "0 auto 40px",
+                margin: "0 auto 20px",
                 maxWidth: "620px",
               }}
             >
-              The CLAUDE.md video was the proof of concept. Someone else already put in
-              the months of context engineering, MCP configuration, and integration work.
-              A Business AI OS is what happens when that work is done by a specialist,
-              built around your specific business, and maintained so it keeps running after
-              you close the laptop.
+              CLAUDE.md files and Obsidian vaults are mainstream now. Every AI newsletter covers the setup. Every creator in the space has done the video. That is validation that the underlying idea is right. Business owners should have AI systems that know how they work.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.25}>
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.75",
+                color: "rgba(255,255,255,0.80)",
+                margin: "0 auto 20px",
+                maxWidth: "620px",
+              }}
+            >
+              The ceiling is not whether the approach works. It is who owns the maintenance, who keeps the context current as the business changes, and who fixes it on the Tuesday when something breaks and you have back-to-back calls.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.3}>
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.75",
+                color: "rgba(255,255,255,0.80)",
+                margin: "0 auto 40px",
+                maxWidth: "620px",
+              }}
+            >
+              A Discovery Assessment maps exactly where your business is leaking time and revenue. That diagnosis shapes what gets built. The system gets built around the root cause, not around what seemed like a good automation to add. That is what makes it an operating system instead of a collection of tools you maintain on the side.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.35}>
             <Link
-              href="/business-ai-operating-system"
+              href="/business-ai-os-assessment"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -1249,7 +1269,7 @@ export default function ClaudeCodeComparisonPage() {
                 textDecoration: "none",
               }}
             >
-              See how it&rsquo;s built <span>→</span>
+              Book a Discovery Assessment <span>→</span>
             </Link>
           </FadeUp>
         </div>
