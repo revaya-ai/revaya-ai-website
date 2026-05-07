@@ -1,5 +1,3 @@
-// Tailwind v4 safelist — keep these literal strings so the scanner includes them:
-// md:col-span-1 md:col-span-2 md:col-span-3 md:row-span-1 md:row-span-2 md:row-start-1 md:col-start-3
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,182 +26,49 @@ export const metadata: Metadata = {
   },
 };
 
-/* ─── Solid color palette for cards without images ─── */
-const solidColors = [
-  { bg: "bg-[#0A2028]", accent: "border-[#15393F]" }, // teal-dark
-  { bg: "bg-[#1A1020]", accent: "border-[#2E1F2E]" }, // purple-dark
-  { bg: "bg-[#0C1A24]", accent: "border-[#1A2E3A]" }, // navy
-  { bg: "bg-[#1A0F14]", accent: "border-[#30171F]" }, // warm-dark
-];
-
-/* ─── Shape definitions for the collage grid ─── */
-interface CardShape {
-  colSpan: string;
-  rowSpan: string;
-  radius: string;
-  minH: string;
-  titleSize: string;
-  showSubtitle: boolean;
-  padding: string;
+function fmt(date: string) {
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
-const shapes: CardShape[] = [
-  // 0: Hero — large, extra-rounded
-  {
-    colSpan: "md:col-span-2",
-    rowSpan: "md:row-span-2",
-    radius: "rounded-[2rem]",
-    minH: "min-h-[460px] md:min-h-[500px]",
-    titleSize: "text-[1.5rem] md:text-[2.1rem] leading-[1.08]",
-    showSubtitle: true,
-    padding: "px-6 pt-6 pb-5 md:px-8 md:pt-8 md:pb-5",
-  },
-  // 1: Tall pill — narrow, very rounded
-  {
-    colSpan: "md:col-span-1",
-    rowSpan: "md:row-span-2",
-    radius: "rounded-[2.5rem]",
-    minH: "min-h-[460px] md:min-h-[500px]",
-    titleSize: "text-[1.2rem] md:text-[1.4rem] leading-[1.12]",
-    showSubtitle: true,
-    padding: "p-6 md:p-7",
-  },
-  // 2: Wide bar — short and wide, standard rounded
-  {
-    colSpan: "md:col-span-2",
-    rowSpan: "md:row-span-1",
-    radius: "rounded-2xl",
-    minH: "min-h-[220px]",
-    titleSize: "text-[1.15rem] md:text-[1.35rem] leading-[1.12]",
-    showSubtitle: false,
-    padding: "p-5 md:p-7",
-  },
-  // 3: Square — compact, extra-rounded
-  {
-    colSpan: "md:col-span-1",
-    rowSpan: "md:row-span-1",
-    radius: "rounded-[2rem]",
-    minH: "min-h-[220px]",
-    titleSize: "text-[1.05rem] md:text-[1.2rem] leading-[1.12]",
-    showSubtitle: false,
-    padding: "p-5 md:p-6",
-  },
-  // 4: Standard card — mid rounded
-  {
-    colSpan: "md:col-span-1",
-    rowSpan: "md:row-span-1",
-    radius: "rounded-3xl",
-    minH: "min-h-[240px]",
-    titleSize: "text-[1.1rem] md:text-[1.25rem] leading-[1.12]",
-    showSubtitle: false,
-    padding: "p-5 md:p-6",
-  },
-  // 5: Full-width banner — spans all 3 columns
-  {
-    colSpan: "md:col-span-3",
-    rowSpan: "md:row-span-1",
-    radius: "rounded-[2rem]",
-    minH: "min-h-[280px] md:min-h-[320px]",
-    titleSize: "text-[1.4rem] md:text-[1.8rem] leading-[1.08]",
-    showSubtitle: true,
-    padding: "p-6 md:p-10",
-  },
-];
-
-/*
- * Image rule: show the image if the card has one AND meets one of:
- * - Every 3rd card in sequence (index 0, 3, 6...)
- * - Full-width banner cards (shape 5) always show their image
- * The rest are solid-color cards, creating a rhythm.
- */
-
-function CollageCardV2({
-  frontmatter,
-  shape,
-  globalIndex,
-}: {
-  frontmatter: ResourceFrontmatter;
-  shape: CardShape;
-  globalIndex: number;
-}) {
-  const formattedDate = new Date(frontmatter.date).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
-
-  const isFullWidth = shape.colSpan === "md:col-span-3";
-  const showImage = frontmatter.image && (globalIndex % 3 === 0 || isFullWidth);
-  const hasImage = showImage;
-  const solid = solidColors[globalIndex % solidColors.length];
-  const href = frontmatter.external_url || `/resources/${frontmatter.slug}`;
-
+/* ─── Featured hero card — large left ─── */
+function FeaturedCard({ fm }: { fm: ResourceFrontmatter }) {
+  const href = fm.external_url || `/resources/${fm.slug}`;
   return (
-    <Link
-      href={href}
-      className={`group block relative overflow-hidden h-full ${shape.radius} ${shape.minH}`}
-    >
-      {/* Background */}
-      <div className={`absolute inset-0 ${hasImage ? "bg-[#111820]" : solid.bg}`}>
-        {hasImage && frontmatter.image && (
+    <Link href={href} className="group block relative overflow-hidden rounded-2xl h-full min-h-[480px]">
+      {/* Image */}
+      <div className="absolute inset-0 bg-[#0D1520]">
+        {fm.image && (
           <Image
-            src={frontmatter.image}
-            alt={frontmatter.title}
+            src={fm.image}
+            alt={fm.title}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            priority
           />
         )}
-        {/* Gradient overlay — heavier on image cards, subtle on solid */}
-        <div
-          className={`absolute inset-0 ${
-            hasImage
-              ? "[background:linear-gradient(to_bottom,#080D11CC_0%,#080D11CC_20%,transparent_50%,#080D11_100%)]"
-              : "bg-gradient-to-t from-[#080D11]/30 to-transparent"
-          }`}
-        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080D11] via-[#080D11]/60 to-transparent" />
       </div>
 
-      {/* Decorative border — visible on solid cards */}
-      {!hasImage && (
-        <div className={`absolute inset-0 ${shape.radius} border ${solid.accent}`} />
-      )}
-
       {/* Content */}
-      <div className={`relative h-full flex flex-col justify-end ${shape.padding}`}>
-        <div className="flex items-center gap-3 mb-2.5">
-          <CategoryPill category={frontmatter.category} size="sm" />
-          <span className="text-white text-[0.72rem]">
-            {formattedDate}
-          </span>
+      <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
+        <div className="flex items-center gap-3 mb-3">
+          <CategoryPill category={fm.category} size="sm" />
+          <span className="text-white/50 text-[0.75rem]">{fmt(fm.date)}</span>
         </div>
-
-        <h2
-          className={`font-display font-bold text-white ${shape.titleSize} mb-1.5`}
-        >
-          {frontmatter.title}
+        <h2 className="font-display font-black text-white text-[1.6rem] md:text-[2rem] leading-[1.1] mb-2">
+          {fm.title}
         </h2>
-
-        <p className={`text-white text-[0.85rem] leading-relaxed mb-2.5 ${shape.showSubtitle ? "line-clamp-3" : "line-clamp-2"}`}>
-          {frontmatter.subtitle}
+        <p className="text-white/60 text-[0.9rem] leading-relaxed line-clamp-2 mb-4 max-w-[520px]">
+          {fm.subtitle}
         </p>
-
-        <div className="flex items-center justify-between mt-auto pt-1">
-          <span className="text-white text-[0.78rem]">
-            {frontmatter.read_time}
-          </span>
-          <span className="w-7 h-7 rounded-full border border-[#2A3544] flex items-center justify-center group-hover:border-[#028090] group-hover:bg-[#0D2428] transition-all duration-300">
-            <svg
-              className="w-3 h-3 text-white group-hover:text-[#028090] transition-colors duration-300 -rotate-45"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2.5}
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
+        <div className="flex items-center justify-between">
+          <span className="text-white/40 text-[0.78rem]">{fm.read_time}</span>
+          <span className="text-[0.8125rem] font-semibold text-[#028090] group-hover:text-white transition-colors duration-200">
+            Read article →
           </span>
         </div>
       </div>
@@ -211,31 +76,133 @@ function CollageCardV2({
   );
 }
 
+/* ─── Side list card — compact horizontal ─── */
+function SideCard({ fm }: { fm: ResourceFrontmatter }) {
+  const href = fm.external_url || `/resources/${fm.slug}`;
+  return (
+    <Link
+      href={href}
+      className="group flex gap-4 p-3 rounded-xl bg-[#0D1520] border border-white/[0.06] hover:border-[#028090]/40 transition-all duration-200 flex-1"
+    >
+      {/* Thumbnail */}
+      <div className="relative w-[88px] h-[64px] flex-shrink-0 rounded-lg overflow-hidden bg-[#111820]">
+        {fm.image ? (
+          <Image
+            src={fm.image}
+            alt={fm.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-[#028090]/20 to-[#553555]/20" />
+        )}
+      </div>
+
+      {/* Text */}
+      <div className="flex flex-col justify-center gap-1 min-w-0">
+        <div className="flex items-center gap-2">
+          <CategoryPill category={fm.category} size="sm" />
+        </div>
+        <p className="font-display font-bold text-white text-[0.8125rem] leading-[1.3] line-clamp-2 group-hover:text-[#028090] transition-colors duration-200">
+          {fm.title}
+        </p>
+        <span className="text-white/35 text-[0.72rem]">{fmt(fm.date)} · {fm.read_time}</span>
+      </div>
+    </Link>
+  );
+}
+
+/* ─── Grid card — standard 3-col ─── */
+function GridCard({ fm }: { fm: ResourceFrontmatter }) {
+  const href = fm.external_url || `/resources/${fm.slug}`;
+  return (
+    <Link
+      href={href}
+      className="group flex flex-col overflow-hidden rounded-2xl bg-[#0D1520] border border-white/[0.06] hover:border-[#028090]/40 transition-all duration-200"
+    >
+      {/* Image */}
+      <div className="relative h-[200px] overflow-hidden bg-[#111820] flex-shrink-0">
+        {fm.image ? (
+          <Image
+            src={fm.image}
+            alt={fm.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-[#028090]/15 to-[#553555]/15" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1520]/80 to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-5">
+        <div className="flex items-center gap-3 mb-3">
+          <CategoryPill category={fm.category} size="sm" />
+          <span className="text-white/40 text-[0.72rem]">{fmt(fm.date)}</span>
+        </div>
+        <h3 className="font-display font-bold text-white text-[1rem] leading-[1.3] mb-2 line-clamp-2 group-hover:text-[#028090] transition-colors duration-200">
+          {fm.title}
+        </h3>
+        <p className="text-white/50 text-[0.8125rem] leading-relaxed line-clamp-2 mb-4">
+          {fm.subtitle}
+        </p>
+        <div className="mt-auto flex items-center justify-between">
+          <span className="text-white/35 text-[0.75rem]">{fm.read_time}</span>
+          <span className="text-[0.75rem] font-semibold text-white/30 group-hover:text-[#028090] transition-colors duration-200">
+            Read →
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/* ─── Assessment CTA card — slots into grid ─── */
+function AssessmentCard() {
+  return (
+    <Link
+      href="/business-ai-os-assessment"
+      className="group flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-[#553555]/40 bg-[#0D1520] hover:border-[#553555]/80 hover:bg-[#120A18] transition-all duration-200 h-full p-8 text-center"
+    >
+      <div className="w-14 h-14 rounded-full bg-[#553555]/20 border border-[#553555]/40 flex items-center justify-center mb-5 group-hover:bg-[#553555]/30 transition-colors duration-200">
+        <svg className="w-6 h-6 text-[#553555]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      </div>
+      <p className="text-white/40 text-[0.72rem] uppercase tracking-[0.12em] font-medium mb-2">Free Tool</p>
+      <h3 className="font-display font-black text-white text-[1.25rem] leading-[1.2] mb-3">
+        Your Personalized<br />AI ROI Scorecard
+      </h3>
+      <p className="text-white/45 text-[0.8125rem] leading-relaxed mb-6 max-w-[220px]">
+        Find out exactly where your business is leaking time and revenue, and what to do about it.
+      </p>
+      <span className="inline-block font-display text-[0.8125rem] font-bold px-6 py-2.5 rounded-full bg-[#553555] text-white group-hover:bg-[#4a2d4a] transition-colors duration-200">
+        Take the Assessment →
+      </span>
+    </Link>
+  );
+}
+
 export default function ResourcesPage() {
   const allResources = getAllResources();
   const featured = getFeaturedResource();
-  const others = featured
-    ? allResources.filter(
-        (r) => r.frontmatter.slug !== featured.frontmatter.slug
-      )
+
+  const rest = featured
+    ? allResources.filter((r) => r.frontmatter.slug !== featured.frontmatter.slug)
     : allResources.slice(1);
+
+  // Right column: up to 4 side cards
+  const sideCards = rest.slice(0, 4);
+  // Grid: everything after the side cards
+  const gridCards = rest.slice(4);
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://revaya.ai",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Resources",
-        item: "https://revaya.ai/resources",
-      },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://revaya.ai" },
+      { "@type": "ListItem", position: 2, name: "Resources", item: "https://revaya.ai/resources" },
     ],
   };
 
@@ -246,36 +213,20 @@ export default function ResourcesPage() {
     description:
       "Guides, frameworks, and case studies on building an agentic Business AI Operating System for founder-led businesses.",
     url: "https://revaya.ai/resources",
-    publisher: {
-      "@type": "Organization",
-      name: "Revaya AI",
-      url: "https://revaya.ai",
-    },
+    publisher: { "@type": "Organization", name: "Revaya AI", url: "https://revaya.ai" },
   };
-
-  /*
-   * Shape assignment logic:
-   * - Featured article: hero (shape 0), 2col x 2row
-   * - Remaining cards get shapes based on whether they have an image:
-   *   - Cards with image: full-width banner (shape 5) or hero-adjacent tall (shape 1)
-   *   - Cards without image (solid): tall pill (shape 1), square (shape 3), standard (shape 4)
-   * - The cycling pattern for 4+ cards: tall, square, full-banner, standard, repeat
-   */
-  // First pass: tall pill, full-width banner, then cycle square, standard, wide
-  const cyclingShapes = [1, 5, 3, 4, 2];
 
   return (
     <>
       <JsonLd data={breadcrumbLd} />
       <JsonLd data={collectionLd} />
 
-      {/* Hero */}
+      {/* Page header */}
       <section className="relative pt-32 pb-10 md:pt-44 md:pb-12 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] bg-[#028090]/[0.04] rounded-full blur-[140px]" />
           <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-[#553555]/[0.05] rounded-full blur-[120px]" />
         </div>
-
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <FadeIn>
             <h1 className="font-display font-black text-[2.5rem] md:text-[4rem] leading-[1.05] text-white mb-2">
@@ -283,53 +234,59 @@ export default function ResourcesPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-white text-[1.1rem] md:text-[1.2rem] max-w-[500px]">
-              Frameworks, guides, and lessons from building agentic Business AI
-              Operating Systems.
+            <p className="text-white/60 text-[1.1rem] md:text-[1.2rem] max-w-[500px]">
+              Frameworks, guides, and lessons from building agentic Business AI Operating Systems.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Collage Grid — V2: unique shapes, tight column gaps, 40px row gaps */}
+      {/* Content */}
       <section className="max-w-[1100px] mx-auto px-6 md:px-10 pb-24 md:pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[230px] gap-x-2.5 gap-y-10 md:gap-x-3 md:gap-y-10">
-          {/* Featured — hero shape */}
-          {featured && (
-            <FadeIn className={`md:col-span-2 md:row-span-2 h-full`}>
-              <CollageCardV2
-                frontmatter={featured.frontmatter}
-                shape={shapes[0]}
-                globalIndex={0}
-              />
-            </FadeIn>
-          )}
 
-          {/* Remaining — assigned shapes via cycling pattern */}
-          {others.map((resource, i) => {
-            const shapeIndex = cyclingShapes[i % cyclingShapes.length];
-            const shape = shapes[shapeIndex];
-            const isTall = i === 0;
-            return (
-              <div
-                key={resource.frontmatter.slug}
-                className={`${shape.colSpan}${i === 2 ? " pt-[30px]" : ""}`}
-                style={isTall
-                  ? { gridRow: "1 / span 2", gridColumn: "3 / span 1", height: "500px" }
-                  : undefined
-                }
-              >
-                <FadeIn delay={(i + 1) * 0.05} className="h-full">
-                  <CollageCardV2
-                    frontmatter={resource.frontmatter}
-                    shape={shape}
-                    globalIndex={i + 1}
-                  />
-                </FadeIn>
+        {/* ── Row 1: Featured + Side stack ── */}
+        {featured && (
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
+              {/* Featured hero */}
+              <div className="lg:col-span-2">
+                <FeaturedCard fm={featured.frontmatter} />
               </div>
-            );
-          })}
-        </div>
+
+              {/* Side stack */}
+              <div className="flex flex-col gap-4">
+                {sideCards.map((r, i) => (
+                  <FadeIn key={r.frontmatter.slug} delay={0.05 * (i + 1)}>
+                    <SideCard fm={r.frontmatter} />
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        )}
+
+        {/* ── Row 2+: Grid ── */}
+        {gridCards.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {gridCards.map((r, i) => {
+              // Insert assessment CTA after 2nd card
+              const cards = [];
+              if (i === 2) {
+                cards.push(
+                  <FadeIn key="assessment-cta" delay={0.1} className="h-full">
+                    <AssessmentCard />
+                  </FadeIn>
+                );
+              }
+              cards.push(
+                <FadeIn key={r.frontmatter.slug} delay={0.05 * (i + 1)} className="h-full">
+                  <GridCard fm={r.frontmatter} />
+                </FadeIn>
+              );
+              return cards;
+            })}
+          </div>
+        )}
       </section>
 
       {/* Closing CTA */}
@@ -339,10 +296,8 @@ export default function ResourcesPage() {
             <h2 className="font-display font-black text-[2rem] md:text-[2.75rem] leading-[1.05] text-white mb-6 max-w-[950px] mx-auto">
               Ready to build your agentic Business AI Operating System?
             </h2>
-            <p className="text-[1.0625rem] leading-[1.65] text-white mb-10 max-w-[520px] mx-auto">
-              Every month without a system is 15+ hours of your time on
-              work that should run itself. At $150/hour, that is $9,750 a
-              month you do not get back.
+            <p className="text-[1.0625rem] leading-[1.65] text-white/60 mb-10 max-w-[520px] mx-auto">
+              Every month without a system is 15+ hours of your time on work that should run itself.
             </p>
             <Link
               href="/work-with-me"

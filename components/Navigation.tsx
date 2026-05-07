@@ -13,7 +13,7 @@ const navLinks = [
 ];
 
 const resourcesDropdown = [
-  { href: "/resources", label: "All Resources" },
+  { href: "/resources", label: "Articles" },
   { href: "/ai-prep-check", label: "AI Prep Check" },
   { href: "/business-ai-os-assessment", label: "Assessment Quiz" },
 ];
