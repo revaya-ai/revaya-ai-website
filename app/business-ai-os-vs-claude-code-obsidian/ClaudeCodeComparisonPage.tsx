@@ -36,17 +36,17 @@ const ceilingCards = [
   {
     num: "01",
     title: "THE TERMINAL REQUIREMENT",
-    body: "Claude Code runs in a terminal. That is not a flaw — for founders who are comfortable there, it is actually the right environment for serious AI work. The ceiling is that most non-technical service business owners will not cross that threshold. And for those who do, the work is just beginning: CLI calendar tools, terminal email clients, scriptable task management. One consulting founder described his setup as 'making my workflow command line based so CC can work it.' That is a full workflow redesign, not a tool you add.",
+    body: "Claude Code runs in a terminal. That is not a flaw. For founders who are comfortable there, it is actually the right environment for serious AI work. The ceiling is that most non-technical service business owners will not cross that threshold. And for those who do, the work is just beginning: CLI calendar tools, terminal email clients, scriptable task management. One consulting founder described his setup as 'making my workflow command line based so CC can work it.' That is a full workflow redesign, not a tool you add.",
   },
   {
     num: "02",
     title: "YOUR CONTEXT LAYER IS YOUR RESPONSIBILITY",
-    body: "Your business brain works as long as it reflects your actual business. New offer, new client, changed priorities — every shift creates drift between what your context files say and what is true. You can build that layer as a single CLAUDE.md or as a structured folder system with dozens of files. Either way, keeping it current is ongoing founder work. Nobody else can do it for you until the system is stable enough to hand off. Nobody teaches what happens when it drifts.",
+    body: "Your business brain works as long as it reflects your actual business. New offer, new client, changed priorities. Every shift creates drift between what your context files say and what is true. You can build that layer as a single CLAUDE.md or as a structured folder system with dozens of files. Either way, keeping it current is ongoing founder work. Nobody else can do it for you until the system is stable enough to hand off. Nobody teaches what happens when it drifts.",
   },
   {
     num: "03",
     title: "EVERY INTEGRATION IS A MANUAL BUILD",
-    body: "Claude Code can automate workflows — and people are doing it. The ceiling is not capability, it is ownership. Calendar, email, CRM, meeting transcripts: each connection is a separate MCP server you set up, test, and maintain. One consulting founder needed four separate CLI tools just to handle calendar and email for one person. When a tool updates, the integration can break. Who fixes it? You. The ceiling is not what it can do. It is who owns it when something changes.",
+    body: "Claude Code can automate workflows, and people are doing it. The ceiling is not capability, it is ownership. Calendar, email, CRM, meeting transcripts: each connection is a separate MCP server you set up, test, and maintain. One consulting founder needed four separate CLI tools just to handle calendar and email for one person. When a tool updates, the integration can break. Who fixes it? You. The ceiling is not what it can do. It is who owns it when something changes.",
   },
   {
     num: "04",
@@ -56,7 +56,7 @@ const ceilingCards = [
   {
     num: "05",
     title: "YOU ARE MAINTAINING TWO SYSTEMS, NOT ONE",
-    body: "Claude Code is one application. Obsidian is a different application. They are made by different teams, built on different architectures, and they do not natively integrate with each other. The bridge between them is yours to manage. Every update cycle, every Obsidian plugin that breaks on a new release, every change to how Claude Code handles context — that gap is yours to close, every time. That is not a one-time setup cost. It is an ongoing job that compounds. For a developer who enjoys that kind of work, fine. For a founder who would rather be doing client work, the friction accumulates quietly until the system has stopped working for weeks and you have not noticed because you stopped relying on it.",
+    body: "Claude Code is one application. Obsidian is a different application. They are made by different teams, built on different architectures, and they do not natively integrate with each other. The bridge between them is yours to manage. Every update cycle, every Obsidian plugin that breaks on a new release, every change to how Claude Code handles context, that gap is yours to close, every time. That is not a one-time setup cost. It is an ongoing job that compounds. For a developer who enjoys that kind of work, fine. For a founder who would rather be doing client work, the friction accumulates quietly until the system has stopped working for weeks and you have not noticed because you stopped relying on it.",
   },
 ];
 
@@ -94,13 +94,13 @@ const tableRows = [
   {
     dimension: "Maintenance responsibility",
     claudeCode:
-      "You own it. MCP changes, tool updates, broken integrations — diagnosis and fixes are the founder's job or they stay broken.",
+      "You own it. MCP changes, tool updates, broken integrations. Diagnosis and fixes are the founder's job or they stay broken.",
     aios: "Covered. When something changes or breaks, that is not your problem.",
   },
   {
     dimension: "Breaks on updates",
     claudeCode:
-      "CLI tools, MCP protocol changes, Obsidian plugins — any can break a workflow. Timeline to fix depends on your availability.",
+      "CLI tools, MCP protocol changes, Obsidian plugins. Any can break a workflow. Timeline to fix depends on your availability.",
     aios: "Covered. Updates, breaks, and extensions are handled without your involvement.",
   },
   {
@@ -397,20 +397,24 @@ export default function ClaudeCodeComparisonPage() {
 
           <FadeUp delay={0.15}>
             <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "20px" }}>
-              Nick Saraev popularized the CLAUDE.md approach &mdash; a single markdown configuration file that gives Claude persistent context about your business, how you work, and what it should know. One file. The base layer. Real, useful, and limited in ways most people do not talk about.
+              Nick Saraev popularized the CLAUDE.md approach, a single markdown configuration file that gives Claude persistent context about your business, how you work, and what it should know. One file. The base layer. Real, useful, and limited in ways most people do not talk about.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "20px" }}>
-              Then 2026 accelerated everything. Andrej Karpathy published an LLM wiki gist on April 4, 2026 (github.com/karpathy/442a6bf555914893e9891c11519de94f). Garry Tan published GBrain the next day &mdash; 13,535 GitHub stars, built on Claude Code (github.com/garrytan/gbrain). Nate Herk built a Claude Code OS course with 127,000 views and 718,000 subscribers, and made the core tension plain: &ldquo;It&rsquo;s difficult to give a step-by-step playbook because everyone runs their business differently.&rdquo;
+              Then 2026 accelerated everything. Andrej Karpathy published an{" "}
+              <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" style={{ color: "#028090" }}>LLM wiki gist</a>
+              {" "}on April 4, 2026. Garry Tan published{" "}
+              <a href="https://github.com/garrytan/gbrain" target="_blank" rel="noopener noreferrer" style={{ color: "#028090" }}>GBrain</a>
+              {" "}the next day, 13,535 GitHub stars, built on Claude Code. Nate Herk built a Claude Code OS course with 127,000 views and 718,000 subscribers, and made the core tension plain: &ldquo;It&rsquo;s difficult to give a step-by-step playbook because everyone runs their business differently.&rdquo;
             </p>
           </FadeUp>
 
           <FadeUp delay={0.22}>
             <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "20px" }}>
               Consultants, solopreneurs, and service business owners are building
-              these systems right now &mdash; running their proposals, morning briefings, and
+              these systems right now, running their proposals, morning briefings, and
               admin through Claude Code. For technically fluent people with time to build,
               it works.
             </p>
@@ -469,40 +473,44 @@ export default function ClaudeCodeComparisonPage() {
         </div>
 
         {/* Blockquote */}
-        <FadeUp delay={0.2}>
+        <FadeUp delay={0.2} style={{ display: "block", width: "100%" }}>
           <div
             className="pullquote-block"
             style={{
               background: "rgba(244,91,105,0.08)",
               borderLeft: "3px solid #F45B69",
-              padding: "28px 80px",
+              padding: "28px 0",
               margin: "40px 0 0",
+              width: "100%",
+              boxSizing: "border-box",
             }}
           >
-            <p
-              style={{
-                fontSize: "18px",
-                fontStyle: "italic",
-                lineHeight: "1.6",
-                margin: 0,
-              }}
-            >
-              &ldquo;I run a small consulting business and was drowning in admin.&rdquo;
-            </p>
-            <p
-              style={{
-                fontSize: "12px",
-                fontWeight: 600,
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                color: "#F45B69",
-                fontStyle: "normal",
-                marginTop: "12px",
-                marginBottom: 0,
-              }}
-            >
-              r/ClaudeAI &mdash; consulting founder
-            </p>
+            <div style={{ padding: "0 80px" }}>
+              <p
+                style={{
+                  fontSize: "18px",
+                  fontStyle: "italic",
+                  lineHeight: "1.6",
+                  margin: 0,
+                }}
+              >
+                &ldquo;I run a small consulting business and was drowning in admin.&rdquo;
+              </p>
+              <p
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "#F45B69",
+                  fontStyle: "normal",
+                  marginTop: "12px",
+                  marginBottom: 0,
+                }}
+              >
+                r/ClaudeAI, consulting founder
+              </p>
+            </div>
           </div>
         </FadeUp>
 
@@ -929,7 +937,7 @@ export default function ClaudeCodeComparisonPage() {
 
           <FadeUp delay={0.15}>
             <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "28px" }}>
-              A Business AI OS is not a tool. It is an operating environment &mdash; five
+              A Business AI OS is not a tool. It is an operating environment, four
               connected layers built specifically around your business.
             </p>
           </FadeUp>
@@ -939,11 +947,11 @@ export default function ClaudeCodeComparisonPage() {
               {[
                 {
                   name: "Context.",
-                  desc: " Everything the AI needs to know about how your business operates — clients, decisions, priorities, history. Not a CLAUDE.md you maintain. A structured knowledge base built by a specialist.",
+                  desc: " Everything the AI needs to know about how your business operates: clients, decisions, priorities, history. Not a CLAUDE.md you maintain. A structured knowledge base built by a specialist.",
                 },
                 {
                   name: "Data.",
-                  desc: " Your real business data, connected live — CRM, email, meetings, forms. Not notes about the business. The actual records.",
+                  desc: " Your real business data, connected live. CRM, email, meetings, forms. Not notes about the business. The actual records.",
                 },
                 {
                   name: "Intelligence.",
@@ -952,10 +960,6 @@ export default function ClaudeCodeComparisonPage() {
                 {
                   name: "Automate.",
                   desc: " Workflows that run without you watching — triggered by conditions, not by you remembering to ask.",
-                },
-                {
-                  name: "Build.",
-                  desc: " Custom systems that compound over time as your business grows.",
                 },
               ].map((layer) => (
                 <p
@@ -982,6 +986,12 @@ export default function ClaudeCodeComparisonPage() {
           </FadeUp>
 
           <FadeUp delay={0.3}>
+            <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "28px" }}>
+              If you are a service business owner, here is where this starts. A Discovery Assessment uncovers exactly where your business is leaking time and revenue. Not a guess. A map. The AI engine gets built around that diagnosis. That is what makes this different from installing a set of automations and hoping they connect: you have the full picture first. Every build decision comes from the root cause. The system reflects how your business actually works, not how someone assumed it does.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.35}>
             <p
               style={{
                 fontSize: "17px",
