@@ -101,7 +101,7 @@ function SideCard({ fm }: { fm: ResourceFrontmatter }) {
       {/* Text */}
       <div className="flex flex-col justify-center gap-1 min-w-0">
         <div className="flex items-center gap-2">
-          <CategoryPill category={fm.category} size="xs" />
+          <CategoryPill category={fm.category} size="sm" />
         </div>
         <p className="font-display font-bold text-white text-[0.8125rem] leading-[1.3] line-clamp-2 group-hover:text-[#028090] transition-colors duration-200">
           {fm.title}
