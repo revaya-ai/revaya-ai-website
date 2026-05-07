@@ -163,7 +163,7 @@ function AssessmentCard() {
   return (
     <Link
       href="/business-ai-os-assessment"
-      className="group flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-[#553555]/40 bg-[#0D1520] hover:border-[#553555]/80 hover:bg-[#120A18] transition-all duration-200 min-h-[340px] p-8 text-center"
+      className="group flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-[#553555]/40 bg-[#0D1520] hover:border-[#553555]/80 hover:bg-[#120A18] transition-all duration-200 h-full p-8 text-center"
     >
       <div className="w-14 h-14 rounded-full bg-[#553555]/20 border border-[#553555]/40 flex items-center justify-center mb-5 group-hover:bg-[#553555]/30 transition-colors duration-200">
         <svg className="w-6 h-6 text-[#553555]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -172,13 +172,13 @@ function AssessmentCard() {
       </div>
       <p className="text-white/40 text-[0.72rem] uppercase tracking-[0.12em] font-medium mb-2">Free Tool</p>
       <h3 className="font-display font-black text-white text-[1.25rem] leading-[1.2] mb-3">
-        Discover your AI<br />Readiness Score
+        Your Personalized<br />AI ROI Scorecard
       </h3>
       <p className="text-white/45 text-[0.8125rem] leading-relaxed mb-6 max-w-[220px]">
-        Find out where AI can have the most impact in your business right now.
+        Find out exactly where your business is leaking time and revenue, and what to do about it.
       </p>
       <span className="inline-block font-display text-[0.8125rem] font-bold px-6 py-2.5 rounded-full bg-[#553555] text-white group-hover:bg-[#4a2d4a] transition-colors duration-200">
-        Take the Quiz →
+        Take the Assessment →
       </span>
     </Link>
   );
@@ -273,13 +273,13 @@ export default function ResourcesPage() {
               const cards = [];
               if (i === 2) {
                 cards.push(
-                  <FadeIn key="assessment-cta" delay={0.1}>
+                  <FadeIn key="assessment-cta" delay={0.1} className="h-full">
                     <AssessmentCard />
                   </FadeIn>
                 );
               }
               cards.push(
-                <FadeIn key={r.frontmatter.slug} delay={0.05 * (i + 1)}>
+                <FadeIn key={r.frontmatter.slug} delay={0.05 * (i + 1)} className="h-full">
                   <GridCard fm={r.frontmatter} />
                 </FadeIn>
               );
