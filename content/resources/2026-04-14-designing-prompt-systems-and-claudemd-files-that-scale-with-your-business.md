@@ -7,12 +7,29 @@ author: "Shannon Winnicki"
 date: "2026-04-14"
 image: "/articles/2026-05-05-topic-3-designing-prompt-systems-and-claudemd-files-that-scale-w/hero.png"
 published: true
-cta_variant: "discovery"
+cta_variant: "fit-call"
+faqs:
+  - question: "What is a Claude prompt system?"
+    answer: "A Claude prompt system is a structured architecture that gives Claude consistent context across every conversation, so you stop rebuilding from scratch each time. It has three layers: a foundation layer (who you are, your voice, your constraints), a functional layer (task-specific prompts), and a context layer (client or project variables). Together they make Claude's outputs consistent without re-explaining yourself each session."
+  - question: "What is a CLAUDE.md file and what does it do?"
+    answer: "A CLAUDE.md file is a plain text document that Claude reads as its primary operating context. It tells Claude who you are, how you communicate, what it should never do, and how to handle ambiguity. Think of it as the handbook you give a contractor on day one so they stop asking the same questions every Monday morning."
+  - question: "How does a CLAUDE.md file make prompts shorter?"
+    answer: "Once your foundation layer captures your identity, voice rules, and non-negotiables, every task prompt can skip all of that context and focus only on the task variables. A prompt that previously took 12 minutes to write and run can shrink to under 3 minutes because the shared context is already loaded. The foundation does the heavy lifting so the task prompt only has to do one job."
+  - question: "Who should build a Claude prompt system?"
+    answer: "Any solo operator or small team using Claude repeatedly for client work, content, or internal processes. If you are re-explaining your voice, your business, or your constraints in multiple separate chats, you are losing time to a solvable architecture problem. A three-layer prompt system is especially valuable once you involve a VA, contractor, or second person who needs consistent outputs without having your full context in their head."
+  - question: "What is prompt sprawl and why does it matter?"
+    answer: "Prompt sprawl is what happens when you have 10 or 15 prompts doing different jobs with no relationship to each other. Each one was written to solve a single problem, stores no shared context, and breaks the moment someone else tries to use it. The result is outputs that vary wildly depending on who ran the prompt and how much context they happened to include."
+  - question: "How often should I update my CLAUDE.md file?"
+    answer: "A quarterly review is enough for most operators. Spend 20 minutes reading through each section and asking one question: is this still true? If you have been correcting the same Claude behavior repeatedly over the past 90 days, that correction belongs in the file, not in your head. A stale foundation file is worse than no file because it actively points Claude in the wrong direction."
+  - question: "What is the third layer and when do I need it?"
+    answer: "The third layer is a context block, a template you fill in per client or project. It holds variables that change per engagement: client name, project scope, specific constraints. You need it once you are working with multiple clients or multiple people accessing the same Claude setup. Without it, you either over-build the foundation layer or paste the same context manually every time."
 ---
 
 # How to Build a Claude Prompt System That Doesn't Reset Every Time You Open a New Chat
 
 You've written a really good prompt. It works. Claude sounds right, hits the right tone, stays in its lane. Then you open a new chat and start over.
+
+A Claude prompt system is a three-layer architecture that gives Claude persistent context across every session, so you stop re-explaining your voice, your business, and your constraints from scratch. It combines a foundation layer, task-specific prompts, and a per-client context block into a structure that produces consistent outputs without manual setup every time.
 
 That's not a prompt problem. That's an architecture problem.
 
@@ -22,7 +39,7 @@ Claude is reliable. The missing piece is a Claude prompt system, not a better in
 
 ---
 
-## Why Your Prompts Stop Working at Scale
+## Why Do Your Prompts Stop Working at Scale?
 
 The real problem isn't bad prompts. It's orphan prompts.
 
@@ -36,7 +53,7 @@ Worth saying plainly: a prompt system doesn't guarantee consistency. Model updat
 
 ---
 
-## What a Claude Prompt System Actually Is
+## What Is a Claude Prompt System?
 
 A Claude prompt system is not a folder of better prompts. It's an architecture.
 
@@ -50,11 +67,11 @@ The **context layer** holds the variables: the client, the project, the current 
 
 When those three layers are distinct and intentional, Claude stops behaving inconsistently because you've stopped giving it inconsistent instructions. That's the mechanism. It's not magic. It's just reducing the noise.
 
-The artifact that anchors the foundation layer is a `CLAUDE.md` file.
+The artifact that anchors the foundation layer is a [`CLAUDE.md` file](https://code.claude.com/docs/en/memory).
 
 ---
 
-## What a CLAUDE.md File Is and Why It Matters
+## What Is a CLAUDE.md File and Why Does It Matter?
 
 A `CLAUDE.md` file is a plain text document that Claude reads as its primary operating context. It tells Claude who you are, how you think, what you care about, and how you want it to behave across everything, not just in this conversation.
 
@@ -78,7 +95,7 @@ Here's where it breaks: a `CLAUDE.md` file that grows to five hundred lines with
 
 ---
 
-## How to Structure Prompts That Build on Each Other
+## How Do You Structure Prompts That Build on Each Other?
 
 Once the foundation layer is in place, task prompts get dramatically simpler. That's the proof that the system is working.
 
@@ -98,7 +115,7 @@ The key principle is inheritance. Every task prompt should be able to assume the
 
 ---
 
-## The One Mistake That Breaks the Whole System
+## What Is the One Mistake That Breaks the Whole System?
 
 Building the `CLAUDE.md` file and then treating it as finished.
 
@@ -112,7 +129,7 @@ The fix is simple: a quarterly review. Twenty minutes, not two hours. Read throu
 
 ---
 
-## When to Add a Third Layer
+## When Do You Need to Add a Third Layer?
 
 Two layers, the `CLAUDE.md` foundation and your task prompts, will handle most of what a solo operator or small team needs. But if you're working with multiple clients, multiple service lines, or multiple people accessing the same Claude setup, a context layer becomes necessary.
 
@@ -126,7 +143,7 @@ This three-layer approach is the core of what I build into client Business AI Op
 
 ---
 
-## Starting Without Starting Over
+## How Do You Start Without Starting Over?
 
 If you already have prompts you've built and trust, you don't throw them out. You audit them.
 
