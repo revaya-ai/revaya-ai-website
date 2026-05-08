@@ -5,9 +5,33 @@ slug: "llm-wiki-for-service-business-owners"
 category: "article"
 author: "Shannon Winnicki"
 date: "2026-05-08"
+read_time: "7 min read"
 image: "/articles/2026-05-08-llm-wiki-for-service-business-owners/hero.png"
 published: true
 cta_variant: "fit-call"
+faqs:
+  - question: "What is the LLM Wiki and who created it?"
+    answer: "The LLM Wiki is a knowledge architecture pattern published by Andrej Karpathy on April 4, 2026. It describes a three-layer system where an AI agent maintains structured knowledge that compounds over time, rather than re-discovering information from scratch on every query."
+  - question: "What is the difference between LLM Wiki and RAG?"
+    answer: "RAG is stateless. The AI rediscovers and pieces together knowledge from raw chunks on every query. LLM Wiki synthesizes knowledge at ingestion, so every query draws on pre-organized, cross-referenced understanding. RAG works for searching large document libraries. LLM Wiki is better for building business knowledge that compounds over time."
+  - question: "Can a non-technical business owner use the LLM Wiki pattern?"
+    answer: "Yes. Karpathy wrote the gist as a format-agnostic blueprint. For a service business, the raw layer is meeting transcripts and client notes. The wiki layer is synthesized decisions and SOPs. No vector databases or coding required."
+  - question: "What does a business LLM Wiki actually store?"
+    answer: "Synthesized knowledge about clients (what they care about, past decisions, pricing calls), business processes (SOPs, how decisions get made), and institutional patterns (what worked, what failed, why). Not raw files. Structured understanding that an AI agent can reason from immediately."
+  - question: "How is this different from uploading files to ChatGPT?"
+    answer: "Uploading files to ChatGPT is stateless. Those files are gone the next session. LLM Wiki synthesizes documents into organized, interlinked pages that persist and compound. The AI starts each session already knowing your business context, not re-reading raw files to discover it."
+  - question: "What is the Context layer of a Business AI Operating System?"
+    answer: "The Context layer is the first of five layers in a Business AI Operating System. It is the structured knowledge base the entire system draws from — business decisions, client history, processes, and institutional knowledge, organized so AI agents can reason from them immediately. The LLM Wiki pattern describes exactly how this layer is built and maintained."
+  - question: "Why does it matter that Andrej Karpathy published this?"
+    answer: "Karpathy co-founded OpenAI in 2015 and directed AI and Autopilot Vision at Tesla from 2017 to 2022. When he publishes an architecture pattern, the developer community moves on it. The gist received 296 HackerNews points in days and 5,000+ GitHub stars within weeks. The business owner version of this story is the one that hasn't been told yet."
+  - question: "Does LLM Wiki replace RAG entirely?"
+    answer: "No. RAG still works for massive, heterogeneous document libraries where synthesis isn't practical: legal discovery, medical literature, enterprise content repositories. LLM Wiki is better for domain-specific knowledge where you want compounding depth over time."
+  - question: "What are the three layers of the LLM Wiki architecture?"
+    answer: "The three layers are: (1) Raw sources — immutable original documents the AI reads but never modifies; (2) The wiki — LLM-maintained structured pages that synthesize and cross-reference the raw sources; (3) The schema — a configuration document that tells the AI how the wiki is organized and how to maintain it."
+  - question: "How long does it take to build a business LLM Wiki?"
+    answer: "The first working version takes a few hours. Define the schema, ingest your highest-priority documents, let the AI write the initial wiki pages. The value compounds over weeks and months. By month three, a system fed on meeting transcripts, client decisions, and process docs can answer nuanced business questions no basic chatbot could touch."
+  - question: "Is this only for people who know how to code?"
+    answer: "No. The pattern requires a structured folder, a schema document, and an AI agent that can read and write files. Tools like Claude Code and Cursor make this accessible to non-developers. The Revaya Business AI Operating System implements this pattern without the business owner writing a single line of code."
 ---
 
 # LLM Wiki for Business Owners: What Karpathy's Pattern Means for Your Business
@@ -24,9 +48,9 @@ This is what that pattern means for service business owners, and why the busines
 
 ## What Karpathy Actually Published (And Why It Spread So Fast)
 
-On April 4, 2026, Karpathy posted a [GitHub gist called "LLM Wiki"](KARPATHY_GIST_URL). It describes a self-maintaining knowledge base where an AI agent synthesizes every new document at ingestion rather than storing raw text for later retrieval. Three layers: raw sources, a wiki of synthesized pages, and a schema that tells the AI how the wiki is organized.
+On April 4, 2026, Karpathy posted a [GitHub gist called "LLM Wiki"](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). It describes a self-maintaining knowledge base where an AI agent synthesizes every new document at ingestion rather than storing raw text for later retrieval. Three layers: raw sources, a wiki of synthesized pages, and a schema that tells the AI how the wiki is organized.
 
-Within days it had 296 HackerNews points. Within weeks: 5,000+ GitHub stars and over 100,000 bookmarks on X. Garry Tan's [GBrain implementation](GBRAIN_REPO_URL) hit 13,800+ stars. Developers were building versions in Python, TypeScript, Go. Ten-plus open-source implementations appeared in the first month.
+Within days it had 296 HackerNews points. Within weeks: 5,000+ GitHub stars and over 100,000 bookmarks on X. Garry Tan's [GBrain implementation](https://github.com/garrytan/gbrain) hit 13,800+ stars. Developers were building versions in Python, TypeScript, Go. Ten-plus open-source implementations appeared in the first month.
 
 Why it spread so fast: Karpathy co-founded OpenAI in 2015 and directed AI and Autopilot Vision at Tesla from 2017 to 2022. He founded Eureka Labs in 2024. When he publishes an architecture pattern, it gets taken seriously. The developer community moved on it immediately.
 
@@ -104,7 +128,7 @@ The first client implementation is running now. For Shawn Hamilton at High Holle
 
 He can ask his AI "what was the reasoning behind our pricing decision for the distributor conversation last fall?" and get an answer that draws from three different source documents, synthesized into something coherent, not just a retrieved chunk.
 
-This is what the Context layer of a [Business AI Operating System](/resources/what-is-a-business-ai-operating-system) does. It's the foundation every other layer depends on. Without compounding context, the intelligence layer is static. The automation layer is brittle. And every session starts from zero.
+This is what the Context layer of a [Business AI Operating System](/business-ai-operating-system) does. It's the foundation every other layer depends on. Without compounding context, the intelligence layer is static. The automation layer is brittle. And every session starts from zero.
 
 For how this plays out when knowledge management is the core constraint, read [How AI-Powered Knowledge Management Turns Founder Expertise Into a Scalable Business Asset](/resources/ai-powered-knowledge-management-founder-expertise).
 
@@ -123,54 +147,6 @@ LLM Wiki is better when you want the knowledge to compound. When the questions a
 For a 10-person service business: LLM Wiki. For a law firm needing to search case archives: RAG.
 
 Neither is a magic fix. Both require you to actually feed them good raw material.
-
----
-
-## Frequently Asked Questions
-
-### What is the LLM Wiki and who created it?
-
-The LLM Wiki is a knowledge architecture pattern published by Andrej Karpathy on April 4, 2026. It describes a three-layer system where an AI agent maintains structured knowledge that compounds over time, rather than re-discovering information from scratch on every query.
-
-### What is the difference between LLM Wiki and RAG?
-
-RAG is stateless. The AI rediscovers and pieces together knowledge from raw chunks on every query. LLM Wiki synthesizes knowledge at ingestion, so every query draws on pre-organized, cross-referenced understanding. RAG works for searching large document libraries. LLM Wiki is better for building business knowledge that compounds over time.
-
-### Can a non-technical business owner use the LLM Wiki pattern?
-
-Yes. Karpathy wrote the gist as a format-agnostic blueprint. For a service business, the raw layer is meeting transcripts and client notes. The wiki layer is synthesized decisions and SOPs. No vector databases or coding required.
-
-### What does a business LLM Wiki actually store?
-
-Synthesized knowledge about clients (what they care about, past decisions, pricing calls), business processes (SOPs, how decisions get made), and institutional patterns (what worked, what failed, why). Not raw files. Structured understanding that an AI agent can reason from immediately.
-
-### How is this different from uploading files to ChatGPT?
-
-Uploading files to ChatGPT is stateless. Those files are gone the next session. LLM Wiki synthesizes documents into organized, interlinked pages that persist and compound. The AI starts each session already knowing your business context, not re-reading raw files to discover it.
-
-### What is the Context layer of a Business AI Operating System?
-
-The Context layer is the first of five layers in a [Business AI Operating System](/resources/what-is-a-business-ai-operating-system). It is the structured knowledge base the entire system draws from. The LLM Wiki pattern describes exactly how this layer is built and maintained.
-
-### Why does it matter that Andrej Karpathy published this?
-
-Karpathy co-founded OpenAI in 2015 and directed AI and Autopilot Vision at Tesla from 2017 to 2022. When he publishes an architecture pattern, the developer community moves on it. The gist received 296 HackerNews points in days and 5,000+ GitHub stars within weeks. The business owner version of this story is the one that hasn't been told yet.
-
-### Does LLM Wiki replace RAG entirely?
-
-No. RAG still works for massive, heterogeneous document libraries where synthesis isn't practical: legal discovery, medical literature, enterprise content repositories. LLM Wiki is better for domain-specific knowledge where you want compounding depth over time.
-
-### What are the three layers of the LLM Wiki architecture?
-
-(1) Raw sources: immutable original documents the AI reads but never modifies. (2) The wiki: LLM-maintained structured pages that synthesize and cross-reference the raw sources. (3) The schema: a configuration document that tells the AI how the wiki is organized and how to maintain it.
-
-### How long does it take to build a business LLM Wiki?
-
-The first working version takes a few hours. Define the schema, ingest your highest-priority documents, let the AI write the initial wiki pages. The value compounds over weeks and months. By month three, a system fed on meeting transcripts, client decisions, and process docs can answer nuanced business questions no basic chatbot could touch.
-
-### Is this only for people who know how to code?
-
-No. The pattern requires a structured folder, a schema document, and an AI agent that can read and write files. Tools like Claude Code and Cursor make this accessible to non-developers. The Revaya Business AI Operating System implements this pattern without the business owner writing a single line of code.
 
 ---
 
