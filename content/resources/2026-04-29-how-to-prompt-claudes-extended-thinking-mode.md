@@ -7,12 +7,29 @@ author: "Shannon Winnicki"
 date: "2026-04-29"
 image: "/articles/2026-05-06-prompt-engineering-for-claude-codes-extended-thinking-mode-to-maximize/hero.png"
 published: true
-cta_variant: "discovery"
+cta_variant: "fit-call"
+faqs:
+  - question: "What is Claude's extended thinking mode?"
+    answer: "Extended thinking is a mode where Claude allocates reasoning tokens before generating its response. The model works through the problem internally, noting uncertainty and considering alternatives, before writing the answer you see. That internal process isn't visible in the output, but it changes the quality of the conclusion, especially on decisions with real tradeoffs or downstream consequences."
+  - question: "How do you turn on extended thinking in Claude?"
+    answer: "Extended thinking isn't the default behavior on most interfaces. You either enable it through the API or prompt toward it by structuring your request so reasoning is a required stage. Turning it on without restructuring your prompt often produces little visible difference. The prompt architecture matters as much as the toggle."
+  - question: "Why do detailed prompts still produce thin outputs on complex tasks?"
+    answer: "The problem usually isn't information volume, it's reasoning architecture. When you add more context without building in a reasoning stage, Claude generates a response that satisfies the surface requirements while bypassing the harder judgment call underneath. The output looks complete but didn't actually work through the tension in the problem. Separating the reasoning request from the answer request changes that."
+  - question: "When should you use extended thinking versus standard prompting?"
+    answer: "Use extended thinking for anything that would require a capable human to pause before answering: pricing decisions with multiple variables, hiring assessments where profiles pull in different directions, risk flags in contracts, strategic prioritization under constraints. For simple tasks like summarization, formatting, or data extraction, standard prompting is faster and adds no value from the extra stage."
+  - question: "What is the CRAFT formula for prompting?"
+    answer: "CRAFT stands for Context, Role, Action, Format, and Tone. Context gives Claude the actual situation with enough detail that the answer changes based on your specifics. Role defines the expertise to bring. Action includes the reasoning step before any recommendation. Format specifies how the output should be structured. Tone names whether you want direct feedback or encouragement, because Claude defaults to encouraging."
+  - question: "How does staged prompting work across multiple messages?"
+    answer: "Instead of compressing a three-stage reasoning problem into one request, you run the reasoning pass first, review it, then ask for the recommendation in a follow-up. This isn't slower if you're building a workflow. It's more reliable, and reliability is what makes a process delegable. Single-pass prompting on complex decisions trades quality for speed."
+  - question: "Why does giving Claude permission to be uncertain improve outputs?"
+    answer: "By default Claude answers in a confident register because that's what most prompts implicitly reward. On genuinely complex decisions, false confidence is worse than calibrated uncertainty. Adding explicit permission, such as asking Claude to name what information it would need before deciding, shifts the output from confident-but-thin to honest-and-useful."
 ---
 
 # How to Prompt Claude's Extended Thinking Mode for Reasoning That Holds Up
 
 The outputs feel almost right. Close enough that you keep using Claude, but not close enough that you can fully delegate. You add more context. You write longer prompts. The results get marginally better, then plateau. So you start wondering if you're doing something wrong, or if this is just the ceiling.
+
+Claude's extended thinking mode is a prompting approach where the model allocates reasoning tokens before generating its response, working through uncertainty and competing factors internally before committing to an output. It exists specifically for decisions with real tradeoffs, not for simple tasks where a fast answer is good enough.
 
 It's not the ceiling. It's the prompting model.
 
@@ -22,9 +39,9 @@ Here's how to fix that.
 
 ---
 
-## What Is Claude's Extended Thinking Mode (And Why Most Operators Miss It)
+## What Is Claude's Extended Thinking Mode, and Why Do Most Operators Miss It?
 
-Extended thinking is a mode where Claude allocates reasoning tokens before generating its response. Think of it as the model working through the problem internally before writing the answer you see. That internal process isn't visible in the output, but it meaningfully changes the quality of the conclusion.
+[Extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) is a mode where Claude allocates reasoning tokens before generating its response. Think of it as the model working through the problem internally before writing the answer you see. That internal process isn't visible in the output, but it meaningfully changes the quality of the conclusion.
 
 ![Abstract visualization of a two-stage reasoning process, inputs flowing into structured thought patterns, dark navy background, teal gradient](/articles/2026-05-06-prompt-engineering-for-claude-codes-extended-thinking-mode-to-maximize/body_1.png)
 
@@ -38,7 +55,7 @@ Most operators miss it for two reasons. First, it's not the default behavior on 
 
 ---
 
-## Why Standard Prompting Fails on Complex Reasoning Tasks
+## Why Does Standard Prompting Fail on Complex Reasoning Tasks?
 
 Here's the pattern I see repeatedly. An operator writes a detailed prompt. Long context, specific instructions, maybe a few examples. They're front-loading information. The output is still thin on nuance, or it misses an edge case that seems obvious in retrospect, or it's technically correct but wrong for their specific situation.
 
@@ -52,7 +69,7 @@ This matters more when you're building repeatable workflows than when you're doi
 
 ---
 
-## How to Prompt Claude's Extended Thinking Mode for Staged Reasoning
+## How Do You Prompt Claude's Extended Thinking Mode for Staged Reasoning?
 
 Claude's extended thinking mode isn't primarily about keywords or toggle switches. It's about structuring your prompt so that reasoning is a required stage, not an assumed byproduct of good instructions.
 
@@ -82,7 +99,7 @@ Extended thinking mode prompting works better when you don't try to compress a t
 
 ---
 
-## Where Extended Thinking Pays Off Most in Operator Workflows
+## Where Does Extended Thinking Pay Off Most in Operator Workflows?
 
 Not every task needs this. Summarization, formatting, first drafts, data extraction — those are single-pass tasks. Prompting for extended thinking on a simple task adds friction without adding value.
 
@@ -94,7 +111,7 @@ That's the real test. Not how Claude performs on the clean version of a problem.
 
 ---
 
-## The CRAFT Formula in Practice
+## How Does the CRAFT Formula Work in Practice?
 
 Describing these principles is one thing. Seeing them assembled into an actual prompt is another. Here's the structure I use, broken into five components, with a business owner example for each.
 

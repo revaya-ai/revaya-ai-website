@@ -7,12 +7,29 @@ author: "Shannon Winnicki"
 date: "2026-04-17"
 image: "/articles/2026-05-05-topic-4-how-to-use-claude-code-as-a-solo-founders-development-te/hero.png"
 published: true
-cta_variant: "discovery"
+cta_variant: "fit-call"
+faqs:
+  - question: "What is Claude Code and how is it different from Claude.ai?"
+    answer: "Claude Code is a terminal-native agentic environment that runs in your command line, reads your entire codebase, writes and executes files, installs packages, and runs tests. Claude.ai is a chat interface where you paste text and get text back. Claude Code takes sequences of actions inside your project rather than giving single responses to single prompts."
+  - question: "Do you need to know how to code to use Claude Code?"
+    answer: "No. Directing Claude Code is closer to managing a contractor than learning to program. You define outcomes, break down scope, and communicate requirements clearly. You review outputs like a product manager, meaning you check whether it does what you asked and whether it breaks when you test it, not whether the code is written correctly at a syntactic level."
+  - question: "What can Claude Code actually build for a solo founder?"
+    answer: "It handles discrete features well: forms, API integrations, automation scripts, database setup, internal tools, dashboards, and prototypes that a small number of people use. It's also good at debugging specific error messages and refactoring existing code. I used it to build intake systems, reporting pipelines, and components of my Business AI OS across multiple sessions."
+  - question: "What are the limits of using Claude Code instead of a developer?"
+    answer: "Claude Code doesn't replace architectural judgment for systems that need to scale to thousands of users, security review for anything handling sensitive data or payments, or the product decision of what to build in the first place. It writes confidently, and confident code can be confidently wrong when it doesn't have enough context about your existing architecture. Prototyping and internal tools are the right use case."
+  - question: "How do you get started with Claude Code this week?"
+    answer: "Install it from the terminal using npm, which takes about five minutes. Start with one small feature, not your whole product. Before your first session, write a CLAUDE.md file with five to ten sentences about what you're building, what technologies you're using, and what you want to accomplish. Then ask it to build the thing and expect to correct it at least once."
+  - question: "What is a CLAUDE.md file and why does it matter?"
+    answer: "A CLAUDE.md is a plain text file at the root of your project that Claude Code reads automatically when it starts a session. You put your project context there: your stack, folder structure, naming conventions, and any constraints. It functions like an onboarding document for a contractor who starts fresh every session. A good CLAUDE.md cuts back-and-forth in half."
+  - question: "Is Claude Code worth it for a solo founder on a tight budget?"
+    answer: "At $20 to $100 per month depending on your plan, you get a context-aware coding collaborator that works on your schedule. A freelance developer for a $10K project is a $10K bet on something you haven't validated. Claude Code is a monthly subscription you cancel if it doesn't work out. That's a different kind of bet for a different stage of building."
 ---
 
 # How to Use Claude Code as Your Solo Founder Development Team
 
 You've hit the wall. Zapier can't do what you need. Bubble gets you close but not close enough. And hiring a developer for a $10K project feels like a gamble when you're still validating the thing you're building.
+
+Claude Code is a terminal-native agentic coding environment built by Anthropic that reads your entire codebase, writes and executes files, runs tests, and iterates on a goal without you typing a single line of code yourself. It's not a chatbot. It takes sequences of actions inside your project, which is what makes it useful for solo founders who need to build without a developer on payroll.
 
 So the idea sits. Half-built. Waiting for a budget line that doesn't exist yet.
 
@@ -22,7 +39,7 @@ To be direct about what this article is: it's a guide to using Claude Code as a 
 
 ---
 
-## What Claude Code Actually Is
+## What Is Claude Code, Actually?
 
 Most founders who know Claude know it as a writing assistant. You paste something in, you get something back. That's Claude.ai, the chat interface.
 
@@ -36,7 +53,7 @@ The gap between Claude.ai and Claude Code is meaningful. One answers questions. 
 
 ---
 
-## Why No-Code Tools Hit a Ceiling
+## Why Do No-Code Tools Hit a Ceiling?
 
 Webflow is genuinely good. Zapier solves real problems. Bubble gets you further than most people expect.
 
@@ -50,7 +67,7 @@ Claude Code operates below that abstraction layer. It writes actual code, Python
 
 ---
 
-## How to Direct Claude Code Without Knowing How to Code
+## How Do You Direct Claude Code Without Knowing How to Code?
 
 Here's the part that surprised me most: directing Claude Code is closer to managing a contractor than learning to program.
 
@@ -72,7 +89,7 @@ Here's how this played out in practice. I needed a client intake form that would
 
 ---
 
-## What Claude Code Can and Cannot Do
+## What Can Claude Code Do, and What Can't It?
 
 Being specific about this matters, because the failure mode is assuming it can do more than it can.
 
@@ -97,11 +114,11 @@ The most common failure pattern I've hit: Claude Code writes confidently, and co
 
 ---
 
-## How to Get Started This Week
+## How Do You Get Started This Week?
 
 You don't need to finish reading documentation before you start. Here's what actually gets you moving.
 
-Install Claude Code from the terminal using npm. You'll need Node.js on your machine. The installation takes about five minutes. Start at the Claude Code documentation page for the current install command, since CLI tools change and a cached version of these instructions may be out of date.
+Install Claude Code from the terminal using npm. You'll need Node.js on your machine. The installation takes about five minutes. Start at the [Claude Code setup documentation](https://docs.anthropic.com/en/docs/claude-code/setup) for the current install command, since CLI tools change and a cached version of these instructions may be out of date.
 
 Start with something small. Not your whole product. One feature. One automation. One thing that would save you three hours a week if it existed. Build that first. The goal is to run the workflow once so you understand how it actually feels, not to ship a complete product on day one.
 

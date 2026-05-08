@@ -7,12 +7,27 @@ author: "Shannon Winnicki"
 date: "2026-04-08"
 image: "/articles/2026-04-08-ai-operating-system-stack-decisions-sub-15-person-companies/hero.png"
 published: true
-cta_variant: "discovery"
+cta_variant: "fit-call"
+faqs:
+  - question: "What is the biggest AI stack mistake small businesses make?"
+    answer: "Choosing tools before designing a system. Most founders ask which tools to buy when the real question is what their operational system needs to do and how information should flow through it. When you pick tools first, you end up with technically connected but operationally siloed software where client context lives in five places and no single source of truth exists."
+  - question: "What is the difference between a stack decision and an architecture decision?"
+    answer: "A stack decision is a list of tools. An architecture decision is a map of how information moves, where it lives, what triggers what, and which layer is responsible for which kind of thinking. Architecture comes first. Tools serve the architecture. When you flip that order, tools end up technically integrated but operationally disconnected."
+  - question: "What is architecture-first AI stack design?"
+    answer: "Architecture-first means running a four-question filter before evaluating any tool: Where does context live? How does information flow between functions? What is each layer of the system responsible for? Where is the single source of truth for each category of information? Once those questions have clear answers, tool selection becomes straightforward because you know exactly what each tool needs to do and how it fits the design."
+  - question: "What are the four layers of a small business AI system?"
+    answer: "Storage and coordination tools like Notion or Airtable hold your single source of truth. Execution tools like Zapier or Make automate information flow between functions. Intelligence layers like Claude or GPT handle reasoning and output generation. Most small businesses ask their intelligence layer to do the work of their coordination layer, then wonder why outputs are inconsistent. Each layer needs to be defined and respected."
+  - question: "How do I know if my current AI stack has an architecture problem?"
+    answer: "If you have more than five tools and cannot answer where context lives with one specific location per category, you have an architecture problem. If someone has to manually copy information between tools when a project starts, or if answering a client status question requires opening three tabs, the stack has no spine. AI tools added on top of that setup will not fix it."
+  - question: "Should I add AI tools to my existing stack?"
+    answer: "Not until you have established a coordination layer and enforced it for 30 days. AI that can read your project records and client history is worth far more than AI that can only see what you paste into a chat window. The sequence is: centralize context first, map two or three high-friction workflows, then add an AI layer to your coordination system, not alongside it."
 ---
 
 # The AI Stack Decision Most Small Businesses Are Making Backwards
 
 You have ChatGPT. You have Zapier. You have Notion or Airtable or both. You've spent real hours watching comparison videos, reading Reddit threads, and maybe even paying for a course that promised to show you the "best AI stack for small business."
+
+An AI stack for a small business works when it is built on an architecture first, meaning a clear map of where context lives, how information flows between functions, and what each layer is responsible for. Without that foundation, tools end up technically connected but operationally siloed, and the founder stays the single source of truth no matter how many tools they add.
 
 And yet your business still runs on your memory. Decisions still bottleneck at you. The automations work, technically, but they don't talk to each other. You're solving the same problem in four different tools, and none of them know what the others are doing.
 
@@ -20,7 +35,7 @@ This is the most common AI stack decision small businesses make, and it's backwa
 
 ---
 
-## The Difference Between a Stack Decision and an Architecture Decision
+## What Is the Difference Between a Stack Decision and an Architecture Decision?
 
 Most founders treat this as a software procurement problem. They ask "which tools should I buy?" when the actual question is "what does my operational system need to do, and how should information flow through it?"
 
@@ -34,19 +49,19 @@ The problem wasn't the tools. The problem was that no one had ever decided: wher
 
 ---
 
-## Why This Hits Harder in Sub-15 Person Companies
+## Why Does This Hit Harder in Sub-15 Person Companies?
 
 At a company with 50 or 100 people, someone eventually gets hired to untangle the mess. There's an ops role, a RevOps function, maybe an IT person. They inherit the chaos and work through it.
 
 At a sub-15 person company, you inherit your own mess. There's no one coming to fix it. The fragmented stack you build in month three is the one you're still running on in month eighteen, except by then it has seven more tools bolted onto it.
 
-This is exactly what I saw across the operational rebuilds I've done inside companies including Virgin Mobile, Boost Mobile, and Papa Murphy's. The pattern holds regardless of company size. The businesses that scaled without compounding operational debt were the ones where someone made architecture decisions before tool decisions. The ones that didn't scale cleanly had point-solution thinking baked into their foundation. Every new problem got a new tool. Every new tool created a new data silo. Every new silo required a new integration. The founder ended up managing the integrations instead of the business.
+This is exactly what I saw across the operational rebuilds I've done inside companies including Virgin Mobile, Boost Mobile, and Papa Murphy's. The pattern holds regardless of company size. [McKinsey's 2024 State of AI research](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024) found that businesses capturing real value from AI were significantly more likely to have redesigned workflows around AI rather than simply adding AI tools to existing processes. The businesses that scaled without compounding operational debt were the ones where someone made architecture decisions before tool decisions. The ones that didn't scale cleanly had point-solution thinking baked into their foundation. Every new problem got a new tool. Every new tool created a new data silo. Every new silo required a new integration. The founder ended up managing the integrations instead of the business.
 
 For a small business making AI stack decisions right now, the window to get this right is actually narrow. The first six months of building AI into your operations is when the architecture either gets established or gets skipped. Most founders skip it because no one told them it existed.
 
 ---
 
-## What Architecture-First Actually Looks Like
+## What Does Architecture-First Actually Look Like?
 
 This is not about drawing a diagram before you're allowed to buy software. Architecture-first is a four-question filter you run before evaluating any tool.
 
@@ -65,7 +80,7 @@ Clients live here. Projects live here. Communications live here. Decisions live 
 
 ---
 
-## The Tool Selection Process That Actually Works
+## What Tool Selection Process Actually Works?
 
 Once you have answers to those four questions, tool selection becomes much less fraught. You're no longer comparing Claude versus GPT in the abstract. You're asking which one integrates more cleanly with the coordination layer you've already chosen, and whether it can access the context you've already centralized.
 
@@ -82,7 +97,7 @@ Third, add an AI layer to your coordination system rather than alongside it. AI 
 
 ---
 
-## The Question to Ask Before You Add Any New AI Tool
+## What Should You Ask Before Adding Any New AI Tool?
 
 Here's the filter I use before recommending any tool to a founder I'm working with: "If this tool disappeared tomorrow, what would break, and where would that information live instead?"
 
@@ -94,7 +109,7 @@ Most small business AI stack decisions never get there because the architecture 
 
 ---
 
-## What to Do Next
+## What Should You Do Next?
 
 If you're currently sitting with a stack that has more than five tools and no clear answer to "where does context live," the right next step is an audit before another purchase.
 

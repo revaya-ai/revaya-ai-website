@@ -46,7 +46,7 @@ This is what that pattern means for service business owners, and why the busines
 
 ---
 
-## What Karpathy Actually Published (And Why It Spread So Fast)
+## What Did Karpathy Actually Publish, and Why Did It Spread So Fast?
 
 On April 4, 2026, Karpathy posted a [GitHub gist called "LLM Wiki"](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). It describes a self-maintaining knowledge base where an AI agent synthesizes every new document at ingestion rather than storing raw text for later retrieval. Three layers: raw sources, a wiki of synthesized pages, and a schema that tells the AI how the wiki is organized.
 
@@ -58,7 +58,7 @@ What nobody moved on: the business owner version. Every tutorial, every implemen
 
 ---
 
-## How RAG Works, and Where It Falls Apart
+## How Does RAG Work, and Where Does It Fall Apart?
 
 RAG works like this. You upload documents. When someone asks a question, the system retrieves the most relevant chunks and feeds them to the AI. The AI reads the chunks and answers.
 
@@ -76,7 +76,7 @@ Those questions require synthesis across everything the business has learned. No
 
 ---
 
-## What LLM Wiki Does Differently
+## What Does LLM Wiki Do Differently From RAG?
 
 ![RAG retrieves fragments. LLM Wiki synthesizes into a connected knowledge tree.](/articles/2026-05-08-llm-wiki-for-service-business-owners/body_1.png)
 
@@ -96,7 +96,7 @@ The difference: RAG retrieves at query time. LLM Wiki synthesizes at ingestion. 
 
 ---
 
-## Why This Matters More for Service Businesses Than for Developers
+## Why Does LLM Wiki Matter More for Service Businesses Than for Developers?
 
 Every developer implementation of Karpathy's pattern is about code repositories, research papers, or personal notes. That makes sense. Developers have the tooling and the motivation to experiment first.
 
@@ -112,7 +112,7 @@ That's not just an interesting technical distinction. It's the difference betwee
 
 ---
 
-## How the Business AI Operating System Context Layer Implements This
+## How Does the Business AI Operating System Context Layer Implement This?
 
 ![Institutional memory built into a system — not locked in one person's head.](/articles/2026-05-08-llm-wiki-for-service-business-owners/body_2.jpeg)
 
@@ -134,7 +134,7 @@ For how this plays out when knowledge management is the core constraint, read [H
 
 ---
 
-## When RAG Is Still the Right Choice
+## When Is RAG Still the Right Choice?
 
 RAG wins in specific situations, and it's worth being clear about them.
 

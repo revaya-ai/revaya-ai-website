@@ -38,7 +38,7 @@ Half of them never got used. And the ones that did? They didn't talk to each oth
 
 The reason your AI tools don't work together isn't a technology problem. It's an org design problem. And the org chart you'd instinctively draw when organizing AI agents for your business is wrong.
 
-## I organized my AI like a Fortune 500 (and it was the worst decision I made)
+## Why Did I Organize My AI Like a Fortune 500 (and Why Was It the Worst Decision I Made)?
 
 My instinct made sense at the time. I reached for what I knew: functional departments. I built 27 roles. Content writers, SEO specialists, social media managers, sales qualifiers, proposal builders, delivery coordinators, financial analysts. Every role had a detailed job description. Every department had a lead.
 
@@ -50,7 +50,7 @@ The problem wasn't the agents. The problem was the structure. Corporate org char
 
 I had recreated the exact silo problem that made corporate life miserable. Except now the silos were made of AI. So I burned it down and started over.
 
-## The real problem isn't your AI tools. It's your org chart.
+## Is the Real Problem Your AI Tools, or Your Org Chart?
 
 If you've tried AI tools and they feel disconnected, you're not doing it wrong. You're organizing it wrong.
 
@@ -62,7 +62,7 @@ The "just add more tools" advice is everywhere. Pick the right tools. Start with
 
 Everyone already knows corporate structure is broken. Silos. Handoff gaps. Departments optimizing for their own metrics instead of the customer's outcome. So why would you replicate that in your AI?
 
-## What is a Business AI Operating System?
+## What Is a Business AI Operating System?
 
 A Business AI Operating System is a structured set of AI agents, workflows, and knowledge systems that run recurring business operations without the founder being the bottleneck. It replaces scattered AI tools with a unified system organized around how the business actually makes money.
 
@@ -74,7 +74,7 @@ Most founders are stuck at layer zero. They have tools but no context layer. No 
 
 When I say "agentic AI" or "autonomous AI agents," I mean agents that carry their own knowledge and methodology. They don't need you to re-explain the job every time. They pick up where they left off. That's the difference between a digital workforce and a collection of chat windows.
 
-## The ACRA model: organize AI agents around your customer lifecycle
+## How Does the ACRA Model Organize AI Agents Around Your Customer Lifecycle?
 
 ACRA stands for Attract, Convert, Retain and Deliver, Ascend. It's a customer lifecycle framework for organizing AI agents in a small business. Instead of replicating a corporate org chart, ACRA groups agents by the stage of the customer journey they serve, with Finance and AI HR as shared support departments.
 
@@ -88,7 +88,7 @@ ACRA stands for Attract, Convert, Retain and Deliver, Ascend. It's a customer li
 
 Four lifecycle departments. Two support departments. Six total. Every agent maps to one. The work flows the way the customer flows. Customer lifecycle automation means no orphan agents doing work that doesn't connect to a customer outcome.
 
-## From 27 roles to 14 agents: what changed (and what stayed)
+## What Changed When I Went from 27 Roles to 14 Agents?
 
 Most founder-led businesses with 1 to 15 people need 10 to 20 specialized agents organized into 4 to 6 departments. The number matters less than the organizing principle. Agents organized around customer lifecycle stages outperform agents organized around corporate departments.
 
@@ -102,7 +102,7 @@ I added what was missing. My corporate org had no Ascend function at all. No age
 
 The biggest change: every agent now carries embedded methodology. Each agent includes a "What I Know" section with the frameworks, processes, and decision criteria it needs. No agent asks me to re-explain how things work. The knowledge is built in, not stored in my head. That's what HBR means when they talk about "agent managers" (February 2026), except they're writing about enterprises supervising 50 to 100 agents. I'm talking about a founder with 14 that actually get used.
 
-## Why customer lifecycle beats corporate departments
+## Why Does Customer Lifecycle Beat Corporate Departments?
 
 Revenue alignment is the obvious reason. Every ACRA department maps directly to how your business makes money. No department exists that isn't connected to a customer outcome. Compare that to a corporate model where entire teams can optimize for internal metrics with no clear line to the bottom line.
 
@@ -114,7 +114,7 @@ And then there's the orphan agent problem. In my 27-role model, I had agents tha
 
 I ran both models. The lifecycle model caught three revenue opportunities in the first month that the corporate model missed entirely. Those opportunities lived in the gap between "sales" and "operations." In the ACRA model, that gap doesn't exist.
 
-## How to build your own AI agent team
+## How Do You Build Your Own AI Agent Team?
 
 Organize AI agents around your customer lifecycle, not around corporate departments. A customer lifecycle model ensures every agent maps to revenue, and nothing falls through the cracks.
 
@@ -128,7 +128,7 @@ Run that one agent for 30 days. Track what it handles, what it misses, what you 
 
 If you're building a founder AI system from scratch, the ACRA model gives you the organizational architecture that most AI tools don't come with. The tools are the easy part. The structure is what makes them work.
 
-## The biggest mistake founders make with AI teams
+## What Is the Biggest Mistake Founders Make with AI Teams?
 
 They copy what they already know.
 
