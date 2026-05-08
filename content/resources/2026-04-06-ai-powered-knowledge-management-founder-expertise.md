@@ -44,6 +44,8 @@ I spent 18 years watching this exact pattern inside organizations like Virgin Mo
 
 The same dynamic plays out in founder-led businesses, just at a smaller scale and with higher personal stakes.
 
+![Founder expertise buried in an overflowing inbox — the knowledge exists, but nothing makes it retrievable.](/articles/2026-04-06-ai-powered-knowledge-management-founder-expertise/body_1.png)
+
 ---
 
 ## What's Wrong With Traditional Documentation Systems?
@@ -76,6 +78,8 @@ Team questions stop routing back to you by default. Your team can query the syst
 
 None of this requires writing 200 SOPs from scratch. The input is a structured capture process. The output is a knowledge base that functions like an extension of how you think.
 
+![A retrieval-based knowledge system makes founder expertise queryable — on demand, without the founder in the room.](/articles/2026-04-06-ai-powered-knowledge-management-founder-expertise/body_2.png)
+
 ---
 
 ## How Do You Scale Founder Knowledge With AI Without Starting From Scratch?
@@ -98,7 +102,7 @@ The benchmark I use: if a team member can query your knowledge base and get an a
 
 ## What Does a Retrieval-Based Knowledge System Look Like for a Small Business?
 
-This is not enterprise software. It is not a six-month implementation. For a 1 to 15 person business, a retrieval-based knowledge system has a few specific components.
+This is not enterprise software. It is not a six-month implementation. For a 5 to 50 person business, a retrieval-based knowledge system has a few specific components.
 
 A structured input layer, where existing expertise gets captured in formats that AI can work with, not just read. There is a meaningful difference between a transcript and a structured knowledge artifact.
 
