@@ -78,6 +78,12 @@ const ctaVariants: Record<string, { heading: string; text: string; href: string;
     href: "/work-with-me",
     label: "Stay Connected",
   },
+  "fit-call": {
+    heading: "Not sure if your business has this problem?",
+    text: "It's a free 45-minute diagnostic. I ask questions, you answer them. At the end, I'll tell you honestly whether what I do is a fit. No pitch. No proposal.",
+    href: "/work-with-me",
+    label: "Book a Fit Call",
+  },
 };
 
 const authorData: Record<string, { title: string; bio: string; linkedin: string }> = {
@@ -365,7 +371,7 @@ export default async function ArticlePage({ params }: PageProps) {
               <h2 className="font-display font-black text-[1.5rem] md:text-[1.75rem] text-white mb-6">
                 Frequently Asked Questions
               </h2>
-              <FaqAccordion items={frontmatter.faqs} />
+              <FaqAccordion items={frontmatter.faqs} columns={2} />
             </FadeIn>
           </div>
         </section>

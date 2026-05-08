@@ -17,7 +17,7 @@ export interface ResourceFrontmatter {
   read_time: string;
   image: string | null;
   featured?: boolean;
-  cta_variant?: "default" | "assessment" | "discovery" | "newsletter";
+  cta_variant?: "default" | "assessment" | "discovery" | "newsletter" | "fit-call";
   related_slugs?: string[];
   external_url?: string;
   faqs?: { question: string; answer: string }[];

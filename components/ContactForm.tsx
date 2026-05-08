@@ -245,7 +245,7 @@ export default function ContactForm() {
       {/* What's costing you — required */}
       <div>
         <label htmlFor="bottleneck" className={labelClass}>
-          What&rsquo;s the function costing you the most right now?{" "}
+          What&rsquo;s your biggest bottleneck, roadblock, or challenge right now?{" "}
           <span className="text-[#F45B69]">*</span>
         </label>
         <textarea
