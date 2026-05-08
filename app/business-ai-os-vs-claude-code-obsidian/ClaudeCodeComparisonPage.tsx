@@ -1254,23 +1254,40 @@ export default function ClaudeCodeComparisonPage() {
           </FadeUp>
 
           <FadeUp delay={0.35}>
-            <Link
-              href="/business-ai-os-assessment"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                background: "#553555",
-                color: "#fff",
-                borderRadius: "9999px",
-                padding: "16px 32px",
-                fontSize: "15px",
-                fontWeight: 600,
-                textDecoration: "none",
-              }}
-            >
-              Book a Discovery Assessment <span>→</span>
-            </Link>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
+              <Link
+                href="/work-with-me"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  background: "#553555",
+                  color: "#fff",
+                  borderRadius: "9999px",
+                  padding: "16px 32px",
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+              >
+                Book a Discovery Assessment <span>→</span>
+              </Link>
+
+              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.50)", margin: 0 }}>
+                Not sure yet?{" "}
+                <Link
+                  href="/business-ai-os-assessment"
+                  style={{
+                    color: "#028090",
+                    textDecoration: "underline",
+                    fontWeight: 500,
+                  }}
+                >
+                  Take the Assessment Quiz to understand how much it&rsquo;s costing you to stay the same
+                </Link>
+                {" "}<span style={{ color: "#028090" }}>→</span>
+              </p>
+            </div>
           </FadeUp>
         </div>
       </section>
