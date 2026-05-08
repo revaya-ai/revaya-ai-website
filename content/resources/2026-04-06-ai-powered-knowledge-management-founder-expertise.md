@@ -52,7 +52,7 @@ The same dynamic plays out in founder-led businesses, just at a smaller scale an
 
 Here is the false belief that keeps founders stuck: "I just need to document better."
 
-So they open Notion. They create a wiki. They record a Loom. They write an SOP in a Google Doc that was last updated in 2021. And none of it works, not because they did it wrong, but because traditional documentation systems were never designed to make expertise retrievable or usable by someone who is not the original author.
+So they open [Notion](https://www.notion.so). They create a wiki. They record a Loom. They write an SOP in a Google Doc that was last updated in 2021. And none of it works, not because they did it wrong, but because traditional documentation systems were never designed to make expertise retrievable or usable by someone who is not the original author.
 
 Documentation and retrieval are two completely different problems.
 

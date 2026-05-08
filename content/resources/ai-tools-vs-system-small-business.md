@@ -32,7 +32,7 @@ You don't have an AI strategy. You have a subscription list.
 
 ![A founder at a desk surrounded by scattered sticky notes and multiple disconnected screens, overwhelmed by too many tools](/images/resources/ai-tools-vs-system-body-1.png)
 
-## Why AI Tools Don't Add Up to a System
+## Why Don't AI Tools Add Up to a System?
 
 Tools are stateless. That word matters. Stateless means each tool begins with zero memory of your business. It doesn't carry anything forward. It doesn't know what you told it last Tuesday or what your best client looks like or how you price a project.
 
@@ -40,11 +40,11 @@ So what happens when you buy five stateless tools? You get five separate startin
 
 That's not automation. That's a new job with a software subscription attached.
 
-I've watched this exact failure mode play out across 18 years of building digital products, at companies like Virgin Mobile, Papa Murphy's, and Intermedia. The organizations buying the most software were often the ones drowning the hardest. They had dashboards, integrations, platforms. What they didn't have was a system designed around how the work actually moved.
+I've watched this exact failure mode play out across 18 years of building digital products, at companies like Virgin Mobile, Papa Murphy's, and Intermedia. The organizations buying the most software were often the ones drowning the hardest. They had dashboards, integrations, platforms. What they didn't have was a system designed around how the work actually moved. McKinsey's [2025 State of AI report](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) found that while nearly 90% of companies deployed AI in at least one function, 94% report not seeing significant value from those investments. More tools without more structure is the same mistake, faster.
 
 Small businesses are repeating the same mistake, just faster and cheaper.
 
-## The Real Cost of a Disconnected Tool Stack
+## What Does a Disconnected Tool Stack Actually Cost?
 
 Most founders I talk to are paying for between 4 and 7 AI subscriptions. ChatGPT. Zapier. Something for email. Something for social. Maybe a scheduling tool with AI features bolted on.
 
@@ -54,7 +54,7 @@ You spend 20 minutes explaining your brand voice to a writing tool that forgot e
 
 The founder is still the connective tissue. And that means the business only moves when you're moving it. That's the definition of a bottleneck.
 
-## What a Connected AI System Actually Looks Like
+## What Does a Connected AI System Actually Look Like?
 
 A system doesn't start from scratch. It knows your business before you say a word.
 
@@ -64,7 +64,7 @@ That's the difference between a tool and a system. The tool answers your questio
 
 The connecting layer that makes this possible is context. Not another app. Not another integration. The captured, organized knowledge of how your business operates.
 
-## How to Audit What You're Already Paying For
+## How Do You Audit What You're Already Paying For?
 
 Before adding anything, look at what you have. For each subscription, ask three questions.
 
@@ -76,7 +76,7 @@ Has this subscription changed how I spend my time in a measurable way? Not "I us
 
 If most of your answers point toward no, you don't have a strategy. You have a collection.
 
-## The Move from Tool Collector to System Owner
+## How Do You Move from Tool Collector to System Owner?
 
 The shift isn't about buying better tools. It's about building the layer that makes tools useful.
 
@@ -88,7 +88,7 @@ This is what a Business AI Operating System does that subscriptions can't. It's 
 
 ![A founder reviewing a unified system architecture on a single screen, teal and purple glow, calm organized workspace](/images/resources/ai-tools-vs-system-body-2.png)
 
-## What a Business AI Operating System Does That Subscriptions Can't
+## What Does a Business AI Operating System Do That Subscriptions Can't?
 
 The question founders ask me most often is: "How do I know if my AI subscriptions are actually saving me time?" The honest answer is: if you have to ask, they probably aren't. Not in a meaningful way.
 

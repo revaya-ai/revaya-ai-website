@@ -42,7 +42,9 @@ Then, at the end of the post, he wrote this:
 
 That sentence is the whole article.
 
-## Why Obsidian + Claude Code Is the Right Foundation
+A Business AI Operating System is a connected layer of AI agents, workflows, and persistent knowledge that runs your business operations without you in every loop. Obsidian and Claude Code give you an exceptional knowledge foundation. A Business AIOS sits on top of that foundation and acts on it, routing decisions and triggering workflows while you focus on the work that actually needs you.
+
+## Why Is Obsidian + Claude Code the Right Foundation?
 
 Karpathy is not wrong about the stack. Obsidian crossed 1.5 million active users in February 2026, growing 22% year over year. The reason is straightforward: local markdown files, no vendor lock-in, and 2,700 plugins. When Claude Code opens inside your vault, it reads your notes, your projects, your conventions. It knows who you are from the first prompt. You stop re-explaining your business every session.
 
@@ -54,7 +56,7 @@ Chase AI made a video that explains the value well. He described a spectrum. On 
 
 That's genuinely worth having. And if it works for how you operate, keep using it.
 
-## What This Stack Actually Buys You
+## What Does This Stack Actually Buy You?
 
 When it works well, Obsidian + Claude Code gives you three things.
 
@@ -68,7 +70,7 @@ PenfieldLabs built this workflow for a content creator and ended up with a 1,150
 
 ![A founder sitting at a kitchen table, overwhelmed, hand on forehead, laptop open, coffee nearby — still the bottleneck in her own business](/images/resources/obsidian-aios-body-1.png)
 
-## Where It Stops Working for Founders
+## Where Does This Stack Stop Working for Founders?
 
 Here's the thing nobody says out loud.
 
@@ -84,13 +86,13 @@ One person. One vault. One brain.
 
 A service business is not one person. It is clients, handoffs, intake, follow-ups, reporting, recurring operations. The stack was designed for a knowledge worker building their second brain. Not for a business that needs to run when the founder is with a client, asleep, or on vacation.
 
-## Karpathy Named the Gap. Here It Is.
+## What Gap Did Karpathy Actually Name?
 
 He called it himself: "a hacky collection of scripts." That's what most DIY AIOS builds become. You add an MCP server for calendar. Another for email. A third for meeting transcripts. Each connection is a separate integration you set up, test, and maintain. When a tool updates, the integration breaks. Who fixes it? You.
 
 The filing cabinet is excellent. The filing cabinet does not run the office.
 
-## The Difference Between a Second Brain and an Operating System
+## What Is the Difference Between a Second Brain and an Operating System?
 
 A second brain stores and surfaces what you know. You are still the one who opens it, reads it, interprets it, and decides what to do with it.
 
@@ -104,7 +106,7 @@ Both are useful. They solve different problems. Most founders who say "AI doesn'
 
 ![A founder relaxed on the sofa reading a book, laptop on the coffee table showing a running dashboard — business operating without him](/images/resources/obsidian-aios-body-2.png)
 
-## How a Business AIOS Connects to Your Knowledge Base
+## How Does a Business AIOS Connect to Your Knowledge Base?
 
 Obsidian is one example. It is not the only one.
 
