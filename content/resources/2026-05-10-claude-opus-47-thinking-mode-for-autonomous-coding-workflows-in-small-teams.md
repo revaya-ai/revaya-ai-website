@@ -7,7 +7,7 @@ author: "Shannon Winnicki"
 date: "2026-05-10"
 image: "/articles/2026-05-10-claude-opus-47-thinking-mode-for-autonomous-coding-workflows-in-small-teams/hero.png"
 published: true
-cta_variant: "discovery"
+cta_variant: "fit-call"
 faqs:
   - question: "What is Claude Opus 4 thinking mode and how is it different from regular AI coding help?"
     answer: "Claude Opus 4 thinking mode is an extended reasoning capability where the model works through a problem internally before returning any output, rather than responding in a single pass. It evaluates tradeoffs, checks for contradictions, and holds architectural context across multiple decisions the way a careful engineer would. Regular AI coding tools respond to each prompt in isolation, which works for simple tasks but breaks down when a problem requires tracking several constraints at once. Thinking mode closes that gap by reasoning first and outputting second."

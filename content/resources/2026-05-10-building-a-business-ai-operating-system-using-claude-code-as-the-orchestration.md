@@ -5,21 +5,9 @@ slug: "building-a-business-ai-operating-system-using-claude-code-as-the-orchestr
 category: "article"
 author: "Shannon Winnicki"
 date: "2026-05-10"
-image: "/articles/2026-05-10-building-a-business-ai-operating-system-using-claude-code-as-the-orchestration/hero.png"
-published: true
-cta_variant: "discovery"
----
-
----
-title: "How to Build a Business AI Operating System Using Claude Code as the Orchestration Layer"
-subtitle: "Five disconnected AI tools don't make a system. Here's how to build one that actually runs your business, without hiring a developer."
-slug: "building-a-business-ai-operating-system-using-claude-code-as-the-orchestration"
-category: "article"
-author: "Shannon Winnicki"
-date: "2026-05-10"
 read_time: "7 min read"
 image: "/articles/2026-05-10-building-a-business-ai-operating-system-using-claude-code-as-the-orchestration/hero.png"
-published: false
+published: true
 cta_variant: "fit-call"
 faqs:
   - question: "What exactly is a business AI operating system and how is it different from just using a bunch of AI tools?"
@@ -37,9 +25,6 @@ faqs:
   - question: "Is building an AI operating system worth the upfront effort compared to just using individual AI tools?"
     answer: "For operators running any kind of repeatable business process, the compounding return on a connected system significantly outweighs the setup cost over time. Individual tools require you to re-explain context every session, manually move information between systems, and rebuild logic whenever something breaks. An AI operating system that retains memory and routes work automatically means your AI gets more useful the longer it runs, not less. The upfront investment is real, but the alternative is paying indefinitely for tools that never get smarter about your specific business."
 ---
-
-
-
 
 
 # How to Build a Business AI Operating System Using Claude Code as the Orchestration Layer
