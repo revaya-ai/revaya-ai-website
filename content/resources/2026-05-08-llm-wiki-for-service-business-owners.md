@@ -148,7 +148,7 @@ Same for medical literature search, enterprise content repositories, or any situ
 
 LLM Wiki is better when you want the knowledge to compound. When the questions are about patterns, history, reasoning, and context. When the answer to "what should I do here?" requires understanding what the business has learned, not just what's in the most recent document.
 
-For a 10-person service business: LLM Wiki. For a law firm needing to search case archives: graph RAG.
+For a service business up to 100 people: LLM Wiki. For a law firm needing to search case archives: graph RAG.
 
 Neither is a magic fix. Both require you to actually feed them good raw material.
 
