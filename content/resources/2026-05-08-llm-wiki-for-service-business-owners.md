@@ -128,7 +128,7 @@ The /lint-wiki command runs a monthly health check across the entire knowledge b
 
 My CLAUDE.md file is the schema. It tells the AI how the knowledge base is organized, what each subdirectory contains, and how to navigate it. Every session, the AI reads the schema first. It already knows where everything is.
 
-The first client implementation is running now. A recent client, the founder of a whiskey brand, was the first full deployment. The raw inputs are investor data, ClickUp records, and transcripts from our work sessions. The wiki is his structured founder brain: client history, decisions made, the reasoning behind them, the patterns he's noticed across his market. The agent interface is the dashboard he uses to interact with it.
+A recent client, the founder of a whiskey brand, uses this pattern in their business. The raw inputs are investor data, ClickUp records, and transcripts from our work sessions. The wiki is his structured founder brain: client history, decisions made, the reasoning behind them, the patterns he's noticed across his market. The agent interface is the dashboard he uses to interact with it.
 
 He can ask his AI "what was the reasoning behind our pricing decision for the distributor conversation last fall?" and get an answer that draws from three different source documents, synthesized into something coherent, not just a retrieved chunk.
 
