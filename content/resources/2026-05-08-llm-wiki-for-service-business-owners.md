@@ -68,6 +68,10 @@ It works for "what" questions. It breaks on "why" questions.
 
 "Why did we price that client at the lower tier?" requires the AI to connect the pricing call from six months ago to the conversation about their budget constraints from the intake notes to the note you wrote about their growth trajectory. RAG retrieves chunks. It doesn't connect them. It wasn't built to.
 
+This is a limitation of the baseline RAG structure most tutorials show. More advanced versions exist. Graph RAG systems map relationships between documents instead of treating every chunk as an isolated file. They close some of these gaps, and at massive scale, a properly built RAG system can return answers dramatically faster and cheaper than any other approach. A 2025 research comparison put the gap at roughly 1,200 times faster and cheaper than loading documents directly into a context window. That's the honest case for RAG when you have a law firm's worth of documents and mostly retrieval questions.
+
+But the RAG most people actually build or buy is not graph RAG. It's naive RAG. Chunks in silos. No relationship mapping. The accuracy on complex questions drops significantly. You end up with something that functions like an overcomplicated search bar.
+
 Stateless AI tools fail on the questions that actually matter to a business: What does this client care about most? What's the pattern across our last five engagements? What did we learn from the mistake we made in Q3?
 
 Those questions require synthesis across everything the business has learned. Not just what's in the document you uploaded today.
@@ -124,7 +128,7 @@ The /lint-wiki command runs a monthly health check across the entire knowledge b
 
 My CLAUDE.md file is the schema. It tells the AI how the knowledge base is organized, what each subdirectory contains, and how to navigate it. Every session, the AI reads the schema first. It already knows where everything is.
 
-The first client implementation is running now. For Shawn Hamilton at High Holler Whiskey, the raw inputs are investor data, ClickUp records, and transcripts from our work sessions. The wiki is Shawn's structured founder brain: client history, decisions made, the reasoning behind them, the patterns he's noticed across his market. The agent interface is the dashboard he uses to interact with it.
+The first client implementation is running now. A recent client, the founder of a whiskey brand, was the first full deployment. The raw inputs are investor data, ClickUp records, and transcripts from our work sessions. The wiki is his structured founder brain: client history, decisions made, the reasoning behind them, the patterns he's noticed across his market. The agent interface is the dashboard he uses to interact with it.
 
 He can ask his AI "what was the reasoning behind our pricing decision for the distributor conversation last fall?" and get an answer that draws from three different source documents, synthesized into something coherent, not just a retrieved chunk.
 
@@ -138,13 +142,13 @@ For how this plays out when knowledge management is the core constraint, read [H
 
 RAG wins in specific situations, and it's worth being clear about them.
 
-If you're running a legal practice and need to search across 10,000 case files, RAG is right. The synthesis would be impractical at that volume, and the questions are mostly retrieval questions anyway: find the precedent, find the clause, find the date.
+If you're running a legal practice and need to search across 10,000 case files, RAG is right. The synthesis would be impractical at that volume, and the questions are mostly retrieval questions anyway. Find the precedent. Find the clause. Find the date.
 
-Same for medical literature search, enterprise content repositories, or any situation where the document library is massive and heterogeneous and the questions are mostly "find the document that contains X."
+Same for medical literature search, enterprise content repositories, or any situation where the document library is massive and the questions are mostly "find the document that contains X." Worth noting: the version that actually performs at that scale is graph RAG, which maps entities and relationships across documents. Not the baseline version most tools ship with. That distinction matters if you're ever evaluating a vendor or deciding whether to build.
 
 LLM Wiki is better when you want the knowledge to compound. When the questions are about patterns, history, reasoning, and context. When the answer to "what should I do here?" requires understanding what the business has learned, not just what's in the most recent document.
 
-For a 10-person service business: LLM Wiki. For a law firm needing to search case archives: RAG.
+For a 10-person service business: LLM Wiki. For a law firm needing to search case archives: graph RAG.
 
 Neither is a magic fix. Both require you to actually feed them good raw material.
 
