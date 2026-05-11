@@ -54,7 +54,7 @@ Within days it had 296 HackerNews points. Within weeks: 5,000+ GitHub stars and 
 
 Why it spread so fast: Karpathy co-founded OpenAI in 2015 and directed AI and Autopilot Vision at Tesla from 2017 to 2022. He founded Eureka Labs in 2024. When he publishes an architecture pattern, it gets taken seriously. The developer community moved on it immediately.
 
-What nobody moved on: the business owner version. Every tutorial, every implementation, every YouTube breakdown targets engineers and researchers. The question of what this means for a 10-person service firm running on meeting transcripts, client notes, and SOPs? Still unanswered.
+What nobody moved on: the business owner version. Every tutorial, every implementation, every YouTube breakdown targets engineers and researchers. The question of what this means for a service firm up to 100 people running on meeting transcripts, client notes, and SOPs? Still unanswered.
 
 ---
 
