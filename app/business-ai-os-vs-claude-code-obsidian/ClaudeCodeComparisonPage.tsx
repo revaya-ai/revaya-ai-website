@@ -58,6 +58,11 @@ const ceilingCards = [
     title: "YOU ARE MAINTAINING TWO SYSTEMS, NOT ONE",
     body: "Claude Code is one application. Obsidian is a different application. They are made by different teams, built on different architectures, and they do not natively integrate with each other. The bridge between them is yours to manage. Every update cycle, every Obsidian plugin that breaks on a new release, every change to how Claude Code handles context, that gap is yours to close, every time. That is not a one-time setup cost. It is an ongoing job that compounds. For a developer who enjoys that kind of work, fine. For a founder who would rather be doing client work, the friction accumulates quietly until the system has stopped working for weeks and you have not noticed because you stopped relying on it.",
   },
+  {
+    num: "06",
+    title: "THE BUILD BELONGS TO YOU",
+    body: "The more advanced setups solve one real problem: a web dashboard wrapping Claude Code means non-technical people get buttons instead of a terminal. That is a genuine improvement. The ceiling it does not solve: someone had to build the dashboard. Someone had to architect the skill library, design the domain taxonomy, write the automation triggers, configure the headless Claude Code execution layer, structure the memory vault, and connect the integrations. That person needed weeks of learning before a single button worked. And after the build: they own the maintenance. Every skill that drifts. Every integration that breaks on an update. Every new workflow the business needs. You have to learn the architecture. You have to execute the build. You have to maintain the system after. That is three compounding responsibilities stacked on top of running a service business. The dashboard is the interface. The build is still yours.",
+  },
 ];
 
 const tableRows = [
@@ -420,6 +425,18 @@ export default function ClaudeCodeComparisonPage() {
             </p>
           </FadeUp>
 
+          <FadeUp delay={0.23}>
+            <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "20px" }}>
+              In May 2026, Chase AI released two videos naming this setup the Agentic OS, a three-layer architecture: a skill and automation library, a structured memory vault built on the Karpathy pattern, and a web dashboard that lets non-technical users access the system through buttons instead of a terminal. The framing is more sophisticated than the Obsidian-first tutorials. It is also a more honest acknowledgment of the gap. At minute 18 of his second video, Chase says this directly: &ldquo;You aren&rsquo;t the ICP here. There&rsquo;s true value for the 99.9%. It just isn&rsquo;t really given to them right now.&rdquo;
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.24}>
+            <p style={{ fontSize: "17px", lineHeight: "1.75", marginBottom: "20px" }}>
+              He named the audience. He did not build a path for them.
+            </p>
+          </FadeUp>
+
           <FadeUp delay={0.25}>
             <p
               style={{
@@ -545,7 +562,7 @@ export default function ClaudeCodeComparisonPage() {
             <FadeUp
               key={card.num}
               delay={0.1 + i * 0.05}
-              style={i === 4 ? { gridColumn: "span 2" } : {}}
+              style={i >= 4 ? { gridColumn: "span 2" } : {}}
             >
               <div
                 style={{
@@ -629,7 +646,7 @@ export default function ClaudeCodeComparisonPage() {
           </FadeUp>
           <FadeUp delay={0.15}>
             <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.70)", margin: 0 }}>
-              The same goal. Different architecture.
+              The vocabulary has shifted. In 2026, the more structured DIY setups are called the Agentic OS rather than Claude Code plus Obsidian. Three layers instead of two: skill library, memory vault, observability dashboard. That is a more sophisticated build than the Obsidian-first approach, and a more honest accounting of what the system requires. The comparison below applies to both. The architecture got more structured. The ownership did not change.
             </p>
           </FadeUp>
         </div>
