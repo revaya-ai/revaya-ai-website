@@ -4,14 +4,27 @@ subtitle: "Andrej Karpathy just validated the stack you've been building. Here's
 slug: "business-ai-os-vs-claude-code-obsidian"
 category: "article"
 author: "Shannon Winnicki"
-date: "2026-04-05"
-updated: "2026-04-05"
+date: "2026-05-11"
+updated: "2026-05-11"
 read_time: "8 min read"
 image: "/images/claude-code-comparison/hero-layers.png"
 featured: false
 cta_variant: "assessment"
 related_slugs: ["how-to-organize-ai-agents-business"]
 published: true
+mentions:
+  - name: "Andrej Karpathy"
+    jobTitle: "AI Researcher"
+    description: "Published the LLM wiki knowledge architecture pattern on April 4, 2026 — a structured three-folder approach to persistent AI memory. Called the existing DIY setups 'a hacky collection of scripts' and said there is room for an incredible new product."
+  - name: "Chase AI"
+    jobTitle: "AI Educator and Creator"
+    description: "Created the Agentic OS framework for Claude Code — three layers covering skill libraries, Karpathy-pattern memory vaults, and web dashboards. Acknowledged in May 2026 that the 99.9% of non-technical business owners are underserved by existing DIY setups."
+  - name: "Greg Isenberg"
+    jobTitle: "Entrepreneur and Creator"
+    description: "Published an Obsidian plus Claude Code workflow thread in 2026 that reached 420 replies and 1.3 million views, framing the setup as a personal operating system."
+  - name: "Nick Saraev"
+    jobTitle: "AI Educator and Creator"
+    description: "Popularized the CLAUDE.md business brain approach. His video on the CLAUDE.md file has over 802,000 views."
 sources:
   - label: "Andrej Karpathy — LLM Knowledge Bases (X / Twitter, April 2026)"
     url: "https://x.com/karpathy"
@@ -20,6 +33,10 @@ sources:
   - label: "PenfieldLabs — Reddit thread on typed relationships in agent-managed knowledge graphs (April 2026)"
   - label: "Chase AI — Claude Code + Obsidian = UNSTOPPABLE (YouTube, April 2026)"
     url: "https://www.youtube.com/watch?v=eRr2rTKriDM"
+  - label: "Chase AI — Stop Using Claude Code Without an Agentic OS (YouTube, May 2026)"
+    url: "https://www.youtube.com/watch?v=Bgxsx8slDEA"
+  - label: "Chase AI — Claude Code Agentic OS = UNSTOPPABLE (YouTube, May 2026)"
+    url: "https://www.youtube.com/watch?v=pfPi04pIfaw"
   - label: "Greg Isenberg — Obsidian + Claude Code personal operating system thread (X / Twitter, 2026) — 420 replies, 1.3M views"
   - label: "Obsidian — 1.5 million active users, 22% year-over-year growth (February 2026)"
     url: "https://obsidian.md"
@@ -32,6 +49,10 @@ faqs:
     answer: "Obsidian stores your notes, projects, decisions, and context as plain markdown files. Claude Code opens inside your vault, reads those files, and can act on them: writing new notes, updating links, running research, surfacing patterns. The result is a second brain that your AI can read and write — not just retrieve from."
   - question: "When do you need more than Obsidian and Claude Code?"
     answer: "When the business needs to run without you in every loop. Obsidian + Claude Code is reactive — you prompt, it responds. When you need intake to process while you sleep, follow-ups to fire while you are with a client, and reporting to run on schedule, you need an operating layer on top of the knowledge layer. That is what a Business AIOS adds."
+  - question: "What is the Agentic OS and how is it different from Obsidian plus Claude Code?"
+    answer: "The Agentic OS is a more structured version of the DIY Claude Code setup. It has three layers: a skill and automation library for repeatable tasks, a structured memory vault built on the Karpathy pattern, and a web dashboard that lets non-technical users access the system through buttons instead of a terminal. It is more organized than a plain Obsidian vault. The ceiling is the same: someone has to build it, someone has to maintain it, and the business still stops when the founder closes the laptop."
+  - question: "Did Chase AI admit that most business owners are underserved by the Agentic OS?"
+    answer: "Yes. In his second Agentic OS video in May 2026, at minute 18, he said directly: 'You aren't the ICP here. There's true value for the 99.9%. It just isn't really given to them right now.' He named the audience clearly. His product — a course teaching founders how to build the system themselves — does not serve that audience. A done-for-you Business AIOS does."
 ---
 
 Andrej Karpathy, one of the most respected AI researchers working today, published his personal knowledge base workflow this week. Raw research goes into a folder. Claude compiles it into a structured wiki. Obsidian acts as the frontend. He called it "incredibly useful."
@@ -53,6 +74,8 @@ Greg Isenberg posted a workflow thread on this that got 420 replies and 1.3 mill
 Personal. That word matters. I'll come back to it.
 
 Chase AI made a video that explains the value well. He described a spectrum. On one end: papers thrown on the floor. Everything unorganized, Claude drowning in noise. On the other end: the Library of Congress. Full RAG embeddings, vector databases, infrastructure most founders will never actually build or maintain. In the middle: a filing cabinet. Organized, accessible, functional. That's what Obsidian + Claude Code buys you. A filing cabinet that's almost free to set up and that Claude already knows how to use.
+
+By May 2026, Chase had evolved the framing. He named the architecture the Agentic OS: three layers — a skill and automation library, a structured memory vault built on the Karpathy pattern, and a web dashboard that lets non-technical users access the system through buttons instead of a terminal. More structured name. Same ceiling.
 
 That's genuinely worth having. And if it works for how you operate, keep using it.
 
@@ -80,7 +103,7 @@ Claude still starts fresh every session. Your vault gives it context. Not memory
 
 Context window limits are real. Large vaults need deliberate scoping. If you have ten years of notes and half-finished ideas in there, Claude will surface noise as often as signal.
 
-But the deepest limitation is the one Chase AI named without realizing it. His entire video, Karpathy's entire post, Greg Isenberg's viral thread — all of it is framed as a personal operating system.
+But the deepest limitation is the one Chase AI eventually named directly. In his second Agentic OS video, at minute 18, he said this: "You aren't the ICP here. There's true value for the 99.9%. It just isn't really given to them right now." His entire architecture, Karpathy's entire post, Greg Isenberg's viral thread — all of it is framed as a personal operating system.
 
 One person. One vault. One brain.
 
@@ -121,5 +144,7 @@ Karpathy said there is room for an incredible new product. He described exactly 
 He was describing the architecture. The business version of it connects to wherever you already are.
 
 If you are running Obsidian + Claude Code and finding that you are still the bottleneck, that the system is smart but not autonomous, that it knows your business but does not run it, that is the ceiling he named. And it is not a flaw in your setup. It is the edge of what a second brain can do.
+
+For a full breakdown of where each ceiling sits and what the alternative looks like, [read the comparison](/business-ai-os-vs-claude-code-obsidian).
 
 The assessment below takes five minutes. It tells you which function in your business has the highest-ROI automation opportunity. That's the starting point.

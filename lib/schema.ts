@@ -478,6 +478,60 @@ export const claudeCodeComparisonPageSchema = (url: string) => ({
   "name": "Business AI OS vs Claude Code + Obsidian | Revaya AI",
   "description": "Claude Code and Obsidian can run your business — with the right technical setup, ongoing maintenance, and the founder at the terminal. Here is where that approach has a ceiling, and what a Business AI OS does differently.",
   "url": url,
+  "dateModified": "2026-05-11",
+  "author": {
+    "@type": "Person",
+    "name": "Shannon Winnicki",
+    "url": "https://www.revaya.ai",
+    "jobTitle": "Founder, Revaya AI",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Revaya AI",
+      "url": "https://www.revaya.ai"
+    }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Business AI Operating System" },
+    { "@type": "Thing", "name": "Claude Code" },
+    { "@type": "Thing", "name": "Agentic OS" },
+    { "@type": "Thing", "name": "AI automation for small business" },
+    { "@type": "Thing", "name": "Obsidian knowledge base" },
+    { "@type": "Thing", "name": "LLM wiki" }
+  ],
+  "mentions": [
+    {
+      "@type": "Person",
+      "name": "Nick Saraev",
+      "jobTitle": "AI Educator and Creator",
+      "description": "Popularized the CLAUDE.md business brain approach for non-technical founders. His video on the CLAUDE.md file has over 802,000 views."
+    },
+    {
+      "@type": "Person",
+      "name": "Andrej Karpathy",
+      "url": "https://github.com/karpathy",
+      "jobTitle": "AI Researcher",
+      "description": "Published the LLM wiki knowledge architecture pattern on April 4, 2026 — a structured three-folder approach to persistent AI memory that has since been widely adopted by builders and creators."
+    },
+    {
+      "@type": "Person",
+      "name": "Garry Tan",
+      "url": "https://github.com/garrytan",
+      "jobTitle": "President, Y Combinator",
+      "description": "Released GBrain on April 5, 2026 — a Claude Code-based business brain that reached 13,535 GitHub stars and accelerated mainstream adoption of the AI second brain concept."
+    },
+    {
+      "@type": "Person",
+      "name": "Nate Herk",
+      "jobTitle": "AI Educator and Creator",
+      "description": "Built a Claude Code OS course with 127,000 views and 718,000 subscribers. Acknowledged the DIY ceiling directly: it is difficult to give a step-by-step playbook because everyone runs their business differently."
+    },
+    {
+      "@type": "Person",
+      "name": "Chase AI",
+      "jobTitle": "AI Educator and Creator",
+      "description": "Created the Agentic OS framework for Claude Code — a three-layer architecture covering skill libraries, Karpathy-pattern memory vaults, and web dashboards for non-technical users. Acknowledged in May 2026 that the 99.9% of non-technical business owners are underserved by existing DIY setups."
+    }
+  ],
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
