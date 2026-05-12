@@ -134,6 +134,14 @@ export default async function ArticlePage({ params }: PageProps) {
     ...(frontmatter.updated && { dateModified: frontmatter.updated }),
     ...(frontmatter.image && { image: frontmatter.image }),
     url: `https://revaya.ai/resources/${slug}`,
+    ...(frontmatter.mentions?.length && {
+      mentions: frontmatter.mentions.map((m) => ({
+        "@type": "Person",
+        name: m.name,
+        jobTitle: m.jobTitle,
+        description: m.description,
+      })),
+    }),
   };
 
   const breadcrumbLd = {

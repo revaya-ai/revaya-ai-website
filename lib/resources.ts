@@ -22,6 +22,7 @@ export interface ResourceFrontmatter {
   external_url?: string;
   faqs?: { question: string; answer: string }[];
   sources?: { label: string; url?: string }[];
+  mentions?: { name: string; jobTitle: string; description: string }[];
   published: boolean;
 }
 
