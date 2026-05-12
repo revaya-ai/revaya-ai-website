@@ -1272,7 +1272,7 @@ export default function ClaudeCodeComparisonPage() {
 
           <FadeUp delay={0.35}>
             <Link
-              href="/business-ai-os-assessment"
+              href="/work-with-me"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -1286,8 +1286,16 @@ export default function ClaudeCodeComparisonPage() {
                 textDecoration: "none",
               }}
             >
-              Book a Discovery Assessment <span>→</span>
+              Book a Fit Call <span>→</span>
             </Link>
+            <p style={{ marginTop: "16px", fontSize: "14px", color: "rgba(255,255,255,0.50)" }}>
+              <Link
+                href="/business-ai-os-assessment"
+                style={{ color: "#028090", textDecoration: "none", fontWeight: 500 }}
+              >
+                See how much it costs you to stay the same → Take the Assessment Quiz
+              </Link>
+            </p>
           </FadeUp>
         </div>
       </section>

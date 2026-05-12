@@ -145,4 +145,6 @@ He was describing the architecture. The business version of it connects to where
 
 If you are running Obsidian + Claude Code and finding that you are still the bottleneck, that the system is smart but not autonomous, that it knows your business but does not run it, that is the ceiling he named. And it is not a flaw in your setup. It is the edge of what a second brain can do.
 
+For a full breakdown of where each ceiling sits and what the alternative looks like, [read the comparison](/business-ai-os-vs-claude-code-obsidian).
+
 The assessment below takes five minutes. It tells you which function in your business has the highest-ROI automation opportunity. That's the starting point.
