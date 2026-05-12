@@ -26,12 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://www.revaya.ai/solutions",
-      lastModified: new Date("2026-03-17"),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: "https://www.revaya.ai/business-ai-operating-system",
       lastModified: new Date("2026-05-01"),
       changeFrequency: "monthly",
@@ -68,16 +62,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: "https://www.revaya.ai/privacy-policy",
-      lastModified: new Date("2026-01-01"),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: "https://www.revaya.ai/terms-of-use",
-      lastModified: new Date("2026-01-01"),
-      changeFrequency: "yearly",
-      priority: 0.3,
+      url: "https://www.revaya.ai/business-ai-os-vs-claude-code-obsidian",
+      lastModified: new Date("2026-05-11"),
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     ...resourceEntries,
   ];
