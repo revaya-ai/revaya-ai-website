@@ -562,7 +562,7 @@ export default function ClaudeCodeComparisonPage() {
             <FadeUp
               key={card.num}
               delay={0.1 + i * 0.05}
-              style={i >= 4 ? { gridColumn: "span 2" } : {}}
+              style={{}}
             >
               <div
                 style={{
