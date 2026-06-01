@@ -82,6 +82,20 @@ export function AssessmentApp() {
     setIsSubmitting(true);
     setEmail(emailAddress);
 
+    // Notify Shannon immediately — fires before Supabase, independent of it
+    fetch("/api/assessment-notification", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email: emailAddress,
+        category: results?.category,
+        lowestSection: results?.lowestSection,
+        totalMonthlyOpportunity: results?.totalMonthlyOpportunity,
+        annualOpportunity: results?.annualOpportunity,
+      }),
+    }).catch((e) => console.error("Assessment notification failed:", e));
+
     try {
       if (results) {
         await saveAssessmentResponse({
