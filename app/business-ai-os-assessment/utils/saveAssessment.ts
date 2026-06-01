@@ -105,6 +105,20 @@ export async function saveAssessmentResponse({
     throw error;
   }
 
+  // Notify Shannon of new submission (fire-and-forget)
+  fetch("/api/assessment-notification", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name,
+      email,
+      category: results.category,
+      lowestSection: results.lowestSection,
+      totalMonthlyOpportunity: results.totalMonthlyOpportunity,
+      annualOpportunity: results.annualOpportunity,
+    }),
+  }).catch((e) => console.error("Assessment notification failed:", e));
+
   // Upsert into email_subscribers — assessment completion = implicit consent
   if (optedIn) {
     await supabase.from("email_subscribers").upsert([{
