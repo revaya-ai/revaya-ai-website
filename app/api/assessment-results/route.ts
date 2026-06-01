@@ -73,7 +73,7 @@ ${monthlyFormatted || annualFormatted ? `THE NUMBERS\n${monthlyFormatted ? `Mont
 
 ---
 
-If any of this lands, the next step is a 20-minute fit call. No pitch — just a look at what's actually going on in your business and whether a Business AI OS makes sense for where you are right now.
+If any of this lands, the next step is a 40-minute fit call. No pitch — just a look at what's actually going on in your business and whether a Business AI OS makes sense for where you are right now.
 
 Book a call: https://www.revaya.ai/work-with-me
 
