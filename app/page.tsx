@@ -811,23 +811,23 @@ export default function HomePage() {
           {/* H1 */}
           <FadeIn delay={0.1}>
             <h1 className="font-display font-black text-[2.375rem] md:text-[3.875rem] lg:text-[4.875rem] leading-[1.0] text-white mb-6 tracking-tight">
-              Your business is running you.
+              You Know AI Matters.
               <br />
-              <span className="text-[#F45B69]">Let&rsquo;s fix that.</span>
+              <span className="text-[#F45B69]">You&rsquo;re Not Sure Where It Fits.</span>
             </h1>
           </FadeIn>
 
           {/* Subhead */}
           <FadeIn delay={0.2}>
             <p className="text-[1.125rem] md:text-[1.25rem] leading-[1.6] text-white mb-5 max-w-[620px] mx-auto">
-              You didn&rsquo;t build this to be the single point of failure. But right now, every decision routes through you. The business runs on you being in it constantly. That&rsquo;s the ceiling.
+              That&rsquo;s where I start. Not a tool recommendation. Not a course. An AI Assessment.
             </p>
           </FadeIn>
 
           {/* Body */}
           <FadeIn delay={0.25}>
             <p className="text-[1.0625rem] leading-[1.75] text-white mb-10 max-w-[718px] mx-auto">
-              I build the operational backbone that lets you do exactly what you do. Only better, faster, and without every answer running through you first. Not a tool. A Business AI Operating System.
+              I work with business owners, find the biggest bottlenecks, and show you exactly where the leverage is. Then I build the AI engine around it, one that grows as the business does. So you can put your time back where it belongs. Growing the business, or finally making your little one&rsquo;s soccer game.
             </p>
           </FadeIn>
 
