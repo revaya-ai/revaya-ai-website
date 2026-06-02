@@ -4,7 +4,6 @@ import { useState } from "react";
 import { AssessmentAnswers, ROIResults } from "./types/assessment";
 import { questions } from "./data/questions";
 import { calculateROI } from "./utils/calculateROI";
-import { saveAssessmentResponse } from "./utils/saveAssessment";
 import LandingSection from "./components/LandingSection";
 import QuestionCard from "./components/QuestionCard";
 import ProgressBar from "./components/ProgressBar";
@@ -116,12 +115,15 @@ export function AssessmentApp() {
 
     try {
       if (results) {
-        await saveAssessmentResponse({
-          email: emailAddress,
-          name,
-          answers,
-          results,
+        const saveRes = await fetch("/api/save-assessment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: emailAddress, name, answers, results }),
         });
+        if (!saveRes.ok) {
+          const detail = await saveRes.json().catch(() => ({}));
+          console.error("Server-side save failed:", detail);
+        }
       }
     } catch (err) {
       // Don't block user from seeing results if Supabase fails
