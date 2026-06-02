@@ -96,7 +96,8 @@ export function AssessmentApp() {
       }),
     }).catch((e) => console.error("Assessment notification failed:", e));
 
-    // Send results email to prospect
+    // Send results email to prospect (with full results for PDF generation)
+    const operationType = answers[1]?.selectedOption === 0 ? "solo-operator" : "team";
     fetch("/api/assessment-results", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -108,6 +109,8 @@ export function AssessmentApp() {
         totalMonthlyOpportunity: results?.totalMonthlyOpportunity,
         annualOpportunity: results?.annualOpportunity,
         monthlyHoursRecoverable: results?.monthlyHoursRecoverable,
+        fullResults: results,
+        operationType,
       }),
     }).catch((e) => console.error("Assessment results email failed:", e));
 

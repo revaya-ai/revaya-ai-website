@@ -320,11 +320,11 @@ function getSectionRecommendations(): Record<string, { title: string; items: str
   };
 }
 
-export async function generatePDF(
+async function buildDoc(
   results: ROIResults,
   email: string,
   operationType: string
-): Promise<void> {
+): Promise<jsPDF> {
   const doc = new jsPDF();
 
   const categoryContent = getCategoryContent(results.category);
@@ -661,5 +661,23 @@ export async function generatePDF(
 
   drawFooter(doc);
 
+  return doc;
+}
+
+export async function generatePDF(
+  results: ROIResults,
+  email: string,
+  operationType: string
+): Promise<void> {
+  const doc = await buildDoc(results, email, operationType);
   doc.save("Business-AI-OS-Scorecard.pdf");
+}
+
+export async function generatePDFBuffer(
+  results: ROIResults,
+  email: string,
+  operationType: string
+): Promise<Buffer> {
+  const doc = await buildDoc(results, email, operationType);
+  return Buffer.from(doc.output("arraybuffer") as ArrayBuffer);
 }

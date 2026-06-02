@@ -29,6 +29,8 @@ export async function POST(request: Request) {
       totalMonthlyOpportunity,
       annualOpportunity,
       monthlyHoursRecoverable,
+      fullResults,
+      operationType,
     } = body;
 
     if (!name || !email || !category) {
@@ -82,11 +84,27 @@ Revaya AI
 https://www.revaya.ai
     `.trim();
 
+    // Generate PDF attachment if full results were provided
+    let pdfAttachment: { filename: string; content: Buffer } | undefined;
+    if (fullResults) {
+      try {
+        const { generatePDFBuffer } = await import("../../business-ai-os-assessment/utils/generatePDF");
+        const pdfBuffer = await generatePDFBuffer(fullResults, email, operationType || "team");
+        pdfAttachment = {
+          filename: "Business-AI-OS-Scorecard.pdf",
+          content: pdfBuffer,
+        };
+      } catch (pdfError) {
+        console.error("PDF generation for email failed:", pdfError);
+      }
+    }
+
     await resend.emails.send({
       from: "Shannon Winnicki — Revaya AI <shannon@revaya.ai>",
       to: email,
       subject: `Your Business AI OS scorecard, ${name.split(" ")[0]}`,
       text: emailText,
+      attachments: pdfAttachment ? [pdfAttachment] : [],
     });
 
     return NextResponse.json({ success: true });
