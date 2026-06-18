@@ -49,8 +49,19 @@
   --color-base-surface: #111820;
   --color-base-border: rgba(255,255,255,0.08);
 
+  /* v4 redesign palette (2026-06-18) */
+  --color-ink: #070b1c;          /* deepest navy base */
+  --color-ink-2: #0d1a4a;        /* navy-2 */
+  --color-teal: #19b3c2;         /* primary accent (v4) */
+  --color-teal-deep: #028090;    /* legacy teal, secondary */
+  --color-coral: #F45B69;
+  --color-purple: #553555;
+  --color-purple-lift: #9a6e9a;  /* lighter purple for on-dark dots/lanes */
+  --color-paper: #E4FDE1;        /* light */
+
   /* Font families */
-  --font-display: var(--font-montserrat), sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
   --font-body: "Proxima Nova", var(--font-inter), sans-serif;
 
   /* Font sizes */
