@@ -52,14 +52,14 @@ export default function Navigation() {
     resourcesDropdown.some((l) => l.href === pathname);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-5 lg:pt-6">
       <div
-        className={`flex items-center justify-between h-16 w-full px-4 ${
+        className={`flex items-center justify-between w-full max-w-[920px] rounded-full border border-white/10 pl-6 pr-2 py-2 transition-all duration-300 ${
           scrolled
-            ? "bg-[#0d1a4a]/90 backdrop-blur-xl border-b border-white/[0.06]"
-            : "bg-transparent"
+            ? "bg-ink/70 backdrop-blur-xl shadow-[0_18px_50px_-20px_rgba(0,0,0,0.7)]"
+            : "bg-ink/40 backdrop-blur-lg"
         }`}
-        style={{ transition: "background 0.4s ease" }}
+        style={{ animation: "navDrop 0.8s cubic-bezier(0.2,0.8,0.2,1) both" }}
       >
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 flex items-center">
@@ -150,9 +150,9 @@ export default function Navigation() {
         <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
           <Link
             href="/work-with-me"
-            className="font-display text-[0.875rem] font-bold px-5 py-2 rounded-full bg-[#553555] text-white hover:bg-[#4a2d4a] hover:shadow-[0_0_40px_rgba(85,53,85,0.5)] transition-all duration-200 whitespace-nowrap"
+            className="font-display text-[0.875rem] font-semibold px-5 py-2.5 rounded-full bg-teal text-[#04121a] hover:-translate-y-0.5 hover:shadow-[0_10px_26px_-8px_rgba(25,179,194,0.7)] transition-all duration-200 whitespace-nowrap"
           >
-            Start a Conversation →
+            Book a fit call
           </Link>
         </div>
 
