@@ -22,7 +22,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-montserrat)", "sans-serif"],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        serif: ["var(--font-fraunces)", "Georgia", "serif"],
         body: ["Proxima Nova", "var(--font-inter)", "sans-serif"],
       },
       fontSize: {

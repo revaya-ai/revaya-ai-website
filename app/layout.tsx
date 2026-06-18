@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,10 +8,11 @@ import { organizationSchema } from "@/lib/schema";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
-const montserrat = Montserrat({
-  weight: ["700", "900"],
+const fraunces = Fraunces({
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -76,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <head>
         <JsonLd data={organizationSchema} />
         <Script
