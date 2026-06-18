@@ -1,11 +1,49 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
-import CountUpStats from "@/components/CountUpStats";
 import type { ProofCopy } from "@/lib/copy/round1";
 
 interface Props {
   copy: ProofCopy;
+}
+
+function InlineCountUp({ target }: { target: number }) {
+  const [value, setValue] = useState(0);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    // Respect prefers-reduced-motion — skip animation, show final number immediately
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReduced) {
+      setValue(target);
+      return;
+    }
+
+    const duration = 1400; // ms
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(eased * target));
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, [target]);
+
+  return <>{value}</>;
 }
 
 export default function Proof({ copy }: Props) {
@@ -29,16 +67,7 @@ export default function Proof({ copy }: Props) {
             {copy.eyebrow}
           </span>
           <h2 className="font-display font-normal text-[clamp(26px,3.8vw,50px)] leading-[1.06] tracking-[-0.02em] text-white max-w-[22ch]">
-            {/* Headline with 18 as CountUp */}
-            <span className="inline-flex items-baseline gap-0">
-              <span
-                className="font-display font-normal text-[clamp(26px,3.8vw,50px)] leading-[1.06] tracking-[-0.02em] text-teal"
-                suppressHydrationWarning
-              >
-                18
-              </span>
-              &nbsp;years building digital products.
-            </span>{" "}
+            Years building digital products.{" "}
             Now that work goes into{" "}
             <em className="italic text-teal">one business at a time.</em>
           </h2>
@@ -58,11 +87,19 @@ export default function Proof({ copy }: Props) {
 
           {/* Number + brands */}
           <FadeIn delay={0.15} direction="left">
-            {/* Large display number */}
+            {/* Large display number — inline count-up, no nested section */}
             <div className="mb-8">
-              <CountUpStats
-                stats={[{ target: 18, suffix: "", label: "years of digital product work" }]}
-              />
+              <div className="flex flex-col items-start gap-1">
+                <span
+                  className="font-display font-normal text-[clamp(64px,8vw,96px)] leading-none tracking-[-0.03em] text-teal tabular-nums"
+                  suppressHydrationWarning
+                >
+                  <InlineCountUp target={18} />
+                </span>
+                <span className="text-[12px] tracking-[0.18em] uppercase text-paper/45 font-semibold">
+                  years of digital product work
+                </span>
+              </div>
             </div>
 
             {/* Brand names */}
@@ -79,12 +116,7 @@ export default function Proof({ copy }: Props) {
               </div>
             </div>
 
-            {/* Proof slot placeholder — honest, tasteful */}
-            <div className="mt-4 rounded-xl border border-dashed border-white/[0.08] px-6 py-4">
-              <p className="text-[12px] text-paper/30 italic leading-snug">
-                First named client result will appear here. Launching credentials-only.
-              </p>
-            </div>
+            {/* Proof slot: add a named client result here when one lands */}
           </FadeIn>
 
         </div>

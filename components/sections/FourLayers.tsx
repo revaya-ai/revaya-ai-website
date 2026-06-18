@@ -70,7 +70,7 @@ export default function FourLayers({ copy }: Props) {
                   </h3>
 
                   {/* Body — hidden on mobile col-2, full width on md+ col-3 */}
-                  <p className="col-start-2 md:col-start-3 row-start-1 md:row-start-auto text-[clamp(14px,1.05vw,16px)] leading-[1.72] text-paper/65 max-w-[46ch]">
+                  <p className="col-start-2 md:col-start-3 row-start-2 md:row-start-auto text-[clamp(14px,1.05vw,16px)] leading-[1.72] text-paper/65 max-w-[46ch]">
                     {layer.body}
                   </p>
                 </div>

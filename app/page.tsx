@@ -89,7 +89,7 @@ export default function HomePage() {
         style={{ zIndex: 1 }}
       >
         <div
-          className="flex gap-10 whitespace-nowrap text-[11px] tracking-[0.22em] uppercase text-paper/30 font-medium"
+          className="marquee-inner flex gap-10 whitespace-nowrap text-[11px] tracking-[0.22em] uppercase text-paper/30 font-medium"
           style={{ animation: "marquee 32s linear infinite", width: "max-content" }}
         >
           {[...Array(4)].flatMap((_, ri) =>
