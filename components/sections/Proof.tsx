@@ -66,10 +66,8 @@ export default function Proof({ copy }: Props) {
           <span className="inline-block text-[11px] tracking-[0.22em] uppercase text-teal mb-6 font-semibold">
             {copy.eyebrow}
           </span>
-          <h2 className="font-display font-normal text-[clamp(26px,3.8vw,50px)] leading-[1.06] tracking-[-0.02em] text-white max-w-[22ch]">
-            Years building digital products.{" "}
-            Now that work goes into{" "}
-            <em className="italic text-teal">one business at a time.</em>
+          <h2 className="font-display font-normal text-[clamp(26px,3.8vw,50px)] leading-[1.06] tracking-[-0.02em] text-white max-w-[28ch]">
+            {copy.heading}
           </h2>
         </FadeIn>
 

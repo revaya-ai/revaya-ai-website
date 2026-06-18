@@ -72,7 +72,9 @@ export default function HomePage() {
           eyebrow={homeCopy.hero.eyebrow}
           headline={
             <>
-              What is the one problem you can&rsquo;t hire for, can&rsquo;t solve, and{" "}
+              What is the one problem you{" "}
+              <em className="italic text-teal">can&rsquo;t hire for,</em>{" "}
+              <em className="italic text-teal">can&rsquo;t solve,</em> and{" "}
               <em className="italic text-teal">can&rsquo;t scale?</em>
             </>
           }
@@ -85,7 +87,7 @@ export default function HomePage() {
       {/* ── SECTION DIVIDER TICKER ────────────────────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="relative overflow-hidden border-y border-white/[0.07] py-4"
+        className="relative overflow-hidden border-y border-white/[0.07] py-4 px-6 lg:px-12"
         style={{ zIndex: 1 }}
       >
         <div

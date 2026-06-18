@@ -77,7 +77,7 @@ export const homeCopy: HomeCopy = {
     eyebrow: "AI Operating System",
     headline: "What is the one problem you can't hire for, can't solve, and can't scale?",
     subcopy:
-      "Start with the problem costing you the most. We find your single most expensive bottleneck, build a system that runs it the way you would, and show you every decision it makes.",
+      "We start with the problem costing you the most. We find your single most expensive bottleneck, build a system that runs it the way you would, and give you back the hours it was eating. And you see every move it makes, because it is not a black box.",
     primaryCta: { label: "Book a fit call", href: "/work-with-me" },
     secondaryCta: { label: "See the system", href: "/business-ai-operating-system" },
   },
@@ -86,10 +86,10 @@ export const homeCopy: HomeCopy = {
     eyebrow: "THE REAL COST",
     heading: "The most expensive problem in your business is the one nobody has put a number on yet.",
     body: [
-      "Every business has one. A function that costs too much to run and too much to leave alone. A motion that eats hours every week and still slips. A hire you keep almost making and keep talking yourself out of, because you are not sure the role pays for itself.",
-      "That problem has a price. Most owners have just never been handed the bill.",
+      "Every business has one. A function that costs too much to run and too much to leave alone. A piece of work that comes back every week, eats hours, and still slips through the cracks. The new hire you know you need, but you are not financially ready to pull the trigger on.",
+      "That problem has a price. Most business owners have just never been handed the bill.",
       "It shows up one of two ways. Either you carry it in headcount, the person or the team you would have to add to keep that function running, loaded cost and all. Or you carry it in hours, the time that disappears into the same recurring work week after week, the work that never happens because the day ran out, the growth you keep declining because there is no room to hold it.",
-      "Run the math either way and the number is bigger than the cost of fixing it. That is why it stays unsolved. Nobody adds it up, so everybody keeps paying it.",
+      "Run the math either way and the number is bigger than the cost of fixing it. That is why it stays unsolved.",
     ],
   },
 
@@ -106,13 +106,13 @@ export const homeCopy: HomeCopy = {
 
   fourLayers: {
     eyebrow: "HOW A SYSTEM COMES TO KNOW YOUR BUSINESS",
-    heading: "A system that runs your work has to know your work. We build that in four layers.",
+    heading: "Four layers teach the system your business. What we build on top is shaped to your problem.",
     intro:
-      "Most AI tools hand you a clever assistant that forgets you exist every morning. We build the opposite. A system that learns your business in four layers, so it picks up where you left off instead of starting from zero every day.",
+      "Most AI tools hand you a clever assistant that forgets you exist every morning. We build the opposite. Four layers that teach the system how your business actually works. They are the same foundation under every build. What we build on top of them is not. That part is shaped to the one problem costing you the most.",
     layers: [
       {
         name: "Context",
-        body: "It learns how you actually work, so it runs a function the way you would, not the way a generic tool assumes you should.",
+        body: "It learns how you actually work, so it runs your business the way you would, not the way a generic tool assumes you should.",
       },
       {
         name: "Data",
@@ -128,7 +128,7 @@ export const homeCopy: HomeCopy = {
       },
     ],
     closing:
-      "That is the part most tools skip, because building it is real work. We wire all four together so the system actually holds your business instead of holding a single task. The full breakdown of how each layer works lives on the AIOS page.",
+      "These four layers feed whatever we build. For one business that is a system that runs the sales pipeline. For another it is scheduling, or marketing, or a dashboard built around how they actually run. The layers are the same every time. The solution is yours alone, built around your most expensive problem. The full breakdown of how each layer works lives on the AIOS page.",
   },
 
   differentiator: {
@@ -137,16 +137,16 @@ export const homeCopy: HomeCopy = {
     body: [
       "You have probably tried AI already. A tool here, an automation there. It saved you two hours and added three hours of managing it. Or it produced something confidently wrong and you stopped trusting it. You had tools. You did not have a system.",
       "Here is the difference. We build specialized agents with full audit trails, not one monolithic black box you cannot question. Every move the system makes is visible. You can see why it decided what it decided, and you can override it. The system earns trust the way a good hire does, by showing its work, not by asking you to take it on faith.",
-      "And we build in the right order. Augment before automate. Founder first. The system runs alongside the people doing the work and proves itself stable before it ever runs anything unwatched. Your business does not get handed to a machine on day one. It gets handed over the moment you, not the machine, are ready.",
+      "And we build in the right order. Augment before automate. The system runs alongside the people doing the work and proves itself stable before it ever runs anything on its own. Nothing gets handed off on day one. Control transfers the moment you are ready, not before, and at the pace you set.",
     ],
   },
 
   proof: {
     eyebrow: "WHO IS BUILDING THIS",
-    heading: "18 years building digital products. Now that work goes into one business at a time.",
+    heading: "Eighteen years of experience building digital products, now pointed at one business at a time.",
     body: [
-      "Revaya AI was founded by Shannon Winnicki, who spent eighteen years sitting between the business and the builders, taking what a company actually needed and turning it into a working digital product. Website overhauls. E-commerce platforms. Digital infrastructure at scale. Not an outside consultant looking in, on the inside, shipping the thing.",
-      "Revaya AI is the same work in a different form. Founder-led, building the operational backbone for businesses carrying a problem too expensive to keep running by hand. We run our own AI Operating System every day. The workspace is the live demo. You can see exactly what you are buying before you buy it.",
+      "Virgin Mobile. Boost Mobile. Ultra Mobile. Papa Murphy's. Intermedia. Revaya AI was founded by Shannon Winnicki, who spent eighteen years sitting between the business and the builders, taking what a company actually needed and turning it into a working digital product. Website overhauls. E-commerce platforms. Digital infrastructure at scale. Not an outside consultant looking in, on the inside, shipping the thing.",
+      "Revaya AI is the same work in a different form. Founder-led, building the operational backbone for businesses carrying a problem too expensive to keep running by hand. Shannon runs her own AI Operating System every day, built for her own business, around her own most expensive problem. So this is not a theory we are selling. It is how we run, and proof that the way we build holds up when the business on the line is our own.",
     ],
     brands: ["Virgin Mobile", "Boost Mobile", "Ultra Mobile", "Papa Murphy's", "Intermedia"],
     proofSlotPlaceholder:

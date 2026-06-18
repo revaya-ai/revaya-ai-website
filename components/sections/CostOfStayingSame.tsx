@@ -37,13 +37,13 @@ export default function CostOfStayingSame({ copy }: Props) {
             {/* Two-currency labels — structural hooks for future toggle */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4" aria-label="Cost framing options">
               <div className="flex-1 rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm px-5 py-4">
-                <p className="text-[11px] tracking-[0.18em] uppercase text-teal/80 mb-1 font-semibold">Headcount view</p>
+                <p className="text-[11px] tracking-[0.18em] uppercase text-teal/80 mb-1 font-semibold">Calculation by Head</p>
                 <p className="text-sm text-paper/60 leading-snug">
                   The hire you keep almost making, fully loaded.
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm px-5 py-4">
-                <p className="text-[11px] tracking-[0.18em] uppercase text-paper/50 mb-1 font-semibold">Hourly view</p>
+                <p className="text-[11px] tracking-[0.18em] uppercase text-paper/50 mb-1 font-semibold">Calculation by Hourly $</p>
                 <p className="text-sm text-paper/60 leading-snug">
                   The hours that disappear week after week.
                 </p>

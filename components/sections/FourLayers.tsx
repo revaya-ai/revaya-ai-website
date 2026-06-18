@@ -37,9 +37,7 @@ export default function FourLayers({ copy }: Props) {
             {copy.eyebrow}
           </span>
           <h2 className="font-display font-normal text-[clamp(28px,4.2vw,54px)] leading-[1.06] tracking-[-0.02em] text-white">
-            A system that runs your work has to{" "}
-            <em className="italic text-teal">know your work.</em>{" "}
-            We build that in four layers.
+            {copy.heading}
           </h2>
           <p className="mt-6 text-[clamp(15px,1.1vw,17px)] leading-[1.75] text-paper/65 max-w-[560px]">
             {copy.intro}
