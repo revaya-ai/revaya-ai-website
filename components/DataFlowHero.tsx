@@ -88,7 +88,7 @@ export default function DataFlowHero({
   }, [layers]);
 
   return (
-    <section className="relative grid lg:grid-cols-[1.05fr_0.95fr] items-center gap-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-20 pt-36 lg:pt-40 pb-20">
+    <section className="relative grid lg:grid-cols-[1fr_460px] items-center gap-10 max-w-[1560px] mx-auto px-6 sm:px-8 lg:px-10 pt-36 lg:pt-40 pb-20">
       <div className="relative z-10">
         <span className="inline-block text-[13px] tracking-[0.16em] uppercase text-teal border border-teal/30 rounded-full px-4 py-1.5 mb-6 bg-teal/[0.06]">
           {eyebrow}
