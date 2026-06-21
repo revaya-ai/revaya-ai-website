@@ -21,7 +21,7 @@ export default function CostOfStayingSame({ copy }: Props) {
         }}
       />
 
-      <div className="relative max-w-content mx-auto px-6 lg:px-12">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-20">
         <div className="grid lg:grid-cols-[1fr_1.15fr] gap-16 lg:gap-24 items-start">
 
           {/* Left: heading block */}

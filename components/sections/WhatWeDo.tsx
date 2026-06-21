@@ -31,7 +31,7 @@ export default function WhatWeDo({ copy }: Props) {
         }}
       />
 
-      <div className="relative max-w-content mx-auto px-6 lg:px-12">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-20">
 
         {/* Eyebrow + heading centered */}
         <FadeIn className="text-center max-w-[680px] mx-auto mb-16">

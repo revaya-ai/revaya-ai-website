@@ -29,7 +29,7 @@ export default function FourLayers({ copy }: Props) {
         }}
       />
 
-      <div className="relative max-w-content mx-auto px-6 lg:px-12">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-20">
 
         {/* Section header */}
         <FadeIn className="max-w-[700px] mb-16">

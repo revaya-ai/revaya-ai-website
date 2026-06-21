@@ -37,7 +37,7 @@ export default function FinalCta({ copy }: Props) {
         }}
       />
 
-      <div className="relative max-w-content mx-auto px-6 lg:px-12">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-20">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 items-end">
 
           {/* Heading */}
