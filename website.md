@@ -1,6 +1,8 @@
 # Revaya AI Website — Design & Build Source of Truth
 
-**Status:** Source of truth
+> **SUPERSEDED 2026-08-02.** This file is replaced by `design-standards.md` at the repo root, which reconciles this doc against `brand/web-design-guide.md` (workspace, locked 2026-07-26 — corrects this file's purple-primary, two-teal, and Montserrat tokens). Kept for historical reference pending Shannon's design-doc review before the next website refresh — do not use as a live standard.
+
+**Status:** Source of truth (historical — see banner above)
 **Last updated:** 2026-07-09
 **Supersedes:** `DESIGN.md`, `DESIGN 2.md` (both describe the pre-v4 Montserrat era and are now historical only)
 **Branch documented:** `redesign-premium`

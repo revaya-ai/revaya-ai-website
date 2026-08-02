@@ -1,3 +1,5 @@
+> **SUPERSEDED 2026-08-02.** This file is replaced by `design-standards.md` at the repo root. Kept for historical reference pending Shannon's design-doc review before the next website refresh — do not use as a live standard. Values here (light background, purple primary) do not match the current site.
+
 ---
 name: Revaya AI
 

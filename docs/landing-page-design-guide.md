@@ -1,5 +1,7 @@
 # Revaya AI — Landing Page Design Guide
 
+> **SUPERSEDED 2026-08-02.** This file is replaced by `design-standards.md` at the repo root. Kept for historical reference pending Shannon's design-doc review before the next website refresh — do not use as a live standard.
+
 > Reference for all future landing pages. Read this at the start of any new page build.
 > Source of truth: `app/business-ai-os-vs-openclaw/ComparisonPage.tsx`
 

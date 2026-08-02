@@ -1,5 +1,6 @@
+> **SUPERSEDED 2026-08-02.** This file is replaced by `design-standards.md` at the repo root. Kept for historical reference pending Shannon's design-doc review before the next website refresh — do not use as a live standard.
+
 # Revaya AI — Design System
-**Source of truth for all pages. Read before every session that touches the website.**
 Last updated: 2026-03-28
 
 ---
